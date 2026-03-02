@@ -1,0 +1,84 @@
+import sys
+import os
+import json
+from pathlib import Path
+
+# Add src to path
+sys.path.append(os.getcwd())
+
+from src.vectorstore.chroma import ChromaVectorStore
+
+def audit_vectorstore():
+    print("--- Audit: Vector Database ---")
+    
+    # 1. Initialize Store (Read-Only intent)
+    # Using defaults from code
+    persist_dir = "data/vectorstore"
+    bm25_path = "data/bm25_index.json"
+    
+    if not os.path.exists(persist_dir):
+        print("❌ ChromaDB persistence directory not found!")
+        return
+        
+    try:
+        store = ChromaVectorStore(
+            persist_dir=persist_dir,
+            collection_name="smc_web", # Standard collection name from config
+            bm25_path=bm25_path
+        )
+    except Exception as e:
+         print(f"❌ Failed to initialize VectorStore: {e}")
+         return
+         
+    # 2. Check Collection
+    try:
+        count = store.collection.count()
+        print(f"✅ ChromaDB Collection 'smc_web' Size: {count} documents")
+    except Exception as e:
+        print(f"❌ Failed to count ChromaDB: {e}")
+        
+    # 3. Check BM25
+    if os.path.exists(bm25_path):
+        try:
+            with open(bm25_path, "r") as f:
+                data = json.load(f)
+                # BM25 JSON structure depends on implementation. 
+                # src/vectorstore/bm25.py uses simple dict or list?
+                # If it's SimpleBM25, it likely keys by doc_id or has a list of documents.
+                # Let's just print keys to be safe.
+                if isinstance(data, dict):
+                    keys = list(data.keys())
+                    print(f"✅ BM25 JSON Keys: {keys}")
+                    if "corpus" in data:
+                        print(f"✅ BM25 Corpus Size: {len(data['corpus'])}")
+                    elif "documents" in data:
+                        print(f"✅ BM25 Documents Size: {len(data['documents'])}")
+                else:
+                    print(f"✅ BM25 is List. Size: {len(data)}")
+        except Exception as e:
+            print(f"❌ BM25 Index corrupt: {e}")
+            
+    # 4. Sampling
+    if count > 0:
+        print("\n--- Sampling 1 Document ---")
+        try:
+            # Peek 1
+            res = store.collection.peek(limit=1)
+            # ids is list of lists? No, peek returns direct dict in new chroma?
+            # Or list of IDs?
+            # Standard: {'ids': ['id1'], 'embeddings': [...], ...}
+            print(f"Peek Result Keys: {res.keys()}")
+            
+            ids = res.get("ids", [])
+            metas = res.get("metadatas", [])
+            
+            if ids:
+                print(f"ID: {ids[0]}")
+                print(f"Metadata: {metas[0]}")
+            else:
+                print("Peek returned empty list.")
+        except Exception as e:
+            print(f"❌ Failed to peek: {e}")
+
+if __name__ == "__main__":
+    audit_vectorstore()
