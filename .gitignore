@@ -44,13 +44,17 @@ data/bm25_index.json
 
 # Internal state & sessions
 data/state.json
+!data/state.example.json     # ← อนุญาตให้ขึ้น git (ตัวอย่างที่ลบข้อมูลแล้ว)
 data/sessions/
 data/sessions_test/
 data/cache_store/
 data/logs/
 
 # Internal contact/personnel records
-data/records/
+data/records/*.jsonl
+data/records/*.json
+!data/records/*.example.jsonl  # ← อนุญาตให้ขึ้น git (ตัวอย่างที่ลบข้อมูลแล้ว)
+data/records/knowledge_packs/
 
 # Evaluation results (may contain internal query logs)
 data/eval/
