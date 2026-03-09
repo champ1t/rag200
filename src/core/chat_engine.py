@@ -1762,15 +1762,17 @@ class ChatEngine:
         self.context_intent_override = None  # Instance variable for cross-method access
         
         if context_manager.should_use_context(q, self.last_context):
+            # Always preserve intent when context is applicable — even if query
+            # text is not changed (e.g., rival-entity check kept query the same).
+            self.context_intent_override = self.last_context.get("intent")
+            if self.context_intent_override:
+                print(f"[CONTEXT_MEMORY] Intent preserved: {self.context_intent_override}")
+
             enriched_query = context_manager.enrich_query_with_context(q, self.last_context)
             if enriched_query != q:
                 q = enriched_query
                 context_enriched = True
-                # Preserve intent from context (e.g., CONTACT_LOOKUP)
-                self.context_intent_override = self.last_context.get("intent")
                 print(f"[CONTEXT_MEMORY] Query enriched from conversation context")
-                if self.context_intent_override:
-                    print(f"[CONTEXT_MEMORY] Intent preserved: {self.context_intent_override}")
         
         # =========================================================================
         # PHASE 80: PENDING STATE RESOLUTION (After Context Enrichment)

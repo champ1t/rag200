@@ -264,6 +264,26 @@ def enrich_query_with_context(query: str, last_context: Optional[Dict[str, Any]]
     # If keyword match found, use it immediately
     if matched_entity:
         # =====================================================================
+        # NEW: RIVAL ENTITY CHECK before appending
+        # =====================================================================
+        # Problem: query="แล้ว RNOC หาดใหญ่ หล่ะ", matched_entity="ศูนย์ OMC หาดใหญ่"
+        # The word "หาดใหญ่" was shared, causing a keyword match.
+        # But the query already asks about a DIFFERENT org (RNOC ≠ OMC).
+        # Fix: extract org acronyms from both sides; if a RIVAL org is found in
+        # the new query, skip enrichment so the query stays clean.
+        # =====================================================================
+        matched_orgs = {
+            w.lower() for w in matched_entity.split()
+            if w.lower() not in {"ศูนย์", "ฝ่าย", "แผนก", "งาน", "ทีม"}
+            and (w.lower() in KNOWN_ACRONYMS or (w.isascii() and w.upper() == w and len(w) >= 2))
+        }
+        query_ascii_segs = {s.lower() for s in re.findall(r'[A-Za-z]{2,}', query)}
+        rival_orgs = query_ascii_segs & KNOWN_ACRONYMS - matched_orgs
+        if rival_orgs:
+            print(f"[CONTEXT_RIVAL_ENTITY] Query has rival org(s) {rival_orgs} "
+                  f"vs matched entity '{matched_entity}' → skipping enrichment")
+            return query
+        # =====================================================================
         # DUPLICATE CHECK: Don't add if key words already in query
         # =====================================================================
         # Check if the significant words from matched entity are already in query
