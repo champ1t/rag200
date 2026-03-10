@@ -184,7 +184,16 @@ def classify_article_content(
         if article_type == "COMMAND_REFERENCE":
             return "command_reference"
         elif article_type == "OVERVIEW":
-            return "index"  # OVERVIEW typically means collection/directory
+            # Content-Aware OVERVIEW Check (Fix: not all OVERVIEW = index)
+            # Real index pages have many links. Short prose articles may be OVERVIEW by Fast Path
+            # but actually have readable content worth summarizing.
+            if article_content:
+                link_count = article_content.lower().count("http")
+                text_len = len(article_content.strip())
+                if link_count <= 5 and text_len > 100:
+                    # This is a short prose article, not a link directory -> allow LLM summary
+                    return "narrative"
+            return "index"  # Default: OVERVIEW with many links = collection/directory
         elif article_type == "MIGRATION_CONVERSION":
             return "command_reference"  # Migration guides often contain commands
     
