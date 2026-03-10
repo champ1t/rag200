@@ -557,6 +557,12 @@ Rules:
                     clean_lines.append(line)
                 
                 preview_content = '\n'.join(clean_lines).strip()
+                
+                # Phase 21 Format: Expand inline numbered lists into separate lines
+                # e.g. "1. item 2. item 3. item" -> "1. item\n2. item\n3. item"
+                # Uses lookbehind (?<=[^\d]) to protect IP addresses (192.168.1.1) and decimals
+                preview_content = re.sub(r'(?<=[^\d])(\d+\.)\s', r'\n\1 ', preview_content)
+                
                 preview_text = smart_truncate(preview_content, max_length=900, footer_url=None)
                 
                 final_ans = f"[{display_title}]\n\n{preview_text}"
