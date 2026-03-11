@@ -28,6 +28,17 @@ KNOWN_ACRONYMS: set = {
     "jna", "sopa", "mdes", "tot", "senate",
 }
 
+# KNOWN_THAI_TEAMS: Thai-language department/team names found in contact records.
+# Used to detect when a new query is about a DIFFERENT team (Thai name) vs context.
+# If query contains one of these that is NOT already in context → block enrichment.
+KNOWN_THAI_TEAMS: set = {
+    "สื่อสารข้อมูล", "helpdesk", "help desk", "radius", "callcenter",
+    "call center", "wifi", "intra", "ipphone", "ip phone", "ip-phone",
+    "winet", "ipnetwork", "ip network", "softswitch", "soft switch",
+    "leased line", "dsl", "fiber", "fttx", "iptv", "ip tv",
+    "ห้องสมุด", "บริหาร", "ฝ่ายขาย",
+}
+
 
 def should_use_context(query: str, last_context: Optional[Dict[str, Any]]) -> bool:
     """
@@ -444,6 +455,21 @@ def enrich_query_with_context(query: str, last_context: Optional[Dict[str, Any]]
 
     if new_entity_detected:
         return query  # New entity wins — use raw query, don't mix old context
+
+    # -------------------------------------------------------------------------
+    # CHECK 3: Known Thai team/department name (สื่อสารข้อมูล, radius, etc.)
+    # -------------------------------------------------------------------------
+    # Problem: query "ขอเบอร์สื่อสารข้อมูล" contains "สื่อสารข้อมูล" which is a
+    # specific team name. If context has OMC entity, "สื่อสารข้อมูล" bypasses all
+    # ASCII/location checks and OMC gets appended → wrong answer.
+    # Fix: if query contains any KNOWN_THAI_TEAMS keyword that is NOT already in
+    # the context entities, treat as a new entity and block enrichment.
+    context_entity_text = " ".join(entities.keys()).lower()
+    for thai_team in KNOWN_THAI_TEAMS:
+        if thai_team in q_lower and thai_team not in context_entity_text:
+            print(f"[CONTEXT_CONFLICT] Thai team name '{thai_team}' in query "
+                  f"(not in context) → blocking enrichment")
+            return query
 
     # =========================================================================
     # FALLBACK: Type-Based Priority Selection
