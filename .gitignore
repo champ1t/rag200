@@ -108,3 +108,11 @@ results/
 # Backup snapshots — contain internal data
 data/state_backup*.json
 data/vectorstore_backup*/
+
+# ============================================================
+# Temporary / Scratch Files (do not commit)
+# ============================================================
+temp_*.html
+temp_*.txt
+temp_*.py
+~$*.docx
