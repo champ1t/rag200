@@ -176,14 +176,35 @@ class ProcessedCache:
         """
         Phase 7: Query Normalization for Deterministic Matching.
         - Lowercase
-        - Remove noise words (how, config, command)
+        - Remove noise words (how to, config, command)
         - Collapse spaces
+        - STRIP Thai Pronouns & Particles (New: Fix OLT/ONT Discrepancy)
         """
         t = text.lower()
-        # Remove noise words
+        # Normalize slashes to spaces (e.g., OLT/ONU → OLT ONU)
+        t = t.replace("/", " ")
+        
+        # Phase 108: Thai Noise Removal (Pronouns, Particles, Prepositions)
+        # This allows "ผมจะกำหนดค่าบน OLT" to match "กำหนดค่าบน OLT"
+        th_noise = [
+            "ผม", "หนู", "เรา", "พี่", "น้อง", "เขา", "มัน", # Pronouns
+            "จะ", "อยาก", "ต้องการ", "ช่วย", "บอก", "ขอ", # Verbs/Intent
+            "หน่อย", "ครับ", "ค่ะ", "นะ", "จ๊ะ", "จ้า", "อ่ะ", "ว่ะ", "ดิ", # Particles
+            "บน", "ที่", "ใน", "ของ", "กับ", # Prepositions
+            "แล้ว", "เอ่อ", "อืม", "หา", "เจอ", # Fillers
+        ]
+        for n in th_noise:
+            # Match whole words to avoid prefix accidental stripping
+            t = re.sub(rf'\b{n}\b', ' ', t)
+            # Thai specific: often no spaces, so try direct substitution too for unambiguous ones
+            if len(n) >= 2:
+                t = t.replace(n, " ")
+
+        # Remove technical noise words
         noise = ["how to", "how", "วิธี", "config", "configuration", "คำสั่ง", "command", "manual", "คู่มือ", "guide", "basic", "พื้นฐาน", "syntax", "cmd"]
         for n in noise:
             t = t.replace(n, " ")
+            
         # Collapse spaces
         t = re.sub(r"\s+", " ", t).strip()
         return t
@@ -1788,9 +1809,14 @@ class ChatEngine:
                  self.pending_question = None
                  bypass_cache = False
              else:
-                 # STEP 3: Active pending -> skip normalizer entirely
-                 skip_normalizer = True
-                 print(f"[DEBUG] [LAYER 1] Pending active. Skip normalizer. Handling: '{q}'")
+                 # STEP 3: Conditional skip based on input length/type (Phase R2 Fix)
+                 is_menu_choice = (len(q.strip()) == 1 and q.strip().isdigit())
+                 if is_menu_choice:
+                     skip_normalizer = True
+                     print(f"[DEBUG] [LAYER 1] Menu choice detected. Skip normalizer. Handling: '{q}'")
+                 else:
+                     skip_normalizer = False
+                     print(f"[DEBUG] [LAYER 1] Full query detected during pending. Invoking normalizer.")
                  
                  followup_res = self._resolve_pending_followup(q, latencies)
                  if followup_res:
@@ -2417,52 +2443,36 @@ class ChatEngine:
             
             print(f"[STEP 5] Ambiguous query detected: {reason}")
             
-            # If broad vendor command, show actual article options if available
-            if reason == "BROAD_VENDOR_COMMAND" or reason == "MINIMAL_VENDOR_CONTEXT":
+            # Case: Broad vendor discovery or explicit all-intent (Phase Discovery)
+            if reason in ["BROAD_VENDOR_COMMAND", "MINIMAL_VENDOR_CONTEXT", "INDEX_QUERY", "VENDOR_ONLY"]:
                  vendor = AmbiguityDetector.extract_vendor(q)
                  if vendor:
-                     # Query deterministic index (Step 2)
+                     # Query deterministic index (Step 16: Advanced Discovery)
                      vendor_articles = self._find_vendor_articles(vendor, limit=10)
                      
                      if vendor_articles:
-                         print(f"[STEP 5] Found {len(vendor_articles)} articles for {vendor} -> Triggering Selection")
+                         print(f"[STEP 5] Found {len(vendor_articles)} articles for {vendor} -> Showing Selection")
                          
-                         # ============================================================
-                         # NUMERIC SELECTION: Global numbering (NO category reset)
-                         # ============================================================
-                         items = []
-                         for art in vendor_articles:
-                             items.append({
-                                 "url": art['url'],
-                                 "title": art['title'],
-                                 "category": art.get('category', '')
-                             })
+                         items = [{"url": art['url'], "title": art['title'], "category": art.get('category', '')} for art in vendor_articles]
                          
-                         # Create session with global numbering
                          session = self.numeric_selection_resolver.create_session(
                              items, context="article_selection",
                              prompt_text=f"กรุณาเลือกหมายเลข (1-{len(items)})"
                          )
-                         options_text = self.numeric_selection_resolver.format_numbered_list(
-                             session['items'], context="article_selection"
-                         )
+                         options_text = self.numeric_selection_resolver.format_numbered_list(session['items'], context="article_selection")
                          self.pending_numeric_session = session
                          
                          res = {
                              "answer": (
-                                 f"พบ {len(vendor_articles)} เอกสารที่เกี่ยวข้อง:\n\n"
+                                 f"พบ {len(vendor_articles)} รายการเอกสาร {vendor} ที่เกี่ยวข้องในระบบ:\n\n"
                                  f"{options_text}\n\n"
                                  f"{session['prompt_text']}"
                              ),
                              "route": "pending_clarification",
                              "metadata": {
-                                 "kind": "vendor_command_selection",
+                                 "kind": "vendor_index_selection",
                                  "vendor": vendor,
-                                 "candidates": [
-                                     {"title": art['title'], "url": art['url']}
-                                     for art in vendor_articles
-                                 ],
-                                 "created_at": time.time(),
+                                 "items": items,
                                  "ambiguity_reason": reason,
                                  "original_query": q
                              },
@@ -2470,20 +2480,12 @@ class ChatEngine:
                          }
                          return res
                      else:
-                         # Case: Vendor detected but no articles found in index
+                         # Case: Vendor detected but no articles found
                          print(f"[STEP 5] Vendor {vendor} detected but no articles found.")
                          res = {
-                             "answer": (
-                                 f"ไม่พบคำสั่ง {vendor} ในระบบ\n"
-                                 f"กรุณาระบุรุ่นอุปกรณ์ เช่น NE8000, OLT, Router"
-                             ),
-                             "route": "pending_clarification", 
-                             "metadata": {
-                                 "kind": "vendor_not_found",
-                                 "vendor": vendor,
-                                 "ambiguity_reason": reason,
-                                 "original_query": q
-                             },
+                             "answer": f"ไม่พบรายการคำสั่งสารานุกรมสำหรับ {vendor} โดยตรงในระบบขณะนี้\n\nโปรดระบุรุ่นอุปกรณ์หรือคำสั่งที่ต้องการ (เช่น {vendor} add vlan)",
+                             "route": "pending_clarification",
+                             "metadata": {"kind": "vendor_not_found", "vendor": vendor, "ambiguity_reason": reason},
                              "latencies": {"total": (time.time() - t_start) * 1000}
                          }
                          return res
@@ -2564,23 +2566,7 @@ class ChatEngine:
         }
         self.last_telemetry = telemetry_data
         
-        # Rule PR-1: Pre-normalize common typos for "เบอร์" (Phase 236)
-        # Handle variations: เบออร์, เบอร, เบอร์ออร์, เบอ, เบแอร์, บอร์, เบอร์ร์
-        # Logic: Match 'บ' or 'เบ' followed by any combination of 'อ', 'ร', '์', 'แ' that vaguely resembles 'เบอร์'
-        # Regex: (เบ?|บ)[อแรต์ว์]{1,5} -> เบอร์ (Simple Fuzzy)
-        # But allow "บอร์" (no leading vowel)
-        # Specific patterns:
-        if re.search(r"เบ[ออ่ร์รแ\.]{1,5}", q) or re.search(r"บ[อ่ร์ร]{1,4}", q):
-             # Be careful not to replace valid words starting with "เบ" like "เบเกอรี่" (unlikely in this domain)
-             # Better specific pattern list from user:
-             # เบอร, เบออร์, เบแอร์, บอร์, เบอร์ร์
-             q = re.sub(r'เบ[อ่ร์รแ]+[อ่ร์รแ\.]{0,4}', 'เบอร์', q) # Handles เบออร์, เบแอร์, เบอร
-             q = re.sub(r'\bบอร์\b', 'เบอร์', q) # Handles บอร์ (standalone)
-             
-        # Also handle "เบอ " -> "เบอร์ " (if not caught above)
-        if q.startswith("เบอ ") or " เบอ " in q:
-            q = q.replace("เบอ ", "เบอร์ ")
-        
+
         # =========================================================================
         # STEP 19.1-19.2: DOMAIN-SPECIFIC NORMALIZATION & INTENT LOCKING
         # Goal: Skip SafeNormalizer for structured domains (CONTACT, POSITION, TEAM)
@@ -2604,17 +2590,19 @@ class ChatEngine:
 
         # --- SAFE NORMALIZATION LAYER ---
         # STEP 4: Deterministic BEFORE Heuristic (already enforced by flow order)
-        # STEP 3: Skip normalizer entirely if pending active (Layer 1 handles all input)
-        # STEP 19.1: Skip normalizer for structured domains (CONTACT/POSITION)
-        
-        if self.pending_question:
-            print(f"[DEBUG] [STEP 3-4] Pending active -> Skipping SafeNormalizer (Layer 1 priority)")
-            shape_analysis = {"confidence": 0}  # Empty result, skip normalization
+        # STEP 3: Handle pending question response logic
+        is_menu_choice = False
+        if self.pending_question and len(q.strip()) == 1 and q.strip().isdigit():
+            is_menu_choice = True
+
+        if is_menu_choice:
+            print(f"[DEBUG] [STEP 3] Menu choice detected -> Skipping SafeNormalizer")
+            shape_analysis = {"confidence": 0} 
         elif intent_locked in ["CONTACT_LOOKUP", "POSITION_LOOKUP"]:
             print(f"[DEBUG] [STEP 19.1] Structured domain ({intent_locked}) -> Skipping SafeNormalizer (deterministic flow)")
-            shape_analysis = {"confidence": 0, "intent": intent_locked}  # Skip normalization, use locked intent
+            shape_analysis = {"confidence": 0, "intent": intent_locked}
         else:
-            # Robustly handle paraphrases using the user-provided "Safe Intent Shape Analyzer" prompt
+            # Fallback path (Heuristic / SafeNormalizer)
             shape_analysis = self.safe_normalizer.analyze(q)
         
         # =========================================================================
@@ -2652,10 +2640,14 @@ class ChatEngine:
         
         # Phase 230: Query Normalization & Alias Rewrite
         # This handles "makebridge" -> "make bridge" and "bridge port" -> "Canonical Title"
-        q, applied_rule = expand_synonyms(q)
-        synonym_active = bool(applied_rule)
-        if synonym_active:
-             print(f"[DEBUG] Query Expanded/Rewritten: {original_q_str} -> {q} (Rule: {applied_rule})")
+        # Skip for structured domains to avoid mangling entities for directory lookup
+        synonym_active = False
+        applied_rule = None
+        if not intent_locked:
+            q, applied_rule = expand_synonyms(q)
+            synonym_active = bool(applied_rule)
+            if synonym_active:
+                 print(f"[DEBUG] Query Expanded/Rewritten: {original_q_str} -> {q} (Rule: {applied_rule})")
         
         # Update telemetry with expanded query
         telemetry_data.update({
@@ -4530,13 +4522,14 @@ class ChatEngine:
              # Verify Coverage (R1)
              if self.evaluator:
                   # Step 12: Fallback Stability Rule (Low Confidence Guard)
-                  # If top score is below 0.75, trigger category menu instead of risking hallucination.
+                  # Phase R2-Fix: Relax threshold for Technical intents. 
                   top_r_score = results[0].score if results else 0.0
                   
-                  # Allow some very low scores to pass if they are "miss" candidates? No, miss is handled by coverage.
-                  # We want to intercept the "Grey Zone" (e.g. 0.60 - 0.74).
-                  if 0.0 < top_r_score < 0.75:
-                       print(f"[STEP 12] Low Confidence Triggered (Score {top_r_score:.4f} < 0.75)")
+                  is_technical = intent in ["HOWTO_PROCEDURE", "CONFIG", "TROUBLESHOOT"]
+                  dynamic_threshold = 0.60 if is_technical else 0.75
+                  
+                  if 0.0 < top_r_score < dynamic_threshold:
+                       print(f"[STEP 12] Low Confidence Triggered (Score {top_r_score:.4f} < {dynamic_threshold})")
                        
                        candidates = [
                            {"title": "Command", "payload": "รวบรวมคำสั่งใช้งาน (Command Reference)"},
@@ -4559,7 +4552,7 @@ class ChatEngine:
                        return {
                            "answer": menu_text,
                            "route": "clarification_low_confidence",
-                           "decision_reason": f"Low Confidence (Score {top_r_score:.4f} < 0.75)",
+                           "decision_reason": f"Low Confidence (Score {top_r_score:.4f} < {dynamic_threshold})",
                            "audit": {
                                "low_confidence_trigger": True,
                                "score": top_r_score
@@ -4617,8 +4610,11 @@ class ChatEngine:
             top_score = valid_results[0].score
 
             # Step 12: Fallback Stability Rule (Low Confidence Guard)
-            # If top score is low (< 0.75) but not zero/miss, trigger category fallback
-            if top_score < 0.75:
+            # Phase R2-Fix: Match dynamic threshold from Step 12
+            is_tech_final = intent in ["HOWTO_PROCEDURE", "CONFIG", "TROUBLESHOOT"]
+            final_threshold = 0.60 if is_tech_final else 0.75
+
+            if top_score < final_threshold:
                  print(f"[STEP 8] Low Confidence Fallback Triggered (Score={top_score:.4f})")
                  
                  # Log Telemetry
@@ -4646,7 +4642,7 @@ class ChatEngine:
                       "latencies": latencies,
                       "decision_reason": f"Low Confidence (Score {top_score:.4f})",
                       "audit": {
-                          "decision_reason": f"Low Confidence (Score {top_score:.4f} < 0.75)",
+                          "decision_reason": f"Low Confidence (Score {top_score:.4f} < {final_threshold})",
                           "confidence_score": float(top_score)
                       }
                  }

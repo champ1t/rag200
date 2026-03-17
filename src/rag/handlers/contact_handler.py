@@ -9,9 +9,20 @@ class ContactHandler:
     Replaces direct calls to `lookup_phones`.
     """
     
-    TRIGGERS = ["เบอร์", "โทร", "ติดต่อ", "email", "อีเมล", "fax", "ที่อยู่", "เบอ", "เบอร", "โท", "บอร์", "ขอ", "ของ", "phone"]
+    TRIGGERS = [
+        "เบอร์์", "เบอร์", "โทร", "ติดต่อ", "email", "อีเมล", "fax", "ที่อยู่", 
+        "เบอ", "เบอร", "โท", "บอร์", "ขอ", "ของ", "phone", "โทรศัพท์", "เบอร์โทร",
+        "เบอร์โทรศัพท์", "เบอร์ของ", "ขอเบอร์", "รบกวนขอ", "หาเบอร์", "โทรหา", "โทรไป", "คุยกับ"
+    ]
     
-    POLITE_PARTICLES = ["ครับ", "ค่ะ", "krup", "ka", "หน่อย", "ด้วยครับ", "ขอ", "รบกวน", "ช่วย", "อยากทราบ", "query", "search"]
+    POLITE_PARTICLES = [
+        "ครับ", "ค่ะ", "krup", "ka", "หน่อย", "ด้วยครับ", "ขอ", "รบกวน", "ช่วย", 
+        "อยากทราบ", "query", "search", "ตอบ", "บอก", "คือ", "อะไร", "ไหน", 
+        "ที่ไหน", "สอบถาม", "ถาม", "ใคร", "คนไหน", "เอ๊ะ", "แล้ว", "หล่ะ", 
+        "นะ", "จ๊ะ", "จ้า", "สิ", "ที", "หน่อยดิ", "ป่าว", "ไหม", "จุง", "เลย", 
+        "น้า", "พี่", "จะ", "หา", "ต้อง", "อยาก", "ได้", "มี", "เอา", "ตรงไหน",
+        "ชื่อ", "ว่า", "เนี่ย", "น่ะ", "จ้ะ", "จ๋า", "ด้วย", "ครับผม", "ค่ะคุณ"
+    ]
 
     # Phase 221: Confidence Constants
     HIGH_CONFIDENCE_THRESHOLD = 80
@@ -236,50 +247,67 @@ class ContactHandler:
             print(f"[STEP 19.5 UNIVERSAL] Checking for prefix matches in '{q_clean}'")
             prefix_teams = []
             
-            # CRITICAL FIX: Use RECORDS (same as Step 19.3) not team_index!
-            # Prepare query variants
+            # STEP 19.5 Improvement: More aggressive stripping for prefix matching
+            from src.directory.lookup import strip_query
+            
+            # Prepare query variants for prefix match
             queries_to_try = [q_clean.strip()]
-            q_cleaned = q_clean.strip()
-            for generic_word in ["ศูนย์", "ฝ่าย", "แผนก", "หน่วย", "งาน", "ทีม"]:
-                q_cleaned = q_cleaned.replace(generic_word, "").strip()
             
-            if len(q_cleaned) >= 3 and q_cleaned != q_clean.strip():
-                queries_to_try.append(q_cleaned)
+            # 1. Strip common generic words
+            q_no_generic = q_clean.strip()
+            for generic_word in ["ศูนย์", "ฝ่าย", "แผนก", "หน่วย", "งาน", "ทีม", "กลุ่ม", "ส่วน", "กอง"]:
+                q_no_generic = q_no_generic.replace(generic_word, "").strip()
+            if q_no_generic and q_no_generic != q_clean.strip():
+                queries_to_try.append(q_no_generic)
             
-            print(f"[DEBUG] Queries to try: {queries_to_try}")
+            # 2. Extract potential technical entites (Latin/Numbers)
+            import re
+            latin_parts = re.findall(r'[a-z0-9\-]{3,}', q_clean)
+            for part in latin_parts:
+                if part not in queries_to_try:
+                    queries_to_try.append(part)
             
-            # Search RECORDS (not team_index)
+            # 3. Aggressive Thai strip (Try to find the "noun" among "verbs")
+            # If query is long, try stripping words from the edges
+            if len(q_clean.split()) > 2:
+                q_words = q_clean.split()
+                # Try middle word if it looks like an entity
+                for w in q_words:
+                    if len(w) >= 3 and w not in queries_to_try:
+                        queries_to_try.append(w)
+
+            print(f"[DEBUG] [STEP 19.5] Queries to try: {queries_to_try}")
+            
+            # Search RECORDS
             for q_check in queries_to_try:
-                if prefix_teams:
-                    break
+                if prefix_teams: break
                 
                 print(f"[PREFIX MATCH] Trying '{q_check}' in records")
-                
+                # Normalize for matching
+                q_match = q_check.replace("ศูนย์", "").replace("บริการ", "").replace("ลูกค้า", "").strip().lower()
+                if len(q_match) < 2: continue
+
                 for record in records:
                     record_name = record.get("name", "").lower()
                     record_unit = str(record.get("unit", "")).lower()
                     
-                    # Normalize for matching
-                    q_norm = q_check.replace("ศูนย์", "").replace("บริการ", "").replace("ลูกค้า", "").strip().lower()
                     name_norm = record_name.replace("ศูนย์", "").replace("บริการ", "").replace("ลูกค้า", "").strip()
                     unit_norm = record_unit.replace("ศูนย์", "").replace("บริการ", "").replace("ลูกค้า", "").strip()
                     
                     match = False
-                    if len(q_norm) >= 3:
-                        # Check name and unit
-                        if q_norm in name_norm or q_norm in unit_norm:
-                            match = True
-                        # Check word prefix
-                        elif len(q_check) >= 3:
-                            for word in (record_name + " " + record_unit).split():
-                                if word.startswith(q_check.lower()):
-                                    match = True
-                                    break
+                    # Strategy: Substring or Word Prefix
+                    if q_match in name_norm or q_match in unit_norm:
+                        match = True
+                    else:
+                        for word in (record_name + " " + record_unit).split():
+                            if word.startswith(q_match):
+                                match = True; break
                     
                     if match:
                         record_copy = record.copy()
                         record_copy["_score"] = 85
                         prefix_teams.append(record_copy)
+                        if len(prefix_teams) >= 10: break
             
             if prefix_teams:
                 print(f"[STEP 19.5 UNIVERSAL] Found {len(prefix_teams)} matches")

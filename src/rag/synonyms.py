@@ -19,9 +19,9 @@ SYNONYM_MAP = [
     # but we can enforce specific spacing here if needed.
     
     # 1. Action Keywords (Additive - keep Thai words for BM25)
-    (r"(?i)(วิธีแก้|แก้ยังไง|วิธีทำ|แก้ไขปัญหา|แก้ปัญหา|how\s*to)", "howto วิธีแก้"), 
-    (r"(?i)(เข้าเว็บ|ลิงก์|ขอลิงก์|link|url|website)", "link ลิงก์"),
-    (r"(?i)(ติดต่อ|เบอร์โทร|(?<!ไฟ)เบอร์)", "phone ติดต่อ"),
+    (r"(?i)(วิธีแก้|แก้ยังไง|วิธีทำ|แก้ไขปัญหา|แก้ปัญหา|how\s*to)", r"\1 howto "), 
+    (r"(?i)(เข้าเว็บ|ลิงก์|ขอลิงก์|link|url|website)", r"\1 link "),
+    (r"(?i)(ติดต่อ|เบอร์โทร|(?<!ไฟ)เบอร์)", r"\1 phone ติดต่อ "),
     
     # 2. Tech Terms & Product Names (Canonicalization)
     (r"(?i)(tr-?069|cwmp)", "TR069 CWMP"),
@@ -81,11 +81,12 @@ def expand_synonyms(query: str) -> tuple[str, str | None]:
     for pattern, repl in SYNONYM_MAP:
         # Check if pattern matches
         if re.search(pattern, expanded):
-            # Apply substitution
+            # Apply substitution (Capture original to keep it)
             new_val = re.sub(pattern, repl, expanded)
             if new_val != expanded:
                 expanded = new_val
                 if not applied_rule:
-                    applied_rule = repl.split()[0]  # "howto" from "howto TR069"
+                    applied_rule = repl.replace("\\1", "").strip().split()[0]
     
-    return expanded.strip(), applied_rule
+    # Final step: Re-normalize to fix spaces after expansion
+    return normalize_query(expanded), applied_rule

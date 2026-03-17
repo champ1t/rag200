@@ -20,7 +20,24 @@ class DispatchMapper:
         q_lower = query.lower()
         has_jayan = "จ่ายงาน" in q_lower
         has_context = any(k in q_lower for k in ["วงจร", "scoms", "เลขหมาย"])
-        return has_jayan and has_context
+        if not (has_jayan and has_context):
+            return False
+            
+        # Refinement: If no province specified and it's a general HOWTO request, 
+        # let standard RAG handle it (it will summarize the whole article).
+        from src.utils.extractors import extract_location_intent
+        locs = extract_location_intent(query)
+        has_location = bool(locs)
+        
+        # General HOWTO keywords
+        is_general_howto = any(k in q_lower for k in ["วิธีการ", "ขั้นตอน", "วิธี", "ทำยังไง", "คู่มือ", "ระเบียบ"])
+        
+
+        # If general request WITHOUT province -> Bypass
+        if is_general_howto and not has_location:
+            return False
+            
+        return True
 
     @classmethod
     def handle(cls, query: str, processed_cache: Any) -> Dict[str, Any]:

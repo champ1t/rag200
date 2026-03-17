@@ -169,7 +169,7 @@ def strip_contact_noise(text: str) -> str:
     if not text: return ""
     
     # Order matters: Compounds first ("หน่วยงาน") before simple ("หน่วย")
-    noise = ["หน่วยงาน", "หน่วย", "ฝ่าย", "งาน", "ทีม", "แผนก", "ส่วน", "กอง", "ศูนย์", "กลุ่ม"]
+    noise = ["หน่วยงาน", "หน่วย", "ฝ่าย", "งาน", "ทีม", "แผนก", "ส่วน", "กอง", "ศูนย์", "กลุ่ม", "สผ"]
     
     cleaned = text
     for n in noise:
