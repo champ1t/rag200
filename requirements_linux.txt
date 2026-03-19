@@ -123,7 +123,7 @@ einops==0.8.2
 einx==0.3.0
 elastic-transport==8.17.1
 elasticsearch==8.16.0
-elevenlabs==1.59.0
+elevenlabs
 email-validator==2.3.0
 emoji==2.15.0
 espeakng-loader==0.2.4
@@ -279,9 +279,9 @@ langchain-sambanova==0.1.0
 langchain-text-splitters==0.3.11
 langchain-unstructured==0.1.5
 langchainhub==0.1.21
-langflow==1.7.3
-langflow-base==0.7.3
-langfuse==2.53.9
+elevenlabs
+langflow
+langflow-base
 langgraph==1.0.1
 langgraph-checkpoint==3.0.1
 langgraph-prebuilt==1.0.1
@@ -462,7 +462,7 @@ pyclipper==1.4.0
 pycountry==24.6.1
 pycparser==3.0
 pycryptodome==3.23.0
-pydantic==2.11.10
+pydantic
 pydantic-ai==0.8.1
 pydantic-ai-slim==0.8.1
 pydantic-evals==0.8.1
@@ -592,8 +592,8 @@ toml==0.10.2
 tomli==2.4.0
 tomlkit==0.13.3
 toonify==1.5.1
-torch==2.10.0
-torchvision==0.25.0
+torch
+torchvision
 tqdm==4.67.1
 traceloop-sdk==0.50.1
 traitlets==5.14.3
