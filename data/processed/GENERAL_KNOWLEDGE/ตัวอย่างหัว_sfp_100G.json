@@ -1,0 +1,15 @@
+{
+  "url": "http://10.192.133.200:5173/?id=11",
+  "title": "ตัวอย่างหัว sfp 100G",
+  "text": "# ตัวอย่างหัว sfp 100G\n\n## ข้อจำกัด\n## แพง\n\n## ภาพประกอบ\n\n\n![รูปภาพประกอบ](http://10.192.133.200:5174/uploads/1773761145115.png)",
+  "links": [
+    {
+      "text": "Link",
+      "href": "http://10.192.133.200:5174/uploads/1773761145115.png)"
+    }
+  ],
+  "content_hash": "8eff78897cf2d9495faf07c88eb7b3a105bc37f8d3b9f4c0f6771dc130a4d7ca",
+  "processed_at": 1773870137.193387,
+  "content_type": "api_import",
+  "category": "GENERAL_KNOWLEDGE"
+}

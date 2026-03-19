@@ -1,0 +1,22 @@
+=== STARTING STRESS & SANITY TEST ===
+
+--- Long Article Stress Test ---
+Title present?: True
+Length: 1546 chars
+Footer 'อ่านต่อ' present?: True
+Start Preview: [TR069 CWMP Setting]  WDM (แนะนำIE) TR069 CWMP Seting เขียนโดย Meru^^ วันศุกร์ที่ 12 กรกฏาคม  2019 เ
+End Preview: 33.33/smc/index.php?option=com_content&view=article&id=636:tr069-cwmp-seting&catid=49:-smc&Itemid=84
+✅ PASS: Long structure valid
+
+--- HAT Simulation ---
+Asking: 'เบอร์ติดต่อ ภูเก็ต' ...
+Response (160 chars): [สื่อสารข้อมูล ภูเก็ต]
+- เบอร์โทร: 076-212-199
+- Source: http://10.192.133.33/smc/index.php?option=c...
+✅ OK (Readable)
+Asking: 'วิธีแก้ TR069' ...
+Response (54 chars): ไม่พบข้อมูลที่เกี่ยวข้องในระบบ (Coverage Check FAILED)...
+✅ OK (Readable)
+Asking: 'เข้าเว็บ Edoc' ...
+Response (54 chars): ไม่พบข้อมูลที่เกี่ยวข้องในระบบ (Coverage Check FAILED)...
+✅ OK (Readable)

@@ -1,0 +1,3 @@
+{"ts": 1766729280.403815, "question": "ใครคือ ผส.บลตน.", "answer": "[ผส.บลตน.]\n- ชื่อ: คุณสมบูรณ์ เชาวน์ศิริวรกุล\n- เบอร์โทร: 074251450, 0893932263\n- อีเมล: somboonc@ntplc.co.th\n- Source: http://10.192.133.33/smc/index.php?option=com_content&view=article&id=60&Itemid=70", "route": "position_lookup", "latencies": {"routing": 0.3361701965332031, "total": 0.3440380096435547}}
+{"ts": 1766729284.198849, "question": "เบอร์โทร", "answer": "เบอร์ติดต่อของ ใครคือ ผส.บลตน.:\n- 074251450\n- 0893932263", "route": "context_followup", "latencies": {}}
+{"ts": 1766729287.077613, "question": "โทรสาร", "answer": "The system does not have this information.", "route": "context_followup_miss", "latencies": {}}

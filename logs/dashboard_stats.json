@@ -1,0 +1,17 @@
+{
+  "total_queries": 2993,
+  "blocked_queries": 317,
+  "missing_article_queries": 145,
+  "article_served_queries": 447,
+  "cross_vendor_block_count": 193,
+  "intents": {
+    "unknown": 2932,
+    "DETERMINISTIC_MATCH": 53
+  },
+  "vendors": {},
+  "derived": {
+    "blocked_rate": "10.6%",
+    "missing_rate": "4.8%",
+    "success_rate": "14.9%"
+  }
+}

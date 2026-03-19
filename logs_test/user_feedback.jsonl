@@ -1,0 +1,2 @@
+{"timestamp": 1771321132.851727, "session_id": "test-001", "query_id": "7243bc65ffa2", "query": "ศูนย์หาดใหญ่โทรอะไร", "answer_preview": "เบอร์ติดต่อศูนย์หาดใหญ่: 074-xxx-xxxx", "rating": "like", "comment": "ตอบถูกต้อง รวดเร็ว", "route": "contact", "metadata": {}}
+{"timestamp": 1771321132.8519459, "session_id": "test-002", "query_id": "142473daf87a", "query": "แก้ไข OLT ยังไง", "answer_preview": "ขออภัย ไม่พบข้อมูล...", "rating": "dislike", "comment": "ตอบไม่ตรงคำถาม", "route": "article_miss", "metadata": {}}

@@ -11,7 +11,7 @@ from typing import List
 # รองรับ: 0-xxxx-xxxx (9 digits), 0xx-xxxx..., 0xxxxxxxxx
 # รองรับ Range suffix: -1, -12
 PHONE_RE = re.compile(
-    r"((?:0\d{1,2}[- ]?\d{3,4}[- ]?\d{3,4}(?:-\d{1,4}){0,2}|0[- ]?\d{4}[- ]?\d{4}(?:-\d{1,4}){0,2}|0[- ]?\d{5}[- ]?\d{3}(?:-\d{1,4}){0,2}|0\d{8,9}(?:-\d{1,4}){0,2}|\d{4}-\d{4}(?:-\d{1,4}){0,2})"
+    r"((?:0[0-9 -]{8,15})"
     r"(?:.*?(?:กด|ต่อ|ext\.?|#)\s*(\d+))?)",
     re.IGNORECASE
 )
@@ -166,31 +166,27 @@ def expand_phone_ranges(raw_token: str) -> List[str]:
 # =========================================================
 def parse_phones(text: str) -> List[str]:
     out: List[str] = []
-
-    for m in PHONE_RE.findall(text or ""):
+    matches = PHONE_RE.findall(text or "")
+    if matches:
+        print(f"[DEBUG] parse_phones found matches: {matches}")
+        
+    for m in matches:
         token = m[0] if isinstance(m, tuple) else m
-
+        
         # (NEW) Expand ranges
         expanded_tokens = expand_phone_ranges(token)
         
         for t in expanded_tokens:
             number, ext = normalize_phone(t)
             if not number:
+                print(f"[DEBUG] normalize_phone REJECTED: '{t}'")
                 continue
 
             if ext:
                 out.append(f"{number} กด {ext}")
             else:
                 out.append(number)
-
-    # uniq keep order
-    seen = set()
-    uniq: List[str] = []
-    for p in out:
-        if p not in seen:
-            seen.add(p)
-            uniq.append(p)
-    return uniq
+    return out
 
 
 def build_directory_records(processed_dir: str, directory_url_substr: str, out_path: str) -> int:
@@ -201,112 +197,82 @@ def build_directory_records(processed_dir: str, directory_url_substr: str, out_p
     if not pdir.exists():
         raise FileNotFoundError(f"processed_dir not found: {processed_dir}")
 
-    # หา URL ของหน้า directory (id=64)
-    target = None
-    for p in pdir.glob("*.json"):
-        j = json.loads(p.read_text(encoding="utf-8"))
-        if directory_url_substr in (j.get("url", "")):
-            target = j
-            break
-    if not target:
-        raise RuntimeError(f"Directory page not found for substring: {directory_url_substr}")
-
-    text = target.get("text", "") or ""
-    url = target.get("url", "")
-
     records = []
-    current_team = None  # State machine context
 
-    for ln in text.splitlines():
-        ln_stripped = ln.strip()
-        if not ln_stripped:
-            continue
-
-        # Check if line is a header/context (Heuristic: no pipe, short length, not noise)
-        if "|" not in ln_stripped:
-            # Simple heuristic: treat lines with minimal keywords or length as headers
-            # Ignore common noise lines
-            noise = {"Today", "Yesterday"}
-            if any(n in ln_stripped for n in noise):
-                continue
+    # 1. Process ALL Files in rglob (Phase 238)
+    # Instead of single target, we scan the whole processed directory
+    # for contact signals.
+    for p in pdir.rglob("*.json"):
+        try:
+            target = json.loads(p.read_text(encoding="utf-8"))
+            text = target.get("text", "") or ""
+            url = target.get("url", "")
+            title = target.get("title", "")
             
-            # Additional heuristic: If it looks like a section header (e.g. ADSL, NMS, etc.)
-            # For now, just accept non-empty lines that are likely headers.
-            # Maybe limit length to avoid capturing long paragraph text?
-            if len(ln_stripped) < 100:
-                current_team = ln_stripped
-            continue
-
-        # Clean parts: remove empty strings from pipe split
-        # This handles "| seq | name | phone | seq | ..." sequences
-        parts = [x.strip() for x in ln.split("|") if x.strip()]
-        
-        # Skip lines that don't have enough data for at least one record (Seq, Name, Phone)
-        # Note: sometimes only Name|Phone exists? (2 parts). 
-        # But our previous observed structure was Seq|Name|Phone (3 parts).
-        # Let's keep strict check to avoid noise, or relax if needed.
-        if len(parts) < 3:
-            continue
-
-        # Iterate in chunks of 3
-        i = 0
-        while i + 2 < len(parts):
-            name = parts[i+1]
-            phone_blob = parts[i+2]
+            # Use title as default team/unit
+            current_team = title 
             
-            # (Guardrail) Parsing Safeguard:
-            # If the phone column is suspiciously long (e.g. merged rows), skip it.
-            # This prevents creating a single record that "owns" all subsequent numbers.
-            if len(phone_blob) > 200:
-                # Log this as a warning if needed, or just skip
-                # print(f"[WARN] Skipping giant phone blob for name='{name}': {len(phone_blob)} chars")
-                i += 3
-                continue
-            
-            phones = parse_phones(phone_blob)
-            
-            if phones and name:
-                 # Calculate tags: use current_team context + own name
-                row_tags = [name.strip()]
-                if current_team:
-                    row_tags.insert(0, current_team)
+            for ln in text.splitlines():
+                ln_stripped = ln.strip()
+                if not ln_stripped:
+                    continue
 
-                 # (ADD) แตก record บุคคล ถ้ามี "คุณ ..."
-                if "คุณ" in phone_blob:
-                    pparts = re.split(r"(?=คุณ\s)", phone_blob)
-                    for part in pparts:
-                        part = part.strip()
-                        if not part.startswith("คุณ"):
-                            continue
+                # Clean headers like "## Title" to "Title"
+                if ln_stripped.startswith("#"):
+                    clean_header = re.sub(r"^#+\s*", "", ln_stripped).strip()
+                    if clean_header:
+                        current_team = clean_header
+                    continue
 
-                        m = re.search(r"(0\d|\d{4}-\d{4})", part)
-                        name_part = part if not m else part[: m.start()]
-                        person_name = re.sub(r"\s+", " ", name_part).strip()
+                # Check if line contains phones
+                found_phones = parse_phones(ln_stripped)
+                if found_phones:
+                    # Deterministic Name extraction
+                    # Case A: Pipe Table
+                    if "|" in ln_stripped:
+                        parts = [x.strip() for x in ln.split("|") if x.strip()]
+                        if len(parts) >= 2:
+                             # Heuristic: Name is usually the first non-numeric part
+                             name = parts[0]
+                             # If it's a number (Seq), take the second part
+                             if re.match(r"^\d+$", name) and len(parts) >= 3:
+                                 name = parts[1]
+                             
+                             row_tags = [name]
+                             if title and title != name: row_tags.append(title)
+                             if current_team and current_team != name: row_tags.append(current_team)
+                             
+                             records.append({
+                                "name": name, "name_norm": norm(name),
+                                "phones": found_phones, "source_url": url,
+                                "row_text": ln.strip(), "tags": list(set(row_tags)), "type": "team",
+                             })
+                             continue
 
-                        person_phones = parse_phones(part)
-                        if person_name and person_phones:
+                    # Case B: Plain text line (Name : Phone)
+                    m_first = PHONE_RE.search(ln_stripped)
+                    if m_first:
+                        prefix = ln_stripped[:m_first.start()].strip()
+                        # Clean up prefix
+                        name = re.sub(r"^\d+[\.\)\s]*", "", prefix).strip()
+                        name = re.sub(r"^[:\-* ]+", "", name).strip()
+                        
+                        if (not name or len(name) <= 2) and current_team:
+                            name = current_team
+
+                        if name and len(name) > 2:
+                            row_tags = [name]
+                            if title and title != name: row_tags.append(title)
+                            if current_team and current_team != name: row_tags.append(current_team)
+                            
                             records.append({
-                                "name": person_name,
-                                "name_norm": norm(person_name),
-                                "phones": person_phones,
-                                "source_url": url,
-                                "row_text": ln.strip(),
-                                "tags": row_tags,
-                                "type": "person",
+                                "name": name, "name_norm": norm(name),
+                                "phones": found_phones, "source_url": url,
+                                "row_text": ln.strip(), "tags": list(set(row_tags)), "type": "team",
                             })
-
-                # (CHANGE) record หลักเดิม (ทีม/งาน)
-                records.append({
-                    "name": name.strip(),
-                    "name_norm": norm(name),
-                    "phones": phones,
-                    "source_url": url,
-                    "row_text": ln.strip(),
-                    "tags": row_tags,
-                    "type": "team",
-                })
-            
-            i += 3
+        except Exception as e:
+            print(f"[ERROR] build_records failed for {p.name}: {e}")
+            continue
 
     # Deduplicate Records
     # Key: (name_norm, sorted_phones_tuple, source_url)

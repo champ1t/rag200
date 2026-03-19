@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="th-th" lang="th-th" >
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="joomla, Joomla, จูมล่าลายไทย" />
+  <meta name="title" content="ทำความรู้จักและตั้งค่า EtherChannel บน Cisco" />
+  <meta name="author" content="ภาณุพงศ์ ทิพย์สังข์" />
+  <meta name="description" content="Joomla! - the dynamic portal engine and content management system" />
+  <meta name="generator" content="Joomla! 1.5 - Open Source Content Management" />
+  <title>ทำความรู้จักและตั้งค่า EtherChannel บน Cisco</title>
+  <link rel="stylesheet" href="/smc/modules/mod_vvisit_counter/css/mod_vvisit_counter.css" type="text/css" />
+  <script type="text/javascript" src="/smc/media/system/js/mootools.js"></script>
+  <script type="text/javascript" src="/smc/media/system/js/caption.js"></script>
+
+
+
+
+<link rel="shortcut icon" href="/smc/images/favicon.ico" />
+<link rel="stylesheet" href="/smc/templates/system/css/system.css" type="text/css" />
+<link rel="stylesheet" href="/smc/templates/system/css/general.css" type="text/css" />
+
+<link href="/smc/templates/js_jamba/css/template_css.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/smc/templates/js_jamba/css/nav.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/smc/templates/js_jamba/css/style1.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/smc/templates/js_jamba/css/j15.css" rel="stylesheet" type="text/css" media="screen" />
+
+<!--[if IE]>
+<link href="/smc/templates/js_jamba/css/ie.css" rel="stylesheet" type="text/css" media="screen" />
+<![endif]-->
+
+</head>
+<body>
+<div id="header-wrap">
+	<div id="header_text">
+			<div id="headermod"></div>
+				<h1>
+												<a href="http://10.192.133.33/smc/" title="ศูนย์ปฏิบัติการระบบสื่อสารข้อมูล (สบลตน.)">ศูนย์ปฏิบัติการระบบสื่อสารข้อมูล (สบลตน.)</a>
+								</h1>
+				<h2>Service Management Center(SMC)</h2>	
+			</div>
+		</div>
+<div class="menubar">
+	<div id="navmenu">
+	<!--[if IE]>
+		<script type="text/javascript" src="/smc/templates/js_jamba/js/barmenu.js"></script>
+	<![endif]-->
+		<ul class="menu"><li class="item62"><a href="http://10.192.133.33/smc/"><span>หน้าหลัก</span></a></li><li class="item70"><a href="/smc/index.php?option=com_content&amp;view=article&amp;id=60&amp;Itemid=70"><span>ผส.บลตน.</span></a></li><li class="item60"><a href="/smc/index.php?option=com_content&amp;view=article&amp;id=56&amp;Itemid=60"><span>ผจ.สบลตน.</span></a></li><li class="item84"><a href="/smc/index.php?option=com_content&amp;view=category&amp;id=49&amp;Itemid=84"><span>ข่าวสาร SMC</span></a></li><li id="current" class="active item81"><a href="/smc/index.php?option=com_content&amp;view=category&amp;id=43&amp;Itemid=81"><span>ความรู้</span></a></li><li class="item64"><a href="/smc/index.php?option=com_content&amp;view=article&amp;id=59&amp;Itemid=64"><span>บุคลากร SMC</span></a></li><li class="item61"><a href="/smc/index.php?option=com_content&amp;view=article&amp;id=64&amp;Itemid=61"><span>เบอร์หน่วยงานต่างๆ</span></a></li><li class="item59"><a href="/smc/index.php?option=com_content&amp;view=article&amp;id=57&amp;Itemid=59"><span>ผู้ดูแลระบบ</span></a></li></ul>
+	</div>
+</div>
+	<div id="main-wrapper">		
+		<div class="main-top-both"></div>
+			<div id="mainbody-both">
+									<div id="leftcol">
+						<div class="left-inside">
+									<div class="module">
+			<div>
+				<div>
+					<div>
+											
+<div style="text-align:center;">
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="rmreader" height="130" width="130">
+<param name="movie" value="http://10.192.133.33/smc/modules/mod_rmclock/mod_rmclock.swf" />
+<param name="allowScriptAccess" value="always" />
+<param name="bgcolor" value="#ffffff" />
+<param name="wmode" value="window" />
+<!--[if !IE]>-->
+<object type="application/x-shockwave-flash" data="http://10.192.133.33/smc/modules/mod_rmclock/mod_rmclock.swf" style="height:130px;width:130px;">
+<param name="allowScriptAccess" value="always" />
+<param name="bgcolor" value="#ffffff" />
+<param name="wmode" value="window" />
+<!--<![endif]-->
+<!--[if !IE]>-->
+</object>
+<!--<![endif]-->
+</object>
+<a href="http://www.rimnam.com"> </a>
+</div>					</div>
+				</div>
+			</div>
+		</div>
+			<div class="moduleS1">
+			<div>
+				<div>
+					<div>
+													<h3>ศูนย์ สลภก.3 </h3>
+											<ul class="menu" />					</div>
+				</div>
+			</div>
+		</div>
+			<div class="moduleS2">
+			<div>
+				<div>
+					<div>
+													<h3>Link ที่เกี่ยวข้อง</h3>
+											<ul class="menu"><li class="item124"><a href="https://ntedoc.intra.ntplc.co.th/doc/homepage-doc"><span>Edocument</span></a></li><li class="item85"><a href="https://lms.ntplc.co.th/" target="_blank"><span>NT Academy(e-Learning)</span></a></li><li class="item76"><a href="https://intranet.ntplc.co.th/" target="_blank"><span>Intranet NT</span></a></li><li class="item74"><a href="https://mail.ntplc.co.th/" target="_blank"><span>E-Mail NT</span></a></li><li class="item139"><a href="https://webhr.ntplc.co.th/" target="_blank"><span>Web HR</span></a></li><li class="item166"><a href="https://pvd.mfcfund.com/auth/login" target="_blank"><span>กองทุนสำรองฯ</span></a></li><li class="item158"><a href="http://192.168.99.200:8080/" target="_blank"><span>SMC Extension Dashboard</span></a></li><li class="item68"><a href="http://192.168.99.200:8999/" target="_blank"><span>SMC AI</span></a></li></ul>					</div>
+				</div>
+			</div>
+		</div>
+			<div class="module">
+			<div>
+				<div>
+					<div>
+											<!-- Vinaora Visitors Counter for Joomla! --><div id="vvisit_counter"><div><img src="http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/0.png" alt="mod_vvisit_counter" title="Vinaora Visitors Counter 2.0" /><img src="http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/0.png" alt="mod_vvisit_counter" title="Vinaora Visitors Counter 2.0" /><img src="http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/0.png" alt="mod_vvisit_counter" title="Vinaora Visitors Counter 2.0" /><img src="http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/6.png" alt="mod_vvisit_counter" title="Vinaora Visitors Counter 2.0" /><img src="http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/1.png" alt="mod_vvisit_counter" title="Vinaora Visitors Counter 2.0" /><img src="http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/0.png" alt="mod_vvisit_counter" title="Vinaora Visitors Counter 2.0" /><img src="http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/6.png" alt="mod_vvisit_counter" title="Vinaora Visitors Counter 2.0" /><img src="http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/3.png" alt="mod_vvisit_counter" title="Vinaora Visitors Counter 2.0" /><img src="http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/1.png" alt="mod_vvisit_counter" title="Vinaora Visitors Counter 2.0" /></div><div><table cellpadding="0" cellspacing="0" style="width: 90%;"><tbody><tr align="left"><td><img src="http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vtoday.png" alt="mod_vvisit_counter" title="2025-12-24" /></td><td>Today</td><td align="right">79</td></tr><tr align="left"><td><img src="http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vyesterday.png" alt="mod_vvisit_counter" title="2025-12-23" /></td><td>Yesterday</td><td align="right">522</td></tr><tr align="left"><td><img src="http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vweek.png" alt="mod_vvisit_counter" title="2025-12-22 -&gt; 2025-12-24" /></td><td>This week</td><td align="right">970</td></tr><tr align="left"><td><img src="http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vlweek.png" alt="mod_vvisit_counter" title="2025-12-15 -&gt; 2025-12-22" /></td><td>Last week</td><td align="right">95</td></tr><tr align="left"><td><img src="http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vmonth.png" alt="mod_vvisit_counter" title="2025-12-01 -&gt; 2025-12-24" /></td><td>This month</td><td align="right">1314</td></tr><tr align="left"><td><img src="http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vlmonth.png" alt="mod_vvisit_counter" title="2025-11-01 -&gt; 2025-12-01" /></td><td>Last month</td><td align="right">415</td></tr><tr align="left"><td><img src="http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vall.png" alt="mod_vvisit_counter" title="Vinaora Visitors Counter" /></td><td>All days</td><td align="right">610631</td></tr></tbody></table></div><hr/><div>We have:&nbsp;71 guests&nbsp;online<br />Your IP::&nbsp;10.192.133.253<br />&nbsp;,&nbsp;<br /> Today: ธ.ค. 24, 2025</div><div><a href="http://vinaora.com" target="_self" title="Vinaora Visitors Counter 2.0 for Joomla!">Visitors Counter</a></div></div>					</div>
+				</div>
+			</div>
+		</div>
+			<div class="module">
+			<div>
+				<div>
+					<div>
+											<form action="/smc/index.php?option=com_content&amp;view=category&amp;id=43&amp;Itemid=81" method="post" name="login" id="form-login" >
+		<fieldset class="input">
+	<p id="form-login-username">
+		<label for="modlgn_username">ชื่อผู้ใช้</label><br />
+		<input id="modlgn_username" type="text" name="username" class="inputbox" alt="username" size="18" />
+	</p>
+	<p id="form-login-password">
+		<label for="modlgn_passwd">รหัสผ่าน</label><br />
+		<input id="modlgn_passwd" type="password" name="passwd" class="inputbox" size="18" alt="password" />
+	</p>
+		<p id="form-login-remember">
+		<label for="modlgn_remember">จำข้อมูลการเข้าสู่ระบบ</label>
+		<input id="modlgn_remember" type="checkbox" name="remember" class="inputbox" value="yes" alt="Remember Me" />
+	</p>
+		<input type="submit" name="Submit" class="button" value="เข้าระบบ" />
+	</fieldset>
+	<ul>
+		<li>
+			<a href="/smc/index.php?option=com_user&amp;view=reset">
+			ลืมรหัสผ่าน?</a>
+		</li>
+		<li>
+			<a href="/smc/index.php?option=com_user&amp;view=remind">
+			ลืมชื่อเข้าใช้งาน?</a>
+		</li>
+				<li>
+			<a href="/smc/index.php?option=com_user&amp;view=register">
+				ลงทะเบียน</a>
+		</li>
+			</ul>
+	
+	<input type="hidden" name="option" value="com_user" />
+	<input type="hidden" name="task" value="login" />
+	<input type="hidden" name="return" value="L3NtYy9pbmRleC5waHA/b3B0aW9uPWNvbV9jb250ZW50JnZpZXc9ZnJvbnRwYWdlJkl0ZW1pZD02Mg==" />
+	<input type="hidden" name="66997d0ffeec8ea27f55d4dc27dba224" value="1" /></form>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+						</div>
+					</div>
+													<div id="rightcol">
+						<div class="right-inside">
+									<div class="module">
+			<div>
+				<div>
+					<div>
+											<form action="index.php" method="post">
+	<div class="search">
+		<input name="searchword" id="mod_search_searchword" maxlength="20" alt="ค้นหา" class="inputbox" type="text" size="20" value="ค้นหา..."  onblur="if(this.value=='') this.value='ค้นหา...';" onfocus="if(this.value=='ค้นหา...') this.value='';" /><input type="submit" value="ค้นหา" class="button" onclick="this.form.searchword.focus();"/>	</div>
+	<input type="hidden" name="task"   value="search" />
+	<input type="hidden" name="option" value="com_search" />
+	<input type="hidden" name="Itemid" value="81" />
+</form>					</div>
+				</div>
+			</div>
+		</div>
+			<div class="moduleS1">
+			<div>
+				<div>
+					<div>
+													<h3>Template </h3>
+											
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr ><td><a href="#" onclick="javascript: window.open('http://10.192.133.33/testppt/reprot_files/frame.htm', '', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=780,height=550'); return false" class="mainlevel" >WDM (แนะนำIE)</a>
+</td></tr>
+<tr ><td><a href="/smc/index.php?option=com_wrapper&amp;view=wrapper&amp;Itemid=149" class="mainlevel" >Template ZTE FTTX v.3</a></td></tr>
+<tr ><td><a href="/smc/index.php?option=com_wrapper&amp;view=wrapper&amp;Itemid=163" class="mainlevel" >Template for PE,APE,LPE</a></td></tr>
+<tr ><td><a href="/smc/index.php?option=com_wrapper&amp;view=wrapper&amp;Itemid=111" class="mainlevel" >Convert ASR920 To NCS</a></td></tr>
+<tr ><td><a href="/smc/index.php?option=com_wrapper&amp;view=wrapper&amp;Itemid=153" class="mainlevel" >Get IP IPPhone</a></td></tr>
+<tr ><td><a href="/smc/index.php?option=com_wrapper&amp;view=wrapper&amp;Itemid=143" class="mainlevel" >ตรวจสอบ ONU Event Log</a></td></tr>
+<tr ><td><a href="/smc/index.php?option=com_wrapper&amp;view=wrapper&amp;Itemid=133" class="mainlevel" >Template Extreme</a></td></tr>
+</table>					</div>
+				</div>
+			</div>
+		</div>
+			<div class="moduleS1">
+			<div>
+				<div>
+					<div>
+													<h3>ลิงค์ภายใต้ ภก.3</h3>
+											
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr ><td><a href="http://10.192.39.50/" class="mainlevel" >นราธิวาส NMS</a></td></tr>
+<tr ><td><a href="https://totsni.com/network" class="mainlevel" >สุราษฎร์ NMS</a></td></tr>
+</table>					</div>
+				</div>
+			</div>
+		</div>
+			<div class="moduleS1">
+			<div>
+				<div>
+					<div>
+													<h3>Project ปรับปรุงตรวจแก้คืนดี ภก.3</h3>
+																</div>
+				</div>
+			</div>
+		</div>
+	
+						</div>
+					</div>
+								<div class="main-both">
+						<table border="0" cellspacing="0" cellpadding="0">
+						  <tr>
+						    <td valign="top">
+																	
+														
+														
+						
+						<table class="contentpaneopen">
+<tr>
+		<td class="contentheading" width="100%">
+					ทำความรู้จักและตั้งค่า EtherChannel บน Cisco			</td>
+						<td align="right" width="100%" class="buttonheading">
+		<a href="/smc/index.php?view=article&amp;catid=43%3A2011-11-14-08-37-12&amp;id=623%3A-etherchannel--cisco&amp;format=pdf&amp;option=com_content&amp;Itemid=81" title="PDF" onclick="window.open(this.href,'win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no'); return false;" rel="nofollow"><img src="/smc/templates/js_jamba/images/pdf_button.png" alt="PDF"  /></a>		</td>
+		
+				<td align="right" width="100%" class="buttonheading">
+		<a href="/smc/index.php?view=article&amp;catid=43%3A2011-11-14-08-37-12&amp;id=623%3A-etherchannel--cisco&amp;tmpl=component&amp;print=1&amp;layout=default&amp;page=&amp;option=com_content&amp;Itemid=81" title="พิมพ์" onclick="window.open(this.href,'win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no'); return false;" rel="nofollow"><img src="/smc/templates/js_jamba/images/printButton.png" alt="พิมพ์"  /></a>		</td>
+		
+				<td align="right" width="100%" class="buttonheading">
+		<a href="/smc/index.php?option=com_mailto&amp;tmpl=component&amp;link=aHR0cDovLzEwLjE5Mi4xMzMuMzMvc21jL2luZGV4LnBocD9vcHRpb249Y29tX2NvbnRlbnQmdmlldz1hcnRpY2xlJmlkPTYyMzotZXRoZXJjaGFubmVsLS1jaXNjbyZjYXRpZD00MzoyMDExLTExLTE0LTA4LTM3LTEyJkl0ZW1pZD04MQ==" title="อีเมล" onclick="window.open(this.href,'win2','width=400,height=350,menubar=yes,resizable=yes'); return false;"><img src="/smc/templates/js_jamba/images/emailButton.png" alt="อีเมล"  /></a>		</td>
+					</tr>
+</table>
+
+<table class="contentpaneopen">
+<tr>
+	<td valign="top">
+		<span class="small">
+			เขียนโดย Meru^^		</span>
+		&nbsp;&nbsp;
+	</td>
+</tr>
+
+<tr>
+	<td valign="top" class="createdate">
+		วันเสาร์ที่ 11 กุมภาพันธ์  2017 เวลา 16:18 น.	</td>
+</tr>
+
+
+<tr>
+<td valign="top">
+<p>EtherChannel หรือที่เรียกว่า Link Aggregation  นั้นเป็นคุณสมบัติที่ทำให้สามารถรวมหลาย ๆ อินเทอร์เฟสแบบ Physical  เข้าด้วยกันเป็นอินเทอร์เฟสแบบ Logical เพียงอันเดียวได้  ใช้เพื่อแก้ปัญหาความคับคั่ง (Congestion) ในการใช้งานระบบเครือข่าย  หรือใช้แก้ปัญหาเมื่อมีปริมาณการใช้งานระบบเครือข่ายมากเกินไปจนทำให้การรับ-ส่งข้อมูลทำได้ช้า  เสมือนเป็นการเพิ่มเส้นทางข้อมูลขึ้น จากเส้นทางเดียวเป็นหลาย ๆ เส้นทาง  เพื่อที่จะทำการ Shared Traffic ไปในหลาย ๆ เส้นทางนั่นเอง  พร้อมทั้งยังเป็นการทำ Redundant ในกรณีที่มีบาง Link ที่เป็นสมาชิกของ  EtherChannel เกิดมีปัญหาขึ้นมาได้อีกด้วย</p>
+<p>การใช้งาน EtherChannel นี้ สามารถใช้งานได้ทั้งบน Switch, Router หรือ  Server ก็ได้ แต่ในวันนี้ จะขอแนะนำการตั้งค่าบน Cisco Catalyst Switch  เพียงอย่างเดียวก่อนนะครับ แต่ก่อนที่จะเข้าสู่เนื้อหา  ขอเคลียร์ความเข้าใจผิดบางอย่างที่เคยได้ยินมาก่อนนะครับ ว่าเจ้า  EtherChannel เนี่ย เป็นการเพิ่ม Bandwidth ในการส่งข้อมูลไปยังปลายทาง  ซึ่งขอบอกไว้ตรงนี้เลยนะครับ ว่าไม่จริง แต่จะด้วยเหตุผลใด ก็ขอให้เพื่อน ๆ  ติดตามบทความนี้ดูนะครับ</p>
+<p>ที่ว่า EtherChannel ไม่ได้เป็นการเพิ่ม Bandwidth  นั้นก็เนื่องมาจาก ในการส่งข้อมูลไปยังอุปกรณ์ฝั่งตรงข้ามของ EtherChannel  นั้น  จะมีการเลือกเส้นทางที่จะใช้ส่งข้อมูลตามเงื่อนไขเพียงเส้นทางเดียวเท่านั้น  เพราะฉะนั้น ถ้าแต่ละเส้นทางมี Bandwidth เท่ากับ 100 Mb เมื่อทำ  EtherChannel โดยใช้ 2 Link แล้ว Bandwidth ก็ไม่ได้เพิ่มเป็น 200 Mb  แต่อย่างใด (เนื่องจากในแต่ละ Link ก็ยังมี Bandwidth เท่ากับ 100 Mb  เช่นเดิม) ในการที่จะใช้งาน EtherChannel ให้ได้เห็นผลลัพธ์อย่างชัดเจนนั้น  จึงจะต้องใช้กับระบบเครือข่ายที่มีความคับคั่ง (Congestion)  ที่ค่อนข้างสูง เพื่อที่จะได้ใช้ EtherChannel นี้ไปช่วยในการ Shared Load  เพื่อลดค่า Congestion ลง ซึ่งถ้านำ EtherChannel  ไปใช้กับเครือข่ายที่ไม่ได้มีการใช้งานในปริมาณที่มากแล้ว  ก็อาจจะไม่เห็นความแตกต่างในการใช้งานเท่าไร แต่ประโยชน์ของ EtherChannel  นั้นยังมีมากกว่าการลดค่า Congestion ลง  นั่นก็คือเป็นการสำรองเส้นทางระหว่างอุปกรณ์ที่ใช้ในการทำ EtherChannel  ทั้งสองฝั่งนั่นเอง ถ้าเกิดกรณีที่ Link ใดมีปัญหาขึ้นมา ก็ยังมี Link อื่น  ๆ ที่สามารถใช้ในการส่งข้อมูลต่อไปได้นั่นเอง</p>
+<p>สำหรับเงื่อนไขที่นำมาใช้ในการตัดสินใจว่าจะส่ง Packet ไปในเส้นทางใดนั้น  สามารถเลือกได้จาก Mac Address, IP Address หรือ Layer 4 Port Number  และสามารถกำหนดได้ทั้ง Source, Destination หรือทั้ง Source และ  Destination มาใช้ในการคำนวนเพื่อที่จะตัดสินใจว่าจะส่ง Packet  ไปในเส้นทางใดได้  โดยเมื่อทำการเลือกเงื่อนไขใดแล้วเงื่อนไขนั้นก็จะนำไปใช้กับทุก ๆ  EtherChannel ที่มีการใช้งานอยู่บนสวิตซ์ตัวนั้น  และการที่จะเลือกว่าจะใช้เงื่อนไขใดก็ควรพิจารณาตามแต่ละสถานการณ์ไป เช่น  ถ้าปลายทางที่จะส่งข้อมูลไปมีเพียงแห่งเดียว โดยอาจจะเป็น Server  เพียงตัวเดียว ก็จะมี Mac Address เดียว ถ้าใช้เงื่อนไข Destination Mac  Address ในการพิจารณา Packet ก็จะถูกส่งไปในเส้นทางเดียวเสมอ  ซึ่งถ้าใช้เงื่อนไข Source Mac Addrss  ในการพิจารณาเลือกเส้นทางก็จะให้ผลลัพธ์ในการทำ Load Sharing ที่ดีกว่า  (โดย Default สวิตซ์จะพิจารณาเลือกเส้นทางจาก Source Mac Address)</p>
+<p>เมื่อได้ทำการกำหนดเงื่อนไขแล้ว  สวิตซ์จะนำข้อมูลตามที่กำหนดในเงื่อนไขมาประมวลผลโดยใช้ Hash Algorithm  ที่เป็นแบบเฉพาะของแต่ละโปรโตคอล เพื่อที่จะใช้ในการเลือกว่าจะส่ง Packet  นี้ไปในอินเทอร์เฟสใดที่เป็นสมาชิกของ EtherChannel นี้  โดยผลลัพธ์ของการประมวลผล จะออกมาเป็นค่าตั้งแต่ 0 ถึง 7  นี่จึงเป็นเหตุผลที่ทำให้แต่ละ EtherChannel  สามารถมีอินเทอร์เฟสที่เป็นสมาชิกได้สูงสุดเพียง 8 อินเทอร์เฟสเท่านั้น  โดยในแต่ละอินเทอร์เฟสนั้นจะมีหน้าที่รับผิดชอบค่า Hash อย่างน้อย 1 ค่า  คือถ้าใช้ EtherChannel 8 อินเทอร์เฟส แต่ละอินเทอร์เฟสก็จะรับผิดชอบค่า  Hash ที่คำนวนออกมาอินเทอร์เฟสละ 1 ค่า แต่ถ้าใช้ EtherChannel 4  อินเทอร์เฟส แต่ละอินเทอร์เฟสก็จะรับผิดชอบค่า Hash อินเทอร์เฟสละ 2 ค่า  เป็นต้น</p>
+<p><span id="fullpost">
+<p><a href="http://lh5.ggpht.com/__rygo9Ui738/TZOjdee0eoI/AAAAAAAAACk/xUNiKOpruEc/s1600-h/image%5B3%5D.png"><img src="http://lh4.ggpht.com/__rygo9Ui738/TZOjeW2XJSI/AAAAAAAAACo/bZil9rbQPR0/image_thumb%5B1%5D.png?imgmax=800" border="0" alt="image" title="image" width="334" height="168" style="border-right-width: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto" /></a></p>
+</span></p>
+<p> </p>
+<p>จากตารางด้านบน  เป็นการแสดงจำนวนของอินเทอร์เฟสและจำนวนของค่า Hash  ที่แต่ละอินเทอร์เฟสต้องรับผิดชอบ ซึ่งจะเห็นว่าในการที่จะทำ EtherChannel  ให้ได้ประสิทธิภาพสูงสุดนั้น ก็ควรที่จะใช้ 2, 4 หรือ 8 อินเทอร์เฟส  ในการทำ EtherChannel  เนื่องจากจะทำให้แต่ละอินเทอร์เฟสมีหน้าที่รับผิดชอบค่า Hash  ในจำนวนที่เท่า ๆ กัน</p>
+<p>อินเทอร์เฟส EtherChannel นั้น  สามารถทำงานได้ทั้งในระดับ Layer 2 (switch port) และ Layer 3 (route port)  และจำนวนสูงสุดที่สามารถใช้งานอินเทอร์เฟส EhterChannel  ได้นั้นก็ขึ้นอยู่กับสวิตซ์ในแต่ละรุ่นไปครับ   โดยในการทำงานจะมีโปรโตคอลที่ใช้ในการทำ EtherChannel ให้เลือกใช้  ดังนี้ครับ</p>
+<ul>
+<li><strong>PAgP </strong>– เป็น Cisco Proprietary อุปกรณ์ทั้ง 2 ฝั่งที่ทำการตั้งค่า EtherChannel จะต้องเป็นอุปกรณ์ Cisco ที่รองรับ PAgP เท่านั้น </li>
+<li><strong>LACP</strong> – เป็นมาตรฐาน IEEE 802.3ad Standard ซึ่งเป็นมาตรฐานของการทำ Link  Aggregation โดย LACP จะสามารถสร้าง standby port ได้อีก 8 port เพิ่มเติม </li>
+</ul>
+<p>และในการที่จะเลือกโปรโตคอลใดในการทำ EtherChannel นั้น  ก็จะต้องไปทำการเลือกโหมดภายในแต่ละอินเทอร์เฟสเอาครับ  โดยจะมีโหมดการทำงานให้เลือกดังนี้ครับ</p>
+<ul>
+<li><strong>Active</strong> (LACP) อินเทอร์เฟสที่ตั้งค่าในโหมดนี้จะเป็นฝ่ายเริ่มต้นเจรจาในการทำ  EtherChannel แบบ LACP โดยอุปกรณ์ฝั่งตรงข้ามจะต้องทำงานในโหมด Active หรือ  Passive เท่านั้น </li>
+<li><strong>Passive </strong>(LACP)  อินเทอร์เฟสที่ตั้งค่าในโหมดนี้จะไม่เป็นฝ่ายเริ่มเจรจา แต่จะรอรับ LACP  Packet จากอุปกรณ์ฝั่งตรงข้าม เพื่อที่จะสร้าง EtherChannel ในแบบ LACP  โดยอุปกรณ์ฝั่งตรงข้ามจะต้องทำงานในโหมด Active เท่านั้น </li>
+<li><strong>Desirable</strong> (PAgP) อินเทอร์เฟสที่ตั้งค่าในโหมดนี้จะเป็นฝ่ายเรื่มต้นเจรจาในการทำ  EtherChannel แบบ PAgP โดยอุปกรณ์ฝั่งตรงข้ามจะต้องทำงานในโหมด Desirable  หรือ Auto เท่านั้น </li>
+<li><strong>Auto</strong> (PAgP)  อินเทอร์เฟสที่ตั้งค่าในโหมดนี้จะไม่เป็นฝ่ายเริ่มเจรจา แต่จะรอรับ PAgP  Packet จากอุปกรณ์ฝั่งตรงข้าม เพื่อที่จะสร้าง EtherChannel ในแบบ PAgP  โดยอุปกรณ์ฝั่งตรงข้ามจะต้องทำงานในโหมด Desirable เท่านั้น </li>
+<li><strong>on</strong> เป็นการบังคับให้อินเทอร์เฟสนี้เป็น EtherChannel  โดยไม่ต้องมีการเจรจาแลกเปลี่ยน PAgP และ LACP Packet กัน  โดยอุปกรณ์ฝั่งตรงข้ามจะต้องทำงานในโหมด on เท่านั้น ถ้าอยู่ในโหมดอื่น ๆ  อินเทอร์เฟสของอุปกรณ์ฝั่งตรงข้ามจะอยู่ในสถานะ errdisable </li>
+<li><strong>off</strong> เป็นการป้องกันไม่ให้มีการทำ EtherChannel ในอินเทอร์เฟสนี้ </li>
+</ul>
+<p><a href="http://lh3.ggpht.com/__rygo9Ui738/TZOjfaq-lqI/AAAAAAAAACs/aGXGj-t7aI0/s1600-h/image%5B8%5D.png"><img src="http://lh5.ggpht.com/__rygo9Ui738/TZOjmp0bBEI/AAAAAAAAACw/2kDio8J1O_o/image_thumb%5B4%5D.png?imgmax=800" border="0" alt="image" title="image" width="404" height="135" style="border-right-width: 0px; display: block; float: none; border-top-width: 0px; border-bottom-width: 0px; margin-left: auto; border-left-width: 0px; margin-right: auto" /></a></p>
+<p>เอาล่ะครับ เมื่อทำความรู้จักกับ EtherChannel กันไปแล้ว  เราก็มาเริ่มดูตัวอย่างการตั้งค่ากันเลยดีกว่านะครับ  และสำหรับตัวอย่างการตั้งค่าในวันนี้นั้นก็จะมีการทำ EtherChannel  ทั้งในระดับ Layer 2 และ Layer 3 เลยนะครับ  เรามาดูขั้นตอนและตัวอย่างการตั้งค่า EtherChannel ในระดับ Layer 2  กันก่อนเลยดีกว่าครับ</p>
+<p>ขั้นตอนการตั้งค่า EtherChannel ในระดับ Layer 2</p>
+<ol>
+<li>ตรวจสอบว่าอินเทอร์เฟสที่จะเป็นสมาชิกของ EtherChannel ทำงานในโหมด switchport (Layer 2) </li>
+<li>ทำการสร้างอินเทอร์เฟส Port-Channel ขึ้นมา </li>
+<li>ทำการกำหนดให้อินเทอร์เฟสเป็นสมาชิกของ Port-Channel ที่สร้างขึ้นมานี้ </li>
+<li>ทำการตั้งค่าอื่น ๆ ที่ใช้งานบนอินเทอร์เฟส Port-Channel </li>
+<li>(ทางเลือก)ทำการปรับแต่งค่า EtherChannel Load-Balance </li>
+</ol>
+<p>เอาล่ะครับ เรามาเริ่มดูตัวอย่างการตั้งค่า EtherChannel ในระดับ Layer 2  กันเลยดีกว่านะครับ สำหรับตัวอย่างในวันนี้นั้นจะกำหนดให้อินเทอร์เฟส  FastEthernet 0/1  และ FastEthernet 0/2  ของสวิตซ์ทั้งสองตัวนี้เป็นสมาชิกของ EtherChannel นะครับ  ในอันดับแรกเราก็ต้องทำการตรวจสอบกันก่อนนะครับว่าอินเทอร์เฟส Fa0/1 และ  Fa0/2 นี้ทำงานอยู่ในโหมด switchport หรือไม่ แต่ถ้าไม่แน่ใจก็ให้ใช้คำสั่ง  <strong>switchport</strong> ในแต่ละอินเทอร์เฟสไปก็ได้ครับ</p>
+<p>ตัวอย่าง<br /><span style="color: #004080;"><em>switch-01(config)#interface FastEthernet 0/1<br />switch-01(config-if)#switchport <br />switch-01(config-if)#exit<br />switch-01(config)#interface FastEthernet 0/2<br />switch-01(config-if)#switchport <br />switch-01(config-if)#exit</em></span></p>
+<p>เมื่อทำการตรวจสอบเรียบร้อยแล้วว่าอินเทอร์เฟสทั้งสองทำงานในโหมด  switchport (Layer 2) จากนั้นก็ให้ทำการสร้างอินเทอร์เฟส Port-Channel  ขึ้นมาครับ โดยการใช้คำสั่ง <strong>"interface Port-channel <number />"</strong> ครับ</p>
+<p>ตัวอย่าง<br /><span style="color: #004080;"><em>switch-01(config)#interface Port-channel 1<br />switch-01(config-if)#exit</em></span></p>
+<p>เมื่อทำการสร้าง Port-channel ขึ้นมาแล้ว  จากนั้นก็ให้เข้าไปทำการตั้งค่าบนอินเทอร์เฟสที่เราต้องการที่จะให้เป็นสมาชิกของ  Port-channel นี้กันเลยนะครับ  โดยเราจะต้องทำการเลือกโหมดและโปรโตคอลที่จะใช้ในการทำ EtherChannel  ด้วยครับ โดยถ้าใช้กับอุปกรณ์ Cisco เพียงอย่างเดียวก็สามารถใช้ PAgP  ได้ครับ แต่ถ้ามีการใช้งานร่วมกับอุปกรณ์อื่นด้วยก็แนะนำให้ใช้เป็น LACP  นะครับ ในการที่จะทำการกำหนดให้อินเทอร์เฟสนี้เป็นสมาชิกของ Port-Channel  ที่เราต้องการก็สามารถทำได้ด้วยการใช้คำสั่ง <strong>"channel-group <number /> mode "</strong> โดยที่หมายเลขที่ทำการระบุไปนี้จะต้องตรงกับหมายเลขของ Port-channel ที่เราทำการสร้างขึ้นมาในขั้นตอนที่ผ่านมานะครับ</p>
+<p>ตัวอย่าง<br /><span style="color: #004080;"><em>switch-01(config)#interface range FastEthernet 0/1-2<br />switch-01(config-if-range)#channel-group 1 mode desirable <br />switch-01(config-if-range)#exit</em></span></p>
+<p>เพียงเท่านี้อินเทอร์เฟสทั้งสอง ก็จะเป็นสมาชิกของ Port-Channel 1  เรียบร้อยแล้วครับ และหลังจากนี้การตั้งค่าทุก ๆ อย่าง  ที่ต้องการทำบนอินเทอร์เฟสทั้งสองนี้ ก็ให้ไปทำการตั้งค่าบน interface  Port-channel 1 ได้เลยนะครับ ไม่ว่าจะเป็นการตั้งค่า Trunk หรืออื่น ๆ ครับ</p>
+<p>ตัวอย่าง<br /><span style="color: #004080;"><em>switch-01(config)#interface Port-channel 1<br />switch-01(config-if)#switchport trunk encapsulation dot1q <br />switch-01(config-if)#switchport mode trunk <br />switch-01(config-if)#switchport trunk native vlan 99<br />switch-01(config-if)#exit</em></span></p>
+<p>และเมื่อทดลอง show running-config  ดูก็จะพบว่าบนอินเทอร์เฟสทั้งสองที่เป็นสมาชิกของ Port-channel  นี้ก็จะได้รับการตั้งค่าไปโดยอัตโนมัติด้วยครับ</p>
+<p>ตัวอย่าง<br /><span style="color: #004080;"><em>switch-01#show running-config<br />!<br />interface FastEthernet0/1<br />channel-group 1 mode desirable<br />switchport trunk native vlan 99<br />switchport trunk encapsulation dot1q<br />switchport mode trunk<br />!<br />interface FastEthernet0/2<br />channel-group 1 mode desirable<br />switchport trunk native vlan 99<br />switchport trunk encapsulation dot1q<br />switchport mode trunk<br />! </em></span></p>
+<p>และเราก็สามารถที่จะกำหนดเงื่อนไขที่จะใช้พิจารณาว่าจะทำการส่ง Packet  ไปในเส้นทางใด ซึ่งโดย Default นั้นจะใช้ source mac address  เป็นเงื่อนไขในการพิจารณานะครับ  ซึ่งเราก็สามารถที่จะเปลี่ยนไปใช้เงื่อนไขอื่น ๆ ได้  ตามความเหมาะสมของการใช้งาน ด้วยการใช้คำสั่ง <strong>"port-channel load-balance"</strong> ใน global configuration mode นะครับ</p>
+<p>ตัวอย่าง<br /><span style="color: #004080;"><em>switch-01(config)#port-channel load-balance dst-mac </em></span></p>
+<p>และเมื่อทำการตั้งค่าบนสวิตซ์ตัวแรกเสร็จแล้ว  เราก็จะต้องไปทำการตั้งค่าบนสวิตซ์อีกฝั่งด้วยนะครับ ซึ่งหลัก ๆ  การตั้งค่าก็จะคล้าย ๆ กัน จึงจะไม่ขอทำตัวอย่างให้ดูนะครับ</p>
+<p>ขั้นตอนการตั้งค่า EtherChannel ในระดับ Layer 3</p>
+<ol>
+<li>ตรวจสอบอินเทอร์เฟสที่เป็นสมาชิกของ EtherChannel ว่าเป็น route port หรือ no switchport (Layer 3) </li>
+<li>สร้างอินเทอร์เฟส Port-Channel ขึ้นมา และทำการกำหนดให้ Port-Channel นั้นทำงานในระดับ Layer 3 </li>
+<li>ทำการกำหนดให้อินเทอร์เฟสเป็นสมาชิกของ Port-Channel ที่สร้างขึ้นมานี้ </li>
+<li>ทำการตั้งค่าอื่น ๆ ที่ใช้งานบนอินเทอร์เฟส Port-Channel </li>
+<li>(ทางเลือก)ทำการปรับแต่งค่า EtherChannel Load-Balance </li>
+</ol>
+<p>สำหรับขั้นตอนการตั้งค่า EtherChannel ในระดับ Layer 3 นี้จริง ๆ  แล้วก็จะเหมือนกันกับการตั้งค่า EtherChannel ในระดับ Layer 2 นะครับ  จะแตกต่างเพียงบางอย่างเท่านั้น ผมจึงขอทำตัวอย่างให้ดูรวดเดียวเลยนะครับ</p>
+<p>ตัวอย่าง<br /><span style="color: #004080;"><em>switch-02(config)#ip routing                <br />switch-02(config)#interface range GigabitEthernet 1/0/1-2<br />switch-02(config-if-range)#no switchport <br />switch-02(config-if-range)#exit </em></span></p>
+<p><span style="color: #004080;"><em>switch-02(config)#interface Port-channel 1<br />switch-02(config-if)#no switchport <br />switch-02(config-if)#exit </em></span></p>
+<p><span style="color: #004080;"><em>switch-02(config)#interface range GigabitEthernet 1/0/1-2<br />switch-02(config-if-range)#channel-group 1 mode active<br />switch-02(config-if-range)#exit </em></span></p>
+<p><span style="color: #004080;"><em>switch-02(config)#interface Port-channel 1<br />switch-02(config-if)#ip address 172.16.0.1 255.255.255.0<br />switch-02(config-if)#exit </em></span></p>
+<p><span style="color: #004080;"><em>switch-02(config)#do show run<br />interface Port-channel1<br />no switchport<br />ip address 172.16.0.1 255.255.255.0<br />!<br />interface GigabitEthernet1/0/1<br />no switchport<br />no ip address<br />channel-group 1 mode active<br />!<br />interface GigabitEthernet1/0/2<br />no switchport<br />no ip address<br />channel-group 1 mode active<br />! </em></span></p>
+<p>เมื่อทำการตั้งค่าเสร็จเรียบร้อยแล้ว เราสามารถตรวจสอบการทำงานของ EtherChannel ได้ด้วยการใช้คำสั่ง ดังต่อไปนี้ครับ</p>
+<ul>
+<li>show etherchannel </li>
+<li>show etherchannel summary </li>
+<li>show etherchannel load-balance </li>
+<li>show etherchannel port-channel </li>
+</ul>
+<p>ตัวอย่าง<br /><span style="color: #004080;"><em>switch-01#<strong>show etherchannel</strong> <br /> Channel-group listing:<br /> ---------------------- </em></span></p>
+<p><span style="color: #004080;"><em>
+<p>Group: 1<br />----------<br />Group state = L2<br />Ports: 2 Maxports = 8<br />Port-channels: 1 Max Portchannels = 1<br />Protocol:   PAGP</p>
+<p>switch-01#<strong>show etherchannel summary</strong> <br />Flags:  D - down        P - in port-channel<br /> I - stand-alone s - suspended<br /> H - Hot-standby (LACP only)<br /> R - Layer3      S - Layer2<br /> U - in use      f - failed to allocate aggregator<br /> u - unsuitable for bundling<br /> w - waiting to be aggregated<br /> d - default port</p>
+<p>Number of channel-groups in use: 1<br />Number of aggregators:           1</p>
+<p>Group  Port-channel  Protocol    Ports<br />------+-------------+-----------+----------------------------------------------</p>
+<p>1      Po1(SU)           PAgP   Fa0/1(P) Fa0/2(P)</p>
+<p>switch-01#<strong>show etherchannel load-balance</strong> <br />EtherChannel Load-Balancing Configuration:<br /> dst-mac</p>
+<p>EtherChannel Load-Balancing Addresses Used Per-Protocol:<br />Non-IP: Destination MAC address<br /> IPv4: Destination MAC address<br /> IPv6: Destination MAC address</p>
+<p>switch-01#<strong>show etherchannel port-channel</strong> <br /> Channel-group listing:<br /> ----------------------</p>
+<p>Group: 1<br />----------<br /> Port-channels in the group:<br /> ---------------------------</p>
+<p>Port-channel: Po1<br />------------</p>
+<p>Age of the Port-channel   = 00d:00h:47m:27s<br />Logical slot/port   = 2/1       Number of ports = 2<br />GC                  = 0x00000000      HotStandBy port = null<br />Port state          = Port-channel <br />Protocol            =   PAGP<br />Port Security       = Disabled</p>
+<p>Ports in the Port-channel:</p>
+</em></span></p>
+<p><span style="color: #004080;"><em>Index   Load   Port     EC state        No of bits<br />------+------+------+------------------+-----------<br /> 0     00     Fa0/1    Desirable-Sl       0<br /> 0     00     Fa0/2    Desirable-Sl       0<br />Time since last port bundled:    00d:00h:01m:38s    Fa0/2 </em></span></p>
+<p>เพียงเท่านี้ก็เรียบร้อยแล้วครับ สำหรับการตั้งค่า EtherChannel  เป็นไงบ้างครับ ไม่ยุ่งยากเลยใช่มั้ยครับ ข้อดีของการใช้ EtherChannel นี้  นอกเหนือจากจะเป็นการทำ Load Sharing เพื่อลดค่า Congestion  ของระบบลงแล้วยังช่วยในเรื่องของการสำรองเส้นทางอีกด้วยนะครับ ยังไงเพื่อน ๆ  ก็ลองนำไปปรับใช้กับระบบเครือข่ายของเพื่อน ๆ ดูนะครับ</p></td>
+</tr>
+
+</table>
+<span class="article_separator">&nbsp;</span>
+
+						</td>
+						  </tr>
+						</table>
+						
+								<div class="clear"></div>
+				</div>
+			</div>
+		<div class="bottom-both"></div>
+				<div class="tplcright"><a href="http://www.joomlashack.com" title="Joomla 1.5 Templates">Joomla 1.5 Templates by Joomlashack</a></div>	</div>
+</body>
+</html>

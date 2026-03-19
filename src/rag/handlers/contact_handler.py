@@ -280,7 +280,7 @@ class ContactHandler:
             
             # Search RECORDS
             for q_check in queries_to_try:
-                if prefix_teams: break
+                # Removed prefix_teams break (Phase 245)
                 
                 print(f"[PREFIX MATCH] Trying '{q_check}' in records")
                 # Normalize for matching
@@ -307,9 +307,21 @@ class ContactHandler:
                         record_copy = record.copy()
                         record_copy["_score"] = 85
                         prefix_teams.append(record_copy)
-                        if len(prefix_teams) >= 10: break
+                        if len(prefix_teams) >= 30: break # Increased limit
             
             if prefix_teams:
+                # RE-APPLY LOCATION FILTERING if available locally
+                if target_locations:
+                    filtered_prefix = []
+                    for h in prefix_teams:
+                        h_text = (h.get("name", "") + " " + str(h.get("role", "") or h.get("unit", ""))).lower()
+                        if any(loc in h_text for loc in target_locations):
+                            filtered_prefix.append(h)
+                    
+                    if filtered_prefix:
+                        print(f"[STEP 19.5 UNIVERSAL] Location filter narrowed {len(prefix_teams)} -> {len(filtered_prefix)}")
+                        prefix_teams = filtered_prefix
+
                 print(f"[STEP 19.5 UNIVERSAL] Found {len(prefix_teams)} matches")
                 prefix_teams.sort(key=lambda x: x.get("_score", 0), reverse=True)
                 hits = prefix_teams[:10]
@@ -388,11 +400,12 @@ class ContactHandler:
                         "context": ""
                     }
 
-                # STEP 19.4: Domain Isolation Guard - NO global suggestions
+                # Phase 242: Fallback to RAG if strict miss
                 return {
-                    "answer": "ไม่พบข้อมูลในฐานข้อมูลติดต่อ\n\n(ลองระบุ ชื่อหน่วยงานเต็ม หรือ จังหวัด เพิ่มเติม)",
-                    "route": "contact_miss_domain_strict",
-                    "context": ""
+                    "answer": None,
+                    "route": "contact_miss",
+                    "context": "",
+                    "fallback_to_rag": True
                 }
             
 

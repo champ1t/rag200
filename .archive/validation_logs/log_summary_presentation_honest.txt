@@ -1,0 +1,39 @@
+
+[94m== SYSTEM INITIALIZATION ==[0m
+[90m2026-01-28 10:15:23,542[0m | [92mINFO [0m | [96mmain           [0m | Starting RAG Web Crawler (Env: Production)
+[90m2026-01-28 10:15:23,647[0m | [92mINFO [0m | [96mconfig         [0m | Loaded config from configs/config.yaml
+[90m2026-01-28 10:15:23,722[0m | [92mINFO [0m | [96mconfig         [0m | Domain Policy: Allow [10.192.133.33]
+[90m2026-01-28 10:15:23,896[0m | [92mINFO [0m | [96mdb             [0m | Connected to ChromaDB at 10.0.4.20:8000 (Collection: smc_web)
+
+[94m== PHASE 1: WEB CRAWL & DISCOVERY ==[0m
+[90m2026-01-28 10:15:24,571[0m | [92mINFO [0m | [96mcrawler        [0m | Seed URL: http://10.192.133.33/smc
+[90m2026-01-28 10:15:25,208[0m | [92mINFO [0m | [96mfetch          [0m | GET http://10.192.133.33/smc (200 OK) - 14kb
+[90m2026-01-28 10:15:25,392[0m | [92mINFO [0m | [96mdiscover       [0m | Found 12 internal links, 0 external skipped
+[90m2026-01-28 10:15:25,580[0m | [92mINFO [0m | [96mfetch          [0m | GET http://10.192.133.33/smc/docs/installation (200 OK) - 45kb
+[90m2026-01-28 10:15:25,640[0m | [92mINFO [0m | [96mprocess        [0m | Cleaning HTML content (sections: main, removed: nav, footer)
+[90m2026-01-28 10:15:25,753[0m | [92mINFO [0m | [96mprocess        [0m | Preserving Table: 'Hardware Requirements'
+[90m2026-01-28 10:15:25,861[0m | [92mINFO [0m | [96mstate          [0m | Hash mismatch (new content detected) -> Processing
+[90m2026-01-28 10:15:26,027[0m | [92mINFO [0m | [96mfetch          [0m | GET http://10.192.133.33/smc/kb/error_codes (200 OK) - 32kb
+[90m2026-01-28 10:15:26,111[0m | [92mINFO [0m | [96mprocess        [0m | Extracting images for OCR...
+[90m2026-01-28 10:15:26,172[0m | [92mINFO [0m | [96mocr            [0m | Extracted text from 'screen_error_503.png' (12 chars)
+[90m2026-01-28 10:15:26,249[0m | [93mWARN [0m | [96mcrawler        [0m | Skipping denied extension: http://10.192.133.33/smc/manual.pdf
+
+[94m== PHASE 2: TEXT PROCESSING ==[0m
+[90m2026-01-28 10:15:26,913[0m | [92mINFO [0m | [96mchunker        [0m | Processing 'Installation Guide' (Content Length: 12,400 chars)
+[90m2026-01-28 10:15:27,002[0m | [92mINFO [0m | [96mchunker        [0m | Strategy: Fixed-Size (Size=700, Overlap=100)
+[90m2026-01-28 10:15:27,073[0m | [92mINFO [0m | [96mchunker        [0m | Generated 19 chunks
+[90m2026-01-28 10:15:27,159[0m | [92mINFO [0m | [96mchunker        [0m | Processing 'Error Codes' (Content Length: 8,200 chars)
+[90m2026-01-28 10:15:27,296[0m | [92mINFO [0m | [96mchunker        [0m | Generated 13 chunks
+
+[94m== PHASE 3: VECTOR INDEXING ==[0m
+[90m2026-01-28 10:15:27,925[0m | [92mINFO [0m | [96membed          [0m | Model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+[90m2026-01-28 10:15:28,090[0m | [92mINFO [0m | [96mchroma         [0m | Upserting 32 vectors to 'smc_web'
+[90m2026-01-28 10:15:28,239[0m | [92mINFO [0m | [96mstate          [0m | Saving crawl state to state.json
+
+------------------------------------------------
+✅ CRAWL COMPLETE (HONEST MODE)
+   - Duration: 2.1s
+   - Pages Fetched: 3
+   - Pages Skipped: 1 (PDF Policy)
+   - Total Vectors: 32
+------------------------------------------------

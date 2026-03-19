@@ -1,0 +1,23 @@
+{
+    "_comment": "This is an example state.json showing the structure. Real file contains actual URLs and hashes.",
+    "pages": {
+        "http://<INTERNAL_IP>/smc/index.php?option=com_content&view=article&id=56&Itemid=60": {
+            "indexed_hash": "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2",
+            "content_hash": "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2",
+            "chunk_count": 2,
+            "last_synced": "2026-03-02T14:39:00"
+        },
+        "http://<INTERNAL_IP>/smc/index.php?option=com_content&view=article&id=57&Itemid=59": {
+            "indexed_hash": "b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3",
+            "content_hash": "b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3",
+            "chunk_count": 1,
+            "last_synced": "2026-03-02T14:39:06"
+        },
+        "http://<INTERNAL_IP>/smc/index.php?option=com_content&view=category&id=43&Itemid=81": {
+            "indexed_hash": "c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4",
+            "content_hash": "c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4",
+            "chunk_count": 3,
+            "last_synced": "2026-03-02T14:39:12"
+        }
+    }
+}

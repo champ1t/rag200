@@ -1,0 +1,3 @@
+{"ts": 1771199683.59334, "question": "ขอเบอร์ศูนย์หาดใหญ่", "answer": "[📌 SMC INFORMATION — ข้อมูลอย่างเป็นทางการ]\n📞 **ศูนย์ OMC หาดใหญ่**\nโทร: 074-XXX-XXX (ตัวอย่าง - ต้องอัพเดทเบอร์จริง)\nEmail: hatyai.omc@example.com\nพื้นที่รับผิดชอบ: จังหวัดสงขลา", "route": "deterministic_resolver", "latencies": {"total": 0}}
+{"ts": 1771199696.627649, "question": "ont password", "answer": "ไม่มั่นใจในคำถาม 'ont password' ครับ (ดูเหมือนพิมพ์ผิด)\nกรุณาระบุเป็นประโยคคำถามที่ชัดเจนขึ้นอีกนิด", "route": "blocked_ambiguous", "latencies": {}}
+{"ts": 1771199705.1221602, "question": "ทะเบียนสินทรัพย์", "answer": "ไม่มั่นใจในคำถาม 'ทะเบียนสินทรัพย์' ครับ (ดูเหมือนพิมพ์ผิด)\nกรุณาระบุเป็นประโยคคำถามที่ชัดเจนขึ้นอีกนิด", "route": "blocked_ambiguous", "latencies": {}}

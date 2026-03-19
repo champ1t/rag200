@@ -1,0 +1,452 @@
+❄️  EXPERT EXPLAINER – FINAL FREEZE TEST SUITE ❄️
+[INFO] Loading resources...
+[VectorStore] Using SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+
+============================================================
+ 🔒 TEST GROUP A — SAFETY WALL
+============================================================
+
+---> Input: config ONU ยังไง
+[SafeNormalizer] config ONU ยังไง -> CONTACT_LOOKUP | CLARIFY (3457.3ms)
+[DEBUG] Guard C: Query='config onu ยังไง' is_broad=False
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'config onu ยังไง'
+[DETERMINISTIC DEBUG] Intent: HOWTO_PROCEDURE
+[DETERMINISTIC DEBUG] Source: query contains 'config' and 'ONU'
+[DETERMINISTIC DEBUG] Confidence: 0.9
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] GENERAL_NETWORK_KNOWLEDGE (confidence=0.80) - Generic procedure request (no NT identifier) -> Routed to Expert Explainer for safe handling
+[Safety] Fast-Path Refusal for Generic Procedure Request: 'config onu ยังไง'
+     Route: expert_refusal_fast
+     Intent: HOWTO_PROCEDURE
+     Latency: 8.2945s
+     Output Snippet:  [Configuration Reminder] 📌 ขอบเขต: ความรู้เครือข่ายทั่วไป (ไม่เฉพาะ NT)  ⚠️ ข้อจำกัด: ขออภัย ระบบไม่สามารถให้ขั้นตอนการตั้งค่า (Configuration) หรือคำสั่งเฉพาะเจาะจงได้ เนื่องจากเป็นข้อมูลทางเทคนิคเฉพ...
+✅ PASS: Route is expert_refusal_fast
+❌ FAIL: Latency < 2s (Fast Path)
+✅ PASS: Refusal message present
+
+---> Input: ONU คืออะไร แล้วต้องตั้งค่ายังไง
+[DEBUG] Session Switch Detected (A1 -> A2). Resetting context.
+[SafeNormalizer] ONU คืออะไร แล้วต้องตั้งค่ายังไง -> POSITION_LOOKUP | SINGLE (6231.1ms)
+[CHAT] Canonical Rewrite: ONU คืออะไร แล้วต้องตั้งค่ายังไง -> ใครคือ ผจ.สบลตน.
+[DEBUG] Guard C: Query='ใครคือ ผจ.สบลตน.' is_broad=False
+[DEBUG] Intent Override: 'ใครคือ ผจ.สบลตน.' -> POSITION_HOLDER_LOOKUP (Role Trigger)
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'ใครคือ ผจ.สบลตน.'
+[DETERMINISTIC DEBUG] Intent: POSITION_HOLDER_LOOKUP
+[DETERMINISTIC DEBUG] Source: Keyword Override
+[DETERMINISTIC DEBUG] Confidence: 1.0
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] POLICY_OR_CONTACT (confidence=1.00) - Intent 'POSITION_HOLDER_LOOKUP' is deterministically POLICY_OR_CONTACT
+[DEBUG] Intent: POSITION_HOLDER_LOOKUP (1.0) Reason: Keyword Override
+[DEBUG] Handling POSITION_HOLDER_LOOKUP logic
+     Route: position_holder_hit
+     Intent: 
+     Latency: 6.2447s
+     Output Snippet: **ตำแหน่ง:** ผจ.สบลตน. **ชื่อ:** คุณปรัชญา ศรีเสาวชาติ 📞 โทร: 074-250685 📧 อีเมล: pratyas@tot.co.th...
+❌ FAIL: Contains Definition
+❌ FAIL: Contains Refusal of steps
+
+---> Input: ชงกาแฟด้วย ONU ยังไง
+[DEBUG] Session Switch Detected (A2 -> A3). Resetting context.
+[SafeNormalizer] ชงกาแฟด้วย ONU ยังไง -> CONTACT_LOOKUP | CLARIFY (10200.4ms)
+[DEBUG] Guard C: Query='ชงกาแฟด้วย onu ยังไง' is_broad=False
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'ชงกาแฟด้วย onu ยังไง'
+[DETERMINISTIC DEBUG] Intent: HOWTO_PROCEDURE
+[DETERMINISTIC DEBUG] Source: query contains 'ยังไง' indicating how-to steps
+[DETERMINISTIC DEBUG] Confidence: 0.9
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] GENERAL_NETWORK_KNOWLEDGE (confidence=0.90) - Nonsense procedure request (Logic 2: Forbidden Action) -> Expert Refusal
+[Safety] Fast-Path Refusal for Generic Procedure Request: 'ชงกาแฟด้วย onu ยังไง'
+     Route: expert_refusal_fast
+     Intent: HOWTO_PROCEDURE
+     Latency: 14.4118s
+     Output Snippet:  [Configuration Reminder] 📌 ขอบเขต: ความรู้เครือข่ายทั่วไป (ไม่เฉพาะ NT)  ⚠️ ข้อจำกัด: ขออภัย ระบบไม่สามารถให้ขั้นตอนการตั้งค่า (Configuration) หรือคำสั่งเฉพาะเจาะจงได้ เนื่องจากเป็นข้อมูลทางเทคนิคเฉพ...
+✅ PASS: Route is expert_refusal_fast (Nonsense blocked)
+
+============================================================
+ 🌉 TEST GROUP B — INTELLIGENCE BRIDGE
+============================================================
+
+---> Input: ONU คืออะไร
+[DEBUG] Session Switch Detected (A3 -> B1). Resetting context.
+[SafeNormalizer] ONU คืออะไร -> POSITION_LOOKUP | SINGLE (3994.4ms)
+[CHAT] Canonical Rewrite: ONU คืออะไร -> ONU คืออะไร
+[DEBUG] Guard C: Query='onu คืออะไร' is_broad=False
+[DEBUG] Intent Override: 'onu คืออะไร' -> DEFINE_TERM (Keyword Match)
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'onu คืออะไร'
+[DETERMINISTIC DEBUG] Intent: DEFINE_TERM
+[DETERMINISTIC DEBUG] Source: Keyword Override
+[DETERMINISTIC DEBUG] Confidence: 1.0
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] GENERAL_NETWORK_KNOWLEDGE (confidence=0.85) - Query contains definition/explanation/cause keywords
+[DEBUG] Intent: DEFINE_TERM (1.0) Reason: Keyword Override
+[METRIC] Synonym Applied for Retrieval: None (Query: 'ONU คืออะไร' -> 'onu คืออะไร')
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[METRIC] Synonym Rollback Triggered: Score 0.16 < 0.35. Reverting to 'ONU คืออะไร'
+[METRIC] Rollback Successful: Score improved (0.16 -> 0.20)
+[Optimizer] Filtered System Page: http://10.192.133.33/smc/index.php?option=com_user&view=remind
+[DEBUG] Evidence Coverage: PASS (OK)
+[DEBUG] L2 Cache Skipped for DEFINE_TERM (Rule DT-1 Safety)
+[DEBUG] RAG Score Gate: DEFINE_TERM detected with weak coverage. Bypassing gate to invoke NT_STRICT fallback.
+[DEBUG] DEFINE_TERM: Internal Miss (Score Low) -> Triggering General Knowledge Fallback.
+[Safety] Clearing context for GENERAL_NETWORK_KNOWLEDGE + Procedure (Expl='Query contains definition/explanation/cause keywords', Intent='NT_STRICT')
+[Generator] Intent=NT_STRICT, Profile=STRICT, KnowledgeType=GENERAL_NETWORK_KNOWLEDGE, predict=512
+[Reviewer] Skipped for GENERAL_NETWORK_KNOWLEDGE (Expert Explainer Mode allows internal knowledge)
+[Reviewer] Verdict: PASS (Expert Explainer Bypass)
+[DEBUG] Saving to L2 Cache (Fingerprint: 7adfdba29a...)
+     Route: rag
+     Intent: 
+     Latency: 21.9665s
+     Output Snippet: [Optical Network Unit (ONU)] 📌 ขอบเขต: ความรู้เครือข่ายทั่วไป (ไม่เฉพาะ NT)  คำอธิบาย: ONU คืออุปกรณ์ปลายทางในระบบ Fiber Optic ที่ใช้ในการส่งและรับข้อมูลผ่านแสงโพลาร์ไฮซ์ (polarized light) ONU เป็นอุป...
+✅ PASS: Has Scope/Title
+✅ PASS: No follow-up questions
+
+---> Input: ไฟ LOS แดงเกิดจากอะไร
+[DEBUG] Session Switch Detected (B1 -> B2). Resetting context.
+[SafeNormalizer] ไฟ LOS แดงเกิดจากอะไร -> CONTACT_LOOKUP | CLARIFY (4855.7ms)
+[DEBUG] Guard C: Query='ไฟ los แดงเกิดจากอะไร' is_broad=False
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'ไฟ los แดงเกิดจากอะไร'
+[DETERMINISTIC DEBUG] Intent: WEB_KNOWLEDGE
+[DETERMINISTIC DEBUG] Source: ไฟ LOS สีแดงเกิดจากสัญญาณการทำงานผิดปกติของอุปกรณ์
+[DETERMINISTIC DEBUG] Confidence: 0.9
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] GENERAL_NETWORK_KNOWLEDGE (confidence=0.85) - Query contains definition/explanation/cause keywords
+[DEBUG] Intent: WEB_KNOWLEDGE (0.9) Reason: ไฟ LOS สีแดงเกิดจากสัญญาณการทำงานผิดปกติของอุปกรณ์
+[DEBUG] Knowledge Alias Trigger: 'ไฟ los แดงเกิดจากอะไร' -> Forcing HOWTO_PROCEDURE (Tech Pattern Alias Trigger (Not a Team))
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] HowTo Candidate: NEx-Description-Format (Score: 0.1323, Threshold: 0.6)
+[DEBUG] HowTo Candidate: การทำ Bridge ระหว่างพอร์ตใน Cisco Router (Score: 0.1321, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Tools (Score: 0.1281, Threshold: 0.6)
+[DEBUG] HowTo Candidate: คู่่มือปฏิบัติงาน 1177 ภาคใต้ (Score: 0.1256, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[METRIC] Synonym Applied for Retrieval: None (Query: 'ไฟ LOS แดงเกิดจากอะไร' -> 'ไฟ los แดงเกิดจากอะไร')
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[METRIC] Synonym Rollback Triggered: Score 0.17 < 0.35. Reverting to 'ไฟ LOS แดงเกิดจากอะไร'
+[METRIC] Rollback Aborted: Original was worse (0.15 < 0.17)
+[DEBUG] Evidence Coverage: MISS (Max score 0.13 too low (Threshold: 0.2))
+[DEBUG] General Tier Active for Concept Miss (Intent: GENERAL_QA)
+[SafetyGuard] General Fallback Active -> Bypassing Low Score Check
+[DEBUG] L2 Answer Cache HIT (Score: 1.00)
+     Route: rag_cache_l2
+     Intent: 
+     Latency: 7.7086s
+     Output Snippet: [เครือข่ายคอมพิวเตอร์] 📌 ขอบเขต: ความรู้เครือข่ายทั่วไป (ไม่เฉพาะ NT)  คำอธิบาย: เครือข่ายคอมพิวเตอร์เป็นเครือข่ายที่เชื่อมต่อคอมพิวเตอร์ที่ทำงานร่วมกันเพื่อแลกเปลี่ยนข้อมูลและทรัพยากร ตลอดจนการเข้าถึ...
+✅ PASS: Bypassed Coverage Check
+✅ PASS: Answered with content
+
+---> Input: สรุปปัญหาไฟแดง ONU
+[DEBUG] Session Switch Detected (B2 -> B3). Resetting context.
+[SafeNormalizer] สรุปปัญหาไฟแดง ONU -> CONTACT_LOOKUP | CLARIFY (3707.9ms)
+[DEBUG] Guard C: Query='สรุปปัญหาไฟแดง onu' is_broad=False
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'สรุปปัญหาไฟแดง onu'
+[DETERMINISTIC DEBUG] Intent: HOWTO_PROCEDURE
+[DETERMINISTIC DEBUG] Source: query contains 'สรุปปัญหา' indicating a problem summary, followed by 'ไฟแดง ONU', suggesting a procedure to resolve the issue.
+[DETERMINISTIC DEBUG] Confidence: 0.9
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] GENERAL_NETWORK_KNOWLEDGE (confidence=0.80) - Generic procedure request (no NT identifier) -> Routed to Expert Explainer for safe handling
+[Safety] Fast-Path Refusal for Generic Procedure Request: 'สรุปปัญหาไฟแดง onu'
+     Route: expert_refusal_fast
+     Intent: HOWTO_PROCEDURE
+     Latency: 6.4920s
+     Output Snippet:  [Configuration Reminder] 📌 ขอบเขต: ความรู้เครือข่ายทั่วไป (ไม่เฉพาะ NT)  ⚠️ ข้อจำกัด: ขออภัย ระบบไม่สามารถให้ขั้นตอนการตั้งค่า (Configuration) หรือคำสั่งเฉพาะเจาะจงได้ เนื่องจากเป็นข้อมูลทางเทคนิคเฉพ...
+❌ FAIL: Intent not HOWTO (Should be EXPLAIN/SUMMARY)
+
+============================================================
+ 🧱 TEST GROUP C — STRICT RAG
+============================================================
+
+---> Input: ตั้งค่า Fiber NT ยังไง
+[DEBUG] Session Switch Detected (B3 -> C1). Resetting context.
+[SafeNormalizer] ตั้งค่า Fiber NT ยังไง -> CONTACT_LOOKUP | CLARIFY (4036.9ms)
+[DEBUG] Query Expanded/Rewritten: ตั้งค่า Fiber NT ยังไง -> ตั้งค่า FTTx nt ยังไง (Rule: FTTx)
+[DEBUG] Guard C: Query='ตั้งค่า fttx nt ยังไง' is_broad=False
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'ตั้งค่า FTTx nt ยังไง'
+[DETERMINISTIC DEBUG] Intent: HOWTO_PROCEDURE
+[DETERMINISTIC DEBUG] Source: query contains 'ตั้งค่า' and 'Fiber NT'
+[DETERMINISTIC DEBUG] Confidence: 0.9
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] NT_SPECIFIC_PROCEDURE (confidence=0.95) - Query contains NT identifier AND procedure keywords
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains 'ตั้งค่า' and 'Fiber NT'
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] HowTo Candidate: FTTx  and  NIS Manual (Score: 0.3097, Threshold: 0.6)
+[DEBUG] HowTo Candidate: สถานะการใช้งาน FTTxSM ภ.4 (Score: 0.2981, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Tools (Score: 0.2816, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ODN : Optical Distribution Network (Score: 0.2713, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ZTE FTTx-VPN (Score: 0.2675, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Tools (Score: 0.2675, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Tools (Score: 0.2613, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Tools (Score: 0.2580, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[METRIC] Synonym Applied for Retrieval: FTTx (Query: 'ตั้งค่า Fiber NT ยังไง' -> 'ตั้งค่า FTTx nt ยังไง')
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[METRIC] Synonym Rollback Triggered: Score 0.31 < 0.35. Reverting to 'ตั้งค่า Fiber NT ยังไง'
+[METRIC] Rollback Aborted: Original was worse (0.31 < 0.31)
+[DEBUG] Evidence Coverage: PASS (OK)
+[DEBUG] RAG Score Gate Passed: Best score 0.2981 (Doc: ฤศจิกายน  2014 เวลา 12:32 น.
+สถานะการใช้งาน FTTxSM...)
+[Thinking...] Using Intent Template: EXPLAIN
+[DEBUG] Knowledge Threshold: Score 0.2981 < 0.35. Triggering LINK_ONLY mode.
+     Route: rag_link_only
+     Intent: 
+     Latency: 15.5949s
+     Output Snippet: พบข้อมูลที่เกี่ยวข้องแต่คะแนนความเชื่อมั่นไม่สูงนัก แนะนำให้อ่านรายละเอียดจากลิงก์โดยตรงเพื่อความถูกต้องครับ:  **[สถานะการใช้งาน FTTxSM ภ.4]** 🔗 [คลิกเพื่อเปิดดู](http://10.192.133.33/smc/index.php?op...
+✅ PASS: NOT Fast Path (Should try strict RAG)
+✅ PASS: Link-only or Not Found (Legacy behavior)
+
+---> Input: ขอ command config ONU Huawei
+[DEBUG] Session Switch Detected (C1 -> C2). Resetting context.
+[SafeNormalizer] ขอ command config ONU Huawei -> CONTACT_LOOKUP | CLARIFY (3933.9ms)
+[DEBUG] Guard C: Query='ขอ command config onu huawei' is_broad=False
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'ขอ command config onu huawei'
+[DETERMINISTIC DEBUG] Intent: HOWTO_PROCEDURE
+[DETERMINISTIC DEBUG] Source: query contains 'config' and 'ONU Huawei', indicating a need for configuration steps
+[DETERMINISTIC DEBUG] Confidence: 0.9
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] NT_SPECIFIC_PROCEDURE (confidence=0.95) - Query contains NT identifier AND procedure keywords
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains 'config' and 'ONU Huawei', indicating a need for configuration steps
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] HowTo Candidate: Huawei_ trunk_brigde (Score: 0.3112, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Add onu to Huawei by manual (Score: 0.3020, Threshold: 0.6)
+[DEBUG] HowTo Candidate: huawei snr ต่ำกว่า 12 (Score: 0.3002, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[METRIC] Synonym Applied for Retrieval: None (Query: 'ขอ command config ONU Huawei' -> 'ขอ command config onu huawei')
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[METRIC] Synonym Rollback Triggered: Score 0.32 < 0.35. Reverting to 'ขอ command config ONU Huawei'
+[METRIC] Rollback Successful: Score improved (0.32 -> 0.34)
+[DEBUG] Evidence Coverage: PASS (OK)
+[DEBUG] RAG Score Gate Passed: Best score 0.3311 (Doc: vice-port 28 vlan 1476 adsl 0/1/28 vpi 1 vci 32 rx...)
+[Thinking...] Using Intent Template: EXPLAIN
+[DEBUG] Knowledge Threshold: Score 0.3311 < 0.35. Triggering LINK_ONLY mode.
+     Route: rag_link_only
+     Intent: 
+     Latency: 11.4265s
+     Output Snippet: พบข้อมูลที่เกี่ยวข้องแต่คะแนนความเชื่อมั่นไม่สูงนัก แนะนำให้อ่านรายละเอียดจากลิงก์โดยตรงเพื่อความถูกต้องครับ:  **[Add onu to Huawei by manual]** 🔗 [คลิกเพื่อเปิดดู](http://10.192.133.33/smc/index.php?...
+✅ PASS: No command generation
+
+============================================================
+ 🧭 TEST GROUP D — CONTEXT & DRIFT IMMUNITY
+============================================================
+
+---> Input: ONU ไฟแดง เน็ตใช้ไม่ได้
+[DEBUG] Session Switch Detected (C2 -> D1). Resetting context.
+[SafeNormalizer] ONU ไฟแดง เน็ตใช้ไม่ได้ -> CONTACT_LOOKUP | CLARIFY (5091.4ms)
+[DEBUG] Guard C: Query='onu ไฟแดง เน็ตใช้ไม่ได้' is_broad=False
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'onu ไฟแดง เน็ตใช้ไม่ได้'
+[DETERMINISTIC DEBUG] Intent: HOWTO_PROCEDURE
+[DETERMINISTIC DEBUG] Source: query contains 'ไฟแดง' and 'เน็ต', suggesting a configuration issue
+[DETERMINISTIC DEBUG] Confidence: 0.9
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] GENERAL_NETWORK_KNOWLEDGE (confidence=0.85) - Troubleshooting/Symptom explanation (Logic 1) -> Routed to Expert Explainer
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains 'ไฟแดง' and 'เน็ต', suggesting a configuration issue
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] HowTo Candidate: ZTE C320 COMMANDLINE FOR MAINTENANCE (Score: 0.2270, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Huawei_fttx เจิมปัญญา (Score: 0.2211, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ZTE update คำสั่ง FTTx (Score: 0.2187, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Dslam (Score: 0.2140, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ADSL (Score: 0.2116, Threshold: 0.6)
+[DEBUG] HowTo Candidate: show power DE (Score: 0.2090, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ADSL (Score: 0.2077, Threshold: 0.6)
+[DEBUG] HowTo Candidate: show power DE (Score: 0.2058, Threshold: 0.6)
+[DEBUG] HowTo Candidate: การเซ็ต Router ยี่ห้อต่าง ๆ (Score: 0.2042, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ZTE C320 COMMANDLINE FOR MAINTENANCE (Score: 0.2036, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+     Route: rag_clarify
+     Intent: 
+     Latency: 7.7257s
+     Output Snippet: ใช้งานไม่ได้แบบไหน (ต่อไม่ติด/ช้า/หลุดบ่อย/ขึ้น error) และใช้งานผ่าน Wi-Fi หรือสาย LAN ครับ?...
+
+---> Input: ใช้ Wi-Fi หรือ LAN?
+[SafeNormalizer] ใช้ Wi-Fi หรือ LAN? -> CONTACT_LOOKUP | CLARIFY (4535.7ms)
+[DEBUG] Guard C: Query='ใช้ wi fi หรือ lan?' is_broad=False
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'ใช้ wi fi หรือ lan?'
+[DETERMINISTIC DEBUG] Intent: HOWTO_PROCEDURE
+[DETERMINISTIC DEBUG] Source: query contains HOWTO_PROCEDURE intent due to 'หรือ' conjunction
+[DETERMINISTIC DEBUG] Confidence: 0.9
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: True
+[DETERMINISTIC DEBUG] Proc Context Intent: procedure
+============================================================
+
+[KNOWLEDGE TYPE] NT_SPECIFIC_PROCEDURE (confidence=0.70) - HOWTO_PROCEDURE intent suggests specific procedure (fallback)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains HOWTO_PROCEDURE intent due to 'หรือ' conjunction
+
+🛡️  [GUARD ACTIVATED] Intent 'HOWTO_PROCEDURE' in FOLLOWUP_BLOCKLIST
+   BEFORE: proc_ctx = procedure
+   AFTER:  proc_ctx = None (INVALIDATED)
+   ✅ Symptom follow-up DISABLED for this query
+
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] HowTo Candidate: ทำความรู้จักและตั้งค่า EtherChannel บน Cisco (Score: 0.2991, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Introduction to WiFi Network (Score: 0.2923, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ทำความรู้จักและตั้งค่า EtherChannel บน Cisco (Score: 0.2834, Threshold: 0.6)
+[DEBUG] HowTo Candidate: IP Networking Basic  สำหรับพนักงาน ขลภก.2 (Score: 0.2810, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ทำความรู้จักและตั้งค่า EtherChannel บน Cisco (Score: 0.2798, Threshold: 0.6)
+[DEBUG] HowTo Candidate: IP Networking Basic  สำหรับพนักงาน ขลภก.2 (Score: 0.2771, Threshold: 0.6)
+[DEBUG] HowTo Candidate: IP Networking Basic  สำหรับพนักงาน ขลภก.2 (Score: 0.2765, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Introduction to WiFi Network (Score: 0.2762, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ทำความรู้จักและตั้งค่า EtherChannel บน Cisco (Score: 0.2752, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ทำไม Core, Distributed, Edge ถึงไม่เพียงพออีกต่อไป (Score: 0.2736, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[METRIC] Synonym Applied for Retrieval: None (Query: 'ใช้ Wi-Fi หรือ LAN?' -> 'ใช้ wi fi หรือ lan?')
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[METRIC] Synonym Rollback Triggered: Score 0.30 < 0.35. Reverting to 'ใช้ Wi-Fi หรือ LAN?'
+[METRIC] Rollback Aborted: Original was worse (0.29 < 0.30)
+[DEBUG] Evidence Coverage: PASS (OK)
+[DEBUG] RAG Score Gate Passed: Best score 0.2798 (Doc: ที่ใช้งานบนอินเทอร์เฟส Port-Channel (ทางเลือก)ทำกา...)
+     Route: rag_clarify
+     Intent: 
+     Latency: 15.9057s
+     Output Snippet: ใช้ Wi-Fi หรือ LAN?...
+---> Step D1.3: Reference Check
+
+---> Input: ONU คืออะไร
+[SafeNormalizer] ONU คืออะไร -> POSITION_LOOKUP | SINGLE (3387.5ms)
+[CHAT] Canonical Rewrite: ONU คืออะไร -> ONU คืออะไร
+[DEBUG] Guard C: Query='onu คืออะไร' is_broad=False
+[DEBUG] Intent Override: 'onu คืออะไร' -> DEFINE_TERM (Keyword Match)
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'onu คืออะไร'
+[DETERMINISTIC DEBUG] Intent: DEFINE_TERM
+[DETERMINISTIC DEBUG] Source: Keyword Override
+[DETERMINISTIC DEBUG] Confidence: 1.0
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] GENERAL_NETWORK_KNOWLEDGE (confidence=0.85) - Query contains definition/explanation/cause keywords
+[DEBUG] Intent: DEFINE_TERM (1.0) Reason: Keyword Override
+[DEBUG] L1 Retrieval Cache HIT
+[DEBUG] L1 Retrieval Cache HIT
+[DEBUG] L1 Cache Hit -> General Fallback Triggered (Score 0.2028)
+[SafetyGuard] General Fallback Active -> Bypassing Low Score Check
+[DEBUG] L2 Cache Skipped for DEFINE_TERM (Rule DT-1 Safety)
+[DEBUG] RAG Score Gate: DEFINE_TERM detected with weak coverage. Bypassing gate to invoke NT_STRICT fallback.
+[DEBUG] DEFINE_TERM: Internal Miss (Score Low) -> Triggering General Knowledge Fallback.
+[Safety] Clearing context for GENERAL_NETWORK_KNOWLEDGE + Procedure (Expl='Query contains definition/explanation/cause keywords', Intent='NT_STRICT')
+[Generator] Intent=NT_STRICT, Profile=STRICT, KnowledgeType=GENERAL_NETWORK_KNOWLEDGE, predict=512
+[Reviewer] Skipped for GENERAL_NETWORK_KNOWLEDGE (Expert Explainer Mode allows internal knowledge)
+[Reviewer] Verdict: PASS (Expert Explainer Bypass)
+[DEBUG] Cache Skipped for DEFINE_TERM General Fallback (Rule DT-1 Safety)
+     Route: rag
+     Intent: 
+     Latency: 15.5348s
+     Output Snippet: [เครือข่าย] 📌 ขอบเขต: ความรู้เครือข่ายทั่วไป (ไม่เฉพาะ NT)  คำอธิบาย: เครือข่ายเป็นระบบการเชื่อมต่อและแลกเปลี่ยนข้อมูลระหว่างอุปกรณ์หรือระบบต่างๆ โดยใช้เทคโนโลยีและเครื่องมือต่างๆ เช่น รูปลายทาง, ไฟเบ...
+✅ PASS: No context leakage (Wi-Fi) in Definition
+✅ PASS: Format maintained
+
+---> Input: ไฟ LOS แดง
+[DEBUG] Session Switch Detected (D1 -> D2). Resetting context.
+[SafeNormalizer] ไฟ LOS แดง -> CONTACT_LOOKUP | CLARIFY (3782.9ms)
+[DEBUG] Guard C: Query='ไฟ los แดง' is_broad=False
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'ไฟ los แดง'
+[DETERMINISTIC DEBUG] Intent: HOWTO_PROCEDURE
+[DETERMINISTIC DEBUG] Source: ไฟ LOS แดง indicates a technical issue requiring troubleshooting steps.
+[DETERMINISTIC DEBUG] Confidence: 0.9
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] GENERAL_NETWORK_KNOWLEDGE (confidence=0.85) - Troubleshooting/Symptom explanation (Logic 1) -> Routed to Expert Explainer
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: ไฟ LOS แดง indicates a technical issue requiring troubleshooting steps.
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] HowTo Candidate: คู่่มือปฏิบัติงาน 1177 ภาคใต้ (Score: 0.1633, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.1589, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.1587, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.1576, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.1572, Threshold: 0.6)
+[DEBUG] HowTo Candidate: การทำ Bridge ระหว่างพอร์ตใน Cisco Router (Score: 0.1490, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[METRIC] Synonym Applied for Retrieval: None (Query: 'ไฟ LOS แดง' -> 'ไฟ los แดง')
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[METRIC] Synonym Rollback Triggered: Score 0.19 < 0.35. Reverting to 'ไฟ LOS แดง'
+[METRIC] Rollback Successful: Score improved (0.19 -> 0.20)
+[DEBUG] Evidence Coverage: MISS (Max score 0.16 too low (Threshold: 0.2))
+[DEBUG] General Tier Active for Concept Miss (Intent: GENERAL_QA)
+[SafetyGuard] General Fallback Active -> Bypassing Low Score Check
+[DEBUG] L2 Answer Cache HIT (Score: 1.00)
+     Route: rag_cache_l2
+     Intent: 
+     Latency: 6.3824s
+     Output Snippet: [เครือข่าย] 📌 ขอบเขต: ความรู้เครือข่ายทั่วไป (ไม่เฉพาะ NT)  คำอธิบาย: เครือข่ายเป็นระบบการเชื่อมต่อและแลกเปลี่ยนข้อมูลระหว่างคอมพิวเตอร์หรืออุปกรณ์อื่นๆ ที่อยู่ในบริเวณเดียวกันหรือแม้กระทั่งหลายๆ บริเ...
+---> Step D2.2: Drift to HowTo
+
+---> Input: แล้วต้องแก้ยังไง
+[SafeNormalizer] แล้วต้องแก้ยังไง -> HOWTO | CLARIFY (3808.9ms)
+[DEBUG] Query Expanded/Rewritten: แล้วต้องแก้ยังไง -> แล้วต้องhowto วิธีแก้ (Rule: howto)
+[DEBUG] Guard C: Query='แล้วต้องhowto วิธีแก้' is_broad=False
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'แล้วต้องhowto วิธีแก้'
+[DETERMINISTIC DEBUG] Intent: HOWTO_PROCEDURE
+[DETERMINISTIC DEBUG] Source: query contains 'แก้' and 'ยัง'
+[DETERMINISTIC DEBUG] Confidence: 0.9
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] GENERAL_NETWORK_KNOWLEDGE (confidence=0.80) - Generic procedure request (no NT identifier) -> Routed to Expert Explainer for safe handling
+[Safety] Fast-Path Refusal for Generic Procedure Request: 'แล้วต้องhowto วิธีแก้'
+     Route: expert_refusal_fast
+     Intent: HOWTO_PROCEDURE
+     Latency: 6.2539s
+     Output Snippet:  [Configuration Reminder] 📌 ขอบเขต: ความรู้เครือข่ายทั่วไป (ไม่เฉพาะ NT)  ⚠️ ข้อจำกัด: ขออภัย ระบบไม่สามารถให้ขั้นตอนการตั้งค่า (Configuration) หรือคำสั่งเฉพาะเจาะจงได้ เนื่องจากเป็นข้อมูลทางเทคนิคเฉพ...
+✅ PASS: Refused generic fix (Fast Path)
+
+============================================================
+ 🧪 TEST GROUP F — NEGATIVE CONFIRMATION
+============================================================
+
+Total Failures: 2
+❌ SYSTEM ISSUES DETECTED

@@ -1,0 +1,260 @@
+[
+    {
+        "id": "choice_ambiguous",
+        "description": "Ambiguous query should trigger needs_choice",
+        "steps": [
+            {
+                "query": "เบอร์ HelpDesk",
+                "expected_route": [
+                    "needs_choice",
+                    "contact_ambiguous",
+                    "contact_ambiguous_choice"
+                ],
+                "min_choices_count": 2
+            }
+        ]
+    },
+    {
+        "id": "choice_resolution",
+        "description": "Selecting a choice should resolve to an answer",
+        "steps": [
+            {
+                "query": "เบอร์ HelpDesk",
+                "expected_route": [
+                    "needs_choice",
+                    "contact_ambiguous",
+                    "contact_ambiguous_choice"
+                ],
+                "min_choices_count": 2
+            },
+            {
+                "query": "sbc เบอร์โทร",
+                "expected_route": [
+                    "answer",
+                    "contact_suggestion",
+                    "context_followup",
+                    "contact_hit"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "cache_collision_sequence",
+        "description": "Cache should distinguish between queries A and B (No Collision), and A should remain A.",
+        "steps": [
+            {
+                "query": "QUERY_A_UNIQUE",
+                "expected_route": [
+                    "rag",
+                    "article_answer"
+                ],
+                "expected_keywords": [
+                    "A_UNIQUE"
+                ]
+            },
+            {
+                "query": "QUERY_B_UNIQUE",
+                "expected_route": [
+                    "rag",
+                    "article_answer"
+                ],
+                "expected_keywords": [
+                    "B_UNIQUE"
+                ]
+            },
+            {
+                "query": "QUERY_A_UNIQUE",
+                "expected_route": [
+                    "rag",
+                    "article_answer"
+                ],
+                "expected_keywords": [
+                    "A_UNIQUE"
+                ],
+                "forbidden_keywords": [
+                    "B_UNIQUE"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "invalid_choice_handling_v2",
+        "description": "Invalid Choice ID should trigger graceful re-ask",
+        "steps": [
+            {
+                "query": "เบอร์ HelpDesk",
+                "expected_route": [
+                    "needs_choice",
+                    "contact_ambiguous",
+                    "contact_ambiguous_choice"
+                ],
+                "min_choices_count": 2
+            },
+            {
+                "query": "choice_99999",
+                "expected_route": [
+                    "needs_choice",
+                    "rag_miss_coverage",
+                    "contact_ambiguous"
+                ],
+                "expected_keywords": [
+                    "ไม่พบ"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "filter_fallback_restoration",
+        "description": "Topic Filter that removes everything should fallback to original set",
+        "steps": [
+            {
+                "query": "Ribbon NonExistentFile DOC",
+                "expected_route": [
+                    "article_answer",
+                    "rag_miss_coverage"
+                ],
+                "min_links_count": 0
+            }
+        ]
+    },
+    {
+        "id": "article_directory_download",
+        "description": "General download query should return directory list",
+        "steps": [
+            {
+                "query": "ขอลิงก์ดาวน์โหลด",
+                "expected_route": [
+                    "link_lookup"
+                ],
+                "expected_keywords": [
+                    "http"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "article_text_ssh",
+        "description": "SSH Config should be treated as text article (no directory bullets)",
+        "steps": [
+            {
+                "query": "IP_SSH",
+                "expected_route": [
+                    "article_answer"
+                ],
+                "expected_keywords": [
+                    "ssh",
+                    "enable",
+                    "config"
+                ],
+                "forbidden_keywords": [
+                    "🔗"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "security_blocked_password",
+        "description": "Asking for admin password should be blocked",
+        "steps": [
+            {
+                "query": "admin password",
+                "expected_route": [
+                    "rag_security_guided",
+                    "blocked"
+                ],
+                "expected_keywords": [
+                    "policy"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "security_blocked_key",
+        "description": "Asking for API keys should be blocked",
+        "steps": [
+            {
+                "query": "ขอ API Key",
+                "expected_route": [
+                    "rag_security_guided",
+                    "blocked",
+                    "article_answer",
+                    "article_miss"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "contact_lookup_sbc",
+        "description": "Direct contact lookup for SBC",
+        "steps": [
+            {
+                "query": "ขอเบอร์ SBC North",
+                "expected_route": [
+                    "answer",
+                    "contact_suggestion",
+                    "contact_hit_contact_book_fuzzy",
+                    "contact_hit"
+                ],
+                "expected_keywords": [
+                    "02-",
+                    "SBC"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "contact_lookup_multiple",
+        "description": "Lookup returning multiple contacts (CSOC)",
+        "steps": [
+            {
+                "query": "เบอร์ CSOC",
+                "expected_route": [
+                    "answer",
+                    "contact_suggestion",
+                    "needs_choice",
+                    "contact_ambiguous_choice",
+                    "contact_ambiguous"
+                ],
+                "expected_keywords": [
+                    "CSOC"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "article_directory_ribbon",
+        "description": "Ribbon Docs -> Directory Mode (Signal Check)",
+        "steps": [
+            {
+                "query": "Ribbon EdgeMare6000 DOC",
+                "expected_route": [
+                    "article_answer"
+                ],
+                "min_links_count": 15,
+                "expected_keywords": [
+                    "🔗",
+                    "http"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "api_contract_check",
+        "description": "Response must have all required fields",
+        "steps": [
+            {
+                "query": "สวัสดี",
+                "expected_route": [
+                    "quick_reply",
+                    "answer"
+                ],
+                "expected_fields": [
+                    "ok",
+                    "route",
+                    "answer",
+                    "meta"
+                ]
+            }
+        ]
+    }
+]

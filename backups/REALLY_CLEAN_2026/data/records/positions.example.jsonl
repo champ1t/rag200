@@ -1,0 +1,3 @@
+{"role": "Network Supervisor", "name": "นายสมชาย ใจดี (ชาย)", "source": "http://<INTERNAL_IP>/smc/...", "phones": ["0-7425-0685 #101", "0-7424-0089"], "emails": ["somchai@company.co.th"]}
+{"role": "Field Engineer", "name": "นายวิชัย ทำงานเก่ง (ไบร์ท)", "source": "http://<INTERNAL_IP>/smc/...", "phones": ["0-7425-1313"], "emails": []}
+{"role": "HelpDesk", "name": "นายธนวัฒน์ ช่วยเหลือดี (แบงค์)", "source": "http://<INTERNAL_IP>/smc/...", "phones": ["0-7425-0685 #110"], "emails": []}

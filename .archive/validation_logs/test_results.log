@@ -1,0 +1,26 @@
+
+🔍 DETERMINISTIC LAYER VALIDATION TEST SUITE
+Zero-tolerance validation of deterministic routing correctness
+
+
+============================================================
+TEST SUITE A: DEFINE / EXPLAIN IMMUNITY
+============================================================
+[INFO] Loading resources...
+[VectorStore] Using SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/test_deterministic_validation.py", line 247, in <module>
+    run_test_suite_a()
+    ~~~~~~~~~~~~~~~~^^
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/test_deterministic_validation.py", line 116, in run_test_suite_a
+    test_case("A1", "ONU คืออะไร", "DEFINE_TERM", forbidden,
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+              "Definition query must not trigger symptom follow-up")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/test_deterministic_validation.py", line 39, in test_case
+    result = engine.chat(query)
+             ^^^^^^^^^^^
+AttributeError: 'ChatEngine' object has no attribute 'chat'

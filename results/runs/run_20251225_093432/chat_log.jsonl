@@ -1,0 +1,3 @@
+{"ts": 1766630088.487, "question": "เบอร์คุณ เฉลิมรัตน์", "answer": "คุณ เฉลิมรัตน์ อัศวทรงพล\n02-575-7222\n085-813-5083", "route": "contact_lookup", "lookup_hit": true, "latency_ms": 0.4699230194091797}
+{"ts": 1766630093.8566, "question": "02-575-7222", "answer": "REVERSE_LOOKUP_HIT", "route": "contact_lookup", "lookup_hit": true, "latency_ms": 0.8449554443359375}
+{"ts": 1766630108.831542, "question": "RNOC หาดใหญ่", "answer": "ศูนย์ RNOC หาดใหญ่\n074-856-174\n081-417-0144", "route": "contact_lookup", "lookup_hit": true, "latency_ms": 0.308990478515625}

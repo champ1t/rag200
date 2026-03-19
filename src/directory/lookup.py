@@ -173,9 +173,13 @@ def precompute_record(r: Dict[str, Any]) -> Dict[str, Any]:
     if latin_concat and len(latin_concat) > 2:
         aliases.add(latin_concat)
         
-    # B.4 Abbreviations (Explicit whitelist)
-    # Add common terms to alias set to ensure robust matching?
-    # Actually matching logic checks tokens, so just ensuring the name is clean is enough.
+    # B.5 Tags (Phase 240)
+    for tag in r.get("tags", []):
+        tag_norm = normalize_for_matching(tag)
+        if tag_norm:
+            aliases.add(tag_norm)
+            # Break down tag into tokens too
+            r["tokens"].update(tag_norm.split())
     
     r["alias_set"] = aliases
     r["_precomputed"] = True
@@ -480,6 +484,12 @@ def lookup_phones(q: str, records: List[Dict[str, Any]]) -> List[Dict[str, Any]]
         # Special Latin Transposition/Typo Rule (Rule C.3)
         # "ipphone" vs "ip phone" handled by alias/normalization
         
+        # Special Tag-Based Priority (Phase 241)
+        # Prioritize records with "เบอร์ติดต่อหน่วยงานต่างๆ" tag for contact queries
+        has_phone_tag = any("เบอร์ติดต่อหน่วยงานต่างๆ" in t for t in r.get("tags", []))
+        if has_phone_tag and score > 0:
+            score += 5 # Small boost for official contact points
+            
         if score >= 60:
             # Inject Score
             hit = dict(r)
@@ -493,7 +503,8 @@ def lookup_phones(q: str, records: List[Dict[str, Any]]) -> List[Dict[str, Any]]
             candidates.append(hit)
             
     # Sort
-    candidates.sort(key=lambda x: (x["_score"], x.get("name", "")), reverse=True)
+    # Phase 241: Sort by score desc, then prioritize phone tag among same scores
+    candidates.sort(key=lambda x: (x["_score"], any("เบอร์ติดต่อหน่วยงานต่างๆ" in t for t in x.get("tags", [])), x.get("name", "")), reverse=True)
     return candidates
 
 

@@ -119,19 +119,26 @@ def format_candidate_list(candidates: List[Dict[str, Any]], max_items: int = 10)
     if not candidates:
         return "ไม่พบข้อมูลที่ระบุเจาะจง"
         
-    lines = ["พบข้อมูลที่ใกล้เคียงกันหลายรายการ:"]
+    lines = ["พบข้อมูลการติดต่อดังนี้:\n"]
     
     for i, c in enumerate(candidates[:max_items]):
         name = c.get("name", "Unknown")
         phones = c.get("phones", [])
-        phone_str = ", ".join(phones) if phones else "ไม่มีเบอร์โทร"
+        source = c.get("source_url", "ไม่พบข้อมูลอ้างอิง")
         
-        # Format: 1) Name (Phone)
-        lines.append(f"{i+1}) {name} ({phone_str})")
+        lines.append(f"**{name}**")
+        if phones:
+            for p in phones:
+                lines.append(f"- เบอร์โทร: {p}")
+        else:
+            lines.append(f"- เบอร์โทร: (ไม่พบข้อมูล)")
+            
+        if source:
+            lines.append(f"- แหล่งที่มา: {source}")
+        lines.append("") # Empty line separator
         
     if len(candidates) > max_items:
-        lines.append(f"... และข้อมูลอื่นๆ อีก {len(candidates) - max_items} รายการ")
+        lines.append(f"\n_... และข้อมูลอื่นๆ อีก {len(candidates) - max_items} รายการ_")
         
-    lines.append("\nพิมพ์หมายเลขหรือชื่อที่ต้องการได้เลยครับ")
-    return "\n".join(lines)
+    return "\n".join(lines).strip()
 

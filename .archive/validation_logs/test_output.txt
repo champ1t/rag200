@@ -1,0 +1,147 @@
+[DEBUG_INTERNAL_START] _process_logic entered. q='!!!'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL_START] _process_logic entered. q='   '
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL_START] _process_logic entered. q='config router'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL] det_hit: None, type: <class 'NoneType'>
+[DEBUG_INTERNAL_START] _process_logic entered. q='Cisco? ไม่ใช่ Huawei NE8000 นะ'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL_START] _process_logic entered. q='ne8000'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL] det_hit: None, type: <class 'NoneType'>
+[DEBUG_INTERNAL_START] _process_logic entered. q='Huawei NE eight thousand'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL] det_hit: None, type: <class 'NoneType'>
+[DEBUG_INTERNAL_START] _process_logic entered. q='Hua wei NE 8000 cfg'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL] det_hit: None, type: <class 'NoneType'>
+F[DEBUG_INTERNAL_START] _process_logic entered. q='huawei ne-8000'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL] det_hit: {'match_type': 'deterministic', 'score': 1.0, 'url': 'http://10.192.133.33/smc/article/valid', 'title': 'Huawei NE8000 Config', 'text': 'Valid Content'}, type: <class 'dict'>
+[DEBUG_INTERNAL_START] _process_logic entered. q='ขอ Huawei NE8000 หน่อยครับ!!!'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL] det_hit: {'match_type': 'deterministic', 'score': 1.0, 'url': 'http://10.192.133.33/smc/article/valid', 'title': 'Huawei NE8000 Config', 'text': 'Valid Content'}, type: <class 'dict'>
+
+======================================================================
+FAIL: test_chaos_inputs (__main__.TestChaosInputFuzzing.test_chaos_inputs) (input='Hua wei NE 8000 cfg', desc='Noisy spelling - Strict Test')
+Test a variety of chaotic inputs.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/test_chaos_input_fuzzing.py", line 153, in test_chaos_inputs
+    self.assertEqual(route, "article_answer", f"Expected SUCCESS for '{inp}', got '{route}'")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'rag_miss_coverage' != 'article_answer'
+- rag_miss_coverage
++ article_answer
+ : Expected SUCCESS for 'Hua wei NE 8000 cfg', got 'rag_miss_coverage'
+
+----------------------------------------------------------------------
+Ran 1 test in 8.474s
+
+FAILED (failures=1)
+[INFO] SMC Hardening ACTIVE. Policy: ['enabled', 'vendor_match', 'model_match', 'web_search_technical', 'fallback_chain', 'similarity_threshold', 'logging']
+[INFO] Enforcing Hardened Threshold: 0.7
+[INFO] Loading resources...
+[VectorStore] Using SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[ProcessedCache] Loaded 14 aliases
+[ProcessedCache] Loading processed data from data/processed...
+[ProcessedCache] Found 144 files
+[ProcessedCache] Loaded 144 docs, 4371 links
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+Testing: '!!!'
+[GOVERNANCE] Identified Intent: UNKNOWN
+[GOVERNANCE] Request Category: UNKNOWN
+[GOVERNANCE] STRICT BLOCK: Category UNKNOWN != TECH_ARTICLE_LOOKUP
+[AUDIT] 1770697417.357653 | Status: SUCCESS | Route: blocked_scope | ArticleID: N/A | Reason: None
+Testing: '   '
+[GOVERNANCE] Identified Intent: UNKNOWN
+[GOVERNANCE] Request Category: UNKNOWN
+[GOVERNANCE] STRICT BLOCK: Category UNKNOWN != TECH_ARTICLE_LOOKUP
+[AUDIT] 1770697417.358284 | Status: SUCCESS | Route: blocked_scope | ArticleID: N/A | Reason: None
+Testing: 'config router'
+[GOVERNANCE] Identified Intent: TECH_ARTICLE_LOOKUP
+[GOVERNANCE] Request Category: TECH_ARTICLE_LOOKUP
+[TEST DEBUG] find_best_article_match called with: 'config router'
+[CHAT] Canonical Rewrite: config router -> config router
+[TEST DEBUG] find_best_article_match called with: 'config router'
+[GOVERNANCE] RELAXED: Command/Config detected in 'config router'. Allowing RAG with Source Fidelity.
+[DEBUG] Guard C: Query='config router' is_broad=False
+[Router] LLM Routing Failed: Invalid URL 'mock/api/generate': No scheme supplied. Perhaps you meant https://mock/api/generate?. Falling back to Keyword Router.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: Document/Manual Keyword Match
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[DEBUG] Evidence Coverage: MISS (No results found)
+[AUDIT] 1770697417.490695 | Status: SUCCESS | Route: rag_miss_coverage | ArticleID: N/A | Reason: None
+Testing: 'Cisco? ไม่ใช่ Huawei NE8000 นะ'
+[GOVERNANCE] Identified Intent: AMBIGUOUS
+[GOVERNANCE] Request Category: UNKNOWN
+[GOVERNANCE] STRICT BLOCK: Category UNKNOWN != TECH_ARTICLE_LOOKUP
+[AUDIT] 1770697417.4915042 | Status: SUCCESS | Route: blocked_scope | ArticleID: N/A | Reason: None
+Testing: 'ne8000'
+[GOVERNANCE] Identified Intent: TECH_ARTICLE_LOOKUP
+[GOVERNANCE] Request Category: TECH_ARTICLE_LOOKUP
+[TEST DEBUG] find_best_article_match called with: 'ne8000'
+[CHAT] Canonical Rewrite: ne8000 -> ne8000
+[TEST DEBUG] find_best_article_match called with: 'ne8000'
+[DEBUG] Guard C: Query='ne8000' is_broad=False
+[DEBUG] Intent Override: 'ne8000' -> DEFINE_TERM (Short Abbreviation)
+[DEBUG] Intent: DEFINE_TERM (1.0) Reason: Keyword Override
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[DEBUG] Evidence Coverage: MISS (No results found)
+[DEBUG] General Tier Active for Concept Miss (Intent: DEFINE_TERM)
+[SafetyGuard] General Fallback Active -> Bypassing Low Score Check
+[DEBUG] L2 Cache Skipped for DEFINE_TERM (Rule DT-1 Safety)
+[AUDIT] 1770697417.504406 | Status: SUCCESS | Route: rag_no_docs | ArticleID: N/A | Reason: None
+Testing: 'Huawei NE eight thousand'
+[GOVERNANCE] Identified Intent: TECH_ARTICLE_LOOKUP
+[GOVERNANCE] Request Category: TECH_ARTICLE_LOOKUP
+[TEST DEBUG] find_best_article_match called with: 'Huawei NE eight thousand'
+[CHAT] Canonical Rewrite: Huawei NE eight thousand -> Huawei NE eight thousand
+[TEST DEBUG] find_best_article_match called with: 'Huawei NE eight thousand'
+[DEBUG] Guard C: Query='huawei ne eight thousand' is_broad=False
+[Router] LLM Routing Failed: Invalid URL 'mock/api/generate': No scheme supplied. Perhaps you meant https://mock/api/generate?. Falling back to Keyword Router.
+[corrector] Error: Invalid URL 'mock/api/generate': No scheme supplied. Perhaps you meant https://mock/api/generate?
+[DEBUG] Intent: GENERAL_QA (1.0) Reason: Default Fallback
+[METRIC] Synonym Applied for Retrieval: None (Query: 'Huawei NE eight thousand' -> 'huawei ne eight thousand')
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[DEBUG] Evidence Coverage: MISS (No results found)
+[AUDIT] 1770697417.52002 | Status: SUCCESS | Route: rag_miss_coverage | ArticleID: N/A | Reason: None
+Testing: 'Hua wei NE 8000 cfg'
+[GOVERNANCE] Identified Intent: TECH_ARTICLE_LOOKUP
+[GOVERNANCE] Request Category: TECH_ARTICLE_LOOKUP
+[TEST DEBUG] find_best_article_match called with: 'Hua wei NE 8000 cfg'
+[CHAT] Canonical Rewrite: Hua wei NE 8000 cfg -> huawei ne8000 cfg
+[TEST DEBUG] find_best_article_match called with: 'huawei ne8000 cfg'
+[GOVERNANCE] Deterministic Match Found (Post-Normalization): Huawei NE8000 Config
+[DEBUG] Guard C: Query='huawei ne8000 cfg' is_broad=False
+[Router] LLM Routing Failed: Invalid URL 'mock/api/generate': No scheme supplied. Perhaps you meant https://mock/api/generate?. Falling back to Keyword Router.
+[corrector] Error: Invalid URL 'mock/api/generate': No scheme supplied. Perhaps you meant https://mock/api/generate?
+[DEBUG] Intent: GENERAL_QA (1.0) Reason: Default Fallback
+[DEBUG] Knowledge Alias Trigger: 'huawei ne8000 cfg' -> Forcing HOWTO_PROCEDURE (Tech Pattern Alias Trigger (Not a Team))
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[METRIC] Synonym Applied for Retrieval: None (Query: 'Hua wei NE 8000 cfg' -> 'hua wei ne 8000 cfg')
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[DEBUG] Evidence Coverage: MISS (No results found)
+[AUDIT] 1770697417.546468 | Status: SUCCESS | Route: rag_miss_coverage | ArticleID: N/A | Reason: None
+Testing: 'huawei ne-8000'
+[GOVERNANCE] Identified Intent: TECH_ARTICLE_LOOKUP
+[GOVERNANCE] Request Category: TECH_ARTICLE_LOOKUP
+[TEST DEBUG] find_best_article_match called with: 'huawei ne-8000'
+[GOVERNANCE] Deterministic Match Found: Huawei NE8000 Config (1.00)
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/article/valid
+[DEBUG] article_content type: <class 'unittest.mock.MagicMock'>
+[AUDIT] 1770697417.550433 | Status: SUCCESS | Route: article_answer | ArticleID: N/A | Reason: None
+Testing: 'ขอ Huawei NE8000 หน่อยครับ!!!'
+[GOVERNANCE] Identified Intent: TECH_ARTICLE_LOOKUP
+[GOVERNANCE] Request Category: TECH_ARTICLE_LOOKUP
+[TEST DEBUG] find_best_article_match called with: 'ขอ Huawei NE8000 หน่อยครับ!!!'
+[GOVERNANCE] Deterministic Match Found: Huawei NE8000 Config (1.00)
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/article/valid
+[DEBUG] article_content type: <class 'unittest.mock.MagicMock'>
+[AUDIT] 1770697417.551151 | Status: SUCCESS | Route: article_answer | ArticleID: N/A | Reason: None
+<sys>:0: ResourceWarning: unclosed <ssl.SSLSocket fd=11, family=2, type=1, proto=0, laddr=('192.168.0.27', 49882), raddr=('3.229.62.68', 443)>

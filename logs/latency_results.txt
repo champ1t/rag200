@@ -1,0 +1,33 @@
+=== Latency Check (Router Optimization) ===
+[INFO] Loading resources...
+[VectorStore] Loading BM25 index from data/bm25_index.json...
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+Init Time: 14.95s
+
+--- Testing Type A (Intent) ---
+Query: ติดต่อ helpdesk
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: CONTACT_LOOKUP (0.9) Reason: เบอร์ helpdesk
+[DEBUG] Route: CONTACT_LOOKUP (via Handler)
+Total Latency: 3.38s
+Answer Sample: [Help Desk ภ.4]
+- เบอร์โทร: 074-251-313
+- Source: http://10.192.133.33/smc/index.php?option=com_cont...
+
+--- Testing Type B (Tutorial) ---
+Query: what is mpls
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Corrected Query: 'what is mpls' -> 'what is MPLS'
+[DEBUG] Intent: GENERAL_QA (0.8) Reason: query does not match any specific category
+[DEBUG] Knowledge Alias Trigger: 'what is MPLS' -> Forcing HOWTO_PROCEDURE (Tech Pattern Alias Trigger (Not a Team))
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] HowTo Link Match: 'what is MPLS' -> http://whatismyipaddress.com/ip/ (Score: 0.8181818181818182)
+[DEBUG] News/Article Route -> http://whatismyipaddress.com/ip/
+[DEBUG] Article content not found in cache for http://whatismyipaddress.com/ip/
+Total Latency: 127.68s
+Answer Sample: ไม่ดึงข้อมูลเนื้อหาข่าวได้ (Content Not Found)...
+
+=== Check Complete ===
+Breakdown: {'routing': 0.0, 'embed': 0.0, 'vector_search': 0.0, 'bm25': 0.0, 'fusion': 0.0, 'controller': 0.0, 'retrieval_opt': 0.0, 'generator': 0.0, 'evaluator': 0.0, 'clarify': 0.0, 'total': 0.0, 'llm': 0.0}

@@ -1,0 +1,2 @@
+{"ts": 1770704032.832514, "question": "syntax zte", "answer": "ไม่พบบทความ SMC ที่เป็น Command โดยตรง", "route": "blocked_intent", "latencies": {"total": 0.009270906448364258}}
+{"ts": 1770704041.9775171, "question": "zte sw command", "answer": "ไม่พบบทความ SMC ที่เป็น Command โดยตรง", "route": "blocked_intent", "latencies": {"total": 0.0050067901611328125}}

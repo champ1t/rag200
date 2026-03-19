@@ -1,0 +1,1 @@
+{"ts": 1771204835.8170922, "question": "ขอเบอร์ศูนย์หาดใหญ่", "answer": "**ทีม:** ศูนย์ OMC หาดใหญ่ (0 คน)", "route": "team_hit", "latencies": {"routing": 0.0, "embed": 0.0, "vector_search": 0.0, "bm25": 0.0, "fusion": 0.0, "controller": 0.0, "retrieval_opt": 0.0, "generator": 0.0, "evaluator": 0.0, "clarify": 0.0, "total": 0.0, "llm": 0.0}}

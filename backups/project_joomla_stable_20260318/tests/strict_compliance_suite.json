@@ -1,0 +1,4239 @@
+[
+  {
+    "test_id": "TEST_0001",
+    "type": "EXACT",
+    "query": "ศูนย์ OMC หาดใหญ่",
+    "expected_match": "ศูนย์ OMC หาดใหญ่",
+    "expected_phones": [
+      "074-251-135"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0002",
+    "type": "VARIANT_MERGED",
+    "query": "ศูนย์OMCหาดใหญ่",
+    "expected_match": "ศูนย์ OMC หาดใหญ่",
+    "expected_phones": [
+      "074-251-135"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0003",
+    "type": "VARIANT_PREFIX_STRIP",
+    "query": "OMC หาดใหญ่",
+    "expected_match": "ศูนย์ OMC หาดใหญ่",
+    "expected_phones": [
+      "074-251-135"
+    ],
+    "notes": "Stripped prefix ศูนย์"
+  },
+  {
+    "test_id": "TEST_0004",
+    "type": "EXACT",
+    "query": "ศูนย์ RNOC หาดใหญ่",
+    "expected_match": "ศูนย์ RNOC หาดใหญ่",
+    "expected_phones": [
+      "074-856-174",
+      "081-417-0144"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0005",
+    "type": "VARIANT_MERGED",
+    "query": "ศูนย์RNOCหาดใหญ่",
+    "expected_match": "ศูนย์ RNOC หาดใหญ่",
+    "expected_phones": [
+      "074-856-174",
+      "081-417-0144"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0006",
+    "type": "VARIANT_PREFIX_STRIP",
+    "query": "RNOC หาดใหญ่",
+    "expected_match": "ศูนย์ RNOC หาดใหญ่",
+    "expected_phones": [
+      "074-856-174",
+      "081-417-0144"
+    ],
+    "notes": "Stripped prefix ศูนย์"
+  },
+  {
+    "test_id": "TEST_0007",
+    "type": "EXACT",
+    "query": "ศูนย์ OMC พุนพิน",
+    "expected_match": "ศูนย์ OMC พุนพิน",
+    "expected_phones": [
+      "077-312-085"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0008",
+    "type": "VARIANT_MERGED",
+    "query": "ศูนย์OMCพุนพิน",
+    "expected_match": "ศูนย์ OMC พุนพิน",
+    "expected_phones": [
+      "077-312-085"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0009",
+    "type": "VARIANT_PREFIX_STRIP",
+    "query": "OMC พุนพิน",
+    "expected_match": "ศูนย์ OMC พุนพิน",
+    "expected_phones": [
+      "077-312-085"
+    ],
+    "notes": "Stripped prefix ศูนย์"
+  },
+  {
+    "test_id": "TEST_0010",
+    "type": "EXACT",
+    "query": "ศุนย์ บริหาร รกภ.4",
+    "expected_match": "ศุนย์ บริหาร รกภ.4",
+    "expected_phones": [
+      "074-251-451"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0011",
+    "type": "VARIANT_SPACING",
+    "query": "ศุนย์ บริหาร รกภ 4",
+    "expected_match": "ศุนย์ บริหาร รกภ.4",
+    "expected_phones": [
+      "074-251-451"
+    ],
+    "notes": "Removed punctuation/spaces"
+  },
+  {
+    "test_id": "TEST_0012",
+    "type": "VARIANT_MERGED",
+    "query": "ศุนย์บริหารรกภ.4",
+    "expected_match": "ศุนย์ บริหาร รกภ.4",
+    "expected_phones": [
+      "074-251-451"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0013",
+    "type": "SPECIAL_DOT_MERGED",
+    "query": "ศุนย์ บริหาร รกภ4",
+    "expected_match": "ศุนย์ บริหาร รกภ.4",
+    "expected_phones": [
+      "074-251-451"
+    ],
+    "notes": "Dot removed"
+  },
+  {
+    "test_id": "TEST_0014",
+    "type": "EXACT",
+    "query": "สื่อสารข้อมูล ภูเก็ต",
+    "expected_match": "สื่อสารข้อมูล ภูเก็ต",
+    "expected_phones": [
+      "076-212-199"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0015",
+    "type": "VARIANT_MERGED",
+    "query": "สื่อสารข้อมูลภูเก็ต",
+    "expected_match": "สื่อสารข้อมูล ภูเก็ต",
+    "expected_phones": [
+      "076-212-199"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0016",
+    "type": "EXACT",
+    "query": "สื่อสารข้อมูล สงขลา",
+    "expected_match": "สื่อสารข้อมูล สงขลา",
+    "expected_phones": [
+      "074-243-001"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0017",
+    "type": "VARIANT_MERGED",
+    "query": "สื่อสารข้อมูลสงขลา",
+    "expected_match": "สื่อสารข้อมูล สงขลา",
+    "expected_phones": [
+      "074-243-001"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0018",
+    "type": "EXACT",
+    "query": "สื่อสารข้อมูล ชุมพร",
+    "expected_match": "สื่อสารข้อมูล ชุมพร",
+    "expected_phones": [
+      "077-507-888"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0019",
+    "type": "VARIANT_MERGED",
+    "query": "สื่อสารข้อมูลชุมพร",
+    "expected_match": "สื่อสารข้อมูล ชุมพร",
+    "expected_phones": [
+      "077-507-888"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0020",
+    "type": "EXACT",
+    "query": "สื่อสารข้อมูล ระนอง",
+    "expected_match": "สื่อสารข้อมูล ระนอง",
+    "expected_phones": [
+      "077-821-978"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0021",
+    "type": "VARIANT_MERGED",
+    "query": "สื่อสารข้อมูลระนอง",
+    "expected_match": "สื่อสารข้อมูล ระนอง",
+    "expected_phones": [
+      "077-821-978"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0022",
+    "type": "EXACT",
+    "query": "สื่อสารข้อมูล สุราษฎร์ธานี",
+    "expected_match": "สื่อสารข้อมูล สุราษฎร์ธานี",
+    "expected_phones": [
+      "077-281-910"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0023",
+    "type": "VARIANT_MERGED",
+    "query": "สื่อสารข้อมูลสุราษฎร์ธานี",
+    "expected_match": "สื่อสารข้อมูล สุราษฎร์ธานี",
+    "expected_phones": [
+      "077-281-910"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0024",
+    "type": "EXACT",
+    "query": "สื่อสารข้อมูล กระบี่",
+    "expected_match": "สื่อสารข้อมูล กระบี่",
+    "expected_phones": [
+      "075-621-400"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0025",
+    "type": "VARIANT_MERGED",
+    "query": "สื่อสารข้อมูลกระบี่",
+    "expected_match": "สื่อสารข้อมูล กระบี่",
+    "expected_phones": [
+      "075-621-400"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0026",
+    "type": "EXACT",
+    "query": "สื่อสารข้อมูล พังงา",
+    "expected_match": "สื่อสารข้อมูล พังงา",
+    "expected_phones": [
+      "076-411-996"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0027",
+    "type": "VARIANT_MERGED",
+    "query": "สื่อสารข้อมูลพังงา",
+    "expected_match": "สื่อสารข้อมูล พังงา",
+    "expected_phones": [
+      "076-411-996"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0028",
+    "type": "EXACT",
+    "query": "สื่อสารข้อมูล พัทลุง",
+    "expected_match": "สื่อสารข้อมูล พัทลุง",
+    "expected_phones": [
+      "074-613-304"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0029",
+    "type": "VARIANT_MERGED",
+    "query": "สื่อสารข้อมูลพัทลุง",
+    "expected_match": "สื่อสารข้อมูล พัทลุง",
+    "expected_phones": [
+      "074-613-304"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0030",
+    "type": "EXACT",
+    "query": "สื่อสารข้อมูล นครศรีธรรมราช",
+    "expected_match": "สื่อสารข้อมูล นครศรีธรรมราช",
+    "expected_phones": [
+      "075-300-091",
+      "075-346-888"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0031",
+    "type": "VARIANT_MERGED",
+    "query": "สื่อสารข้อมูลนครศรีธรรมราช",
+    "expected_match": "สื่อสารข้อมูล นครศรีธรรมราช",
+    "expected_phones": [
+      "075-300-091",
+      "075-346-888"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0032",
+    "type": "EXACT",
+    "query": "สื่อสารข้อมูล ตรัง",
+    "expected_match": "สื่อสารข้อมูล ตรัง",
+    "expected_phones": [
+      "075-213-777"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0033",
+    "type": "VARIANT_MERGED",
+    "query": "สื่อสารข้อมูลตรัง",
+    "expected_match": "สื่อสารข้อมูล ตรัง",
+    "expected_phones": [
+      "075-213-777"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0034",
+    "type": "EXACT",
+    "query": "สื่อสารข้อมูล สตูล",
+    "expected_match": "สื่อสารข้อมูล สตูล",
+    "expected_phones": [
+      "074-721-234"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0035",
+    "type": "VARIANT_MERGED",
+    "query": "สื่อสารข้อมูลสตูล",
+    "expected_match": "สื่อสารข้อมูล สตูล",
+    "expected_phones": [
+      "074-721-234"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0036",
+    "type": "EXACT",
+    "query": "สื่อสารข้อมูล ยะลา",
+    "expected_match": "สื่อสารข้อมูล ยะลา",
+    "expected_phones": [
+      "073-224-001"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0037",
+    "type": "VARIANT_MERGED",
+    "query": "สื่อสารข้อมูลยะลา",
+    "expected_match": "สื่อสารข้อมูล ยะลา",
+    "expected_phones": [
+      "073-224-001"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0038",
+    "type": "EXACT",
+    "query": "สื่อสารข้อมูล ปัตตานี",
+    "expected_match": "สื่อสารข้อมูล ปัตตานี",
+    "expected_phones": [
+      "073-331-444"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0039",
+    "type": "VARIANT_MERGED",
+    "query": "สื่อสารข้อมูลปัตตานี",
+    "expected_match": "สื่อสารข้อมูล ปัตตานี",
+    "expected_phones": [
+      "073-331-444"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0040",
+    "type": "EXACT",
+    "query": "สื่อสารข้อมูล นราธิวาส",
+    "expected_match": "สื่อสารข้อมูล นราธิวาส",
+    "expected_phones": [
+      "073-512-045"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0041",
+    "type": "VARIANT_MERGED",
+    "query": "สื่อสารข้อมูลนราธิวาส",
+    "expected_match": "สื่อสารข้อมูล นราธิวาส",
+    "expected_phones": [
+      "073-512-045"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0042",
+    "type": "EXACT",
+    "query": "callcenter wifi",
+    "expected_match": "callcenter wifi",
+    "expected_phones": [
+      "02-575-7145"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0043",
+    "type": "VARIANT_MERGED",
+    "query": "callcenterwifi",
+    "expected_match": "callcenter wifi",
+    "expected_phones": [
+      "02-575-7145"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0044",
+    "type": "EXACT",
+    "query": "Help Desk ภ.4",
+    "expected_match": "Help Desk ภ.4",
+    "expected_phones": [
+      "074-251-313"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0045",
+    "type": "VARIANT_SPACING",
+    "query": "Help Desk ภ 4",
+    "expected_match": "Help Desk ภ.4",
+    "expected_phones": [
+      "074-251-313"
+    ],
+    "notes": "Removed punctuation/spaces"
+  },
+  {
+    "test_id": "TEST_0046",
+    "type": "VARIANT_MERGED",
+    "query": "HelpDeskภ.4",
+    "expected_match": "Help Desk ภ.4",
+    "expected_phones": [
+      "074-251-313"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0047",
+    "type": "SPECIAL_DOT_MERGED",
+    "query": "Help Desk ภ4",
+    "expected_match": "Help Desk ภ.4",
+    "expected_phones": [
+      "074-251-313"
+    ],
+    "notes": "Dot removed"
+  },
+  {
+    "test_id": "TEST_0048",
+    "type": "EXACT",
+    "query": "ISP TOT",
+    "expected_match": "ISP TOT",
+    "expected_phones": [
+      "02-574-8504",
+      "02-574-8506"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0049",
+    "type": "VARIANT_MERGED",
+    "query": "ISPTOT",
+    "expected_match": "ISP TOT",
+    "expected_phones": [
+      "02-574-8504",
+      "02-574-8506"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0050",
+    "type": "EXACT",
+    "query": "IP Network",
+    "expected_match": "IP Network",
+    "expected_phones": [
+      "02-575-4750",
+      "02-575-4755",
+      "02-574-8478",
+      "02-575-4602",
+      "02-575-4603"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0051",
+    "type": "VARIANT_MERGED",
+    "query": "IPNetwork",
+    "expected_match": "IP Network",
+    "expected_phones": [
+      "02-575-4750",
+      "02-575-4755",
+      "02-574-8478",
+      "02-575-4602",
+      "02-575-4603"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0052",
+    "type": "EXACT",
+    "query": "Intra TOT",
+    "expected_match": "Intra TOT",
+    "expected_phones": [
+      "02-575-9692",
+      "02-575-9693"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0053",
+    "type": "VARIANT_MERGED",
+    "query": "IntraTOT",
+    "expected_match": "Intra TOT",
+    "expected_phones": [
+      "02-575-9692",
+      "02-575-9693"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0054",
+    "type": "EXACT",
+    "query": "ATM TOT,Umbo",
+    "expected_match": "ATM TOT,Umbo",
+    "expected_phones": [
+      "02-500-8084",
+      "02-150-7941"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0055",
+    "type": "VARIANT_MERGED",
+    "query": "ATMTOT,Umbo",
+    "expected_match": "ATM TOT,Umbo",
+    "expected_phones": [
+      "02-500-8084",
+      "02-150-7941"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0056",
+    "type": "EXACT",
+    "query": "BRAS TOT",
+    "expected_match": "BRAS TOT",
+    "expected_phones": [
+      "02-575-5190",
+      "02-575-5191",
+      "02-568-2515",
+      "02-568-2516"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0057",
+    "type": "VARIANT_MERGED",
+    "query": "BRASTOT",
+    "expected_match": "BRAS TOT",
+    "expected_phones": [
+      "02-575-5190",
+      "02-575-5191",
+      "02-568-2515",
+      "02-568-2516"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0058",
+    "type": "EXACT",
+    "query": "Scom - Helpdesk 2lDB",
+    "expected_match": "Scom - Helpdesk 2lDB",
+    "expected_phones": [
+      "02-505-2157",
+      "02-505-2247"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0059",
+    "type": "VARIANT_SPACING",
+    "query": "Scom  Helpdesk 2lDB",
+    "expected_match": "Scom - Helpdesk 2lDB",
+    "expected_phones": [
+      "02-505-2157",
+      "02-505-2247"
+    ],
+    "notes": "Removed punctuation/spaces"
+  },
+  {
+    "test_id": "TEST_0060",
+    "type": "VARIANT_MERGED",
+    "query": "Scom-Helpdesk2lDB",
+    "expected_match": "Scom - Helpdesk 2lDB",
+    "expected_phones": [
+      "02-505-2157",
+      "02-505-2247"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0061",
+    "type": "SPECIAL_HYPHEN",
+    "query": "Scom   Helpdesk 2lDB",
+    "expected_match": "Scom - Helpdesk 2lDB",
+    "expected_phones": [
+      "02-505-2157",
+      "02-505-2247"
+    ],
+    "notes": "Hyphen replaced with space"
+  },
+  {
+    "test_id": "TEST_0062",
+    "type": "EXACT",
+    "query": "SCOMS Call Center อสส. (การใช้งาน,สิทธิ,อื่นๆ)",
+    "expected_match": "SCOMS Call Center อสส. (การใช้งาน,สิทธิ,อื่นๆ)",
+    "expected_phones": [
+      "02-505-4120",
+      "02-574-8520"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0063",
+    "type": "VARIANT_SPACING",
+    "query": "SCOMS Call Center อสส (การใช้งาน,สิทธิ,อื่นๆ)",
+    "expected_match": "SCOMS Call Center อสส. (การใช้งาน,สิทธิ,อื่นๆ)",
+    "expected_phones": [
+      "02-505-4120",
+      "02-574-8520"
+    ],
+    "notes": "Removed punctuation/spaces"
+  },
+  {
+    "test_id": "TEST_0064",
+    "type": "VARIANT_MERGED",
+    "query": "SCOMSCallCenterอสส.(การใช้งาน,สิทธิ,อื่นๆ)",
+    "expected_match": "SCOMS Call Center อสส. (การใช้งาน,สิทธิ,อื่นๆ)",
+    "expected_phones": [
+      "02-505-4120",
+      "02-574-8520"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0065",
+    "type": "SPECIAL_DOT",
+    "query": "SCOMS Call Center อสส  (การใช้งาน,สิทธิ,อื่นๆ)",
+    "expected_match": "SCOMS Call Center อสส. (การใช้งาน,สิทธิ,อื่นๆ)",
+    "expected_phones": [
+      "02-505-4120",
+      "02-574-8520"
+    ],
+    "notes": "Dot replaced with space"
+  },
+  {
+    "test_id": "TEST_0066",
+    "type": "SPECIAL_PAREN",
+    "query": "SCOMS Call Center อสส.",
+    "expected_match": "SCOMS Call Center อสส. (การใช้งาน,สิทธิ,อื่นๆ)",
+    "expected_phones": [
+      "02-505-4120",
+      "02-574-8520"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0067",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "การใช้งาน,สิทธิ,อื่นๆ",
+    "expected_match": "SCOMS Call Center อสส. (การใช้งาน,สิทธิ,อื่นๆ)",
+    "expected_phones": [
+      "02-505-4120",
+      "02-574-8520"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0068",
+    "type": "EXACT",
+    "query": "U-MUX",
+    "expected_match": "U-MUX",
+    "expected_phones": [
+      "02-575-7117",
+      "02-575-7118"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0069",
+    "type": "VARIANT_SPACING",
+    "query": "U MUX",
+    "expected_match": "U-MUX",
+    "expected_phones": [
+      "02-575-7117",
+      "02-575-7118"
+    ],
+    "notes": "Removed punctuation/spaces"
+  },
+  {
+    "test_id": "TEST_0070",
+    "type": "SPECIAL_HYPHEN_MERGED",
+    "query": "UMUX",
+    "expected_match": "U-MUX",
+    "expected_phones": [
+      "02-575-7117",
+      "02-575-7118"
+    ],
+    "notes": "Hyphen removed"
+  },
+  {
+    "test_id": "TEST_0071",
+    "type": "EXACT",
+    "query": "JNA - test",
+    "expected_match": "JNA - test",
+    "expected_phones": [
+      "02-575-9531",
+      "02-575-9532",
+      "02-150-7911"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0072",
+    "type": "VARIANT_SPACING",
+    "query": "JNA  test",
+    "expected_match": "JNA - test",
+    "expected_phones": [
+      "02-575-9531",
+      "02-575-9532",
+      "02-150-7911"
+    ],
+    "notes": "Removed punctuation/spaces"
+  },
+  {
+    "test_id": "TEST_0073",
+    "type": "VARIANT_MERGED",
+    "query": "JNA-test",
+    "expected_match": "JNA - test",
+    "expected_phones": [
+      "02-575-9531",
+      "02-575-9532",
+      "02-150-7911"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0074",
+    "type": "SPECIAL_HYPHEN",
+    "query": "JNA   test",
+    "expected_match": "JNA - test",
+    "expected_phones": [
+      "02-575-9531",
+      "02-575-9532",
+      "02-150-7911"
+    ],
+    "notes": "Hyphen replaced with space"
+  },
+  {
+    "test_id": "TEST_0075",
+    "type": "EXACT",
+    "query": "Noc IIG",
+    "expected_match": "Noc IIG",
+    "expected_phones": [
+      "02-574-8103"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0076",
+    "type": "VARIANT_MERGED",
+    "query": "NocIIG",
+    "expected_match": "Noc IIG",
+    "expected_phones": [
+      "02-574-8103"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0077",
+    "type": "EXACT",
+    "query": "Noc T-NEP",
+    "expected_match": "Noc T-NEP",
+    "expected_phones": [
+      "02-150-7900"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0078",
+    "type": "VARIANT_SPACING",
+    "query": "Noc T NEP",
+    "expected_match": "Noc T-NEP",
+    "expected_phones": [
+      "02-150-7900"
+    ],
+    "notes": "Removed punctuation/spaces"
+  },
+  {
+    "test_id": "TEST_0079",
+    "type": "VARIANT_MERGED",
+    "query": "NocT-NEP",
+    "expected_match": "Noc T-NEP",
+    "expected_phones": [
+      "02-150-7900"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0080",
+    "type": "SPECIAL_HYPHEN_MERGED",
+    "query": "Noc TNEP",
+    "expected_match": "Noc T-NEP",
+    "expected_phones": [
+      "02-150-7900"
+    ],
+    "notes": "Hyphen removed"
+  },
+  {
+    "test_id": "TEST_0081",
+    "type": "EXACT",
+    "query": "กบป.(ดูสื่อทั่วประเทศ)",
+    "expected_match": "กบป.(ดูสื่อทั่วประเทศ)",
+    "expected_phones": [
+      "02-568-2799",
+      "02-575-5254"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0082",
+    "type": "VARIANT_SPACING",
+    "query": "กบป (ดูสื่อทั่วประเทศ)",
+    "expected_match": "กบป.(ดูสื่อทั่วประเทศ)",
+    "expected_phones": [
+      "02-568-2799",
+      "02-575-5254"
+    ],
+    "notes": "Removed punctuation/spaces"
+  },
+  {
+    "test_id": "TEST_0083",
+    "type": "SPECIAL_DOT_MERGED",
+    "query": "กบป(ดูสื่อทั่วประเทศ)",
+    "expected_match": "กบป.(ดูสื่อทั่วประเทศ)",
+    "expected_phones": [
+      "02-568-2799",
+      "02-575-5254"
+    ],
+    "notes": "Dot removed"
+  },
+  {
+    "test_id": "TEST_0084",
+    "type": "SPECIAL_PAREN",
+    "query": "กบป.",
+    "expected_match": "กบป.(ดูสื่อทั่วประเทศ)",
+    "expected_phones": [
+      "02-568-2799",
+      "02-575-5254"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0085",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "ดูสื่อทั่วประเทศ",
+    "expected_match": "กบป.(ดูสื่อทั่วประเทศ)",
+    "expected_phones": [
+      "02-568-2799",
+      "02-575-5254"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0086",
+    "type": "EXACT",
+    "query": "Radius NT2",
+    "expected_match": "Radius NT2",
+    "expected_phones": [
+      "02-568-2515",
+      "02-568-2516"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0087",
+    "type": "VARIANT_MERGED",
+    "query": "RadiusNT2",
+    "expected_match": "Radius NT2",
+    "expected_phones": [
+      "02-568-2515",
+      "02-568-2516"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0088",
+    "type": "EXACT",
+    "query": "Radius NT1",
+    "expected_match": "Radius NT1",
+    "expected_phones": [
+      "02-104-1919 กด 2"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0089",
+    "type": "VARIANT_MERGED",
+    "query": "RadiusNT1",
+    "expected_match": "Radius NT1",
+    "expected_phones": [
+      "02-104-1919 กด 2"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0090",
+    "type": "EXACT",
+    "query": "Soft-Swicth",
+    "expected_match": "Soft-Swicth",
+    "expected_phones": [
+      "02-196-3981",
+      "02-356-0025"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0091",
+    "type": "VARIANT_SPACING",
+    "query": "Soft Swicth",
+    "expected_match": "Soft-Swicth",
+    "expected_phones": [
+      "02-196-3981",
+      "02-356-0025"
+    ],
+    "notes": "Removed punctuation/spaces"
+  },
+  {
+    "test_id": "TEST_0092",
+    "type": "SPECIAL_HYPHEN_MERGED",
+    "query": "SoftSwicth",
+    "expected_match": "Soft-Swicth",
+    "expected_phones": [
+      "02-196-3981",
+      "02-356-0025"
+    ],
+    "notes": "Hyphen removed"
+  },
+  {
+    "test_id": "TEST_0093",
+    "type": "EXACT",
+    "query": "IP-Phone-helpdesk",
+    "expected_match": "IP-Phone-helpdesk",
+    "expected_phones": [
+      "02-269-9111",
+      "02-575-5340"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0094",
+    "type": "VARIANT_SPACING",
+    "query": "IP Phone helpdesk",
+    "expected_match": "IP-Phone-helpdesk",
+    "expected_phones": [
+      "02-269-9111",
+      "02-575-5340"
+    ],
+    "notes": "Removed punctuation/spaces"
+  },
+  {
+    "test_id": "TEST_0095",
+    "type": "SPECIAL_HYPHEN_MERGED",
+    "query": "IPPhonehelpdesk",
+    "expected_match": "IP-Phone-helpdesk",
+    "expected_phones": [
+      "02-269-9111",
+      "02-575-5340"
+    ],
+    "notes": "Hyphen removed"
+  },
+  {
+    "test_id": "TEST_0096",
+    "type": "EXACT",
+    "query": "IP-Phone SBC",
+    "expected_match": "IP-Phone SBC",
+    "expected_phones": [
+      "02-575-9444"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0097",
+    "type": "VARIANT_SPACING",
+    "query": "IP Phone SBC",
+    "expected_match": "IP-Phone SBC",
+    "expected_phones": [
+      "02-575-9444"
+    ],
+    "notes": "Removed punctuation/spaces"
+  },
+  {
+    "test_id": "TEST_0098",
+    "type": "VARIANT_MERGED",
+    "query": "IP-PhoneSBC",
+    "expected_match": "IP-Phone SBC",
+    "expected_phones": [
+      "02-575-9444"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0099",
+    "type": "SPECIAL_HYPHEN_MERGED",
+    "query": "IPPhone SBC",
+    "expected_match": "IP-Phone SBC",
+    "expected_phones": [
+      "02-575-9444"
+    ],
+    "notes": "Hyphen removed"
+  },
+  {
+    "test_id": "TEST_0100",
+    "type": "EXACT",
+    "query": "IP-Core ดูแลอุปกรณ์ SW",
+    "expected_match": "IP-Core ดูแลอุปกรณ์ SW",
+    "expected_phones": [
+      "02-575-7533"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0101",
+    "type": "VARIANT_SPACING",
+    "query": "IP Core ดูแลอุปกรณ์ SW",
+    "expected_match": "IP-Core ดูแลอุปกรณ์ SW",
+    "expected_phones": [
+      "02-575-7533"
+    ],
+    "notes": "Removed punctuation/spaces"
+  },
+  {
+    "test_id": "TEST_0102",
+    "type": "VARIANT_MERGED",
+    "query": "IP-Coreดูแลอุปกรณ์SW",
+    "expected_match": "IP-Core ดูแลอุปกรณ์ SW",
+    "expected_phones": [
+      "02-575-7533"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0103",
+    "type": "SPECIAL_HYPHEN_MERGED",
+    "query": "IPCore ดูแลอุปกรณ์ SW",
+    "expected_match": "IP-Core ดูแลอุปกรณ์ SW",
+    "expected_phones": [
+      "02-575-7533"
+    ],
+    "notes": "Hyphen removed"
+  },
+  {
+    "test_id": "TEST_0104",
+    "type": "EXACT",
+    "query": "สผ (ADSL , DSL-VPN)",
+    "expected_match": "สผ (ADSL , DSL-VPN)",
+    "expected_phones": [
+      "02-505-7414",
+      "02-505-7416"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0105",
+    "type": "VARIANT_SPACING",
+    "query": "สผ (ADSL , DSL VPN)",
+    "expected_match": "สผ (ADSL , DSL-VPN)",
+    "expected_phones": [
+      "02-505-7414",
+      "02-505-7416"
+    ],
+    "notes": "Removed punctuation/spaces"
+  },
+  {
+    "test_id": "TEST_0106",
+    "type": "VARIANT_MERGED",
+    "query": "สผ(ADSL,DSL-VPN)",
+    "expected_match": "สผ (ADSL , DSL-VPN)",
+    "expected_phones": [
+      "02-505-7414",
+      "02-505-7416"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0107",
+    "type": "SPECIAL_HYPHEN_MERGED",
+    "query": "สผ (ADSL , DSLVPN)",
+    "expected_match": "สผ (ADSL , DSL-VPN)",
+    "expected_phones": [
+      "02-505-7414",
+      "02-505-7416"
+    ],
+    "notes": "Hyphen removed"
+  },
+  {
+    "test_id": "TEST_0108",
+    "type": "SPECIAL_PAREN",
+    "query": "สผ",
+    "expected_match": "สผ (ADSL , DSL-VPN)",
+    "expected_phones": [
+      "02-505-7414",
+      "02-505-7416"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0109",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "ADSL , DSL-VPN",
+    "expected_match": "สผ (ADSL , DSL-VPN)",
+    "expected_phones": [
+      "02-505-7414",
+      "02-505-7416"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0110",
+    "type": "EXACT",
+    "query": "สผ (IP Phone)",
+    "expected_match": "สผ (IP Phone)",
+    "expected_phones": [
+      "02-269-9111 กด 1"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0111",
+    "type": "VARIANT_MERGED",
+    "query": "สผ(IPPhone)",
+    "expected_match": "สผ (IP Phone)",
+    "expected_phones": [
+      "02-269-9111 กด 1"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0112",
+    "type": "SPECIAL_PAREN",
+    "query": "สผ",
+    "expected_match": "สผ (IP Phone)",
+    "expected_phones": [
+      "02-269-9111 กด 1"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0113",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "IP Phone",
+    "expected_match": "สผ (IP Phone)",
+    "expected_phones": [
+      "02-269-9111 กด 1"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0114",
+    "type": "EXACT",
+    "query": "สผ (แบบฟอร์ม Fixed IP ADSL)(ปสผ.)",
+    "expected_match": "สผ (แบบฟอร์ม Fixed IP ADSL)(ปสผ.)",
+    "expected_phones": [
+      "02-269-9111 กด 2"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0115",
+    "type": "VARIANT_SPACING",
+    "query": "สผ (แบบฟอร์ม Fixed IP ADSL)(ปสผ )",
+    "expected_match": "สผ (แบบฟอร์ม Fixed IP ADSL)(ปสผ.)",
+    "expected_phones": [
+      "02-269-9111 กด 2"
+    ],
+    "notes": "Removed punctuation/spaces"
+  },
+  {
+    "test_id": "TEST_0116",
+    "type": "VARIANT_MERGED",
+    "query": "สผ(แบบฟอร์มFixedIPADSL)(ปสผ.)",
+    "expected_match": "สผ (แบบฟอร์ม Fixed IP ADSL)(ปสผ.)",
+    "expected_phones": [
+      "02-269-9111 กด 2"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0117",
+    "type": "SPECIAL_DOT_MERGED",
+    "query": "สผ (แบบฟอร์ม Fixed IP ADSL)(ปสผ)",
+    "expected_match": "สผ (แบบฟอร์ม Fixed IP ADSL)(ปสผ.)",
+    "expected_phones": [
+      "02-269-9111 กด 2"
+    ],
+    "notes": "Dot removed"
+  },
+  {
+    "test_id": "TEST_0118",
+    "type": "SPECIAL_PAREN",
+    "query": "สผ",
+    "expected_match": "สผ (แบบฟอร์ม Fixed IP ADSL)(ปสผ.)",
+    "expected_phones": [
+      "02-269-9111 กด 2"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0119",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "แบบฟอร์ม Fixed IP ADSL",
+    "expected_match": "สผ (แบบฟอร์ม Fixed IP ADSL)(ปสผ.)",
+    "expected_phones": [
+      "02-269-9111 กด 2"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0120",
+    "type": "EXACT",
+    "query": "สผ (Fiber to U)(รสผ.)",
+    "expected_match": "สผ (Fiber to U)(รสผ.)",
+    "expected_phones": [
+      "02-269-9111 กด 3"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0121",
+    "type": "VARIANT_SPACING",
+    "query": "สผ (Fiber to U)(รสผ )",
+    "expected_match": "สผ (Fiber to U)(รสผ.)",
+    "expected_phones": [
+      "02-269-9111 กด 3"
+    ],
+    "notes": "Removed punctuation/spaces"
+  },
+  {
+    "test_id": "TEST_0122",
+    "type": "VARIANT_MERGED",
+    "query": "สผ(FibertoU)(รสผ.)",
+    "expected_match": "สผ (Fiber to U)(รสผ.)",
+    "expected_phones": [
+      "02-269-9111 กด 3"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0123",
+    "type": "SPECIAL_DOT_MERGED",
+    "query": "สผ (Fiber to U)(รสผ)",
+    "expected_match": "สผ (Fiber to U)(รสผ.)",
+    "expected_phones": [
+      "02-269-9111 กด 3"
+    ],
+    "notes": "Dot removed"
+  },
+  {
+    "test_id": "TEST_0124",
+    "type": "SPECIAL_PAREN",
+    "query": "สผ",
+    "expected_match": "สผ (Fiber to U)(รสผ.)",
+    "expected_phones": [
+      "02-269-9111 กด 3"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0125",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "Fiber to U",
+    "expected_match": "สผ (Fiber to U)(รสผ.)",
+    "expected_phones": [
+      "02-269-9111 กด 3"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0126",
+    "type": "EXACT",
+    "query": "Intra Helpdesk",
+    "expected_match": "Intra Helpdesk",
+    "expected_phones": [
+      "02-554-0100"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0127",
+    "type": "VARIANT_MERGED",
+    "query": "IntraHelpdesk",
+    "expected_match": "Intra Helpdesk",
+    "expected_phones": [
+      "02-554-0100"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0128",
+    "type": "EXACT",
+    "query": "อรร(รายงาน Quality Award)",
+    "expected_match": "อรร(รายงาน Quality Award)",
+    "expected_phones": [
+      "02-574-8435"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0129",
+    "type": "VARIANT_MERGED",
+    "query": "อรร(รายงานQualityAward)",
+    "expected_match": "อรร(รายงาน Quality Award)",
+    "expected_phones": [
+      "02-574-8435"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0130",
+    "type": "SPECIAL_PAREN",
+    "query": "อรร",
+    "expected_match": "อรร(รายงาน Quality Award)",
+    "expected_phones": [
+      "02-574-8435"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0131",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "รายงาน Quality Award",
+    "expected_match": "อรร(รายงาน Quality Award)",
+    "expected_phones": [
+      "02-574-8435"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0132",
+    "type": "EXACT",
+    "query": "ผบบ.(ขอ ip ใหม่ LL )",
+    "expected_match": "ผบบ.(ขอ ip ใหม่ LL )",
+    "expected_phones": [
+      "02-575-9846",
+      "02-575-9848",
+      "02-575-6785",
+      "02-575-8708"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0133",
+    "type": "VARIANT_SPACING",
+    "query": "ผบบ (ขอ ip ใหม่ LL )",
+    "expected_match": "ผบบ.(ขอ ip ใหม่ LL )",
+    "expected_phones": [
+      "02-575-9846",
+      "02-575-9848",
+      "02-575-6785",
+      "02-575-8708"
+    ],
+    "notes": "Removed punctuation/spaces"
+  },
+  {
+    "test_id": "TEST_0134",
+    "type": "VARIANT_MERGED",
+    "query": "ผบบ.(ขอipใหม่LL)",
+    "expected_match": "ผบบ.(ขอ ip ใหม่ LL )",
+    "expected_phones": [
+      "02-575-9846",
+      "02-575-9848",
+      "02-575-6785",
+      "02-575-8708"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0135",
+    "type": "SPECIAL_DOT_MERGED",
+    "query": "ผบบ(ขอ ip ใหม่ LL )",
+    "expected_match": "ผบบ.(ขอ ip ใหม่ LL )",
+    "expected_phones": [
+      "02-575-9846",
+      "02-575-9848",
+      "02-575-6785",
+      "02-575-8708"
+    ],
+    "notes": "Dot removed"
+  },
+  {
+    "test_id": "TEST_0136",
+    "type": "SPECIAL_PAREN",
+    "query": "ผบบ.",
+    "expected_match": "ผบบ.(ขอ ip ใหม่ LL )",
+    "expected_phones": [
+      "02-575-9846",
+      "02-575-9848",
+      "02-575-6785",
+      "02-575-8708"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0137",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "ขอ ip ใหม่ LL",
+    "expected_match": "ผบบ.(ขอ ip ใหม่ LL )",
+    "expected_phones": [
+      "02-575-9846",
+      "02-575-9848",
+      "02-575-6785",
+      "02-575-8708"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0138",
+    "type": "EXACT",
+    "query": "ทคบ.1(ขอ ip ใหม่ ip-vpn)",
+    "expected_match": "ทคบ.1(ขอ ip ใหม่ ip-vpn)",
+    "expected_phones": [
+      "02-575-6695",
+      "02-574-9633"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0139",
+    "type": "VARIANT_SPACING",
+    "query": "ทคบ 1(ขอ ip ใหม่ ip vpn)",
+    "expected_match": "ทคบ.1(ขอ ip ใหม่ ip-vpn)",
+    "expected_phones": [
+      "02-575-6695",
+      "02-574-9633"
+    ],
+    "notes": "Removed punctuation/spaces"
+  },
+  {
+    "test_id": "TEST_0140",
+    "type": "VARIANT_MERGED",
+    "query": "ทคบ.1(ขอipใหม่ip-vpn)",
+    "expected_match": "ทคบ.1(ขอ ip ใหม่ ip-vpn)",
+    "expected_phones": [
+      "02-575-6695",
+      "02-574-9633"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0141",
+    "type": "SPECIAL_HYPHEN",
+    "query": "ทคบ.1(ขอ ip ใหม่ ip vpn)",
+    "expected_match": "ทคบ.1(ขอ ip ใหม่ ip-vpn)",
+    "expected_phones": [
+      "02-575-6695",
+      "02-574-9633"
+    ],
+    "notes": "Hyphen replaced with space"
+  },
+  {
+    "test_id": "TEST_0142",
+    "type": "SPECIAL_HYPHEN_MERGED",
+    "query": "ทคบ.1(ขอ ip ใหม่ ipvpn)",
+    "expected_match": "ทคบ.1(ขอ ip ใหม่ ip-vpn)",
+    "expected_phones": [
+      "02-575-6695",
+      "02-574-9633"
+    ],
+    "notes": "Hyphen removed"
+  },
+  {
+    "test_id": "TEST_0143",
+    "type": "SPECIAL_DOT",
+    "query": "ทคบ 1(ขอ ip ใหม่ ip-vpn)",
+    "expected_match": "ทคบ.1(ขอ ip ใหม่ ip-vpn)",
+    "expected_phones": [
+      "02-575-6695",
+      "02-574-9633"
+    ],
+    "notes": "Dot replaced with space"
+  },
+  {
+    "test_id": "TEST_0144",
+    "type": "SPECIAL_DOT_MERGED",
+    "query": "ทคบ1(ขอ ip ใหม่ ip-vpn)",
+    "expected_match": "ทคบ.1(ขอ ip ใหม่ ip-vpn)",
+    "expected_phones": [
+      "02-575-6695",
+      "02-574-9633"
+    ],
+    "notes": "Dot removed"
+  },
+  {
+    "test_id": "TEST_0145",
+    "type": "SPECIAL_PAREN",
+    "query": "ทคบ.1",
+    "expected_match": "ทคบ.1(ขอ ip ใหม่ ip-vpn)",
+    "expected_phones": [
+      "02-575-6695",
+      "02-574-9633"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0146",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "ขอ ip ใหม่ ip-vpn",
+    "expected_match": "ทคบ.1(ขอ ip ใหม่ ip-vpn)",
+    "expected_phones": [
+      "02-575-6695",
+      "02-574-9633"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0147",
+    "type": "EXACT",
+    "query": "ทคบ.1(ขอ ip ใหม่ โครงการ GIN)",
+    "expected_match": "ทคบ.1(ขอ ip ใหม่ โครงการ GIN)",
+    "expected_phones": [
+      "02-574-9903"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0148",
+    "type": "VARIANT_SPACING",
+    "query": "ทคบ 1(ขอ ip ใหม่ โครงการ GIN)",
+    "expected_match": "ทคบ.1(ขอ ip ใหม่ โครงการ GIN)",
+    "expected_phones": [
+      "02-574-9903"
+    ],
+    "notes": "Removed punctuation/spaces"
+  },
+  {
+    "test_id": "TEST_0149",
+    "type": "VARIANT_MERGED",
+    "query": "ทคบ.1(ขอipใหม่โครงการGIN)",
+    "expected_match": "ทคบ.1(ขอ ip ใหม่ โครงการ GIN)",
+    "expected_phones": [
+      "02-574-9903"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0150",
+    "type": "SPECIAL_DOT_MERGED",
+    "query": "ทคบ1(ขอ ip ใหม่ โครงการ GIN)",
+    "expected_match": "ทคบ.1(ขอ ip ใหม่ โครงการ GIN)",
+    "expected_phones": [
+      "02-574-9903"
+    ],
+    "notes": "Dot removed"
+  },
+  {
+    "test_id": "TEST_0151",
+    "type": "SPECIAL_PAREN",
+    "query": "ทคบ.1",
+    "expected_match": "ทคบ.1(ขอ ip ใหม่ โครงการ GIN)",
+    "expected_phones": [
+      "02-574-9903"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0152",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "ขอ ip ใหม่ โครงการ GIN",
+    "expected_match": "ทคบ.1(ขอ ip ใหม่ โครงการ GIN)",
+    "expected_phones": [
+      "02-574-9903"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0153",
+    "type": "EXACT",
+    "query": "จมผ(Fttx-SM)",
+    "expected_match": "จมผ(Fttx-SM)",
+    "expected_phones": [
+      "02-568-2755"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0154",
+    "type": "VARIANT_SPACING",
+    "query": "จมผ(Fttx SM)",
+    "expected_match": "จมผ(Fttx-SM)",
+    "expected_phones": [
+      "02-568-2755"
+    ],
+    "notes": "Removed punctuation/spaces"
+  },
+  {
+    "test_id": "TEST_0155",
+    "type": "SPECIAL_HYPHEN_MERGED",
+    "query": "จมผ(FttxSM)",
+    "expected_match": "จมผ(Fttx-SM)",
+    "expected_phones": [
+      "02-568-2755"
+    ],
+    "notes": "Hyphen removed"
+  },
+  {
+    "test_id": "TEST_0156",
+    "type": "SPECIAL_PAREN",
+    "query": "จมผ",
+    "expected_match": "จมผ(Fttx-SM)",
+    "expected_phones": [
+      "02-568-2755"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0157",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "Fttx-SM",
+    "expected_match": "จมผ(Fttx-SM)",
+    "expected_phones": [
+      "02-568-2755"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0158",
+    "type": "EXACT",
+    "query": "ขอ ip ใหม่ dsl-vpn",
+    "expected_match": "ขอ ip ใหม่ dsl-vpn",
+    "expected_phones": [
+      "02-575-6707"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0159",
+    "type": "VARIANT_SPACING",
+    "query": "ขอ ip ใหม่ dsl vpn",
+    "expected_match": "ขอ ip ใหม่ dsl-vpn",
+    "expected_phones": [
+      "02-575-6707"
+    ],
+    "notes": "Removed punctuation/spaces"
+  },
+  {
+    "test_id": "TEST_0160",
+    "type": "VARIANT_MERGED",
+    "query": "ขอipใหม่dsl-vpn",
+    "expected_match": "ขอ ip ใหม่ dsl-vpn",
+    "expected_phones": [
+      "02-575-6707"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0161",
+    "type": "SPECIAL_HYPHEN_MERGED",
+    "query": "ขอ ip ใหม่ dslvpn",
+    "expected_match": "ขอ ip ใหม่ dsl-vpn",
+    "expected_phones": [
+      "02-575-6707"
+    ],
+    "notes": "Hyphen removed"
+  },
+  {
+    "test_id": "TEST_0162",
+    "type": "EXACT",
+    "query": "ขอ ip ใหม่ dsl-vpn Bank",
+    "expected_match": "ขอ ip ใหม่ dsl-vpn Bank",
+    "expected_phones": [
+      "02-575-6696",
+      "02-574-9625"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0163",
+    "type": "VARIANT_SPACING",
+    "query": "ขอ ip ใหม่ dsl vpn Bank",
+    "expected_match": "ขอ ip ใหม่ dsl-vpn Bank",
+    "expected_phones": [
+      "02-575-6696",
+      "02-574-9625"
+    ],
+    "notes": "Removed punctuation/spaces"
+  },
+  {
+    "test_id": "TEST_0164",
+    "type": "VARIANT_MERGED",
+    "query": "ขอipใหม่dsl-vpnBank",
+    "expected_match": "ขอ ip ใหม่ dsl-vpn Bank",
+    "expected_phones": [
+      "02-575-6696",
+      "02-574-9625"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0165",
+    "type": "SPECIAL_HYPHEN_MERGED",
+    "query": "ขอ ip ใหม่ dslvpn Bank",
+    "expected_match": "ขอ ip ใหม่ dsl-vpn Bank",
+    "expected_phones": [
+      "02-575-6696",
+      "02-574-9625"
+    ],
+    "notes": "Hyphen removed"
+  },
+  {
+    "test_id": "TEST_0166",
+    "type": "EXACT",
+    "query": "IP TV เทคนิค",
+    "expected_match": "IP TV เทคนิค",
+    "expected_phones": [
+      "02-568-2610",
+      "02-568-2703"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0167",
+    "type": "VARIANT_MERGED",
+    "query": "IPTVเทคนิค",
+    "expected_match": "IP TV เทคนิค",
+    "expected_phones": [
+      "02-568-2610",
+      "02-568-2703"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0168",
+    "type": "EXACT",
+    "query": "WINET",
+    "expected_match": "WINET",
+    "expected_phones": [
+      "02-505-7382",
+      "02-574-9141"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0169",
+    "type": "EXACT",
+    "query": "Tacac++     PE ขึ้นไป",
+    "expected_match": "Tacac++     PE ขึ้นไป",
+    "expected_phones": [
+      "02-575-9634",
+      "02-575-7557",
+      "02-575-4602",
+      "02-575-4603"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0170",
+    "type": "VARIANT_MERGED",
+    "query": "Tacac++  PEขึ้นไป",
+    "expected_match": "Tacac++     PE ขึ้นไป",
+    "expected_phones": [
+      "02-575-9634",
+      "02-575-7557",
+      "02-575-4602",
+      "02-575-4603"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0171",
+    "type": "EXACT",
+    "query": "คุณ เฉลิมรัตน์ อัศวทรงพล",
+    "expected_match": "คุณ เฉลิมรัตน์ อัศวทรงพล",
+    "expected_phones": [
+      "02-575-7222",
+      "085-813-5083"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0172",
+    "type": "VARIANT_MERGED",
+    "query": "คุณเฉลิมรัตน์อัศวทรงพล",
+    "expected_match": "คุณ เฉลิมรัตน์ อัศวทรงพล",
+    "expected_phones": [
+      "02-575-7222",
+      "085-813-5083"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0173",
+    "type": "EXACT",
+    "query": "คุณ อนุสรณ์ สมสกุล",
+    "expected_match": "คุณ อนุสรณ์ สมสกุล",
+    "expected_phones": [
+      "02-575-7222",
+      "081-907-9176"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0174",
+    "type": "VARIANT_MERGED",
+    "query": "คุณอนุสรณ์สมสกุล",
+    "expected_match": "คุณ อนุสรณ์ สมสกุล",
+    "expected_phones": [
+      "02-575-7222",
+      "081-907-9176"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0175",
+    "type": "EXACT",
+    "query": "Tacac++    LPE ถึง Access switch",
+    "expected_match": "Tacac++    LPE ถึง Access switch",
+    "expected_phones": [
+      "02-575-7222",
+      "085-813-5083",
+      "081-907-9176"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0176",
+    "type": "VARIANT_MERGED",
+    "query": "Tacac++  LPEถึงAccessswitch",
+    "expected_match": "Tacac++    LPE ถึง Access switch",
+    "expected_phones": [
+      "02-575-7222",
+      "085-813-5083",
+      "081-907-9176"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0177",
+    "type": "EXACT",
+    "query": "ห้อง CSOC(N'เช่) (ขอ ip ธนาคาร,moe )",
+    "expected_match": "ห้อง CSOC(N'เช่) (ขอ ip ธนาคาร,moe )",
+    "expected_phones": [
+      "02-159-0644"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0178",
+    "type": "VARIANT_MERGED",
+    "query": "ห้องCSOC(N'เช่)(ขอipธนาคาร,moe)",
+    "expected_match": "ห้อง CSOC(N'เช่) (ขอ ip ธนาคาร,moe )",
+    "expected_phones": [
+      "02-159-0644"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0179",
+    "type": "SPECIAL_PAREN",
+    "query": "ห้อง CSOC",
+    "expected_match": "ห้อง CSOC(N'เช่) (ขอ ip ธนาคาร,moe )",
+    "expected_phones": [
+      "02-159-0644"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0180",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "N'เช่",
+    "expected_match": "ห้อง CSOC(N'เช่) (ขอ ip ธนาคาร,moe )",
+    "expected_phones": [
+      "02-159-0644"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0181",
+    "type": "EXACT",
+    "query": "เพิ่ม pool ip (sbc)",
+    "expected_match": "เพิ่ม pool ip (sbc)",
+    "expected_phones": [
+      "02-575-9444"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0182",
+    "type": "VARIANT_MERGED",
+    "query": "เพิ่มpoolip(sbc)",
+    "expected_match": "เพิ่ม pool ip (sbc)",
+    "expected_phones": [
+      "02-575-9444"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0183",
+    "type": "SPECIAL_PAREN",
+    "query": "เพิ่ม pool ip",
+    "expected_match": "เพิ่ม pool ip (sbc)",
+    "expected_phones": [
+      "02-575-9444"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0184",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "sbc",
+    "expected_match": "เพิ่ม pool ip (sbc)",
+    "expected_phones": [
+      "02-575-9444"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0185",
+    "type": "EXACT",
+    "query": "CSOC",
+    "expected_match": "CSOC",
+    "expected_phones": [
+      "02-159-9555 กด 2"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0186",
+    "type": "EXACT",
+    "query": "ECO-Leased Line",
+    "expected_match": "ECO-Leased Line",
+    "expected_phones": [
+      "02-150-7955"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0187",
+    "type": "VARIANT_SPACING",
+    "query": "ECO Leased Line",
+    "expected_match": "ECO-Leased Line",
+    "expected_phones": [
+      "02-150-7955"
+    ],
+    "notes": "Removed punctuation/spaces"
+  },
+  {
+    "test_id": "TEST_0188",
+    "type": "VARIANT_MERGED",
+    "query": "ECO-LeasedLine",
+    "expected_match": "ECO-Leased Line",
+    "expected_phones": [
+      "02-150-7955"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0189",
+    "type": "SPECIAL_HYPHEN_MERGED",
+    "query": "ECOLeased Line",
+    "expected_match": "ECO-Leased Line",
+    "expected_phones": [
+      "02-150-7955"
+    ],
+    "notes": "Hyphen removed"
+  },
+  {
+    "test_id": "TEST_0190",
+    "type": "EXACT",
+    "query": "NOC MDES",
+    "expected_match": "NOC MDES",
+    "expected_phones": [
+      "089-300-9414"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0191",
+    "type": "VARIANT_MERGED",
+    "query": "NOCMDES",
+    "expected_match": "NOC MDES",
+    "expected_phones": [
+      "089-300-9414"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0192",
+    "type": "EXACT",
+    "query": "NOC NTMobile (NT2)",
+    "expected_match": "NOC NTMobile (NT2)",
+    "expected_phones": [
+      "02-575-4991"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0193",
+    "type": "VARIANT_MERGED",
+    "query": "NOCNTMobile(NT2)",
+    "expected_match": "NOC NTMobile (NT2)",
+    "expected_phones": [
+      "02-575-4991"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0194",
+    "type": "SPECIAL_PAREN",
+    "query": "NOC NTMobile",
+    "expected_match": "NOC NTMobile (NT2)",
+    "expected_phones": [
+      "02-575-4991"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0195",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "NT2",
+    "expected_match": "NOC NTMobile (NT2)",
+    "expected_phones": [
+      "02-575-4991"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0196",
+    "type": "EXACT",
+    "query": "NOC noc cnema",
+    "expected_match": "NOC noc cnema",
+    "expected_phones": [
+      "081-350-9735"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0197",
+    "type": "VARIANT_MERGED",
+    "query": "NOCnoccnema",
+    "expected_match": "NOC noc cnema",
+    "expected_phones": [
+      "081-350-9735"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0198",
+    "type": "EXACT",
+    "query": "Supervisor Agent",
+    "expected_match": "Supervisor Agent",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0199",
+    "type": "VARIANT_SPACING",
+    "query": "Supervisor Agent (ผจ เปิ้ล)",
+    "expected_match": "Supervisor Agent",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Removed punctuation/spaces"
+  },
+  {
+    "test_id": "TEST_0200",
+    "type": "VARIANT_MERGED",
+    "query": "Supervisor Agent",
+    "expected_match": "Supervisor Agent",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0201",
+    "type": "SPECIAL_DOT_MERGED",
+    "query": "Supervisor Agent (ผจเปิ้ล)",
+    "expected_match": "Supervisor Agent",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Dot removed"
+  },
+  {
+    "test_id": "TEST_0202",
+    "type": "SPECIAL_PAREN",
+    "query": "Supervisor Agent",
+    "expected_match": "Supervisor Agent",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0203",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "ผจ.เปิ้ล",
+    "expected_match": "Supervisor Agent",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0204",
+    "type": "EXACT",
+    "query": "Field Engineer A",
+    "expected_match": "Field Engineer A",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0205",
+    "type": "VARIANT_MERGED",
+    "query": "Field Engineer A",
+    "expected_match": "Field Engineer A",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0206",
+    "type": "SPECIAL_PAREN",
+    "query": "Field Engineer A",
+    "expected_match": "Field Engineer A",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0207",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "โชค",
+    "expected_match": "Field Engineer A",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0208",
+    "type": "EXACT",
+    "query": "Field Engineer B",
+    "expected_match": "Field Engineer B",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0209",
+    "type": "VARIANT_MERGED",
+    "query": "Field Engineer B",
+    "expected_match": "Field Engineer B",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0210",
+    "type": "SPECIAL_PAREN",
+    "query": "Field Engineer B",
+    "expected_match": "Field Engineer B",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0211",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "เตเต้",
+    "expected_match": "Field Engineer B",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0212",
+    "type": "EXACT",
+    "query": "Field Engineer C",
+    "expected_match": "Field Engineer C",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0213",
+    "type": "VARIANT_MERGED",
+    "query": "Field Engineer C",
+    "expected_match": "Field Engineer C",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0214",
+    "type": "SPECIAL_PAREN",
+    "query": "Field Engineer C",
+    "expected_match": "Field Engineer C",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0215",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "เสือ",
+    "expected_match": "Field Engineer C",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0216",
+    "type": "EXACT",
+    "query": "Network Engineer A",
+    "expected_match": "Network Engineer A",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0217",
+    "type": "VARIANT_MERGED",
+    "query": "Network Engineer A",
+    "expected_match": "Network Engineer A",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0218",
+    "type": "SPECIAL_PAREN",
+    "query": "Network Engineer A ทิพย์สังข์",
+    "expected_match": "Network Engineer A",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0219",
+    "type": "EXACT",
+    "query": "Network Engineer B",
+    "expected_match": "Network Engineer B",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0220",
+    "type": "VARIANT_MERGED",
+    "query": "Network Engineer B",
+    "expected_match": "Network Engineer B",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0221",
+    "type": "SPECIAL_PAREN",
+    "query": "Network Engineer B ทองประดับ",
+    "expected_match": "Network Engineer B",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0222",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "เก่ง",
+    "expected_match": "Network Engineer B",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0223",
+    "type": "EXACT",
+    "query": "HelpDesk Staff A (กุล)",
+    "expected_match": "HelpDesk Staff A (กุล)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0224",
+    "type": "VARIANT_MERGED",
+    "query": "HelpDesk Staff A",
+    "expected_match": "HelpDesk Staff A (กุล)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0225",
+    "type": "SPECIAL_PAREN",
+    "query": "HelpDesk Staff A",
+    "expected_match": "HelpDesk Staff A (กุล)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0226",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "กุล",
+    "expected_match": "HelpDesk Staff A (กุล)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0227",
+    "type": "EXACT",
+    "query": "HelpDesk Staff B (เจษ)",
+    "expected_match": "HelpDesk Staff B (เจษ)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0228",
+    "type": "VARIANT_MERGED",
+    "query": "HelpDesk Staff B",
+    "expected_match": "HelpDesk Staff B (เจษ)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0229",
+    "type": "SPECIAL_PAREN",
+    "query": "HelpDesk Staff B",
+    "expected_match": "HelpDesk Staff B (เจษ)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0230",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "เจษ",
+    "expected_match": "HelpDesk Staff B (เจษ)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0231",
+    "type": "EXACT",
+    "query": "HelpDesk Staff C",
+    "expected_match": "HelpDesk Staff C",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0232",
+    "type": "VARIANT_MERGED",
+    "query": "HelpDesk Staff C",
+    "expected_match": "HelpDesk Staff C",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0233",
+    "type": "SPECIAL_PAREN",
+    "query": "HelpDesk Staff C หมื่นขจร",
+    "expected_match": "HelpDesk Staff C",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0234",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "เต้",
+    "expected_match": "HelpDesk Staff C",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0235",
+    "type": "EXACT",
+    "query": "HelpDesk Staff D",
+    "expected_match": "HelpDesk Staff D",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0236",
+    "type": "VARIANT_SPACING",
+    "query": "น ส ปาลิตา กลิ่นหอม (จูน)",
+    "expected_match": "HelpDesk Staff D",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Removed punctuation/spaces"
+  },
+  {
+    "test_id": "TEST_0237",
+    "type": "VARIANT_MERGED",
+    "query": "HelpDesk Staff D",
+    "expected_match": "HelpDesk Staff D",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0238",
+    "type": "SPECIAL_DOT_MERGED",
+    "query": "นสปาลิตา กลิ่นหอม (จูน)",
+    "expected_match": "HelpDesk Staff D",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Dot removed"
+  },
+  {
+    "test_id": "TEST_0239",
+    "type": "SPECIAL_PAREN",
+    "query": "HelpDesk Staff D กลิ่นหอม",
+    "expected_match": "HelpDesk Staff D",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0240",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "จูน",
+    "expected_match": "HelpDesk Staff D",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0241",
+    "type": "EXACT",
+    "query": "Field Staff E เชื้อช่วยชู (กบ)",
+    "expected_match": "Field Staff E เชื้อช่วยชู (กบ)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0242",
+    "type": "VARIANT_MERGED",
+    "query": "Field Staff E",
+    "expected_match": "Field Staff E เชื้อช่วยชู (กบ)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0243",
+    "type": "SPECIAL_PAREN",
+    "query": "Field Staff E เชื้อช่วยชู",
+    "expected_match": "Field Staff E เชื้อช่วยชู (กบ)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0244",
+    "type": "EXACT",
+    "query": "Field Staff F ธรรมปัญญาสกุล (บอย)",
+    "expected_match": "Field Staff F ธรรมปัญญาสกุล (บอย)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0245",
+    "type": "VARIANT_MERGED",
+    "query": "Field Staff F",
+    "expected_match": "Field Staff F ธรรมปัญญาสกุล (บอย)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0246",
+    "type": "SPECIAL_PAREN",
+    "query": "Field Staff F ธรรมปัญญาสกุล",
+    "expected_match": "Field Staff F ธรรมปัญญาสกุล (บอย)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0247",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "บอย",
+    "expected_match": "Field Staff F ธรรมปัญญาสกุล (บอย)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0248",
+    "type": "EXACT",
+    "query": "Field Staff G อ่อนรอด (ธิส)",
+    "expected_match": "Field Staff G อ่อนรอด (ธิส)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0249",
+    "type": "VARIANT_MERGED",
+    "query": "Field Staff G",
+    "expected_match": "Field Staff G อ่อนรอด (ธิส)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0250",
+    "type": "SPECIAL_PAREN",
+    "query": "Field Staff G อ่อนรอด",
+    "expected_match": "Field Staff G อ่อนรอด (ธิส)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0251",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "ธิส",
+    "expected_match": "Field Staff G อ่อนรอด (ธิส)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0252",
+    "type": "EXACT",
+    "query": "Field Staff H ปิ่นทองพันธ์ (อัต)",
+    "expected_match": "Field Staff H ปิ่นทองพันธ์ (อัต)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0253",
+    "type": "VARIANT_MERGED",
+    "query": "Field Staff H",
+    "expected_match": "Field Staff H ปิ่นทองพันธ์ (อัต)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0254",
+    "type": "SPECIAL_PAREN",
+    "query": "Field Staff H ปิ่นทองพันธ์",
+    "expected_match": "Field Staff H ปิ่นทองพันธ์ (อัต)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0255",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "อัต",
+    "expected_match": "Field Staff H ปิ่นทองพันธ์ (อัต)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0256",
+    "type": "EXACT",
+    "query": "Field Staff I แหละกุบ (ตุ้ย)",
+    "expected_match": "Field Staff I แหละกุบ (ตุ้ย)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0257",
+    "type": "VARIANT_MERGED",
+    "query": "Field Staff I",
+    "expected_match": "Field Staff I แหละกุบ (ตุ้ย)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0258",
+    "type": "SPECIAL_PAREN",
+    "query": "Field Staff I แหละกุบ",
+    "expected_match": "Field Staff I แหละกุบ (ตุ้ย)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0259",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "ตุ้ย",
+    "expected_match": "Field Staff I แหละกุบ (ตุ้ย)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0260",
+    "type": "EXACT",
+    "query": "Field Staff J บุญนิจันทร์ (กุ้ม)",
+    "expected_match": "Field Staff J บุญนิจันทร์ (กุ้ม)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0261",
+    "type": "VARIANT_SPACING",
+    "query": "น ส ณัฐพร บุญนิจันทร์ (กุ้ม)",
+    "expected_match": "Field Staff J บุญนิจันทร์ (กุ้ม)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Removed punctuation/spaces"
+  },
+  {
+    "test_id": "TEST_0262",
+    "type": "VARIANT_MERGED",
+    "query": "Field Staff J",
+    "expected_match": "Field Staff J บุญนิจันทร์ (กุ้ม)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0263",
+    "type": "SPECIAL_DOT_MERGED",
+    "query": "นสณัฐพร บุญนิจันทร์ (กุ้ม)",
+    "expected_match": "Field Staff J บุญนิจันทร์ (กุ้ม)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Dot removed"
+  },
+  {
+    "test_id": "TEST_0264",
+    "type": "SPECIAL_PAREN",
+    "query": "Field Staff J บุญนิจันทร์",
+    "expected_match": "Field Staff J บุญนิจันทร์ (กุ้ม)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0265",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "กุ้ม",
+    "expected_match": "Field Staff J บุญนิจันทร์ (กุ้ม)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0266",
+    "type": "EXACT",
+    "query": "Field Staff K คงแก้ว (สัน)",
+    "expected_match": "Field Staff K คงแก้ว (สัน)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0267",
+    "type": "VARIANT_MERGED",
+    "query": "Field Staff K",
+    "expected_match": "Field Staff K คงแก้ว (สัน)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0268",
+    "type": "SPECIAL_PAREN",
+    "query": "Field Staff K คงแก้ว",
+    "expected_match": "Field Staff K คงแก้ว (สัน)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0269",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "สัน",
+    "expected_match": "Field Staff K คงแก้ว (สัน)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0270",
+    "type": "EXACT",
+    "query": "Field Staff L มีผล (เจ)",
+    "expected_match": "Field Staff L มีผล (เจ)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0271",
+    "type": "VARIANT_MERGED",
+    "query": "Field Staff L",
+    "expected_match": "Field Staff L มีผล (เจ)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0272",
+    "type": "SPECIAL_PAREN",
+    "query": "Field Staff L มีผล",
+    "expected_match": "Field Staff L มีผล (เจ)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0273",
+    "type": "EXACT",
+    "query": "Field Staff M ชูแก้ว (กร)",
+    "expected_match": "Field Staff M ชูแก้ว (กร)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0274",
+    "type": "VARIANT_MERGED",
+    "query": "Field Staff M",
+    "expected_match": "Field Staff M ชูแก้ว (กร)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0275",
+    "type": "SPECIAL_PAREN",
+    "query": "Field Staff M ชูแก้ว",
+    "expected_match": "Field Staff M ชูแก้ว (กร)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0276",
+    "type": "EXACT",
+    "query": "Field Staff N ช่วยราชการ (ลิม)",
+    "expected_match": "Field Staff N ช่วยราชการ (ลิม)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0277",
+    "type": "VARIANT_MERGED",
+    "query": "Field Staff N",
+    "expected_match": "Field Staff N ช่วยราชการ (ลิม)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0278",
+    "type": "SPECIAL_PAREN",
+    "query": "Field Staff N ช่วยราชการ",
+    "expected_match": "Field Staff N ช่วยราชการ (ลิม)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0279",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "ลิม",
+    "expected_match": "Field Staff N ช่วยราชการ (ลิม)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0280",
+    "type": "EXACT",
+    "query": "Field Staff O แก้วนุกูล (โก้)",
+    "expected_match": "Field Staff O แก้วนุกูล (โก้)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0281",
+    "type": "VARIANT_MERGED",
+    "query": "Field Staff O",
+    "expected_match": "Field Staff O แก้วนุกูล (โก้)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0282",
+    "type": "SPECIAL_PAREN",
+    "query": "Field Staff O แก้วนุกูล",
+    "expected_match": "Field Staff O แก้วนุกูล (โก้)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0283",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "โก้",
+    "expected_match": "Field Staff O แก้วนุกูล (โก้)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0284",
+    "type": "EXACT",
+    "query": "Field Staff P เคยะกูล (กร)",
+    "expected_match": "Field Staff P เคยะกูล (กร)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0285",
+    "type": "VARIANT_MERGED",
+    "query": "Field Staff P",
+    "expected_match": "Field Staff P เคยะกูล (กร)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0286",
+    "type": "SPECIAL_PAREN",
+    "query": "Field Staff P เคยะกูล",
+    "expected_match": "Field Staff P เคยะกูล (กร)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0287",
+    "type": "EXACT",
+    "query": "Field Staff Q พงศ์สุวรรณ (ปอนด์)",
+    "expected_match": "Field Staff Q พงศ์สุวรรณ (ปอนด์)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0288",
+    "type": "VARIANT_MERGED",
+    "query": "Field Staff Q",
+    "expected_match": "Field Staff Q พงศ์สุวรรณ (ปอนด์)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0289",
+    "type": "SPECIAL_PAREN",
+    "query": "Field Staff Q พงศ์สุวรรณ",
+    "expected_match": "Field Staff Q พงศ์สุวรรณ (ปอนด์)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content outside parentheses"
+  },
+  {
+    "test_id": "TEST_0290",
+    "type": "SPECIAL_PAREN_CONTENT",
+    "query": "ปอนด์",
+    "expected_match": "Field Staff Q พงศ์สุวรรณ (ปอนด์)",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Content inside parentheses"
+  },
+  {
+    "test_id": "TEST_0291",
+    "type": "EXACT",
+    "query": "คุณชัยยา จิตรพรหม",
+    "expected_match": "คุณชัยยา จิตรพรหม",
+    "expected_phones": [
+      "<PHONE>"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0292",
+    "type": "VARIANT_MERGED",
+    "query": "คุณชัยยาจิตรพรหม",
+    "expected_match": "คุณชัยยา จิตรพรหม",
+    "expected_phones": [
+      "<PHONE>"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0293",
+    "type": "EXACT",
+    "query": "คุณสมบูรณ์ เชาวน์ศิริวรกุล",
+    "expected_match": "คุณสมบูรณ์ เชาวน์ศิริวรกุล",
+    "expected_phones": [
+      "<PHONE>",
+      "0893932263"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0294",
+    "type": "VARIANT_MERGED",
+    "query": "คุณสมบูรณ์เชาวน์ศิริวรกุล",
+    "expected_match": "คุณสมบูรณ์ เชาวน์ศิริวรกุล",
+    "expected_phones": [
+      "<PHONE>",
+      "0893932263"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0295",
+    "type": "EXACT",
+    "query": "คุณปรัชญา ศรีเสาวชาติ",
+    "expected_match": "คุณปรัชญา ศรีเสาวชาติ",
+    "expected_phones": [
+      "<PHONE>"
+    ],
+    "notes": "Exact stored name match"
+  },
+  {
+    "test_id": "TEST_0296",
+    "type": "VARIANT_MERGED",
+    "query": "คุณปรัชญาศรีเสาวชาติ",
+    "expected_match": "คุณปรัชญา ศรีเสาวชาติ",
+    "expected_phones": [
+      "<PHONE>"
+    ],
+    "notes": "Merged tokens"
+  },
+  {
+    "test_id": "TEST_0297",
+    "type": "STRESS_WHITESPACE",
+    "query": "   Tacac++  PE  ขึ้นไป   ",
+    "expected_match": "Tacac++     PE ขึ้นไป",
+    "expected_phones": [
+      "02-575-9634",
+      "02-575-7557",
+      "02-575-4602",
+      "02-575-4603"
+    ],
+    "notes": "Messy whitespace"
+  },
+  {
+    "test_id": "TEST_0298",
+    "type": "STRESS_MIXED_CASE",
+    "query": "TaCaC++     Pe ขึ้นไป",
+    "expected_match": "Tacac++     PE ขึ้นไป",
+    "expected_phones": [
+      "02-575-9634",
+      "02-575-7557",
+      "02-575-4602",
+      "02-575-4603"
+    ],
+    "notes": "Mixed case query"
+  },
+  {
+    "test_id": "TEST_0299",
+    "type": "STRESS_PREFIX",
+    "query": "ติดต่อ Tacac++     PE ขึ้นไป",
+    "expected_match": "Tacac++     PE ขึ้นไป",
+    "expected_phones": [
+      "02-575-9634",
+      "02-575-7557",
+      "02-575-4602",
+      "02-575-4603"
+    ],
+    "notes": "Prefix ติดต่อ"
+  },
+  {
+    "test_id": "TEST_0300",
+    "type": "STRESS_TH_EN",
+    "query": "contact Tacac++     PE ขึ้นไป",
+    "expected_match": "Tacac++     PE ขึ้นไป",
+    "expected_phones": [
+      "02-575-9634",
+      "02-575-7557",
+      "02-575-4602",
+      "02-575-4603"
+    ],
+    "notes": "Eng prefix + Thai Name"
+  },
+  {
+    "test_id": "TEST_0301",
+    "type": "STRESS_WHITESPACE",
+    "query": "   สื่อสารข้อมูล  นราธิวาส   ",
+    "expected_match": "สื่อสารข้อมูล นราธิวาส",
+    "expected_phones": [
+      "073-512-045"
+    ],
+    "notes": "Messy whitespace"
+  },
+  {
+    "test_id": "TEST_0302",
+    "type": "STRESS_PREFIX",
+    "query": "เบอร์ สื่อสารข้อมูล นราธิวาส",
+    "expected_match": "สื่อสารข้อมูล นราธิวาส",
+    "expected_phones": [
+      "073-512-045"
+    ],
+    "notes": "Prefix เบอร์"
+  },
+  {
+    "test_id": "TEST_0303",
+    "type": "STRESS_TH_EN",
+    "query": "contact สื่อสารข้อมูล นราธิวาส",
+    "expected_match": "สื่อสารข้อมูล นราธิวาส",
+    "expected_phones": [
+      "073-512-045"
+    ],
+    "notes": "Eng prefix + Thai Name"
+  },
+  {
+    "test_id": "TEST_0304",
+    "type": "STRESS_WHITESPACE",
+    "query": "   ณัฐศักย์  แก้วนุกูล   ",
+    "expected_match": "ณัฐศักย์ แก้วนุกูล",
+    "expected_phones": [],
+    "notes": "Messy whitespace"
+  },
+  {
+    "test_id": "TEST_0305",
+    "type": "STRESS_PREFIX",
+    "query": "เบอร์ ณัฐศักย์ แก้วนุกูล",
+    "expected_match": "ณัฐศักย์ แก้วนุกูล",
+    "expected_phones": [],
+    "notes": "Prefix เบอร์"
+  },
+  {
+    "test_id": "TEST_0306",
+    "type": "STRESS_TH_EN",
+    "query": "contact ณัฐศักย์ แก้วนุกูล",
+    "expected_match": "ณัฐศักย์ แก้วนุกูล",
+    "expected_phones": [],
+    "notes": "Eng prefix + Thai Name"
+  },
+  {
+    "test_id": "TEST_0307",
+    "type": "STRESS_WHITESPACE",
+    "query": "   IP  Network   ",
+    "expected_match": "IP Network",
+    "expected_phones": [
+      "02-575-4750",
+      "02-575-4755",
+      "02-574-8478",
+      "02-575-4602",
+      "02-575-4603"
+    ],
+    "notes": "Messy whitespace"
+  },
+  {
+    "test_id": "TEST_0308",
+    "type": "STRESS_MIXED_CASE",
+    "query": "Ip nEtWoRk",
+    "expected_match": "IP Network",
+    "expected_phones": [
+      "02-575-4750",
+      "02-575-4755",
+      "02-574-8478",
+      "02-575-4602",
+      "02-575-4603"
+    ],
+    "notes": "Mixed case query"
+  },
+  {
+    "test_id": "TEST_0309",
+    "type": "STRESS_PREFIX",
+    "query": "เบอร์ IP Network",
+    "expected_match": "IP Network",
+    "expected_phones": [
+      "02-575-4750",
+      "02-575-4755",
+      "02-574-8478",
+      "02-575-4602",
+      "02-575-4603"
+    ],
+    "notes": "Prefix เบอร์"
+  },
+  {
+    "test_id": "TEST_0310",
+    "type": "STRESS_WHITESPACE",
+    "query": "   ชลกร  เคยะกูล   ",
+    "expected_match": "ชลกร เคยะกูล",
+    "expected_phones": [],
+    "notes": "Messy whitespace"
+  },
+  {
+    "test_id": "TEST_0311",
+    "type": "STRESS_PREFIX",
+    "query": "ขอเบอร์ ชลกร เคยะกูล",
+    "expected_match": "ชลกร เคยะกูล",
+    "expected_phones": [],
+    "notes": "Prefix ขอเบอร์"
+  },
+  {
+    "test_id": "TEST_0312",
+    "type": "STRESS_TH_EN",
+    "query": "contact ชลกร เคยะกูล",
+    "expected_match": "ชลกร เคยะกูล",
+    "expected_phones": [],
+    "notes": "Eng prefix + Thai Name"
+  },
+  {
+    "test_id": "TEST_0313",
+    "type": "STRESS_WHITESPACE",
+    "query": "   IP-Phone-helpdesk   ",
+    "expected_match": "IP-Phone-helpdesk",
+    "expected_phones": [
+      "02-269-9111",
+      "02-575-5340"
+    ],
+    "notes": "Messy whitespace"
+  },
+  {
+    "test_id": "TEST_0314",
+    "type": "STRESS_MIXED_CASE",
+    "query": "Ip-pHoNe-hElPdEsK",
+    "expected_match": "IP-Phone-helpdesk",
+    "expected_phones": [
+      "02-269-9111",
+      "02-575-5340"
+    ],
+    "notes": "Mixed case query"
+  },
+  {
+    "test_id": "TEST_0315",
+    "type": "STRESS_PREFIX",
+    "query": "โทร IP-Phone-helpdesk",
+    "expected_match": "IP-Phone-helpdesk",
+    "expected_phones": [
+      "02-269-9111",
+      "02-575-5340"
+    ],
+    "notes": "Prefix โทร"
+  },
+  {
+    "test_id": "TEST_0316",
+    "type": "STRESS_TH_EN",
+    "query": "เบอร์ IP-Phone-helpdesk",
+    "expected_match": "IP-Phone-helpdesk",
+    "expected_phones": [
+      "02-269-9111",
+      "02-575-5340"
+    ],
+    "notes": "Thai prefix + Eng Name"
+  },
+  {
+    "test_id": "TEST_0317",
+    "type": "STRESS_WHITESPACE",
+    "query": "   สผ  (แบบฟอร์ม  Fixed  IP  ADSL)(ปสผ.)   ",
+    "expected_match": "สผ (แบบฟอร์ม Fixed IP ADSL)(ปสผ.)",
+    "expected_phones": [
+      "02-269-9111 กด 2"
+    ],
+    "notes": "Messy whitespace"
+  },
+  {
+    "test_id": "TEST_0318",
+    "type": "STRESS_MIXED_CASE",
+    "query": "สผ (แบบฟอร์ม fIxEd iP AdSl)(ปสผ.)",
+    "expected_match": "สผ (แบบฟอร์ม Fixed IP ADSL)(ปสผ.)",
+    "expected_phones": [
+      "02-269-9111 กด 2"
+    ],
+    "notes": "Mixed case query"
+  },
+  {
+    "test_id": "TEST_0319",
+    "type": "STRESS_PREFIX",
+    "query": "ขอเบอร์ สผ (แบบฟอร์ม Fixed IP ADSL)(ปสผ.)",
+    "expected_match": "สผ (แบบฟอร์ม Fixed IP ADSL)(ปสผ.)",
+    "expected_phones": [
+      "02-269-9111 กด 2"
+    ],
+    "notes": "Prefix ขอเบอร์"
+  },
+  {
+    "test_id": "TEST_0320",
+    "type": "STRESS_TH_EN",
+    "query": "contact สผ (แบบฟอร์ม Fixed IP ADSL)(ปสผ.)",
+    "expected_match": "สผ (แบบฟอร์ม Fixed IP ADSL)(ปสผ.)",
+    "expected_phones": [
+      "02-269-9111 กด 2"
+    ],
+    "notes": "Eng prefix + Thai Name"
+  },
+  {
+    "test_id": "TEST_0321",
+    "type": "STRESS_WHITESPACE",
+    "query": "   NOC  NTMobile  (NT2)   ",
+    "expected_match": "NOC NTMobile (NT2)",
+    "expected_phones": [
+      "02-575-4991"
+    ],
+    "notes": "Messy whitespace"
+  },
+  {
+    "test_id": "TEST_0322",
+    "type": "STRESS_MIXED_CASE",
+    "query": "NoC NtMoBiLe (Nt2)",
+    "expected_match": "NOC NTMobile (NT2)",
+    "expected_phones": [
+      "02-575-4991"
+    ],
+    "notes": "Mixed case query"
+  },
+  {
+    "test_id": "TEST_0323",
+    "type": "STRESS_PREFIX",
+    "query": "โทร NOC NTMobile (NT2)",
+    "expected_match": "NOC NTMobile (NT2)",
+    "expected_phones": [
+      "02-575-4991"
+    ],
+    "notes": "Prefix โทร"
+  },
+  {
+    "test_id": "TEST_0324",
+    "type": "STRESS_TH_EN",
+    "query": "เบอร์ NOC NTMobile (NT2)",
+    "expected_match": "NOC NTMobile (NT2)",
+    "expected_phones": [
+      "02-575-4991"
+    ],
+    "notes": "Thai prefix + Eng Name"
+  },
+  {
+    "test_id": "TEST_0325",
+    "type": "STRESS_WHITESPACE",
+    "query": "   อรร(รายงาน  Quality  Award)   ",
+    "expected_match": "อรร(รายงาน Quality Award)",
+    "expected_phones": [
+      "02-574-8435"
+    ],
+    "notes": "Messy whitespace"
+  },
+  {
+    "test_id": "TEST_0326",
+    "type": "STRESS_MIXED_CASE",
+    "query": "อรร(รายงาน qUaLiTy aWaRd)",
+    "expected_match": "อรร(รายงาน Quality Award)",
+    "expected_phones": [
+      "02-574-8435"
+    ],
+    "notes": "Mixed case query"
+  },
+  {
+    "test_id": "TEST_0327",
+    "type": "STRESS_PREFIX",
+    "query": "ติดต่อ อรร(รายงาน Quality Award)",
+    "expected_match": "อรร(รายงาน Quality Award)",
+    "expected_phones": [
+      "02-574-8435"
+    ],
+    "notes": "Prefix ติดต่อ"
+  },
+  {
+    "test_id": "TEST_0328",
+    "type": "STRESS_TH_EN",
+    "query": "contact อรร(รายงาน Quality Award)",
+    "expected_match": "อรร(รายงาน Quality Award)",
+    "expected_phones": [
+      "02-574-8435"
+    ],
+    "notes": "Eng prefix + Thai Name"
+  },
+  {
+    "test_id": "TEST_0329",
+    "type": "STRESS_WHITESPACE",
+    "query": "   Network Engineer A  ทิพย์สังข์  (เม)   ",
+    "expected_match": "Network Engineer A",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Messy whitespace"
+  },
+  {
+    "test_id": "TEST_0330",
+    "type": "STRESS_PREFIX",
+    "query": "ขอเบอร์ Network Engineer A",
+    "expected_match": "Network Engineer A",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Prefix ขอเบอร์"
+  },
+  {
+    "test_id": "TEST_0331",
+    "type": "STRESS_TH_EN",
+    "query": "contact Network Engineer A",
+    "expected_match": "Network Engineer A",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Eng prefix + Thai Name"
+  },
+  {
+    "test_id": "TEST_0332",
+    "type": "STRESS_WHITESPACE",
+    "query": "   Field Engineer B  เลิศจำรัสพงศ์   ",
+    "expected_match": "Field Engineer B",
+    "expected_phones": [],
+    "notes": "Messy whitespace"
+  },
+  {
+    "test_id": "TEST_0333",
+    "type": "STRESS_PREFIX",
+    "query": "ติดต่อ Field Engineer B",
+    "expected_match": "Field Engineer B",
+    "expected_phones": [],
+    "notes": "Prefix ติดต่อ"
+  },
+  {
+    "test_id": "TEST_0334",
+    "type": "STRESS_TH_EN",
+    "query": "contact Field Engineer B",
+    "expected_match": "Field Engineer B",
+    "expected_phones": [],
+    "notes": "Eng prefix + Thai Name"
+  },
+  {
+    "test_id": "TEST_0335",
+    "type": "STRESS_WHITESPACE",
+    "query": "   นายปรัชญา  ศรีเสาวชาติ  (ผจ.เปิ้ล)   ",
+    "expected_match": "Supervisor Agent",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Messy whitespace"
+  },
+  {
+    "test_id": "TEST_0336",
+    "type": "STRESS_PREFIX",
+    "query": "ติดต่อ Supervisor Agent",
+    "expected_match": "Supervisor Agent",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Prefix ติดต่อ"
+  },
+  {
+    "test_id": "TEST_0337",
+    "type": "STRESS_TH_EN",
+    "query": "contact Supervisor Agent",
+    "expected_match": "Supervisor Agent",
+    "expected_phones": [
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>",
+      "<PHONE>"
+    ],
+    "notes": "Eng prefix + Thai Name"
+  },
+  {
+    "test_id": "TEST_0338",
+    "type": "STRESS_WHITESPACE",
+    "query": "   Field Staff Q  พงศ์สุวรรณ  (ปอนด์)   ",
+    "expected_match": "Field Staff Q พงศ์สุวรรณ (ปอนด์)",
+    "expected_phones": [],
+    "notes": "Messy whitespace"
+  },
+  {
+    "test_id": "TEST_0339",
+    "type": "STRESS_PREFIX",
+    "query": "ติดต่อ Field Staff Q พงศ์สุวรรณ (ปอนด์)",
+    "expected_match": "Field Staff Q พงศ์สุวรรณ (ปอนด์)",
+    "expected_phones": [],
+    "notes": "Prefix ติดต่อ"
+  },
+  {
+    "test_id": "TEST_0340",
+    "type": "STRESS_TH_EN",
+    "query": "contact Field Staff Q พงศ์สุวรรณ (ปอนด์)",
+    "expected_match": "Field Staff Q พงศ์สุวรรณ (ปอนด์)",
+    "expected_phones": [],
+    "notes": "Eng prefix + Thai Name"
+  },
+  {
+    "test_id": "TEST_0341",
+    "type": "STRESS_WHITESPACE",
+    "query": "   ATM  TOT,Umbo   ",
+    "expected_match": "ATM TOT,Umbo",
+    "expected_phones": [
+      "02-500-8084",
+      "02-150-7941"
+    ],
+    "notes": "Messy whitespace"
+  },
+  {
+    "test_id": "TEST_0342",
+    "type": "STRESS_MIXED_CASE",
+    "query": "AtM ToT,UmBo",
+    "expected_match": "ATM TOT,Umbo",
+    "expected_phones": [
+      "02-500-8084",
+      "02-150-7941"
+    ],
+    "notes": "Mixed case query"
+  },
+  {
+    "test_id": "TEST_0343",
+    "type": "STRESS_PREFIX",
+    "query": "ขอเบอร์ ATM TOT,Umbo",
+    "expected_match": "ATM TOT,Umbo",
+    "expected_phones": [
+      "02-500-8084",
+      "02-150-7941"
+    ],
+    "notes": "Prefix ขอเบอร์"
+  },
+  {
+    "test_id": "TEST_0344",
+    "type": "STRESS_TH_EN",
+    "query": "เบอร์ ATM TOT,Umbo",
+    "expected_match": "ATM TOT,Umbo",
+    "expected_phones": [
+      "02-500-8084",
+      "02-150-7941"
+    ],
+    "notes": "Thai prefix + Eng Name"
+  },
+  {
+    "test_id": "TEST_0345",
+    "type": "STRESS_WHITESPACE",
+    "query": "   นายเหมาะโชค  เจียรนัย   ",
+    "expected_match": "Field Engineer A",
+    "expected_phones": [],
+    "notes": "Messy whitespace"
+  },
+  {
+    "test_id": "TEST_0346",
+    "type": "STRESS_PREFIX",
+    "query": "ขอเบอร์ Field Engineer A",
+    "expected_match": "Field Engineer A",
+    "expected_phones": [],
+    "notes": "Prefix ขอเบอร์"
+  },
+  {
+    "test_id": "TEST_0347",
+    "type": "STRESS_TH_EN",
+    "query": "contact Field Engineer A",
+    "expected_match": "Field Engineer A",
+    "expected_phones": [],
+    "notes": "Eng prefix + Thai Name"
+  },
+  {
+    "test_id": "TEST_0348",
+    "type": "STRESS_WHITESPACE",
+    "query": "   callcenter  wifi   ",
+    "expected_match": "callcenter wifi",
+    "expected_phones": [
+      "02-575-7145"
+    ],
+    "notes": "Messy whitespace"
+  },
+  {
+    "test_id": "TEST_0349",
+    "type": "STRESS_MIXED_CASE",
+    "query": "CaLlCeNtEr wIfI",
+    "expected_match": "callcenter wifi",
+    "expected_phones": [
+      "02-575-7145"
+    ],
+    "notes": "Mixed case query"
+  },
+  {
+    "test_id": "TEST_0350",
+    "type": "STRESS_PREFIX",
+    "query": "เบอร์ callcenter wifi",
+    "expected_match": "callcenter wifi",
+    "expected_phones": [
+      "02-575-7145"
+    ],
+    "notes": "Prefix เบอร์"
+  },
+  {
+    "test_id": "TEST_0351",
+    "type": "STRESS_WHITESPACE",
+    "query": "   Radius  NT2   ",
+    "expected_match": "Radius NT2",
+    "expected_phones": [
+      "02-568-2515",
+      "02-568-2516"
+    ],
+    "notes": "Messy whitespace"
+  },
+  {
+    "test_id": "TEST_0352",
+    "type": "STRESS_MIXED_CASE",
+    "query": "RaDiUs nT2",
+    "expected_match": "Radius NT2",
+    "expected_phones": [
+      "02-568-2515",
+      "02-568-2516"
+    ],
+    "notes": "Mixed case query"
+  },
+  {
+    "test_id": "TEST_0353",
+    "type": "STRESS_PREFIX",
+    "query": "ติดต่อ Radius NT2",
+    "expected_match": "Radius NT2",
+    "expected_phones": [
+      "02-568-2515",
+      "02-568-2516"
+    ],
+    "notes": "Prefix ติดต่อ"
+  },
+  {
+    "test_id": "TEST_0354",
+    "type": "STRESS_TH_EN",
+    "query": "เบอร์ Radius NT2",
+    "expected_match": "Radius NT2",
+    "expected_phones": [
+      "02-568-2515",
+      "02-568-2516"
+    ],
+    "notes": "Thai prefix + Eng Name"
+  },
+  {
+    "test_id": "TEST_0355",
+    "type": "STRESS_WHITESPACE",
+    "query": "   Field Staff M  ชูแก้ว   ",
+    "expected_match": "Field Staff M ชูแก้ว",
+    "expected_phones": [],
+    "notes": "Messy whitespace"
+  },
+  {
+    "test_id": "TEST_0356",
+    "type": "STRESS_PREFIX",
+    "query": "เบอร์ Field Staff M ชูแก้ว",
+    "expected_match": "Field Staff M ชูแก้ว",
+    "expected_phones": [],
+    "notes": "Prefix เบอร์"
+  },
+  {
+    "test_id": "TEST_0357",
+    "type": "STRESS_TH_EN",
+    "query": "contact Field Staff M ชูแก้ว",
+    "expected_match": "Field Staff M ชูแก้ว",
+    "expected_phones": [],
+    "notes": "Eng prefix + Thai Name"
+  },
+  {
+    "test_id": "TEST_0358",
+    "type": "STRESS_WHITESPACE",
+    "query": "   กบป.(ดูสื่อทั่วประเทศ)   ",
+    "expected_match": "กบป.(ดูสื่อทั่วประเทศ)",
+    "expected_phones": [
+      "02-568-2799",
+      "02-575-5254"
+    ],
+    "notes": "Messy whitespace"
+  },
+  {
+    "test_id": "TEST_0359",
+    "type": "STRESS_PREFIX",
+    "query": "เบอร์ กบป.(ดูสื่อทั่วประเทศ)",
+    "expected_match": "กบป.(ดูสื่อทั่วประเทศ)",
+    "expected_phones": [
+      "02-568-2799",
+      "02-575-5254"
+    ],
+    "notes": "Prefix เบอร์"
+  },
+  {
+    "test_id": "TEST_0360",
+    "type": "STRESS_TH_EN",
+    "query": "contact กบป.(ดูสื่อทั่วประเทศ)",
+    "expected_match": "กบป.(ดูสื่อทั่วประเทศ)",
+    "expected_phones": [
+      "02-568-2799",
+      "02-575-5254"
+    ],
+    "notes": "Eng prefix + Thai Name"
+  },
+  {
+    "test_id": "TEST_0361",
+    "type": "STRESS_WHITESPACE",
+    "query": "   Field Staff F  ธรรมปัญญาสกุล   ",
+    "expected_match": "Field Staff F ธรรมปัญญาสกุล",
+    "expected_phones": [],
+    "notes": "Messy whitespace"
+  },
+  {
+    "test_id": "TEST_0362",
+    "type": "STRESS_PREFIX",
+    "query": "เบอร์ Field Staff F ธรรมปัญญาสกุล",
+    "expected_match": "Field Staff F ธรรมปัญญาสกุล",
+    "expected_phones": [],
+    "notes": "Prefix เบอร์"
+  },
+  {
+    "test_id": "TEST_0363",
+    "type": "STRESS_TH_EN",
+    "query": "contact Field Staff F ธรรมปัญญาสกุล",
+    "expected_match": "Field Staff F ธรรมปัญญาสกุล",
+    "expected_phones": [],
+    "notes": "Eng prefix + Thai Name"
+  }
+]

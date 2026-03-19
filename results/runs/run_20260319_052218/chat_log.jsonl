@@ -1,0 +1,1 @@
+{"ts": 1773872564.2835221, "question": "ขอดูรูปพวกหัว SFP 100G หน่อยดิ่", "answer": "ไม่พบข้อมูลทีม 'พวกหัว sfp 100g' ในระบบ", "route": "team_miss", "latencies": {"routing": 0.0, "embed": 0.0, "vector_search": 0.0, "bm25": 0.0, "fusion": 0.0, "controller": 0.0, "retrieval_opt": 0.0, "generator": 0.0, "evaluator": 0.0, "clarify": 0.0, "total": 0.0, "llm": 0.0}}

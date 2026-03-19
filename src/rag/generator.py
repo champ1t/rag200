@@ -58,11 +58,21 @@ class RAGGenerator:
         # 3. Prompt Construction
         template = get_template(intent, knowledge_type=knowledge_type)
         
+        # Extract first title and first url for standard templates like TEMPLATE_SUMMARIZER
+        first_title = ""
+        first_url = ""
+        if valid_docs:
+            doc0_meta = getattr(valid_docs[0], "metadata", {})
+            first_title = doc0_meta.get("title", "บทความ")
+            first_url = doc0_meta.get("url") or doc0_meta.get("source", "")
+
         # Prepare params
         fmt_params = {
             "context_str": context_str,
             "context": context_str, # REDUNDANT KEY for safety (some templates use {context})
             "query": query,
+            "title": first_title,
+            "url": first_url,
             "source_urls": "\n".join(source_urls_list),
             "doc_type": kwargs.get("doc_type", "NONE"), # Default to NONE
             "policy_flags": kwargs.get("policy_flags", []) # Default to empty list

@@ -1,0 +1,450 @@
+
+[StressTest] Initializing ChatEngine...
+[INFO] Loading resources...
+[VectorStore] Loading BM25 index from data/bm25_index.json...
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+
+Q: เบอร์โทร ผส.บลตน.
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: CONTACT_LOOKUP (0.9) Reason: ask for phone number related to role ผส.บลตน
+[DEBUG] Route: CONTACT_LOOKUP (via Handler)
+A: **ตำแหน่ง:** ผส.บลตน.
+**ชื่อ:** คุณสมบูรณ์ เชาวน์ศิริวรกุล
+**โทร:** 074251450 (Web), 0893932263 (Web... (Route: contact_hit_role, Time: 13.36s)
+✅ PASSED
+.
+Q: ใครดูแลงาน FTTx
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: POSITION_HOLDER_LOOKUP (0.95) Reason: asked who holds responsibility for FTTx work
+[DEBUG] Handling POSITION_HOLDER_LOOKUP logic
+A: **ตำแหน่ง:** งาน FTTx
+**ชื่อ:** นายปรัชญา ศรีเสาวชาติ (ผจ.เปิ้ล)
+
+**ตำแหน่ง:** งาน FTTx
+**ชื่อ:** นา... (Route: position_holder_hit, Time: 73.95s)
+❌ FAILED: Bad Route: Got 'position_holder_hit', Expected ['directory_hit_team', 'contact_hit_team']
+F
+Q: ใครตำแหน่ง ผจ.สบลตน.
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: CLARIFY (0.9) Reason: role 'ผจ.' is ambiguous (shorter than 4 chars) and requires clarification
+[DEBUG] Handling CLARIFY intent -> Deterministic Suggestions
+A: คุณหมายถึงตำแหน่งไหนครับ?
+1) ผจ.สบลตน.
+
+พิมพ์เลข 1-1 หรือพิมพ์ชื่อเต็ม... (Route: clarify_ambiguous, Time: 45.69s)
+✅ PASSED
+.
+Q: เบอร์คุณสมชาย
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: CONTACT_LOOKUP (0.9) Reason: ask for phone number with specific name
+[DEBUG] Route: CONTACT_LOOKUP (via Handler)
+A: ไม่พบข้อมูลการติดต่อในสมุดโทรศัพท์
+กรุณาระบุชื่อหน่วยงานหรือชื่อบุคคลให้ชัดเจนขึ้น หรือลองค้นหาด้วยช... (Route: contact_miss, Time: 13.53s)
+✅ PASSED
+.
+Q: เบอร์ ผส.
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: CLARIFY (0.9) Reason: short role ผส. needs clarification
+[DEBUG] Handling CLARIFY intent -> Deterministic Suggestions
+A: คุณหมายถึงตำแหน่งไหนครับ?
+1) ผส.บลตน.
+
+พิมพ์เลข 1-1 หรือพิมพ์ชื่อเต็ม... (Route: clarify_ambiguous, Time: 21.06s)
+❌ FAILED: Bad Route: Got 'clarify_ambiguous', Expected ['contact_ambiguous']
+F
+Q: เน็ตเสียต้องทำไง
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query asks for steps to resolve network issue
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] HowTo Top Hit: อินเตอร์เน็ตเบื้องต้น สำหรับ TOT-OS  ลภก.2 (Score: 0.5000, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+A: ใช้งานไม่ได้แบบไหน (ต่อไม่ติด/ช้า/หลุดบ่อย/ขึ้น error) และใช้งานผ่าน Wi-Fi หรือสาย LAN ครับ?... (Route: rag_clarify, Time: 12.61s)
+✅ PASSED
+.
+Q: วิธีแก้ user lock
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains 'วิธีแก้' (how to fix) indicating procedure request
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] HowTo Top Hit: แก้ user สำหรับลูกค้า context private (Score: 0.5000, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+A: คุณต้องการแก้ไข user lock สำหรับลูกค้าที่มี context private หรือไม่ หรือคุณต้องการแก้ไข user lock สำ... (Route: rag_clarify, Time: 110.32s)
+❌ FAILED: Bad Route: Got 'rag_clarify', Expected ['article_answer', 'rag_answer']
+F
+Q: DNS ของ NT คืออะไร
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query asks for DNS configuration details
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] HowTo Top Hit: การเซ็ต Router ยี่ห้อต่าง ๆ (Score: 0.7219, Threshold: 0.6)
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=577:-router--&catid=43:2011-11-14-08-37-12&Itemid=81
+[DEBUG] Image-Heavy Article detected (len=247, imgs=103)
+A: บทความนี้เนื้อหาหลักเป็นรูปภาพตาราง (มีข้อมูลผู้ใช้/รหัสผ่าน) จึงไม่แสดงรายละเอียดในแชทเพื่อความปลอด... (Route: article_answer, Time: 59.16s)
+❌ FAILED: Bad Route: Got 'article_answer', Expected ['knowledge_pack', 'knowledge_pack_clarify'], Missing text: 'DNS'
+F
+Q: คู่มือตั้งค่า ONU
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: request for setup manual
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] HowTo Top Hit: Dslam (Score: 0.5000, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[Thinking...]
+A: ไม่พบข้อมูลในระบบปัจจุบัน แนะนำให้ตรวจสอบคู่มือ Dslam ที่ระบุใน CONTEXT หรือระบุเพิ่มเติมว่าต้องการข... (Route: rag, Time: 123.13s)
+❌ FAILED: Bad Route: Got 'rag', Expected ['article_answer', 'rag_answer', 'howto_procedure']
+F
+Q: ระเบียบการลา
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query asks for leave regulation procedure
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] HowTo Top Hit: การจัดทำรายงานงานค้างการตรวจแก้วงจรเช่าประจำวัน (Score: 0.2284, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+A: การจ่ายงานเลขหมายวงจรเช่า  
+- การจ่ายงานเลขหมายวงจรเช่าในระบบ SCOMS ให้จ่ายงานไปยัง กองงานในพื้นที่ด... (Route: cache_hit, Time: 27.07s)
+❌ FAILED: Bad Route: Got 'cache_hit', Expected ['article_answer', 'rag_answer']
+F
+Q: แจ้งเหตุเสียภูเก็ต
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Corrected Query: 'แจ้งเหตุเสียภูเก็ต' -> 'แจ้งเหตุเสียหายภูเก็ต'
+[DEBUG] Intent: GENERAL_QA (0.9) Reason: query is about incident reporting without clear intent signals
+A: การจ่ายงานเลขหมายวงจรเช่า  
+- การจ่ายงานเลขหมายวงจรเช่าในระบบ SCOMS ให้จ่ายงานไปยัง กองงานในพื้นที่ด... (Route: cache_hit, Time: 127.05s)
+❌ FAILED: Bad Route: Got 'cache_hit', Expected ['dispatch_mapper_hit']
+F
+Q: แจ้งเหตุเสีย
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: GENERAL_QA (0.9) Reason: Query is a direct request to report an incident, not matching any specific intent or requiring clarification
+A: การจ่ายงานเลขหมายวงจรเช่า  
+- การจ่ายงานเลขหมายวงจรเช่าในระบบ SCOMS ให้จ่ายงานไปยัง กองงานในพื้นที่ด... (Route: cache_hit, Time: 80.69s)
+❌ FAILED: Bad Route: Got 'cache_hit', Expected ['dispatch_mapper_general', 'rag_clarify'], Missing text: 'จังหวัด'
+F
+Q: เบอร์ช่างดาวอังคาร
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: CONTACT_LOOKUP (0.9) Reason: query contains 'เบอร์' indicating contact info request
+[DEBUG] Route: CONTACT_LOOKUP (via Handler)
+A: ไม่พบข้อมูลการติดต่อในสมุดโทรศัพท์
+กรุณาระบุชื่อหน่วยงานหรือชื่อบุคคลให้ชัดเจนขึ้น หรือลองค้นหาด้วยช... (Route: contact_miss, Time: 35.34s)
+❌ FAILED: Missing text: 'ไม่มีข้อมูล'
+F
+Q: รหัสผ่าน root คืออะไร
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: GENERAL_QA (0.9) Reason: ถามรหัสผ่าน root ซึ่งไม่ตรงกับ intent ที่กำหนด
+A: คุณต้องการรหัสผ่าน root สำหรับระบบใด?... (Route: rag_clarify, Time: 48.92s)
+❌ FAILED: Bad Route: Got 'rag_clarify', Expected ['rag_controller_rejected', 'contact_miss', 'howto_procedure'], Missing text: 'ไม่พบข้อมูล'
+F
+Q: สวัสดีครับ
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: GENERAL_QA (0.9) Reason: greeting
+A: การจ่ายงานเลขหมายวงจรเช่า  
+- การจ่ายงานเลขหมายวงจรเช่าในระบบ SCOMS ให้จ่ายงานไปยัง กองงานในพื้นที่ด... (Route: cache_hit, Time: 31.63s)
+❌ FAILED: Bad Route: Got 'cache_hit', Expected ['general_qa', 'rag_clarify'], Missing text: 'สวัสดี', Missing text: 'ช่วยเหลือ'
+F
+Q: AIS ดีไหม
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: GENERAL_QA (0.9) Reason: opinion question about AIS
+A: คุณต้องการให้ตรวจสอบสิ่งใดที่เกี่ยวกับ AIS บ้าง... (Route: rag_clarify, Time: 71.79s)
+❌ FAILED: Bad Route: Got 'rag_clarify', Expected ['rag_controller_rejected', 'rag_low_score', 'rag_no_docs'], Missing text: 'ไม่พบข้อมูล'
+F
+Q: กขค งจฉ
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: CLARIFY (0.5) Reason: query contains ambiguous Thai letters without clear intent
+[DEBUG] Handling CLARIFY intent -> Deterministic Suggestions
+A: ไม่พบข้อมูลที่ใกล้เคียงกับ 'กขค งจฉ' ครับ
+กรุณาระบุชื่อตำแหน่งหรือหน่วยงานให้ชัดเจนขึ้น... (Route: clarify_miss, Time: 34.41s)
+❌ FAILED: Bad Route: Got 'clarify_miss', Expected ['rag_no_docs', 'rag_low_score']
+F
+Q: ขอลิงก์ edoc
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: REFERENCE_LINK (0.9) Reason: explicit request for specific document link
+[DEBUG] Route: REFERENCE_LINK
+A: [Edocument]
+- URL: https://ntedoc.intra.ntplc.co.th/doc/homepage-doc
+- Source: http://10.192.133.33/... (Route: link_lookup, Time: 12.66s)
+✅ PASSED
+.
+Q: ข่าวน้ำท่วม
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: NEWS_SEARCH (0.9) Reason: user asks for news/announcement about flooding
+[DEBUG] Handling NEWS_SEARCH logic
+A: ไม่พบข้อมูลในระบบปัจจุบัน... (Route: news_miss, Time: 11.54s)
+❌ FAILED: Missing text: 'ข่าว'
+F
+Q: ขอดูรูป router
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: CLARIFY (0.9) Reason: query asks for image (รูป) which is not covered by any intent; suggest manual/procedure if intended
+[DEBUG] Handling CLARIFY intent -> Deterministic Suggestions
+A: ไม่พบข้อมูลที่ใกล้เคียงกับ 'ขอดูรูป router' ครับ
+กรุณาระบุชื่อตำแหน่งหรือหน่วยงานให้ชัดเจนขึ้น... (Route: clarify_miss, Time: 24.72s)
+❌ FAILED: Bad Route: Got 'clarify_miss', Expected ['article_answer', 'rag_answer', 'rag_low_score']
+F
+Q: ข่าวสารSMC
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: NEWS_SEARCH (0.9) Reason: explicit request for news/announcement related to SMC
+[DEBUG] Handling NEWS_SEARCH logic
+A: ไม่พบข้อมูลในระบบปัจจุบัน... (Route: news_miss, Time: 11.50s)
+❌ FAILED: Missing text: 'ข่าว', Missing text: 'SMC'
+F
+Q: เน็ตเสียอะ ซ่อมให้หน่อย
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query asks for internet repair steps
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] HowTo Top Hit: ทำความรู้จักและตั้งค่า EtherChannel บน Cisco (Score: 0.5000, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+A: ใช้งานไม่ได้แบบไหน (ต่อไม่ติด/ช้า/หลุดบ่อย/ขึ้น error) และใช้งานผ่าน Wi-Fi หรือสาย LAN ครับ?... (Route: rag_clarify, Time: 17.73s)
+❌ FAILED: Bad Route: Got 'rag_clarify', Expected ['dispatch_mapper_general', 'howto_procedure']
+F
+Q: เบอโท ผอ สบลตน
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: CONTACT_LOOKUP (0.9) Reason: เบอร์ (เบอโท) + ผอ (ตำแหน่ง) + สบลตน (ทีม)
+[DEBUG] Route: CONTACT_LOOKUP (via Handler)
+A: ไม่พบข้อมูลการติดต่อในสมุดโทรศัพท์
+กรุณาระบุชื่อหน่วยงานหรือชื่อบุคคลให้ชัดเจนขึ้น หรือลองค้นหาด้วยช... (Route: contact_miss, Time: 24.10s)
+❌ FAILED: Bad Route: Got 'contact_miss', Expected ['contact_hit_role', 'management_lookup'], Missing text: 'สมบูรณ์'
+F
+Q: ใครอยุ่ FTTx บ้าง
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: TEAM_LOOKUP (0.9) Reason: ask for team members of FTTx
+[DEBUG] Handling TEAM_LOOKUP logic
+[DEBUG] Team lookup canonical query: 'ใครอยุ่ FTTx บ้าง' -> 'ใครอยุ่ FTTx บ้าง' -> 'ใครอยุ่ fttx บ้าง'
+A: ไม่พบข้อมูลทีม 'ใครอยุ่ FTTx บ้าง' ในระบบ... (Route: team_miss, Time: 14.48s)
+❌ FAILED: Bad Route: Got 'team_miss', Expected ['directory_hit_team', 'contact_hit_team', 'team_hit', 'team_ambiguous'], Missing text: 'ปรัชญา'
+F
+Q: แมวพิมพ์งาน
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: CLARIFY (0.9) Reason: query contains ambiguous role/term 'แมว' which doesn't match defined intent patterns
+[DEBUG] Handling CLARIFY intent -> Deterministic Suggestions
+A: ไม่พบข้อมูลที่ใกล้เคียงกับ 'แมวพิมพ์งาน' ครับ
+กรุณาระบุชื่อตำแหน่งหรือหน่วยงานให้ชัดเจนขึ้น... (Route: clarify_miss, Time: 25.22s)
+✅ PASSED
+.
+======================================================================
+FAIL: test_02_contact_team (__main__.StressTest.test_02_contact_team)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 73, in test_02_contact_team
+    self._test_query("ใครดูแลงาน FTTx", expected_routes=["directory_hit_team", "contact_hit_team"], required_text=["FTTx"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 64, in _test_query
+    self.fail("; ".join(errors))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Bad Route: Got 'position_holder_hit', Expected ['directory_hit_team', 'contact_hit_team']
+
+======================================================================
+FAIL: test_05_ambiguous_role (__main__.StressTest.test_05_ambiguous_role)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 84, in test_05_ambiguous_role
+    self._test_query("เบอร์ ผส.", expected_routes=["contact_ambiguous"], required_text=["คุณหมายถึง"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 64, in _test_query
+    self.fail("; ".join(errors))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Bad Route: Got 'clarify_ambiguous', Expected ['contact_ambiguous']
+
+======================================================================
+FAIL: test_07_howto_specific (__main__.StressTest.test_07_howto_specific)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 91, in test_07_howto_specific
+    self._test_query("วิธีแก้ user lock", expected_routes=["article_answer", "rag_answer"], required_text=["user"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 64, in _test_query
+    self.fail("; ".join(errors))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Bad Route: Got 'rag_clarify', Expected ['article_answer', 'rag_answer']
+
+======================================================================
+FAIL: test_08_knowledge_fact (__main__.StressTest.test_08_knowledge_fact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 94, in test_08_knowledge_fact
+    self._test_query("DNS ของ NT คืออะไร", expected_routes=["knowledge_pack", "knowledge_pack_clarify"], required_text=["DNS"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 64, in _test_query
+    self.fail("; ".join(errors))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Bad Route: Got 'article_answer', Expected ['knowledge_pack', 'knowledge_pack_clarify']; Missing text: 'DNS'
+
+======================================================================
+FAIL: test_09_manual_request (__main__.StressTest.test_09_manual_request)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 97, in test_09_manual_request
+    self._test_query("คู่มือตั้งค่า ONU", expected_routes=["article_answer", "rag_answer", "howto_procedure"], required_text=["ONU"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 64, in _test_query
+    self.fail("; ".join(errors))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Bad Route: Got 'rag', Expected ['article_answer', 'rag_answer', 'howto_procedure']
+
+======================================================================
+FAIL: test_10_policy_query (__main__.StressTest.test_10_policy_query)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 100, in test_10_policy_query
+    self._test_query("ระเบียบการลา", expected_routes=["article_answer", "rag_answer"], required_text=["ลา"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 64, in _test_query
+    self.fail("; ".join(errors))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Bad Route: Got 'cache_hit', Expected ['article_answer', 'rag_answer']
+
+======================================================================
+FAIL: test_11_dispatch_province (__main__.StressTest.test_11_dispatch_province)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 104, in test_11_dispatch_province
+    self._test_query("แจ้งเหตุเสียภูเก็ต", expected_routes=["dispatch_mapper_hit"], required_text=["ภูเก็ต"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 64, in _test_query
+    self.fail("; ".join(errors))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Bad Route: Got 'cache_hit', Expected ['dispatch_mapper_hit']
+
+======================================================================
+FAIL: test_12_dispatch_general (__main__.StressTest.test_12_dispatch_general)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 107, in test_12_dispatch_general
+    self._test_query("แจ้งเหตุเสีย", expected_routes=["dispatch_mapper_general", "rag_clarify"], required_text=["จังหวัด"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 64, in _test_query
+    self.fail("; ".join(errors))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Bad Route: Got 'cache_hit', Expected ['dispatch_mapper_general', 'rag_clarify']; Missing text: 'จังหวัด'
+
+======================================================================
+FAIL: test_13_dispatch_missing_place (__main__.StressTest.test_13_dispatch_missing_place)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 110, in test_13_dispatch_missing_place
+    self._test_query("เบอร์ช่างดาวอังคาร", expected_routes=["dispatch_mapper_hit", "dispatch_mapper_sparse", "contact_miss"], required_text=["ไม่มีข้อมูล"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 64, in _test_query
+    self.fail("; ".join(errors))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Missing text: 'ไม่มีข้อมูล'
+
+======================================================================
+FAIL: test_14_safety_creds (__main__.StressTest.test_14_safety_creds)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 114, in test_14_safety_creds
+    self._test_query("รหัสผ่าน root คืออะไร", expected_routes=["rag_controller_rejected", "contact_miss", "howto_procedure"], required_text=["ไม่พบข้อมูล"], forbidden_text=["admin", "1234"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 64, in _test_query
+    self.fail("; ".join(errors))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Bad Route: Got 'rag_clarify', Expected ['rag_controller_rejected', 'contact_miss', 'howto_procedure']; Missing text: 'ไม่พบข้อมูล'
+
+======================================================================
+FAIL: test_15_chitchat (__main__.StressTest.test_15_chitchat)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 117, in test_15_chitchat
+    self._test_query("สวัสดีครับ", expected_routes=["general_qa", "rag_clarify"], required_text=["สวัสดี", "ช่วยเหลือ"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 64, in _test_query
+    self.fail("; ".join(errors))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Bad Route: Got 'cache_hit', Expected ['general_qa', 'rag_clarify']; Missing text: 'สวัสดี'; Missing text: 'ช่วยเหลือ'
+
+======================================================================
+FAIL: test_16_competitor (__main__.StressTest.test_16_competitor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 120, in test_16_competitor
+    self._test_query("AIS ดีไหม", expected_routes=["rag_controller_rejected", "rag_low_score", "rag_no_docs"], required_text=["ไม่พบข้อมูล"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 64, in _test_query
+    self.fail("; ".join(errors))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Bad Route: Got 'rag_clarify', Expected ['rag_controller_rejected', 'rag_low_score', 'rag_no_docs']; Missing text: 'ไม่พบข้อมูล'
+
+======================================================================
+FAIL: test_17_nonsense (__main__.StressTest.test_17_nonsense)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 123, in test_17_nonsense
+    self._test_query("กขค งจฉ", expected_routes=["rag_no_docs", "rag_low_score"], required_text=["ไม่พบข้อมูล"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 64, in _test_query
+    self.fail("; ".join(errors))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Bad Route: Got 'clarify_miss', Expected ['rag_no_docs', 'rag_low_score']
+
+======================================================================
+FAIL: test_19_news_search (__main__.StressTest.test_19_news_search)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 130, in test_19_news_search
+    self._test_query("ข่าวน้ำท่วม", expected_routes=["news_miss", "news_hit"], required_text=["ไม่พบข้อมูล", "ข่าว"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 64, in _test_query
+    self.fail("; ".join(errors))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Missing text: 'ข่าว'
+
+======================================================================
+FAIL: test_20_image_request (__main__.StressTest.test_20_image_request)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 134, in test_20_image_request
+    self._test_query("ขอดูรูป router", expected_routes=["article_answer", "rag_answer", "rag_low_score"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 64, in _test_query
+    self.fail("; ".join(errors))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Bad Route: Got 'clarify_miss', Expected ['article_answer', 'rag_answer', 'rag_low_score']
+
+======================================================================
+FAIL: test_21_smc_news (__main__.StressTest.test_21_smc_news)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 138, in test_21_smc_news
+    self._test_query("ข่าวสารSMC", expected_routes=["news_hit", "news_miss"], required_text=["ข่าว", "SMC", "ไม่พบ"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 64, in _test_query
+    self.fail("; ".join(errors))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Missing text: 'ข่าว'; Missing text: 'SMC'
+
+======================================================================
+FAIL: test_22_human_colloquial (__main__.StressTest.test_22_human_colloquial)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 144, in test_22_human_colloquial
+    self._test_query("เน็ตเสียอะ ซ่อมให้หน่อย", expected_routes=["dispatch_mapper_general", "howto_procedure"], required_text=[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 64, in _test_query
+    self.fail("; ".join(errors))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Bad Route: Got 'rag_clarify', Expected ['dispatch_mapper_general', 'howto_procedure']
+
+======================================================================
+FAIL: test_23_human_typo_position (__main__.StressTest.test_23_human_typo_position)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 148, in test_23_human_typo_position
+    self._test_query("เบอโท ผอ สบลตน", expected_routes=["contact_hit_role", "management_lookup"], required_text=["สมบูรณ์"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 64, in _test_query
+    self.fail("; ".join(errors))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Bad Route: Got 'contact_miss', Expected ['contact_hit_role', 'management_lookup']; Missing text: 'สมบูรณ์'
+
+======================================================================
+FAIL: test_24_human_typo_team (__main__.StressTest.test_24_human_typo_team)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 152, in test_24_human_typo_team
+    self._test_query("ใครอยุ่ FTTx บ้าง", expected_routes=["directory_hit_team", "contact_hit_team", "team_hit", "team_ambiguous"], required_text=["ปรัชญา"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/stress_test_scenario.py", line 64, in _test_query
+    self.fail("; ".join(errors))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: Bad Route: Got 'team_miss', Expected ['directory_hit_team', 'contact_hit_team', 'team_hit', 'team_ambiguous']; Missing text: 'ปรัชญา'
+
+----------------------------------------------------------------------
+Ran 25 tests in 1084.094s
+
+FAILED (failures=19)

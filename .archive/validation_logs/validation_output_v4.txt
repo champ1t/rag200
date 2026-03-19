@@ -1,0 +1,419 @@
+[DEBUG_INTERNAL_START] _process_logic entered. q='Huawei NE8000 config BGP'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL] det_hit: {'title': 'Huawei NE8000 Configuration Guide', 'text': 'Full config guide for NE8000...', 'url': 'http://10.192.133.33/ne8000/config', 'topic': 'huawei ne8000', 'match_type': 'deterministic', 'score': 1.0}, type: <class 'dict'>
+[DEBUG_INTERNAL_START] _process_logic entered. q='Cisco ASR920 command'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL] det_hit: {'match_type': 'missing_corpus', 'topic': 'cisco asr920', 'score': 1.0}, type: <class 'dict'>
+[DEBUG_INTERNAL_START] _process_logic entered. q='Huawei NE8000 คืออะไร'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL] det_hit: {'title': 'Huawei NE8000 Overview', 'text': 'Introduction to NE8000...', 'url': 'http://10.192.133.33/ne8000/overview', 'topic': 'huawei ne8000', 'match_type': 'deterministic', 'score': 1.0}, type: <class 'dict'>
+[DEBUG_INTERNAL_START] _process_logic entered. q='Huawei 577K SNR ต่ำ แก้ไข'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL] det_hit: {'title': 'Troubleshooting Huawei 577K SNR', 'text': 'How to fix low SNR...', 'url': 'http://10.192.133.33/577k/ts', 'topic': 'huawei 577k', 'match_type': 'deterministic', 'score': 1.0}, type: <class 'dict'>
+[INFO] SMC Hardening ACTIVE. Policy: ['enabled', 'vendor_match', 'model_match', 'web_search_technical', 'fallback_chain', 'similarity_threshold', 'logging']
+[INFO] Enforcing Hardened Threshold: 0.7
+[INFO] Loading resources...
+[VectorStore] Using SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[ProcessedCache] Loaded 14 aliases
+[ProcessedCache] Loading processed data from data/processed...
+[ProcessedCache] Found 144 files
+[ProcessedCache] Loaded 144 docs, 4371 links
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+
+--- RUNNING: A1: Huawei NE8000 config BGP ---
+Query: 'Huawei NE8000 config BGP'
+[GOVERNANCE] Identified Intent: CONFIG
+DEBUG: find_best_article_match q='Huawei NE8000 config BGP'
+DEBUG: Returning NE8000 Config
+[GOVERNANCE] Deterministic Match Found: Huawei NE8000 Configuration Guide (1.00)
+[DEBUG] News/Article Route -> http://10.192.133.33/ne8000/config
+[DEBUG] Cache Miss for http://10.192.133.33/ne8000/config -> Attempting Fetch (Strict Timeout)...
+DEBUG: Mock Fetch called for http://10.192.133.33/ne8000/config
+[DEBUG] Fetch Success: 59 chars
+[DEBUG] article_content type: <class 'str'>
+[ArticleInterpreter] is_tutorial_mode: True
+[ArticleInterpreter] Hybrid Strategy: SHORT (59 chars) -> Extractive Preview.
+[WARN] Deterministic Retrieval Failed: 'FakeProcessedCache' object has no attribute '_link_index'
+[SafeNormalizer] Error: Invalid URL 'mock/api/generate': No scheme supplied. Perhaps you meant https://mock/api/generate?
+[GOVERNANCE] RELAXED: Command/Config detected in 'huawei ne8000 config bgp'. Allowing RAG with Source Fidelity.
+[DEBUG] Guard C: Query='huawei ne8000 config bgp' is_broad=False
+[Router] LLM Routing Failed: Invalid URL 'mock/api/generate': No scheme supplied. Perhaps you meant https://mock/api/generate?. Falling back to Keyword Router.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: Document/Manual Keyword Match
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[METRIC] Synonym Applied for Retrieval: None (Query: 'Huawei NE8000 config BGP' -> 'huawei ne8000 config bgp')
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[DEBUG] Evidence Coverage: MISS (No results found)
+[AUDIT] 1770694415.7925289 | Status: SUCCESS | Route: rag_miss_coverage | ArticleID: N/A | Reason: None
+❌ FAIL: ['Route Mismatch: Expected article_answer, Got rag_miss_coverage']
+[INFO] SMC Hardening ACTIVE. Policy: ['enabled', 'vendor_match', 'model_match', 'web_search_technical', 'fallback_chain', 'similarity_threshold', 'logging']
+[INFO] Enforcing Hardened Threshold: 0.7
+[INFO] Loading resources...
+[VectorStore] Using SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[ProcessedCache] Loaded 14 aliases
+[ProcessedCache] Loading processed data from data/processed...
+[ProcessedCache] Found 144 files
+[ProcessedCache] Loaded 144 docs, 4371 links
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+
+--- RUNNING: A2: Cisco ASR920 command (Missing) ---
+Query: 'Cisco ASR920 command'
+[GOVERNANCE] Identified Intent: CONFIG
+DEBUG: find_best_article_match q='Cisco ASR920 command'
+DEBUG: Returning Missing Corpus ASR920 (Broad)
+[GOVERNANCE] MISSING CORPUS DETECTED: cisco asr920
+[AUDIT] 1770694415.867189 | Status: BLOCKED | Route: rag_missing_corpus | ArticleID: N/A | Reason: MISSING_CORPUS
+[AUDIT] 1770694415.867193 | Status: SUCCESS | Route: rag_missing_corpus | ArticleID: N/A | Reason: None
+✅ PASS
+[INFO] SMC Hardening ACTIVE. Policy: ['enabled', 'vendor_match', 'model_match', 'web_search_technical', 'fallback_chain', 'similarity_threshold', 'logging']
+[INFO] Enforcing Hardened Threshold: 0.7
+[INFO] Loading resources...
+[VectorStore] Using SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[ProcessedCache] Loaded 14 aliases
+[ProcessedCache] Loading processed data from data/processed...
+[ProcessedCache] Found 144 files
+[ProcessedCache] Loaded 144 docs, 4371 links
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+
+--- RUNNING: A3: Overview Concept ---
+Query: 'Huawei NE8000 คืออะไร'
+[GOVERNANCE] Identified Intent: OVERVIEW
+DEBUG: find_best_article_match q='Huawei NE8000 คืออะไร'
+[GOVERNANCE] Deterministic Match Found: Huawei NE8000 Overview (1.00)
+[DEBUG] News/Article Route -> http://10.192.133.33/ne8000/overview
+[DEBUG] Cache Miss for http://10.192.133.33/ne8000/overview -> Attempting Fetch (Strict Timeout)...
+DEBUG: Mock Fetch called for http://10.192.133.33/ne8000/overview
+[DEBUG] Fetch Success: 61 chars
+[DEBUG] article_content type: <class 'str'>
+[ArticleInterpreter] is_tutorial_mode: True
+[ArticleInterpreter] Hybrid Strategy: SHORT (61 chars) -> Extractive Preview.
+[WARN] Deterministic Retrieval Failed: 'FakeProcessedCache' object has no attribute '_link_index'
+[SafeNormalizer] Error: Invalid URL 'mock/api/generate': No scheme supplied. Perhaps you meant https://mock/api/generate?
+[DEBUG] Guard C: Query='huawei ne8000 คืออะไร' is_broad=False
+[DEBUG] Intent Override: 'huawei ne8000 คืออะไร' -> DEFINE_TERM (Keyword Match)
+[DEBUG] Intent: DEFINE_TERM (1.0) Reason: Keyword Override
+[METRIC] Synonym Applied for Retrieval: None (Query: 'Huawei NE8000 คืออะไร' -> 'huawei ne8000 คืออะไร')
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[DEBUG] Evidence Coverage: MISS (No results found)
+[DEBUG] General Tier Active for Concept Miss (Intent: DEFINE_TERM)
+[SafetyGuard] General Fallback Active -> Bypassing Low Score Check
+[DEBUG] L2 Cache Skipped for DEFINE_TERM (Rule DT-1 Safety)
+[AUDIT] 1770694415.939989 | Status: SUCCESS | Route: rag_no_docs | ArticleID: N/A | Reason: None
+❌ FAIL: ['Route Mismatch: Expected article_answer, Got rag_no_docs']
+[INFO] SMC Hardening ACTIVE. Policy: ['enabled', 'vendor_match', 'model_match', 'web_search_technical', 'fallback_chain', 'similarity_threshold', 'logging']
+[INFO] Enforcing Hardened Threshold: 0.7
+[INFO] Loading resources...
+[VectorStore] Using SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[ProcessedCache] Loaded 14 aliases
+[ProcessedCache] Loading processed data from data/processed...
+[ProcessedCache] Found 144 files
+[ProcessedCache] Loaded 144 docs, 4371 links
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+
+--- RUNNING: A4: Troubleshooting ---
+Query: 'Huawei 577K SNR ต่ำ แก้ไข'
+[GOVERNANCE] Identified Intent: TROUBLESHOOT
+DEBUG: find_best_article_match q='Huawei 577K SNR ต่ำ แก้ไข'
+[GOVERNANCE] Deterministic Match Found: Troubleshooting Huawei 577K SNR (1.00)
+[DEBUG] News/Article Route -> http://10.192.133.33/577k/ts
+[DEBUG] Cache Miss for http://10.192.133.33/577k/ts -> Attempting Fetch (Strict Timeout)...
+DEBUG: Mock Fetch called for http://10.192.133.33/577k/ts
+[DEBUG] Fetch Success: 53 chars
+[DEBUG] article_content type: <class 'str'>
+[ArticleInterpreter] is_tutorial_mode: False
+[ArticleInterpreter] Hybrid Strategy: SHORT (53 chars) -> Extractive Preview.
+[WARN] Deterministic Retrieval Failed: 'FakeProcessedCache' object has no attribute '_link_index'
+[SafeNormalizer] Error: Invalid URL 'mock/api/generate': No scheme supplied. Perhaps you meant https://mock/api/generate?
+[DEBUG] Guard C: Query='huawei 577k snr ต่ำ แก้ไข' is_broad=False
+[Router] LLM Routing Failed: Invalid URL 'mock/api/generate': No scheme supplied. Perhaps you meant https://mock/api/generate?. Falling back to Keyword Router.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.85) Reason: HowTo Keyword Match
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[METRIC] Synonym Applied for Retrieval: None (Query: 'Huawei 577K SNR ต่ำ แก้ไข' -> 'huawei 577k snr ต่ำ แก้ไข')
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[DEBUG] Evidence Coverage: MISS (No results found)[DEBUG_INTERNAL_START] _process_logic entered. q='Config Huawei NE8000'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL] det_hit: {'title': 'Huawei NE8000 Configuration Guide', 'text': 'Full config guide for NE8000...', 'url': 'http://10.192.133.33/ne8000/config', 'topic': 'huawei ne8000', 'match_type': 'deterministic', 'score': 1.0}, type: <class 'dict'>
+[DEBUG_INTERNAL_START] _process_logic entered. q='Huawei NE8000 best practice'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL_START] _process_logic entered. q='Huawei NE8000 vs Cisco ASR920'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL_START] _process_logic entered. q='Huawei ABC999 config'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL] det_hit: None, type: <class 'NoneType'>
+[DEBUG_INTERNAL_START] _process_logic entered. q='Huawei NE8'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL] det_hit: None, type: <class 'NoneType'>
+
+[AUDIT] 1770694416.016595 | Status: SUCCESS | Route: rag_miss_coverage | ArticleID: N/A | Reason: None
+❌ FAIL: ['Route Mismatch: Expected article_answer, Got rag_miss_coverage']
+[INFO] SMC Hardening ACTIVE. Policy: ['enabled', 'vendor_match', 'model_match', 'web_search_technical', 'fallback_chain', 'similarity_threshold', 'logging']
+[INFO] Enforcing Hardened Threshold: 0.7
+[INFO] Loading resources...
+[VectorStore] Using SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[ProcessedCache] Loaded 14 aliases
+[ProcessedCache] Loading processed data from data/processed...
+[ProcessedCache] Found 144 files
+[ProcessedCache] Loaded 144 docs, 4371 links
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+
+--- RUNNING: B1: Technical Query Web Block ---
+Query: 'Config Huawei NE8000'
+[GOVERNANCE] Identified Intent: CONFIG
+DEBUG: find_best_article_match q='Config Huawei NE8000'
+DEBUG: Returning NE8000 Config
+[GOVERNANCE] Deterministic Match Found: Huawei NE8000 Configuration Guide (1.00)
+[DEBUG] News/Article Route -> http://10.192.133.33/ne8000/config
+[DEBUG] Cache Miss for http://10.192.133.33/ne8000/config -> Attempting Fetch (Strict Timeout)...
+DEBUG: Mock Fetch called for http://10.192.133.33/ne8000/config
+[DEBUG] Fetch Success: 59 chars
+[DEBUG] article_content type: <class 'str'>
+[ArticleInterpreter] is_tutorial_mode: True
+[ArticleInterpreter] Hybrid Strategy: SHORT (59 chars) -> Extractive Preview.
+[WARN] Deterministic Retrieval Failed: 'FakeProcessedCache' object has no attribute '_link_index'
+[SafeNormalizer] Error: Invalid URL 'mock/api/generate': No scheme supplied. Perhaps you meant https://mock/api/generate?
+[GOVERNANCE] RELAXED: Command/Config detected in 'config huawei ne8000'. Allowing RAG with Source Fidelity.
+[DEBUG] Guard C: Query='config huawei ne8000' is_broad=False
+[Router] LLM Routing Failed: Invalid URL 'mock/api/generate': No scheme supplied. Perhaps you meant https://mock/api/generate?. Falling back to Keyword Router.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: Document/Manual Keyword Match
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[METRIC] Synonym Applied for Retrieval: None (Query: 'Config Huawei NE8000' -> 'config huawei ne8000')
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[DEBUG] Evidence Coverage: MISS (No results found)
+[AUDIT] 1770694416.09148 | Status: SUCCESS | Route: rag_miss_coverage | ArticleID: N/A | Reason: None
+❌ FAIL: ['Route Mismatch: Expected article_answer, Got rag_miss_coverage']
+[INFO] SMC Hardening ACTIVE. Policy: ['enabled', 'vendor_match', 'model_match', 'web_search_technical', 'fallback_chain', 'similarity_threshold', 'logging']
+[INFO] Enforcing Hardened Threshold: 0.7
+[INFO] Loading resources...
+[VectorStore] Using SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[ProcessedCache] Loaded 14 aliases
+[ProcessedCache] Loading processed data from data/processed...
+[ProcessedCache] Found 144 files
+[ProcessedCache] Loaded 144 docs, 4371 links
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+
+--- RUNNING: B2: External Knowledge Attempt (Best Practice) ---
+Query: 'Huawei NE8000 best practice'
+[GOVERNANCE] Query blocked as Out-of-Scope: Huawei NE8000 best practice
+[AUDIT] 1770694416.164191 | Status: BLOCKED | Route: blocked_scope | ArticleID: N/A | Reason: OUT_OF_SCOPE_QUERY
+✅ PASS
+[INFO] SMC Hardening ACTIVE. Policy: ['enabled', 'vendor_match', 'model_match', 'web_search_technical', 'fallback_chain', 'similarity_threshold', 'logging']
+[INFO] Enforcing Hardened Threshold: 0.7
+[INFO] Loading resources...
+[VectorStore] Using SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[ProcessedCache] Loaded 14 aliases
+[ProcessedCache] Loading processed data from data/processed...
+[ProcessedCache] Found 144 files
+[ProcessedCache] Loaded 144 docs, 4371 links
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+
+--- RUNNING: B3: Vendor Comparison ---
+Query: 'Huawei NE8000 vs Cisco ASR920'
+[GOVERNANCE] Query blocked as Out-of-Scope: Huawei NE8000 vs Cisco ASR920
+[AUDIT] 1770694416.2372348 | Status: BLOCKED | Route: blocked_scope | ArticleID: N/A | Reason: OUT_OF_SCOPE_QUERY
+✅ PASS
+[INFO] SMC Hardening ACTIVE. Policy: ['enabled', 'vendor_match', 'model_match', 'web_search_technical', 'fallback_chain', 'similarity_threshold', 'logging']
+[INFO] Enforcing Hardened Threshold: 0.7
+[INFO] Loading resources...
+[VectorStore] Using SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[ProcessedCache] Loaded 14 aliases
+[ProcessedCache] Loading processed data from data/processed...
+[ProcessedCache] Found 144 files
+[ProcessedCache] Loaded 144 docs, 4371 links
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+
+--- RUNNING: C1: Random Model ---
+Query: 'Huawei ABC999 config'
+[GOVERNANCE] Identified Intent: CONFIG
+DEBUG: find_best_article_match q='Huawei ABC999 config'
+[SafeNormalizer] Error: Invalid URL 'mock/api/generate': No scheme supplied. Perhaps you meant https://mock/api/generate?
+[GOVERNANCE] RELAXED: Command/Config detected in 'huawei abc999 config'. Allowing RAG with Source Fidelity.
+[DEBUG] Guard C: Query='huawei abc999 config' is_broad=False
+[Router] LLM Routing Failed: Invalid URL 'mock/api/generate': No scheme supplied. Perhaps you meant https://mock/api/generate?. Falling back to Keyword Router.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: Document/Manual Keyword Match
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[METRIC] Synonym Applied for Retrieval: None (Query: 'Huawei ABC999 config' -> 'huawei abc999 config')
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[DEBUG] Evidence Coverage: MISS (No results found)
+[AUDIT] 1770694416.404578 | Status: SUCCESS | Route: rag_miss_coverage | ArticleID: N/A | Reason: None
+✅ PASS
+[INFO] SMC Hardening ACTIVE. Policy: ['enabled', 'vendor_match', 'model_match', 'web_search_technical', 'fallback_chain', 'similarity_threshold', 'logging']
+[INFO] Enforcing Hardened Threshold: 0.7
+[INFO] Loading resources...
+[VectorStore] Using SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[ProcessedCache] Loaded 14 aliases
+[ProcessedCache] Loading processed data from data/processed...
+[ProcessedCache] Found 144 files
+[ProcessedCache] Loaded 144 docs, 4371 links
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+
+--- RUNNING: C2: Partial Model Name ---
+Query: 'Huawei NE8'
+[GOVERNANCE] Identified Intent: UNKNOWN
+DEBUG: find_best_article_match q='Huawei NE8'
+DEBUG: No Match Found
+[SafeNormalizer] Error: Invalid URL 'mock/api/generate': No scheme supplied. Perhaps you meant https://mock/api/generate?
+[DEBUG] Guard C: Query='huawei ne8' is_broad=False
+[Router] LLM Routing Failed: Invalid URL 'mock/api/generate': No scheme supplied. Perhaps you meant https://mock/api/generate?. Falling back to Keyword Router.
+[corrector] Error: Invalid URL 'mock/api/generate': No scheme supplied. Perhaps you meant https://mock/api/generate?
+[DEBUG] Intent: GENERAL_QA (1.0) Reason: Default Fallback
+[DEBUG] Knowledge Alias Trigger: 'huawei ne8' -> Forcing HOWTO_PROCEDURE (Tech Pattern Alias Trigger (Not a Team))
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[METRIC] Synonym Applied for Retrieval: None (Query: 'Huawei NE8' -> 'huawei ne8')
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[DEBUG] Evidence Coverage: MISS (No results found)
+[AUDIT] 1770694416.487359 | Status: SUCCESS | Route: rag_miss_coverage | ArticleID: N/A | Reason: None
+✅ PASS
+[INFO] SMC Hardening ACTIVE. Policy: ['enabled', 'vendor_match', 'model_match', 'web_search_technical', 'fallback_chain', 'similarity_threshold', 'logging']
+[INFO] Enforcing Hardened Threshold: 0.7[DEBUG_INTERNAL_START] _process_logic entered. q='Huawei NE8000 Overview'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL] det_hit: {'title': 'Huawei NE8000 Overview', 'text': 'Introduction to NE8000...', 'url': 'http://10.192.133.33/ne8000/overview', 'topic': 'huawei ne8000', 'match_type': 'deterministic', 'score': 1.0}, type: <class 'dict'>
+[DEBUG_INTERNAL_START] _process_logic entered. q='Huawei NE8000 Overview config'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL] det_hit: {'title': 'Huawei NE8000 Configuration Guide', 'text': 'Full config guide for NE8000...', 'url': 'http://10.192.133.33/ne8000/config', 'topic': 'huawei ne8000', 'match_type': 'deterministic', 'score': 1.0}, type: <class 'dict'>
+[DEBUG_INTERNAL_START] _process_logic entered. q='Ambiguous Query'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL] det_hit: {'match_type': 'ambiguous', 'candidates': ['Option A', 'Option B'], 'score': 0.9}, type: <class 'dict'>
+
+[INFO] Loading resources...
+[VectorStore] Using SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[ProcessedCache] Loaded 14 aliases
+[ProcessedCache] Loading processed data from data/processed...
+[ProcessedCache] Found 144 files
+[ProcessedCache] Loaded 144 docs, 4371 links
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+
+--- RUNNING: C_Extra: Intent Mismatch ---
+Query: 'Huawei NE8000 Overview'
+[GOVERNANCE] Identified Intent: OVERVIEW
+DEBUG: find_best_article_match q='Huawei NE8000 Overview'
+[GOVERNANCE] Deterministic Match Found: Huawei NE8000 Overview (1.00)
+[DEBUG] News/Article Route -> http://10.192.133.33/ne8000/overview
+[DEBUG] Cache Miss for http://10.192.133.33/ne8000/overview -> Attempting Fetch (Strict Timeout)...
+DEBUG: Mock Fetch called for http://10.192.133.33/ne8000/overview
+[DEBUG] Fetch Success: 61 chars
+[DEBUG] article_content type: <class 'str'>
+[ArticleInterpreter] is_tutorial_mode: True
+[ArticleInterpreter] Hybrid Strategy: SHORT (61 chars) -> Extractive Preview.
+[WARN] Deterministic Retrieval Failed: 'FakeProcessedCache' object has no attribute '_link_index'
+[SafeNormalizer] Error: Invalid URL 'mock/api/generate': No scheme supplied. Perhaps you meant https://mock/api/generate?
+[DEBUG] Guard C: Query='huawei ne8000 overview' is_broad=False
+[Router] LLM Routing Failed: Invalid URL 'mock/api/generate': No scheme supplied. Perhaps you meant https://mock/api/generate?. Falling back to Keyword Router.
+[corrector] Error: Invalid URL 'mock/api/generate': No scheme supplied. Perhaps you meant https://mock/api/generate?
+[DEBUG] Intent: GENERAL_QA (1.0) Reason: Default Fallback
+[DEBUG] Knowledge Alias Trigger: 'huawei ne8000 overview' -> Forcing HOWTO_PROCEDURE (Tech Pattern Alias Trigger (Not a Team))
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[METRIC] Synonym Applied for Retrieval: None (Query: 'Huawei NE8000 Overview' -> 'huawei ne8000 overview')
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[DEBUG] Evidence Coverage: MISS (No results found)
+[AUDIT] 1770694416.586495 | Status: SUCCESS | Route: rag_miss_coverage | ArticleID: N/A | Reason: None
+❌ FAIL: ['Route Mismatch: Expected article_answer, Got rag_miss_coverage']
+[INFO] SMC Hardening ACTIVE. Policy: ['enabled', 'vendor_match', 'model_match', 'web_search_technical', 'fallback_chain', 'similarity_threshold', 'logging']
+[INFO] Enforcing Hardened Threshold: 0.7
+[INFO] Loading resources...
+[VectorStore] Using SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[ProcessedCache] Loaded 14 aliases
+[ProcessedCache] Loading processed data from data/processed...
+[ProcessedCache] Found 144 files
+[ProcessedCache] Loaded 144 docs, 4371 links
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+
+--- RUNNING: C_Extra: Mismatch Config vs Overview ---
+Query: 'Huawei NE8000 Overview config'
+[GOVERNANCE] Identified Intent: CONFIG
+DEBUG: find_best_article_match q='Huawei NE8000 Overview config'
+DEBUG: Returning NE8000 Config
+[GOVERNANCE] Deterministic Match Found: Huawei NE8000 Configuration Guide (1.00)
+[DEBUG] News/Article Route -> http://10.192.133.33/ne8000/config
+[DEBUG] Cache Miss for http://10.192.133.33/ne8000/config -> Attempting Fetch (Strict Timeout)...
+DEBUG: Mock Fetch called for http://10.192.133.33/ne8000/config
+[DEBUG] Fetch Success: 59 chars
+[DEBUG] article_content type: <class 'str'>
+[ArticleInterpreter] is_tutorial_mode: True
+[ArticleInterpreter] Hybrid Strategy: SHORT (59 chars) -> Extractive Preview.
+[WARN] Deterministic Retrieval Failed: 'FakeProcessedCache' object has no attribute '_link_index'
+[SafeNormalizer] Error: Invalid URL 'mock/api/generate': No scheme supplied. Perhaps you meant https://mock/api/generate?
+[GOVERNANCE] RELAXED: Command/Config detected in 'huawei ne8000 overview config'. Allowing RAG with Source Fidelity.
+[DEBUG] Guard C: Query='huawei ne8000 overview config' is_broad=False
+[Router] LLM Routing Failed: Invalid URL 'mock/api/generate': No scheme supplied. Perhaps you meant https://mock/api/generate?. Falling back to Keyword Router.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: Document/Manual Keyword Match
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[METRIC] Synonym Applied for Retrieval: None (Query: 'Huawei NE8000 Overview config' -> 'huawei ne8000 overview config')
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[DEBUG] Evidence Coverage: MISS (No results found)
+[AUDIT] 1770694416.7381 | Status: SUCCESS | Route: rag_miss_coverage | ArticleID: N/A | Reason: None
+❌ FAIL: ['Route Mismatch: Expected blocked_intent, Got rag_miss_coverage', 'Block Reason Mismatch: Expected INTENT_MISMATCH, Got None']
+[INFO] SMC Hardening ACTIVE. Policy: ['enabled', 'vendor_match', 'model_match', 'web_search_technical', 'fallback_chain', 'similarity_threshold', 'logging']
+[INFO] Enforcing Hardened Threshold: 0.7
+[INFO] Loading resources...
+[VectorStore] Using SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[ProcessedCache] Loaded 14 aliases
+[ProcessedCache] Loading processed data from data/processed...
+[ProcessedCache] Found 144 files
+[ProcessedCache] Loaded 144 docs, 4371 links
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+
+--- RUNNING: C4: Ambiguous Intent ---
+Query: 'Ambiguous Query'
+[GOVERNANCE] Identified Intent: UNKNOWN
+DEBUG: find_best_article_match q='Ambiguous Query'
+DEBUG: Returning Ambiguous
+[AUDIT] 1770694416.81524 | Status: BLOCKED | Route: blocked_ambiguous | ArticleID: N/A | Reason: AMBIGUOUS_QUERY
+[AUDIT] 1770694416.815243 | Status: BLOCKED | Route: blocked_ambiguous | ArticleID: N/A | Reason: AMBIGUOUS_QUERY
+✅ PASS
+
+============================================================
+SMC GOVERNANCE COMPLIANCE REPORT
+============================================================
+❌ A1: Huawei NE8000 config BGP             | Route: rag_miss_coverage
+   └─ Route Mismatch: Expected article_answer, Got rag_miss_coverage
+✅ A2: Cisco ASR920 command (Missing)       | Route: rag_missing_corpus
+❌ A3: Overview Concept                     | Route: rag_no_docs
+   └─ Route Mismatch: Expected article_answer, Got rag_no_docs
+❌ A4: Troubleshooting                      | Route: rag_miss_coverage
+   └─ Route Mismatch: Expected article_answer, Got rag_miss_coverage
+❌ B1: Technical Query Web Block            | Route: rag_miss_coverage
+   └─ Route Mismatch: Expected article_answer, Got rag_miss_coverage
+✅ B2: External Knowledge Attempt (Best Practice) | Route: blocked_scope
+✅ B3: Vendor Comparison                    | Route: blocked_scope
+✅ C1: Random Model                         | Route: rag_miss_coverage
+✅ C2: Partial Model Name                   | Route: rag_miss_coverage
+❌ C_Extra: Intent Mismatch                 | Route: rag_miss_coverage
+   └─ Route Mismatch: Expected article_answer, Got rag_miss_coverage
+❌ C_Extra: Mismatch Config vs Overview     | Route: rag_miss_coverage
+   └─ Route Mismatch: Expected blocked_intent, Got rag_miss_coverage
+   └─ Block Reason Mismatch: Expected INTENT_MISMATCH, Got None
+✅ C4: Ambiguous Intent                     | Route: blocked_ambiguous
+------------------------------------------------------------
+TOTAL: 12 | PASS: 6 | FAIL: 6
+============================================================
+RESULT: NO-GO

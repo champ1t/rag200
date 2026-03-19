@@ -1,0 +1,101 @@
+[
+  {
+    "label": "Regression: Exact Match",
+    "query": "zte sw command",
+    "route": "article_link_only_exact",
+    "expected": "article_link_only_exact",
+    "status": "PASS",
+    "reason": "Soft-normalized exact match",
+    "normalized_query": "zte sw command"
+  },
+  {
+    "label": "Regression: Soft-norm Match",
+    "query": "ZTE--SW--Command",
+    "route": "article_link_only_exact",
+    "expected": "article_link_only_exact",
+    "status": "PASS",
+    "reason": "Soft-normalized exact match",
+    "normalized_query": "zte sw command"
+  },
+  {
+    "label": "Regression: Normal Article (Summary)",
+    "query": "GPON Overview",
+    "route": "article_link_only",
+    "expected": "article_answer",
+    "status": "FAIL",
+    "reason": "Processing complete",
+    "normalized_query": "gpon overview"
+  },
+  {
+    "label": "Regression: Primary Vendor Sanity",
+    "query": "Huawei manual",
+    "route": "article_link_only",
+    "expected": null,
+    "status": "PASS",
+    "reason": "Processing complete",
+    "normalized_query": "huawei manual"
+  },
+  {
+    "label": "Boundary: Ambiguity (Short)",
+    "query": "zte sw",
+    "route": "article_link_only_exact",
+    "expected": "blocked_ambiguous",
+    "status": "FAIL",
+    "reason": "Precise Tech Match → Link Only",
+    "normalized_query": "zte sw"
+  },
+  {
+    "label": "Boundary: Ambiguity (Mixed)",
+    "query": "command zte sw overview",
+    "route": "article_link_only_exact",
+    "expected": "blocked_ambiguous",
+    "status": "FAIL",
+    "reason": "Precise Tech Match → Link Only",
+    "normalized_query": "command zte sw overview"
+  },
+  {
+    "label": "Boundary: Comparison (Cross-vendor)",
+    "query": "ZTE OLT vs Huawei OLT",
+    "route": "blocked_scope",
+    "expected": "blocked_scope",
+    "status": "PASS",
+    "reason": "Processing complete",
+    "normalized_query": "zte olt vs huawei olt"
+  },
+  {
+    "label": "Boundary: Cisco (Adversarial)",
+    "query": "Cisco command like ZTE",
+    "route": "web_error",
+    "expected": "blocked_vendor_out_of_scope",
+    "status": "FAIL",
+    "reason": "Processing complete",
+    "normalized_query": "cisco command like zte"
+  },
+  {
+    "label": "Thai Stress: Mixed Lang",
+    "query": "ขอ command zte sw ที่ใช้ config vlan หน่อย",
+    "route": "blocked_intent",
+    "expected": "article_link_only_exact",
+    "status": "FAIL",
+    "reason": "Intent mismatch: Query(COMMAND) vs Article(MIGRATION_CONVERSION)",
+    "normalized_query": "ขอ command zte sw ที่ใช้ config vlan หน่อย"
+  },
+  {
+    "label": "Thai Stress: Spacing Error",
+    "query": "zte  sw    command",
+    "route": "article_link_only_exact",
+    "expected": "article_link_only_exact",
+    "status": "PASS",
+    "reason": "Soft-normalized exact match",
+    "normalized_query": "zte sw command"
+  },
+  {
+    "label": "Thai Stress: Long Query/Short Intent",
+    "query": "ขอ command zte sw ที่ใช้ config vlan หน่อย แบบที่อยู่ใน manual",
+    "route": "blocked_intent",
+    "expected": "article_link_only_exact",
+    "status": "FAIL",
+    "reason": "Intent mismatch: Query(COMMAND) vs Article(MIGRATION_CONVERSION)",
+    "normalized_query": "ขอ command zte sw ที่ใช้ config vlan หน่อย แบบที่อยู่ใน manual"
+  }
+]

@@ -1,0 +1,10 @@
+======================================================================
+CRITICAL TEST SUITE - Expert Explainer (Direct Engine)
+======================================================================
+Total Tests: 8
+✅ Must Answer: 6 queries
+❌ Must Refuse: 2 queries
+======================================================================
+
+🔧 Initializing ChatEngine...
+❌ Failed to initialize ChatEngine: [Errno 2] No such file or directory: 'config.yaml'

@@ -33,7 +33,7 @@ smc_hardening:
   model_match: "EXACT" 
   web_search_technical: "DISABLED"
   fallback_chain: "NONE"
-  similarity_threshold: 0.70  # Fixed threshold, no auto-adjust
+  similarity_threshold: 0.45  # ปรับลดลงเพื่อให้บอท "ยืดหยุ่น" เข้าใจภาษาพูดได้ง่ายขึ้น
   logging:
     audit_route: true
     audit_reason: true

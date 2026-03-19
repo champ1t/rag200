@@ -1,0 +1,132 @@
+[DEBUG_INTERNAL_START] _process_logic entered. q='zte sw command'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL_START] _process_logic entered. q='ZTE-SW Command'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL_START] _process_logic entered. q='ZTE__SW   Command'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL_START] _process_logic entered. q='ZTE--SW--Command'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL_START] _process_logic entered. q='ZTE Router'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL] det_hit: {'url': 'http://10.192.133.33/smc/index.php?option=com_content&view=article&id=577:-router--&catid=43:2011-11-14-08-37-12&Itemid=81', 'title': 'router', 'score': 0.95, 'match_type': 'deterministic', 'article_type': 'MIGRATION_CONVERSION'}, type: <class 'dict'>
+[INFO] SMC Hardening ACTIVE. Policy: ['enabled', 'vendor_match', 'model_match', 'web_search_technical', 'fallback_chain', 'similarity_threshold', 'logging']
+[INFO] Enforcing Hardened Threshold: 0.7
+[INFO] Loading resources...
+[VectorStore] Using SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+[ProcessedCache] Loaded 14 aliases
+[ProcessedCache] Loading processed data from data/processed...
+[ProcessedCache] Found 144 files
+[ProcessedCache] Loaded 144 docs, 4371 links
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+
+==================================================
+QUERY: zte sw command
+==================================================
+[GOVERNANCE] Identified Intent: COMMAND
+[GOVERNANCE] Request Category: TECH_ARTICLE_LOOKUP
+[FAST PATH] Title exact match compatible (OVERVIEW): ZTE-SW Command
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=641:zte-sw-command&catid=43:2011-11-14-08-37-12&Itemid=81
+[GOVERNANCE] Phase 19: Precise Tech Match -> LINK_ONLY Overlap
+[AUDIT] 1770711158.840802 | Status: SUCCESS | Route: article_link_only_overlap | ArticleID: N/A | Reason: None
+ROUTE: article_link_only_overlap
+DECISION REASON: None
+LATENCY: 69.02ms
+--------------------
+ANSWER:
+[SMC Reference]
+🔗 [ZTE-SW Command](http://10.192.133.33/smc/index.php?option=com_content&view=article&id=641:zte-sw-command&catid=43:2011-11-14-08-37-12&Itemid=81)
+
+ข้อมูลทางเทคนิคมีความยาว แนะนำดูรายละเอียดทั้งหมดจากลิงก์ด้านบนครับ
+--------------------
+
+==================================================
+QUERY: ZTE-SW Command
+==================================================
+[GOVERNANCE] Identified Intent: COMMAND
+[GOVERNANCE] Request Category: TECH_ARTICLE_LOOKUP
+[FAST PATH] Title exact match compatible (OVERVIEW): ZTE-SW Command
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=641:zte-sw-command&catid=43:2011-11-14-08-37-12&Itemid=81
+[GOVERNANCE] Phase 19: Precise Tech Match -> LINK_ONLY Overlap
+[AUDIT] 1770711158.849905 | Status: SUCCESS | Route: article_link_only_overlap | ArticleID: N/A | Reason: None
+ROUTE: article_link_only_overlap
+DECISION REASON: None
+LATENCY: 8.53ms
+--------------------
+ANSWER:
+[SMC Reference]
+🔗 [ZTE-SW Command](http://10.192.133.33/smc/index.php?option=com_content&view=article&id=641:zte-sw-command&catid=43:2011-11-14-08-37-12&Itemid=81)
+
+ข้อมูลทางเทคนิคมีความยาว แนะนำดูรายละเอียดทั้งหมดจากลิงก์ด้านบนครับ
+--------------------
+
+==================================================
+QUERY: ZTE__SW   Command
+==================================================
+[GOVERNANCE] Identified Intent: COMMAND
+[GOVERNANCE] Request Category: TECH_ARTICLE_LOOKUP
+[FAST PATH] Title exact match compatible (OVERVIEW): ZTE-SW Command
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=641:zte-sw-command&catid=43:2011-11-14-08-37-12&Itemid=81
+[GOVERNANCE] Phase 19: Precise Tech Match -> LINK_ONLY Overlap
+[AUDIT] 1770711158.858319 | Status: SUCCESS | Route: article_link_only_overlap | ArticleID: N/A | Reason: None
+ROUTE: article_link_only_overlap
+DECISION REASON: None
+LATENCY: 8.40ms
+--------------------
+ANSWER:
+[SMC Reference]
+🔗 [ZTE-SW Command](http://10.192.133.33/smc/index.php?option=com_content&view=article&id=641:zte-sw-command&catid=43:2011-11-14-08-37-12&Itemid=81)
+
+ข้อมูลทางเทคนิคมีความยาว แนะนำดูรายละเอียดทั้งหมดจากลิงก์ด้านบนครับ
+--------------------
+
+==================================================
+QUERY: ZTE--SW--Command
+==================================================
+[GOVERNANCE] Identified Intent: COMMAND
+[GOVERNANCE] Request Category: TECH_ARTICLE_LOOKUP
+[FAST PATH] Title exact match compatible (OVERVIEW): ZTE-SW Command
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=641:zte-sw-command&catid=43:2011-11-14-08-37-12&Itemid=81
+[GOVERNANCE] Phase 19: Precise Tech Match -> LINK_ONLY Overlap
+[AUDIT] 1770711158.866278 | Status: SUCCESS | Route: article_link_only_overlap | ArticleID: N/A | Reason: None
+ROUTE: article_link_only_overlap
+DECISION REASON: None
+LATENCY: 7.88ms
+--------------------
+ANSWER:
+[SMC Reference]
+🔗 [ZTE-SW Command](http://10.192.133.33/smc/index.php?option=com_content&view=article&id=641:zte-sw-command&catid=43:2011-11-14-08-37-12&Itemid=81)
+
+ข้อมูลทางเทคนิคมีความยาว แนะนำดูรายละเอียดทั้งหมดจากลิงก์ด้านบนครับ
+--------------------
+
+==================================================
+QUERY: ZTE Router
+==================================================
+[GOVERNANCE] Identified Intent: UNKNOWN
+[GOVERNANCE] Request Category: TECH_ARTICLE_LOOKUP
+[GOVERNANCE] Deterministic Match Found: router (0.95)
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=577:-router--&catid=43:2011-11-14-08-37-12&Itemid=81
+[DEBUG] Article Summary Cache HIT (Score: 1.00)
+[AUDIT] 1770711158.878166 | Status: SUCCESS | Route: article_answer | ArticleID: N/A | Reason: None
+ROUTE: article_answer
+DECISION REASON: None
+LATENCY: 11.85ms
+--------------------
+ANSWER:
+📌 **แหล่งข้อมูลหลัก (SMC):**
+🔗 [SMC Article](http://10.192.133.33/smc/index.php?option=com_content&view=article&id=577:-router--&catid=43:2011-11-14-08-37-12&Itemid=81)
+
+[การเซ็ต Router ยี่ห้อต่าง ๆ]
+วิธีการเซ็ท Router เพื่อใช้งานกับ DVR ต้องทำ 4 ขั้นตอนหลัก: สมัครและสร้าง Host name กับ DynDNS.com, เซ็ท DVR แต่ละตัว, การทำ Port Forward และทำ DDNS ที่ Router
+
+- สมัครและสร้าง Host name กับ DynDNS.com
+ - สมัครและลงทะเบียนกับ DynDNS.com
+ - จดชื่อโฮส ชื่อผู้ใช้ และระหัสผ่าน ที่ลงทะเบียนกับ DynDNS ด้วย
+
+- เซ็ท DVR แต่ละตัว
+ - เซ็ท DVR แต่ละรุ่น วิธีการจะคล้ายๆ กัน (ดูการเซ็ท DVRฯ)
+
+ตรวจสอบข้อมูลเพิ่มเติมจากลิงก์ SMC ต้นฉบับ
+--------------------

@@ -1,0 +1,178 @@
+[INFO] Loading resources...
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+Running 12 critical tests...
+
+[1] Query: 'เบอร์ NOC' (Ambiguous List)
+[DEBUG] Query Expanded/Rewritten: เบอร์ NOC -> phone ติดต่อ noc (Rule: phone)
+[DEBUG] Guard C: Query='phone ติดต่อ noc' is_broad=False
+[DEBUG] Intent Override: 'phone ติดต่อ noc' -> CONTACT_LOOKUP (Contact Trigger)
+[DEBUG] Intent: CONTACT_LOOKUP (1.0) Reason: Keyword Override
+[DEBUG] Route: CONTACT_LOOKUP (via Handler)
+[DEBUG Contact] Query: 'noc', Intent: UNKNOWN
+[DEBUG] Filtering hits (Top=90, Cutoff=75) -> Kept 5 candidates.
+   -> Route: 'contact_broad_list'
+   -> Intent: unknown
+   [PASS]
+
+[2] Query: '3' (Choice Selection (After NOC))
+[DEBUG] Attempting to resolve pending question: '3'
+[DEBUG] Follow-up Resolved: Choice 3 -> NOC noc cnema
+[DEBUG] resolving choice 3 in CONTACT mode
+   -> Route: 'contact_hit_choice'
+   -> Intent: unknown
+   [PASS]
+
+[3] Query: 'เบอร์ศูนย์หาดใหญ่' (Rewriter Glitch (No recursive rewrite))
+[DEBUG] Query Expanded/Rewritten: เบอร์ศูนย์หาดใหญ่ -> phone ติดต่อศูนย์หาดใหญ่ (Rule: phone)
+[DEBUG] Guard C: Query='phone ติดต่อศูนย์หาดใหญ่' is_broad=False
+[DEBUG] Intent Override: 'phone ติดต่อศูนย์หาดใหญ่' -> CONTACT_LOOKUP (Contact Trigger)
+[DEBUG] Intent: CONTACT_LOOKUP (1.0) Reason: Keyword Override
+[DEBUG] Route: CONTACT_LOOKUP (via Handler)
+[DEBUG Contact] Query: 'ศูนย์หาดใหญ่', Intent: TEAM
+[DEBUG] Filtering hits (Top=90, Cutoff=75) -> Kept 2 candidates.
+   -> Route: 'contact_ambiguous'
+   -> Intent: unknown
+   [PASS]
+
+[4] Query: 'omc hatyai เบอร์' (Contact Override HowTo)
+[DEBUG] Query Expanded/Rewritten: omc hatyai เบอร์ -> omc hatyai phone ติดต่อ (Rule: phone)
+[DEBUG] Attempting to resolve pending question: 'omc hatyai phone ติดต่อ'
+[DEBUG] Input 'omc hatyai phone ติดต่อ' is not selection/control -> Escape as New Query.
+[DEBUG] Pending Question active -> Bypassing Cache for this turn.
+[DEBUG] Guard C: Query='omc hatyai phone ติดต่อ' is_broad=False
+[DEBUG] Intent Override: 'omc hatyai phone ติดต่อ' -> CONTACT_LOOKUP (Contact Trigger)
+[DEBUG] Intent: CONTACT_LOOKUP (1.0) Reason: Keyword Override
+[DEBUG] Route: CONTACT_LOOKUP (via Handler)
+[DEBUG Contact] Query: 'omc หาดใหญ่', Intent: UNKNOWN
+[DEBUG] Filtering hits (Top=100, Cutoff=85) -> Kept 1 candidates.
+   -> Route: 'contact_hit_contact_book_fuzzy'
+   -> Intent: unknown
+   [FAIL] Expected route in ['contact_hit', 'contact_ambiguous', 'position_holder_hit'], got 'contact_hit_contact_book_fuzzy'
+
+[5] Query: 'ตารางเวร สรกภ.4' (Clean Summary)
+[DEBUG] Guard C: Query='ตารางเวร สรกภ.4' is_broad=False
+[DEBUG] Intent: POSITION_HOLDER_LOOKUP (0.9) Reason: Role holder signal 'สรกภ.4'
+[DEBUG] Demoting POSITION_HOLDER_LOOKUP -> RAG (Keyword Guard: True)
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] JunkFilter first_item keys: ['href', 'text', 'source'], title='N/A', text='ตารางเวรพนักงาน สรกภ.4', href='http://10.192.133.33/smc/index.php?option=com_content&view=article&id=585:-4&catid=49:-smc&Itemid=84'
+[DEBUG] HowTo Link Match: 'ตารางเวร สรกภ.4' -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=585:-4&catid=49:-smc&Itemid=84 (Score: 0.8108108108108109)
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=585:-4&catid=49:-smc&Itemid=84
+[DEBUG] Article Summary Cache HIT (Score: 1.00)
+   -> Route: 'article_answer'
+   -> Intent: unknown
+   [FAIL] Answer contained forbidden term 'online'
+
+[6] Query: 'ตาราง proxy IPphone' (Menu Mode)
+[DEBUG] Guard C: Query='ตาราง proxy ipphone' is_broad=False
+[DEBUG] Intent Override: 'ตาราง proxy ipphone' -> CONTACT_LOOKUP (Contact Trigger)
+[DEBUG] Intent: CONTACT_LOOKUP (1.0) Reason: Keyword Override
+[DEBUG] Knowledge Alias Trigger: 'ตาราง proxy ipphone' -> Forcing HOWTO_PROCEDURE (Direct Link Match (Article-First))
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] JunkFilter first_item keys: ['href', 'text', 'source'], title='N/A', text='ตาราง proxy IP PHONE', href='http://10.192.133.33/smc/index.php?option=com_content&view=article&id=342:-proxy-ip-phone&catid=49:-smc&Itemid=84'
+[DEBUG] HowTo Link Match: 'ตาราง proxy ipphone' -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=342:-proxy-ip-phone&catid=49:-smc&Itemid=84 (Score: 0.9743589743589743)
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=342:-proxy-ip-phone&catid=49:-smc&Itemid=84
+[DEBUG] Article Summary Cache HIT (Score: 1.00)
+   -> Route: 'article_answer'
+   -> Intent: unknown
+   [PASS]
+
+[7] Query: 'OLT คือ' (General Definition)
+[DEBUG] Guard C: Query='olt คือ' is_broad=False
+[DEBUG] Intent Override: 'olt คือ' -> DEFINE_TERM (Keyword Match)
+[DEBUG] Intent: DEFINE_TERM (1.0) Reason: Keyword Override
+[METRIC] Synonym Applied for Retrieval: None (Query: 'OLT คือ' -> 'olt คือ')
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[METRIC] Synonym Rollback Triggered: Score 0.25 < 0.35. Reverting to 'OLT คือ'
+[METRIC] Rollback Aborted: Original was worse (0.22 < 0.25)
+[DEBUG] Evidence Coverage: MISS (Max score 0.25 too low (Threshold: 0.35))
+[DEBUG] General Tier Active for Concept Miss (Intent: DEFINE_TERM)
+[SafetyGuard] General Fallback Active -> Bypassing Low Score Check
+[DEBUG] L2 Cache Skipped for DEFINE_TERM (Rule DT-1 Safety)
+[DEBUG] RAG Score Gate: DEFINE_TERM detected with weak coverage. Bypassing gate to invoke NT_STRICT fallback.
+[DEBUG] DEFINE_TERM: Internal Miss (Score Low) -> Triggering General Knowledge Fallback.
+[Generator] Intent=NT_STRICT, Profile=STRICT, predict=512
+[Reviewer] Verdict: PASS (คำตอบอธิบายทั่วไปและไม่มีข้อมูลใหม่หรือตัวเลข/ชื่อคน ที่ไม่มีในเอกสารภายใน)
+[DEBUG] Cache Skipped for DEFINE_TERM General Fallback (Rule DT-1 Safety)
+   -> Route: 'rag'
+   -> Intent: unknown
+   [PASS]
+
+[8] Query: 'GPON คือ' (General Definition)
+[DEBUG] Guard C: Query='gpon คือ' is_broad=False
+[DEBUG] Intent Override: 'gpon คือ' -> DEFINE_TERM (Keyword Match)
+[DEBUG] Intent: DEFINE_TERM (1.0) Reason: Keyword Override
+[METRIC] Synonym Applied for Retrieval: None (Query: 'GPON คือ' -> 'gpon คือ')
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[METRIC] Synonym Rollback Triggered: Score 0.23 < 0.35. Reverting to 'GPON คือ'
+[METRIC] Rollback Successful: Score improved (0.23 -> 0.29)
+[DEBUG] Evidence Coverage: MISS (Max score 0.29 too low (Threshold: 0.35))
+[DEBUG] General Tier Active for Concept Miss (Intent: DEFINE_TERM)
+[SafetyGuard] General Fallback Active -> Bypassing Low Score Check
+[DEBUG] L2 Cache Skipped for DEFINE_TERM (Rule DT-1 Safety)
+[DEBUG] RAG Score Gate: DEFINE_TERM detected with weak coverage. Bypassing gate to invoke NT_STRICT fallback.
+[DEBUG] DEFINE_TERM: Internal Miss (Score Low) -> Triggering General Knowledge Fallback.
+[Generator] Intent=NT_STRICT, Profile=STRICT, predict=512
+[Reviewer] Verdict: PASS (เนื่องจากคำถามเกี่ยวกับ GPON เป็นข้อมูลความรู้ทั่วไป และคำตอบใน Evidence มีความถูกต้องตามหลักฐาน)
+[DEBUG] Cache Skipped for DEFINE_TERM General Fallback (Rule DT-1 Safety)
+   -> Route: 'rag'
+   -> Intent: unknown
+   [PASS]
+
+[9] Query: 'ใครคือผจ' (Who Is -> Position (Not Define))
+[DEBUG] Guard C: Query='ใครคือผจ' is_broad=False
+[DEBUG] Intent Override: 'ใครคือผจ' -> POSITION_HOLDER_LOOKUP (Role Trigger)
+[DEBUG] Intent: POSITION_HOLDER_LOOKUP (1.0) Reason: Keyword Override
+[DEBUG] Handling POSITION_HOLDER_LOOKUP logic
+   -> Route: 'position_miss'
+   -> Intent: unknown
+   [PASS]
+
+[10] Query: 'ผจ คืออะไร' (Define -> General)
+[DEBUG] Guard C: Query='ผจ คืออะไร' is_broad=False
+[DEBUG] Intent Override: 'ผจ คืออะไร' -> DEFINE_TERM (Keyword Match)
+[DEBUG] Intent: DEFINE_TERM (1.0) Reason: Keyword Override
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[DEBUG] Evidence Coverage: MISS (Max score 0.22 too low (Threshold: 0.35))
+[DEBUG] General Tier Active for Concept Miss (Intent: DEFINE_TERM)
+[SafetyGuard] General Fallback Active -> Bypassing Low Score Check
+[DEBUG] L2 Cache Skipped for DEFINE_TERM (Rule DT-1 Safety)
+[DEBUG] RAG Score Gate: DEFINE_TERM detected with weak coverage. Bypassing gate to invoke NT_STRICT fallback.
+[DEBUG] DEFINE_TERM: Internal Miss (Score Low) -> Triggering General Knowledge Fallback.
+[Generator] Intent=NT_STRICT, Profile=STRICT, predict=512
+[DEBUG] Cache Skipped for DEFINE_TERM General Fallback (Rule DT-1 Safety)
+   -> Route: 'rag'
+   -> Intent: unknown
+   [PASS]
+
+[11] Query: 'ทำbridgeระหว่างport' (Internal Article for Config)
+[DEBUG] Query Expanded/Rewritten: ทำbridgeระหว่างport -> การทำ Bridge ระหว่างพอร์ตใน Cisco Router (Rule: ALIAS_REWRITE)
+[DEBUG] Guard C: Query='การทำ bridge ระหว่างพอร์ตใน cisco router' is_broad=False
+[DEBUG] Intent: WEB_KNOWLEDGE (0.9) Reason: ตั้งค่า TR069
+[DEBUG] Knowledge Alias Trigger: 'การทำ Bridge ระหว่างพอร์ตใน Cisco Router' -> Forcing HOWTO_PROCEDURE (Direct Link Match (Article-First))
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] JunkFilter first_item keys: ['href', 'text', 'source'], title='N/A', text='การทำ Bridge ระหว่างพอร์ตใน Cisco Router', href='http://10.192.133.33/smc/index.php?option=com_content&view=article&id=592:-bridge-cisco-router&catid=43:2011-11-14-08-37-12&Itemid=81'
+[DEBUG] HowTo Link Match: 'การทำ Bridge ระหว่างพอร์ตใน Cisco Router' -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=592:-bridge-cisco-router&catid=43:2011-11-14-08-37-12&Itemid=81 (Score: 1.0)
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=592:-bridge-cisco-router&catid=43:2011-11-14-08-37-12&Itemid=81
+[DEBUG] Article Summary Cache HIT (Score: 1.00)
+   -> Route: 'article_answer'
+   -> Intent: unknown
+   [PASS]
+
+[12] Query: 'add adsl Huawei' (Internal First / Fail Closed)
+[DEBUG] Guard C: Query='add adsl huawei' is_broad=False
+[DEBUG] Intent: WEB_KNOWLEDGE (0.9) Reason: Huawei related query
+[DEBUG] Knowledge Alias Trigger: 'add adsl huawei' -> Forcing HOWTO_PROCEDURE (Direct Link Match (Article-First))
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] JunkFilter first_item keys: ['href', 'text', 'source'], title='N/A', text='add adsl Huawei', href='http://10.192.133.33/smc/index.php?option=com_content&view=article&id=632:add-adsl-huawei&catid=43:2011-11-14-08-37-12&Itemid=81'
+[DEBUG] HowTo Link Match: 'add adsl huawei' -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=632:add-adsl-huawei&catid=43:2011-11-14-08-37-12&Itemid=81 (Score: 1.0)
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=632:add-adsl-huawei&catid=43:2011-11-14-08-37-12&Itemid=81
+[DEBUG] Article Summary Cache HIT (Score: 1.00)
+   -> Route: 'article_answer'
+   -> Intent: unknown
+   [PASS]
+
+==============================
+SUMMARY: 10/12 Passed
+==============================

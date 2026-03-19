@@ -74,7 +74,7 @@ def collect_raw_positions():
     # Itemid_60: ผส.บลตน. (Director)
     # Itemid_56: ผจ.สบลตน. (Manager)
     
-    files = list(processed_dir.glob("*.json"))
+    files = list(processed_dir.rglob("*.json"))
     
     for p in files:
         try:
@@ -301,6 +301,39 @@ def collect_raw_positions():
                                 "emails": []
                             })
                             
+            # --- Strategy 4: Generic Role Matching (Phase 237) ---
+            # Scan for "Role: Name" patterns throughout the text
+            # This runs for ALL files to maximize coverage of non-standard pages
+            role_patterns = [
+                r"##\s*([^\n:]+?)\s*:\s*(นาย|นาง|น\.ส\.|คุณ|ว่าที่|ดร\.)[\s\u00A0]*([^\n]+)",
+                r"(ผส\.|ผจ\.|ผอ\.|หัวหน้าส่วน|สมาชิก)\s*([ก-๙A-Za-z\.]+)\s*:\s*(นาย|นาง|น\.ส\.|คุณ|ว่าที่|ดร\.)[\s\u00A0]*([^\n]+)"
+            ]
+            
+            for pattern in role_patterns:
+                for m in re.finditer(pattern, text):
+                    role_extracted = m.group(1).strip()
+                    # If 4 groups, m.group(1) is prefix, m.group(2) is unit/suffix
+                    if len(m.groups()) >= 4:
+                        role_extracted = f"{m.group(1)}{m.group(2)}"
+                        person_prefix = m.group(3)
+                        person_name = m.group(4).strip()
+                    else:
+                        person_prefix = m.group(2)
+                        person_name = m.group(3).strip()
+                    
+                    # Clean up person name (remove nicknames in parens or residual text)
+                    person_name = re.split(r"[:\n]", person_name)[0].strip()
+                    
+                    positions.append({
+                        "role": role_extracted,
+                        "name": f"{person_prefix}{person_name}",
+                        "source": url,
+                        "phones": [],
+                        "faxes": [],
+                        "emails": []
+                    })
+                            
+                            
         except Exception as e:
             print(f"Error processing {p.name}: {e}")
             continue
@@ -384,9 +417,10 @@ def merge_entities(positions):
 def summarize_teams(records):
     """
     Group records by Role (Team) -> Team Record.
+    Strips prefixes (ผจ., สมาชิก) to group all members of a unit together.
     Output:
     {
-      "team": "งาน FTTx",
+      "team": "ข.บลตน.",
       "members": [
          {"name": "...", "phones": [...], "role": "..."} 
       ],
@@ -394,23 +428,35 @@ def summarize_teams(records):
     }
     """
     teams = {}
+    import re
+    
     for r in records:
         role = r["role"]
-        # Normalize Role? 
-        # For now, use exact role from extraction as key.
-        if role not in teams:
-            teams[role] = {
-                "team": role,
-                "members": [],
-                "sources": set()
-            }
         
-        teams[role]["members"].append({
-            "name": r["name"],
-            "phones": r["phones"],
-            "emails": r["emails"]
-        })
-        teams[role]["sources"].update(r["sources"])
+        # Clean the role to get the base unit name (e.g. "สมาชิก ข.บลตน." -> "ข.บลตน.")
+        unit = re.sub(r"^(ผส\.|ผจ\.|ผอ\.|หัวหน้าส่วน|สมาชิก)\s*", "", role).strip()
+        
+        if not unit:
+            unit = role
+            
+        if unit not in teams:
+            teams[unit] = {
+                "team": unit,
+                "members": [],
+                "sources": set(),
+                "seen_names": set()
+            }
+            
+        name_key = r["name"].strip().lower()
+        if name_key not in teams[unit]["seen_names"]:
+            teams[unit]["seen_names"].add(name_key)
+            teams[unit]["members"].append({
+                "name": r["name"],
+                "phones": r["phones"],
+                "emails": r["emails"],
+                "role": role
+            })
+        teams[unit]["sources"].update(r["sources"])
         
     final_teams = []
     for k, v in teams.items():

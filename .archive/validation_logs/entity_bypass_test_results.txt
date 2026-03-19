@@ -1,0 +1,31 @@
+======================================================================
+Entity Bypass Fix - Integration Test
+======================================================================
+[INFO] SMC Hardening ACTIVE. Policy: ['enabled', 'vendor_match', 'model_match', 'web_search_technical', 'fallback_chain', 'similarity_threshold', 'logging']
+[INFO] Enforcing Hardened Threshold: 0.7
+[INFO] Loading resources...
+[VectorStore] Using SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+[ProcessedCache] Loaded 14 aliases
+[ProcessedCache] Loading processed data from data/processed...
+[ProcessedCache] Found 144 files
+[ProcessedCache] Loaded 144 docs, 4371 links
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+[INFO] Numeric Selection Resolver loaded
+[INFO] Entity Detector loaded (bypass noise gate for entity queries)
+
+✅ ChatEngine initialized with Entity Detector
+✅ Entity Detector: True
+
+======================================================================
+Test 1: Entity Bypass - Device Queries
+======================================================================
+
+🧪 Query: 'ขอเบอร์UMUX'
+   Entity Detected: True (UMUX)
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/test_entity_bypass_integration.py", line 59, in <module>
+    result = engine.process_query(query)
+             ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ChatEngine' object has no attribute 'process_query'

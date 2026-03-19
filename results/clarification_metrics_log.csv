@@ -1,0 +1,1520 @@
+timestamp,query,route,top_score,second_score,score_gap,n_candidates_above_threshold,clarification_triggered,clarification_reason
+1770865361.611189,คำถามทดสอบระบบ,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1770865366.7058702,หัวข้อที่ต้องการตรวจสอบ,pending_clarification,0.82,0.81,0.009999999999999898,2,True,vector_ambiguous
+1770865371.050932,random empty query,rag_miss_coverage,0.0,0.0,0.0,0,False,none
+1770880369.612131,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1770880382.922295,4,article_link_only_index,0.0,0.0,0.0,0,False,none
+1770880931.8254678,query_with_low_confidence,rag_miss_coverage,0.0,0.0,0.0,0,False,none
+1770880939.409607,query_with_high_confidence,contact_miss_strict,0.0,0.0,0.0,0,False,none
+1770881091.427933,query_with_high_confidence,contact_miss_strict,0.0,0.0,0.0,0,False,none
+1770881141.386574,query_with_low_confidence,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1770881145.635243,query_with_high_confidence,contact_miss_strict,0.0,0.0,0.0,0,False,none
+1770881348.931905,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1770881351.0575202,1,article_link_only_index,0.0,0.0,0.0,0,False,none
+1770881380.61102,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1770882954.670096,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1770883426.91962,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1770883565.606375,คำสั่งhuawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1770884717.258219,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1770884725.362232,Huawei NE8000 Command Manual,article_link_only_index,0.0,0.0,0.0,0,False,none
+1770884735.432329,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1770884740.693415,config VAS by Huawei,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1770884756.534229,fix ip,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1770884771.0714471,bras for fixip,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1770884786.5681899,ข้อจำกัดของ ncs,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1770884804.929599,เข้า ONU ไม่ได้,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1770885114.4992378,ใครคือผจ,position_ambiguous,0.0,0.0,0.0,0,False,none
+1770885122.294842,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1770885150.499949,ขอเบอร์ศูนย์หาดใหญ่หน่อย,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1770885190.547769,ขอMac addressหน่อย,contact_miss_strict,0.0,0.0,0.0,0,False,none
+1770885205.435603,MAC Addrass ของยี่ห้อแปลกๆ,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1770885322.173515,MAC Addrass ของยี่ห้อแปลกๆ,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1770885718.966878,MAC Addrass,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1770885739.220884,วีธีบีบ แบนวิธ ที่ port onu Zte,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1770885858.753958,การทำbrifgrระหว่างport,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1770886188.008662,การทำ Bridge ระหว่างพอร์ตใน Cisco Router,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1770886765.3869991,สวัสดี,greeting_gate,0.0,0.0,0.0,0,False,none
+1770886765.4087539,ขอบคุณ,greeting_deterministic,0.0,0.0,0.0,0,False,none
+1770886765.418269,ok,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1770886765.422287,hi,greeting_gate,0.0,0.0,0.0,0,False,none
+1770886765.428229,1,article_direct,0.0,0.0,0.0,0,False,none
+1770887018.421667,test query,rag_miss_coverage,0.0,0.0,0.0,0,False,none
+1770887018.534047,สวัสดี,greeting_gate,0.0,0.0,0.0,0,False,none
+1770887018.538263,ขอบคุณ,greeting_deterministic,0.0,0.0,0.0,0,False,none
+1770887018.548911,ok,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1770887018.5534358,hi,greeting_gate,0.0,0.0,0.0,0,False,none
+1770887018.5588229,1,article_direct,0.0,0.0,0.0,0,False,none
+1770887232.680044,MAC Addrass ของยี่ห้อแปลกๆ,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1770887238.414876,การทำ Bridge ระหว่างพอร์ตใน Cisco Router,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1770887242.948131,bras for fixip,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1770887248.5994592,huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1770887257.279511,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1770887264.658936,Huawei NE8000 Command Manual,article_link_only_index,0.0,0.0,0.0,0,False,none
+1770887270.0190709,cisco,blocked_vendor_out_of_scope,0.0,0.0,0.0,0,False,none
+1770887279.7875872,zte,pending_clarification,0.0,0.0,0.0,0,False,none
+1770887285.150164,การทำbrifgrระหว่างport,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1770887294.039552,สวัสดีครับ,greeting_gate,0.0,0.0,0.0,0,False,none
+1770887305.934678,ใครคือผจ,position_ambiguous,0.0,0.0,0.0,0,False,none
+1770887309.9843671,ใช่,contact_miss_strict,0.0,0.0,0.0,0,False,none
+1770887820.504562,ใช่,position_confirmed,0.0,0.0,0.0,0,False,none
+1770887862.8307378,ใช่,position_confirmed,0.0,0.0,0.0,0,False,none
+1770888239.182422,ใช่,position_confirmed,0.0,0.0,0.0,0,False,none
+1770888239.1857631,ใช่,rag_miss_coverage,0.0,0.0,0.0,0,False,none
+1770888239.3477252,สวัสดี,greeting_gate,0.0,0.0,0.0,0,False,none
+1770888239.3580859,สวัสดี ,greeting_gate,0.0,0.0,0.0,0,False,none
+1770888470.578306,test query,rag_miss_coverage,0.0,0.0,0.0,0,False,none
+1770888470.6799,วิธีตั้งค่า,rag_miss_coverage,0.0,0.0,0.0,0,False,none
+1770888567.69853,ใครคือผจ,position_ambiguous,0.0,0.0,0.0,0,False,none
+1770888572.903971,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1770888577.7760231,ใครคือผส,position_ambiguous,0.0,0.0,0.0,0,False,none
+1770888582.140866,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1770888589.6742668,ขอเบอร์ศูนย์นครหน่อย,contact_miss_strict,0.0,0.0,0.0,0,False,none
+1770888600.9045498,ขอเบอร์ศูนย์นครรศรีธรรมราชฃ,contact_miss_strict,0.0,0.0,0.0,0,False,none
+1770888605.495475,ขอเบอร์ศูนย์นครรศรีธรรมราช,contact_miss_strict,0.0,0.0,0.0,0,False,none
+1770888837.9261692,เบอร์นครศรีธรรมราช,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1770888863.196438,MAC Addrass ของยี่ห้อแปลกๆ,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1770888869.254441,huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1770888944.679074,ใครคือผจ,position_ambiguous,0.0,0.0,0.0,0,False,none
+1770888949.364179,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1770888954.4778528,ศูนย์หาดใหญ่,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1770888966.330396,ขอเบอร์ศูนย์หาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1770888968.033916,รวบรวมคำสั่งใช้งาน (Command Reference),blocked_scope,0.0,0.0,0.0,0,False,none
+1770888968.033916,รวบรวมคำสั่งใช้งาน (Command Reference),blocked_scope,0.0,0.0,0.0,0,False,none
+1770888977.4359949,MAC Addrass ของยี่ห้อแปลกๆ,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1770888983.804749,huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1770888988.832951,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1770888995.124659,สวัสดีครับ,greeting_gate,0.0,0.0,0.0,0,False,none
+1770889005.939469,การทำbrifgrระหว่างport,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1770889709.527123,เบอร์ csoc,contact_broad_list,0.0,0.0,0.0,0,False,none
+1770889709.547949,ใครคือผจ,position_ambiguous,0.0,0.0,0.0,0,False,none
+1770889709.5558631,วิธีตั้งค่า router,blocked_scope,0.0,0.0,0.0,0,False,none
+1770889740.6374688,เบอร์ csoc,contact_broad_list,0.0,0.0,0.0,0,False,none
+1770889740.654669,ใครคือผจ,position_ambiguous,0.0,0.0,0.0,0,False,none
+1770889740.662517,วิธีตั้งค่า router,blocked_scope,0.0,0.0,0.0,0,False,none
+1770889854.9865339,ขอเบอร์นคร,contact_miss_strict,0.0,0.0,0.0,0,False,none
+1770889858.306756,ขอเบอร์นครศรี,contact_miss_strict,0.0,0.0,0.0,0,False,none
+1770889862.075118,ขอเบอร์นครศรีธรรมราช,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1770890522.0807428,ขอคู่มือหน่อย,blocked_ambiguous,0.0,0.0,0.0,0,False,none
+1770890657.4410381,ขอคำสั่ง Huaweiหน่อย,pending_clarification,0.0,0.0,0.0,0,False,none
+1770890667.301333,FTTx Huawei Native vlan,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1770890686.8619132,ขอคำสั่ง NCS หน่อย,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1770890707.920264,ont password,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1770890733.717012,ขอเบอร์นคร,contact_prefix_ambiguous,0.0,0.0,0.0,0,False,none
+1770890746.887579,ขอเบอร์นครศรี,contact_prefix_ambiguous,0.0,0.0,0.0,0,False,none
+1770890763.487968,ขอเบอรอร์ศุนย์นครหน่อย,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1770890777.437408,อเบอร์ศูนย์นครหน่อย,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1770890835.9051762,่huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1770890838.0980978,1,article_link_only_index,0.0,0.0,0.0,0,False,none
+1770890858.594522,ขอเบอร์ศูนย์หาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1770890860.9542558,1,article_link_only_index,0.0,0.0,0.0,0,False,none
+1770891259.4608388,ขอเบอร์นคร,contact_prefix_ambiguous,0.0,0.0,0.0,0,False,none
+1770891322.1368692,ขอเบอร์นคร,contact_prefix_ambiguous,0.0,0.0,0.0,0,False,none
+1770891360.4584541,ขอเบอร์นคร,contact_prefix_ambiguous,0.0,0.0,0.0,0,False,none
+1770891404.980243,1,contact_hit_choice,0.0,0.0,0.0,0,False,none
+1770891494.368813,ขอเบอร์ศูนย์นครหน่อย,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1770891497.995666,ขอเบอร์ศูนย์นครห,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1770891503.16692,ขอเบอร์ศูนคร,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1770891523.2912588,ขอเบอร์ศูนย์หาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1770891533.589613,ขอเบอร์ศูนย์หนคร,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1770891539.303286,ขอเบอร์ศูนย์นคร,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1770891546.453977,ขอเบอร์ศูนย์นครศรี,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1770891550.4286878,ขอเบอร์ศูนย์นครศรีธรรมราช,contact_hit_team,0.0,0.0,0.0,0,False,none
+1770892109.600106,1,article_link_only_index,0.0,0.0,0.0,0,False,none
+1770892180.800761,1,contact_hit_choice,0.0,0.0,0.0,0,False,none
+1770892273.828706,1,contact_hit_choice,0.0,0.0,0.0,0,False,none
+1770892398.78865,ขอเบอร์ศูนย์นครศรีธรรมราช,contact_hit_team,0.0,0.0,0.0,0,False,none
+1770892403.315166,ขอเบอร์ศูนย์นครศ,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1770892416.493588,ขอเบอร์ RNOC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1770892421.885421,ขอเบอร์ OM C หาดใหญ่,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1770892428.817065,ขอเบอร์ศูนย์น,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1770892436.976753,ขอเบอร์ศูนย์,contact_broad_list,0.0,0.0,0.0,0,False,none
+1770892444.9866638,manual,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1770892451.19212,huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1770892456.197089,สวัสดี,greeting_gate,0.0,0.0,0.0,0,False,none
+1770892733.10732,สวัสดีครับ,greeting_gate,0.0,0.0,0.0,0,False,none
+1770892800.576092,สวัสดีครับ,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1770892800.5808609,สวัสดี,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1770892800.5810728,สวัสดี ขอเบอร์,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1770910381.120335,ขอเบอร์ศูนย์นครศรีธรรมราช,contact_hit_team,0.0,0.0,0.0,0,False,none
+1770910386.464305,ขอเบอร์ศูนย์นคร,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1770910391.8499022,ขอเบอร์ศูนย์นครศ,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1770910396.966987,ขอเบอร์ศูนย์,contact_broad_list,0.0,0.0,0.0,0,False,none
+1770910401.6839528,ขอเบอร์ศูนย์abcxyz,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1770910406.852858,ขอเบอร์ IP Network,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1770911235.21371,สวัสดีครับ,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1770911243.2306502,ขอเบอร์ศูนย์นครศรีธรรมราช,contact_hit_team,0.0,0.0,0.0,0,False,none
+1770911252.813843,ขอเบอร์ศูนย์นคร,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1770911259.012681,ขอเบอร์ศูนย์นครศรี,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1770911267.340706,ขอเบอร์ศูนย์,contact_broad_list,0.0,0.0,0.0,0,False,none
+1770911275.004456,ขอเบอร์ IP Network,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1770911279.887249,ขอเบอร์ network,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1770911286.335968,OLT คืออะไร,blocked_ambiguous,0.0,0.0,0.0,0,False,none
+1770911293.023201,ขั้นตอน migration network,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1770922233.323738,ขอเบอร์ศูนย์นคร,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1770922238.4051352,ขอเบอร์ศูนย์นครศรี,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1770922243.0516632,ขอเบอร์นคร,contact_prefix_ambiguous,0.0,0.0,0.0,0,False,none
+1770923874.229511,ขอเบอร์ศูนย์นคร,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1770923878.573357,ขอเบอร์ศูนย์นครศรี,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1770923881.8886771,ขอเบอร์นคร,contact_prefix_ambiguous,0.0,0.0,0.0,0,False,none
+1770924488.69522,ขอเบอร์ศูนย์นคร,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1770924492.4508958,ขอเบอร์ศูนย์นครศรี,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1770924495.920306,ขอเบอร์นคร,contact_prefix_ambiguous,0.0,0.0,0.0,0,False,none
+1770925465.4126499,ขอเบอร์ศูนย์นคร,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1770925709.7889762,ขอเบอร์ศูนย์นคร,contact_hit_contact_prefix_match,0.0,0.0,0.0,0,False,none
+1770925717.524449,ขอเบอร์ศูนย์นครศรี,contact_hit_contact_prefix_match,0.0,0.0,0.0,0,False,none
+1770925721.4932501,ขอเบอร์นคร,contact_prefix_ambiguous,0.0,0.0,0.0,0,False,none
+1770925729.3274398,ใครคือผจ,position_ambiguous,0.0,0.0,0.0,0,False,none
+1770925731.13976,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1770925734.767395,คำสั่งhuawei,article_link_only,0.0,0.0,0.0,0,False,none
+1770925755.603311,huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1770925759.6146991,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1770925782.702059,คำสั่งhuawei,article_link_only,0.0,0.0,0.0,0,False,none
+1770925794.6229062,คำสั่ง huaweii,pending_clarification,0.0,0.0,0.0,0,False,none
+1770926155.79587,คำสั่งhuawei,article_link_only,0.0,0.0,0.0,0,False,none
+1770926166.156438,commandzte,article_link_only_index,0.0,0.0,0.0,0,False,none
+1770926177.5890298,huaweiคำสั่ง,article_link_only,0.0,0.0,0.0,0,False,none
+1770926205.989346,clihuawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1770926210.2769861,huawei add vlan,article_answer,0.0,0.0,0.0,0,False,none
+1770926221.391218,huawei ma5680t,article_answer,0.0,0.0,0.0,0,False,none
+1770926632.172172,คำสั่งhuawei,article_link_only,0.0,0.0,0.0,0,False,none
+1770926902.025113,คำสั่งhuawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1770926905.073913,คำสั่งhu awei,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1770926918.546137,รวบรวมคำสั่งใช้งาน (Command Reference),blocked_scope,0.0,0.0,0.0,0,False,none
+1770926918.546137,รวบรวมคำสั่งใช้งาน (Command Reference),blocked_scope,0.0,0.0,0.0,0,False,none
+1770927194.878477,HUAWEI command,pending_clarification,0.0,0.0,0.0,0,False,none
+1770927201.838645,command h uawei,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1770927216.538202,คำสั่งhuawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1770927229.206419,เบอร?ศูนย์นราธิวาส,contact_hit_team,0.0,0.0,0.0,0,False,none
+1770927239.121411,ztecommand,pending_clarification,0.0,0.0,0.0,0,False,none
+1770927248.519878,ZTE C320 COMMANDLINE FOR MAINTENANCE,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771235844.5311549,สวัสดี,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1771235844.540001,exit,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771235908.7419038,สวัสดี,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1771235911.295553,ใครคือผจ,position_ambiguous,0.0,0.0,0.0,0,False,none
+1771235912.501442,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1771235917.8383338,ขอเบอร์ศูนย์หาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771235924.486805,ขอเบอร์ศูนย์ชุมพร,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771235931.9725099,ทะเบียนสินทรัพย์,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771235941.7073832,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1771236612.565747,คำสั่งhuawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1771237697.874308,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1771238031.3757608,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1771238039.628716,2,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1771238051.57484,ขอเบอร์ISP,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771238062.072194,คู่มือประกอบการวิเคราะห์ปัญหาเบื้องต้น,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771238608.310258,ขอเบอร์หาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771238608.3475351,ขอเบอร์CSOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771238608.364418,เบอร์ศูนย์ภูเก็ต,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771238675.711518,ขอเบอร์หาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771238675.735498,ขอเบอร์CSOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771238675.748872,เบอร์ศูนย์ภูเก็ต,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771238675.761678,ผจ.สบลตน.,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771238675.809759,เบอร์ช่างบางเขน,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1771238675.824409,IP Network,article_link_only,0.0,0.0,0.0,0,False,none
+1771238690.843564,ทะเบียนสินทรัพย์,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771238690.856568,FTTx คืออะไร,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771238697.0384278,ONuT,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771238697.041892,ขอเบอร์ CSOC หน่อย,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771238697.057634,เบอร์โทรศัพท์ของ CSOC,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1771238697.073429,อยากติดต่อหาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771238697.082926,OLT มันคืออะไรหว่า,blocked_ambiguous,0.0,0.0,0.0,0,False,none
+1771238697.089088,เบอร์หาดใหญญญ,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1771238854.5829551,ขอเบอร์หาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771238854.615284,ขอเบอร์CSOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771238854.629945,ผจ.สบลตน.,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771238854.6747048,ทะเบียนสินทรัพย์,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771238854.682994,FTTx,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771238854.686611,ขอเบอร์หาดใหญ่หน่อย,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771238854.700617,เบอร์โทรศัพท์ของหาดใหญ่,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1771238854.715724,OLT คืออะไร,blocked_ambiguous,0.0,0.0,0.0,0,False,none
+1771239523.252473,ขอเบอร์UMUX,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771239523.278822,ขอเบอร์หาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771239523.292392,ขอเบอร์ CSOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771239523.306507,สวัสดี,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1771239890.846215,OLT มัน คืออะไร หว่า,blocked_ambiguous,0.0,0.0,0.0,0,False,none
+1771239890.862606,ขอเบอร์CSOC เนี่ย,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771239890.8872142,GPON ทำงานยังไง รึเปล่า,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771239900.469864,ขอเบอร์หาดใหญ่ นะ,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771239900.483485,OLT คืออะไร,blocked_ambiguous,0.0,0.0,0.0,0,False,none
+1771266970.743158,อยากติดต่อ CSOC,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771266970.779358,บอกเบอร์หาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771266970.797933,OLT ทำงานยังไง,blocked_ambiguous,0.0,0.0,0.0,0,False,none
+1771266970.805835,ขอเบอร์ OMC,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771269249.094573,ขอเบอร์หาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771269253.641751,เบอร์หาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771269258.514761,บอกเบอร์หาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771269262.9887779,ติดต่อหาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771269694.8763552,ศูนย์หาดใหญ่โทรอะไร,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771270455.523354,ศูนย์หาดใหญ่โทรอะไร,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771270789.6198652,ศูนย์หาดใหญ่โทรอะไร,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771270808.127761,ขอเบอร์,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771270814.041976,เบอร์ศูนย์,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771270820.120057,โทรศูนย์,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771270827.06021,สมาชิก helpdesk,team_hit,0.0,0.0,0.0,0,False,none
+1771270835.084429,ทีม help desk,team_hit,0.0,0.0,0.0,0,False,none
+1771270843.317319,helpdesk มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1771270851.4583209,คนใน fttx,team_hit,0.0,0.0,0.0,0,False,none
+1771270859.31267,สมาชิกงาน,team_ambiguous,0.0,0.0,0.0,0,False,none
+1771270867.811142,huawei command,pending_clarification,0.0,0.0,0.0,0,False,none
+1771270873.7696881,huawei มีอะไรบ้าง,pending_clarification,0.0,0.0,0.0,0,False,none
+1771270879.223561,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1771270890.892201,3,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1771270897.0636978,OLT คืออะไร,blocked_ambiguous,0.0,0.0,0.0,0,False,none
+1771270904.241591,UMUX คืออะไร,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771270910.737,FTTx คืออะไร,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771270917.101753,อยากติดต่อ csoc,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771270922.3432598,หาเบอร์ umux,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1771270932.306904,สมาชิก helpdesk,team_hit,0.0,0.0,0.0,0,False,none
+1771270938.31659,ขอเบอร์,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771270945.241759,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1771270947.1846242,2,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1771270950.977957,ขอเบอร์,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771270958.56864,ขอเบอร์เชียงใหม่,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1771270963.4326131,ทีม AI,team_miss,0.0,0.0,0.0,0,False,none
+1771271738.046608,ศูนย์หาดใหญ่โทรอะไร,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771271738.078294,ขอเบอร์,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771272349.7942688,ศูนย์หาดใหญ่โทรอะไร,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771272353.392981,ขอเบอร์,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771272412.949342,ศูนย์หาดใหญ่โทรอะไร,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771272418.8292649,ของ RNOC ละ,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771272431.714071,สมาชิก helpdesk,team_hit,0.0,0.0,0.0,0,False,none
+1771272436.662982,ขอเบอร์,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771272750.817226,ศูนย์หาดใหญ่โทรอะไร,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771272750.844756,ขอเบอร์,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771272840.18133,ศูนย์หาดใหญ่โทรอะไร,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771272843.908007,ของ RNOC ละ,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771273106.70821,ศูนย์หาดใหญ่โทรอะไร,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771273110.9402292,ของ RNOC ละ,knowledge_pack,0.0,0.0,0.0,0,False,none
+1771273214.9956381,ศูนย์หาดใหญ่โทรอะไร,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771273215.022676,ขอเบอร์,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771273305.721091,ศูนย์หาดใหญ่โทรอะไร,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771273311.155471,ของ RNOC ละ,knowledge_pack,0.0,0.0,0.0,0,False,none
+1771273682.4190972,ศูนย์หาดใหญ่โทรอะไร,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771273687.211561,ของ RNOC ละ,knowledge_pack,0.0,0.0,0.0,0,False,none
+1771273973.275878,เบอร์ CSOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771273973.314524,สมาชิก helpdesk,team_hit,0.0,0.0,0.0,0,False,none
+1771273981.091032,config vlan,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771273981.0976,เบอร์ CSOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771273981.121768,ขอเบอร์,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771275587.945204,ศูนย์หาดใหญ่โทรอะไร,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771275587.975264,ของ RNOC ละ,knowledge_pack,0.0,0.0,0.0,0,False,none
+1771275599.45948,เบอร์ CSOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771275599.47849,ขอเบอร์,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771275651.416242,ศูนย์หาดใหญ่โทรอะไร,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771275651.4899929,ของ RNOC ละ,knowledge_pack,0.0,0.0,0.0,0,False,none
+1771275661.303734,เบอร์ CSOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771275661.321341,ขอเบอร์,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771321386.9476402,huawei command,pending_clarification,0.0,0.0,0.0,0,False,none
+1771321390.313086,1,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1771321393.009214,2,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771321397.554276,3,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771321928.970146,ขอเบอร์หาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771321934.813322,RNOCหล่ะ,knowledge_pack,0.0,0.0,0.0,0,False,none
+1771324590.843869,ศูนย์หาดใหญ่โทรอะไร,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771324595.912788,ของ RNOC ละ,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1771325271.76126,ศูนย์หาดใหญ่โทรอะไร,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771325276.816281,ของ RNOC ละ,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1771337114.466272,ศูนย์หาดใหญ่โทรอะไร,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771337118.210853,ของ RNOC ละ,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1771337861.109212,ศูนย์หาดใหญ่โทรอะไร,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771337865.6170611,ของ RNOC ละ,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771337891.879649,omc หล่ะ,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771337907.0544581,ใครคือผจ,position_miss,0.0,0.0,0.0,0,False,none
+1771337916.345634,ใครคือผจ,position_miss,0.0,0.0,0.0,0,False,none
+1771338608.8235772,ขอเบอร์หาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771338612.7513402,RNOC,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771338624.9617448,ใครคือผจ,position_ambiguous,0.0,0.0,0.0,0,False,none
+1771338629.5763211,ใใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1771338636.7919848,ont password,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771338653.3043299,เปิดโทร 3 สาย บน onu,article_link_only,0.0,0.0,0.0,0,False,none
+1771338695.436451,ip sbc,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771338721.550879,huawei fttx,pending_clarification,0.0,0.0,0.0,0,False,none
+1771338734.884077,8,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1771338750.03399,ติดตั้งmodem 9,article_answer,0.0,0.0,0.0,0,False,none
+1771338767.142636,การติดตั้ง Modem 9ต่างๆ,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771339723.847768,คำสั่ง เปิด port ont,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771339740.179384,อvpn dsl,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771339754.410063,vpn dsl,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771339768.1002822,ส่วนประกอบ คอมพิวเตรอร์,article_answer,0.0,0.0,0.0,0,False,none
+1771339780.7224572,ส่วนประกอบ คอมพิวเตร์,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771353905.578356,สวัสดี,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1771353910.386545,ใครคือผจ,position_ambiguous,0.0,0.0,0.0,0,False,none
+1771353913.220917,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1771353921.102804,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1771353927.550763,3,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1771353961.736415,ขอเบอร์ umux,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771353997.989681,มาตรฐาน 5 ส,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771354020.683041,แก้ user ลูกค้า context private,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771354040.163009,ตาราง proxy IP PHONE,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771354068.8018298,หลักเกณฑ์ service id บริการ Last mile,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771354090.908649,"{
+  ""query"": ""	ตำแหน่งสื่อสัญญาณ 100G "",
+  ""user"": ""champ1t"",
+  ""top_k"": 3
+}",position_miss,0.0,0.0,0.0,0,False,none
+1771354101.975801,ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771354106.356779,ตำแหน่งสื่อสัญญาณ 100G ,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771354122.2582731,helpdesk มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1771354154.2873862,นายปรัชญา คือใคร,position_miss,0.0,0.0,0.0,0,False,none
+1771354164.3716211,ใครคือผจ,position_ambiguous,0.0,0.0,0.0,0,False,none
+1771354167.871796,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1771354175.7462342,คุณปรัชญา ศรีเสาวชาติ คือใคร,position_miss,0.0,0.0,0.0,0,False,none
+1771356502.4373078,TR069 คืออะไร,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771356510.325732,วิธี config SBC,blocked_scope,0.0,0.0,0.0,0,False,none
+1771356523.3249788,CWMP ทำงานยังไง,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771356708.1653178,TR069 คืออะไร,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771356714.273452,วิธี config SBC,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771356779.9190762,TR069 คืออะไร,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771356789.346626,Bras for fixip,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771356850.393472,อินเตอร์เน็ตเบื้องต้น สำหรับ TOT-OS ลภก.2,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771405869.717769,เบอ R NOC หาดใหย่,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1771406139.030394,เบอร์ rnoc หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771406169.491315,เบอร์ร์ชุมพอน,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1771406173.129339,เบอร์ร์ชุมพร,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771406769.707948,ขอเบอร์หญ,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771406779.811845,ขอเบอร์ชุมพอน,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771406783.0122108,ขอเบอร์ชุมพรร,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771406924.0358882,ศูนย์ RNOC หาดใหญ่,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771406932.116935,ขอเบอร์ชุมพอนศูนย์ RNOC หาดใหญ่,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771406938.068873,ขอเบอร์ชุมพอน,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771469513.3226829,ขอเบอร์หาดใหญ่ทั้งหมด,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1771469889.8568609,ขอเบอร์หาดใหญ่ทั้งหมด,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771469889.897962,เบอร์ OMC,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771469889.919213,ขอเบอร์หาดใหญ่,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771469926.06628,ขอเบอร์หาดใหญ่ทั้งหมด,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771470281.182443,ขอเบอร์หาดใหญ่ทั้งหมด,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771470281.216358,เบอร์ภาคใต้ทั้งหมด,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1771470281.233119,เบอร์ NOC รวม,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771470281.25425,เบอร์ OMC,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771470281.2706492,เบอร์ CSOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771470281.286013,เบอร์ RNOC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771470281.3036091,เบอร์ติดต่อหาดใหญ่,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771470281.3151019,วิธีทำ vlan huawei,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771470281.6148129,สวัสดี,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1771472969.295764,ขอเบอร์หาดใหญ่หน่อย,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771472974.392023,ขอเบอร์หาดใหญ่หทั้งหมด,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771472982.094005,ทั้งหมด,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771473017.0710552,ขอเบอร์หาดใหญ่,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771473019.003511,ทั้งหมด,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771492261.741107,bras ip,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771492288.251462,เบอร์๋์๋์ ๋JNA,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771492305.277359,เบอร์ทั้งหมด,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1771492309.1141372,เบอร์ทั,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771492314.956429,เบอร์ทumux,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1771492325.3716779,เบอร์umux,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771492337.986231,เบอร์umux,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771492338.921071,เบอร์umux,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771492339.59504,เบอร์umux,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771493532.657501,เบอร์umux,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771493536.992906,เบอร์jna,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771493545.2430148,เบอร์หาดใหญ่,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771493549.236037,เบอร์ jna,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771493557.28318,เบอร์ชุมพร,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771493563.8994188,เบอร์ JNA,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771493568.6933088,เบอร์ jna,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771493594.7771788,เบอร์ห,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771493598.623222,เบอร์หาดใหญ่,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771493602.522974,เบอร์ JNA,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771493608.0438988,เบอร์หาดใหญ่,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771493614.0016232,เบอร์ jna,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771493617.367342,เบอร์JNA,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771493623.64704,เบอร์ JNA,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771552290.682415,เบอร์ JNA,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771552294.863629,เบอร์ UMUX,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771552298.972942,เบอร์ jna,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771553251.686292,เบอร์omc,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771553256.285269,เบอร์jna,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771553267.726728,เบอร์umux,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771553583.6853719,ขอเบอร์ omc,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771553588.922882,ขอเบอร์ jna,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771553597.83318,เบอร์ umuxห,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1771553601.8352199,เบอร์ umux,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771553619.065331,เบอร์ร์noc,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771553784.7690082,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1771553791.285729,9,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1771553825.3413079,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1771553827.6376379,7,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1771555058.371527,display version,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771555069.6468532,คำสั่งแสดงข้อมูลการผลิต,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771556544.930484,คำสั่ง display cpu-usage ใช้ทำอะไร,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771556553.4342809,display device manuinfo ใช้ทำอะไร,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771556595.4010408,display cpu-usage คืออะไร,rag_clarify,0.0,0.0,0.0,0,False,none
+1771556601.91946,คำสั่งแสดงข้อมูลซีเรียล Huawei NE8000,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771556602.0226188,huawei ne8000 display version ดูอะไร,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771557172.9516952,คำสั่งที่ใช้แสดงอัตราการใช้ CPU คือ,knowledge_pack,0.0,0.0,0.0,0,False,none
+1771557179.370861,display device manuinfo ใช้ทำอะไร,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771557184.482778,คำสั่งดู serial number huawei ne8000 คืออะไร,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771557294.068688,คำสั่งที่ใช้แสดงอัตราการใช้ CPU คือ,knowledge_pack,0.0,0.0,0.0,0,False,none
+1771557298.618331,display cpu-usage คืออะไร,knowledge_pack,0.0,0.0,0.0,0,False,none
+1771557300.709646,display device manuinfo ใช้ทำอะไร,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771557305.7157729,คำสั่งดู serial number huawei ne8000,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771557499.489579,คำสั่งที่ใช้แสดงอัตราการใช้ CPU คือ,knowledge_pack,0.0,0.0,0.0,0,False,none
+1771557504.204764,display cpu-usage คืออะไร,knowledge_pack,0.0,0.0,0.0,0,False,none
+1771557506.30546,display device manuinfo ใช้ทำอะไร,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771557511.3417778,คำสั่งดู serial number huawei ne8000,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771557511.3548422,คู่มือ huawei ne8000,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771557584.422334,คำสั่งที่ใช้แสดงอัตราการใช้ CPU คือ,knowledge_pack,0.0,0.0,0.0,0,False,none
+1771557589.072653,display cpu-usage คืออะไร,knowledge_pack,0.0,0.0,0.0,0,False,none
+1771557591.141933,display device manuinfo ใช้ทำอะไร,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771557596.177376,คำสั่งดู serial number huawei ne8000,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771557596.1908538,คู่มือ huawei ne8000,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771557643.346435,display cpu-usage คืออะไร,knowledge_pack,0.0,0.0,0.0,0,False,none
+1771557711.045154,display cpu-usage คืออะไร,knowledge_pack,0.0,0.0,0.0,0,False,none
+1771557855.778256,คำสั่งที่ใช้แสดงอัตราการใช้ CPU คือ,knowledge_pack,0.0,0.0,0.0,0,False,none
+1771557858.733665,display cpu-usage คืออะไร,knowledge_pack_huawei_cmd,0.0,0.0,0.0,0,False,none
+1771557858.734538,display device manuinfo ใช้ทำอะไร,knowledge_pack_huawei_cmd,0.0,0.0,0.0,0,False,none
+1771557858.735241,คำสั่งดู serial number huawei ne8000,knowledge_pack_huawei_cmd,0.0,0.0,0.0,0,False,none
+1771557858.736574,คู่มือ huawei ne8000,knowledge_pack_huawei_cmd,0.0,0.0,0.0,0,False,none
+1771557921.7835531,คำสั่งที่ใช้แสดงอัตราการใช้ CPU คือ,knowledge_pack,0.0,0.0,0.0,0,False,none
+1771557924.715691,display cpu-usage คืออะไร,knowledge_pack_huawei_cmd,0.0,0.0,0.0,0,False,none
+1771557924.716578,display device manuinfo ใช้ทำอะไร,knowledge_pack_huawei_cmd,0.0,0.0,0.0,0,False,none
+1771557924.717408,คำสั่งดู serial number huawei ne8000,knowledge_pack_huawei_cmd,0.0,0.0,0.0,0,False,none
+1771557924.7182982,คู่มือ huawei ne8000,article_link_only_exact,0.0,0.0,0.0,0,False,none
+1771558347.492469,คู่มือ huawei ne8000,article_link_only_content_type,0.0,0.0,0.0,0,False,none
+1771558347.6214552,display cpu-usage คืออะไร,knowledge_pack_huawei_cmd,0.0,0.0,0.0,0,False,none
+1771558402.0381818,คู่มือ huawei ne8000,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1771558413.345526,display cpu-usage คืออะไร,knowledge_pack_huawei_cmd,0.0,0.0,0.0,0,False,none
+1771558488.2471921,คู่มือ huawei ne8000,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1771558492.56878,display cpu-usage คืออะไร,knowledge_pack_huawei_cmd,0.0,0.0,0.0,0,False,none
+1771558551.934752,คู่มือ huawei ne8000,article_answer,0.0,0.0,0.0,0,False,none
+1771558554.1823301,display cpu-usage คืออะไร,knowledge_pack_huawei_cmd,0.0,0.0,0.0,0,False,none
+1771558662.6514041,ใครคือผจ,position_ambiguous,0.0,0.0,0.0,0,False,none
+1771558664.295906,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1771558667.427499,ขอเบอร์ jna,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771558673.28492,เบอร์ omc,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771558680.800071,คำสั่งhuawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1771558681.76024,2,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1771558694.090175,คำสั่งแสดงข้อมูลเวอร์ชัน VRP,article_answer,0.0,0.0,0.0,0,False,none
+1771559009.1271338,คำสั่งแสดงสถานะสุขภาพของอุปกรณ์,article_answer,0.0,0.0,0.0,0,False,none
+1771559089.5535738,bras ip,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771559108.667108,คำสั่งแสดงค่าการตั้งค่าปัจจุบันทั้งหมด,pending_clarification,0.0,0.0,0.0,0,False,none
+1771559124.1899981,คำสั่งแสดงค่าการตั้งค่าที่บันทึกไว้ในไฟล์ startup.cfg,article_answer,0.0,0.0,0.0,0,False,none
+1771559166.0001862,Check list ลูกค้า แจ้งช้า,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1771559181.940275,Bras for fixip,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771559613.8007271,Check list ลูกค้า แจ้งช้า,article_answer,0.0,0.0,0.0,0,False,none
+1771559731.521249,Check list ลูกค้าแจ้งช้า,article_answer,0.0,0.0,0.0,0,False,none
+1771559746.8006349,ข่าว NT1,article_answer,0.0,0.0,0.0,0,False,none
+1771559774.989357,การระบุ SIP ของ บริการ V-PBX,article_answer,0.0,0.0,0.0,0,False,none
+1771559804.476585,Huawei bras ippgw command,article_answer,0.0,0.0,0.0,0,False,none
+1771559822.6633759,ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP,article_answer,0.0,0.0,0.0,0,False,none
+1771559871.269618,รายชื่อ ผู้จัดการศูนย์ และทีมช่าง NT1,article_answer,0.0,0.0,0.0,0,False,none
+1771560136.737401,รายชื่อ ผู้จัดการศูนย์ และทีมช่าง NT1,article_answer,0.0,0.0,0.0,0,False,none
+1771560136.822026,Huawei bras ippgw command,article_answer,0.0,0.0,0.0,0,False,none
+1771560174.927888,รายชื่อ ผู้จัดการศูนย์ และทีมช่าง NT1 ครับผม,article_answer,0.0,0.0,0.0,0,False,none
+1771560185.8955991,Huawei bras ippgw command ครับผม,pending_clarification,0.0,0.0,0.0,0,False,none
+1771560253.412842,รายชื่อ ผู้จัดการศูนย์ และทีมช่าง NT1,article_answer,0.0,0.0,0.0,0,False,none
+1771560253.5465522,Huawei bras ippgw command,article_answer,0.0,0.0,0.0,0,False,none
+1771560287.554454,nt1,article_answer,0.0,0.0,0.0,0,False,none
+1771560287.667858,Huawei bras ippgw command,article_answer,0.0,0.0,0.0,0,False,none
+1771560328.103165,Team NT1,article_answer,0.0,0.0,0.0,0,False,none
+1771560336.624852,Huawei bras ippgw command,article_answer,0.0,0.0,0.0,0,False,none
+1771560380.034362,Team NT1,article_answer,0.0,0.0,0.0,0,False,none
+1771560386.2851799,Huawei bras ippgw command,article_answer,0.0,0.0,0.0,0,False,none
+1771560481.851382,Team NT1,article_answer,0.0,0.0,0.0,0,False,none
+1771560488.1571221,Huawei bras ippgw command,article_answer,0.0,0.0,0.0,0,False,none
+1771560565.4247859,Team NT1,article_answer,0.0,0.0,0.0,0,False,none
+1771560571.971185,Huawei bras ippgw command,article_answer,0.0,0.0,0.0,0,False,none
+1771560650.703213,Team NT1,article_answer,0.0,0.0,0.0,0,False,none
+1771560657.3033369,Huawei bras ippgw command,article_answer,0.0,0.0,0.0,0,False,none
+1771560723.71364,Team NT1,article_answer,0.0,0.0,0.0,0,False,none
+1771560730.160118,Huawei bras ippgw command,article_answer,0.0,0.0,0.0,0,False,none
+1771560937.861046,รายชื่อ ผู้จัดการศูนย์ และทีมช่าง NT1,article_answer,0.0,0.0,0.0,0,False,none
+1771560944.37533,ONT password,article_answer,0.0,0.0,0.0,0,False,none
+1771561112.4773371,ONT password,article_answer,0.0,0.0,0.0,0,False,none
+1771561112.631298,รายชื่อ ผู้จัดการศูนย์ และทีมช่าง NT1,article_answer,0.0,0.0,0.0,0,False,none
+1771561196.798186,กำหนดค่าบน OLT/ONU,article_answer,0.0,0.0,0.0,0,False,none
+1771561204.736494,หลักเกณฑ์กำหนด service ID บริการ Last Mile,article_answer,0.0,0.0,0.0,0,False,none
+1771561210.211333,Ribbon EdgeMare6000 DOC,article_answer,0.0,0.0,0.0,0,False,none
+1771561221.122101,Vlan_Primary BBAGG,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771561228.1268852,โอนสายโทรศัพท์,article_answer,0.0,0.0,0.0,0,False,none
+1771561318.731311,Ribbon EdgeMare6000 DOC,article_answer,0.0,0.0,0.0,0,False,none
+1771561568.920154,ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP,article_answer,0.0,0.0,0.0,0,False,none
+1771561576.0701451,รายชื่อ ผู้จัดการศูนย์ และทีมช่าง NT1,article_answer,0.0,0.0,0.0,0,False,none
+1771561590.49559,NEW TOT-DNS,article_answer,0.0,0.0,0.0,0,False,none
+1771561595.639924,Organization chart 1 July 16,article_answer,0.0,0.0,0.0,0,False,none
+1771561600.307575,Vlan_planning,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771561606.898314,NEx-Description-Format,article_answer,0.0,0.0,0.0,0,False,none
+1771561612.036222,MA cisco,article_answer,0.0,0.0,0.0,0,False,none
+1771561880.823128,MA cisco,article_answer,0.0,0.0,0.0,0,False,none
+1771562029.596083,MA cisco,article_answer,0.0,0.0,0.0,0,False,none
+1771562180.832864,MA cisco,article_answer,0.0,0.0,0.0,0,False,none
+1771562314.986351,MA cisco,article_answer,0.0,0.0,0.0,0,False,none
+1771562597.504158,MA cisco,article_answer,0.0,0.0,0.0,0,False,none
+1771562860.931666,MA cisco,article_answer,0.0,0.0,0.0,0,False,none
+1771563012.6471071,MA cisco,article_answer,0.0,0.0,0.0,0,False,none
+1771563107.6788092,MA cisco,article_answer,0.0,0.0,0.0,0,False,none
+1771563349.45931,MA cisco,article_answer,0.0,0.0,0.0,0,False,none
+1771563740.646137,มาตรฐาน 5ส.,article_answer,0.0,0.0,0.0,0,False,none
+1771563772.2280169,การจัดทำรายงานงานรอ NMS config ค้างดำเนินการประจำวัน,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771563788.342349,สถานะการใช้งาน FTTxSM ภ.4,article_answer,0.0,0.0,0.0,0,False,none
+1771563799.404703,MA cisco,article_answer,0.0,0.0,0.0,0,False,none
+1771563896.24789,MA cisco,article_answer,0.0,0.0,0.0,0,False,none
+1771564179.760297,MA cisco,article_answer,0.0,0.0,0.0,0,False,none
+1771564322.360489,MA cisco,article_answer,0.0,0.0,0.0,0,False,none
+1771564335.2530801,มาตรฐาน 5ส.,article_answer,0.0,0.0,0.0,0,False,none
+1771564358.591564,ทะเบียนสินทรัพย์,article_answer,0.0,0.0,0.0,0,False,none
+1771564363.4798138,การจ่ายงานเลขหมายวงจรเช่า,article_answer,0.0,0.0,0.0,0,False,none
+1771564391.409039,ขอเบอร์umux,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771564397.981215,ขอเบอร์ omc,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771564401.520433,ขอเบอร์นคร,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771564408.124233,ขอเบอร์นครศรีธรรมราช,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771569053.0898712,IP_SSH,article_answer,0.0,0.0,0.0,0,False,none
+1771569059.449963,ตาราง proxy IP PHONE,article_answer,0.0,0.0,0.0,0,False,none
+1771569065.859477,DNS และ SMTP ของ TOT,article_answer,0.0,0.0,0.0,0,False,none
+1771569070.5569532,Tools,article_answer,0.0,0.0,0.0,0,False,none
+1771569379.573314,สวัสดี,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1771569388.454966,ขอเบอร์นครศรีธรรมราช,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771569393.494217,ขอเบอร์omc,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771569401.988327,ใครคือผจ,position_ambiguous,0.0,0.0,0.0,0,False,none
+1771569404.770265,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1771569409.084822,ผจคือใคร,position_ambiguous,0.0,0.0,0.0,0,False,none
+1771569412.705924,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1771569421.016684,bras IP,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771569440.257061,ทะเบียนสินทรัพย์,article_answer,0.0,0.0,0.0,0,False,none
+1771569458.779716,ตาราง proxy ipphone,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1771569484.82606,huawir command,article_answer,0.0,0.0,0.0,0,False,none
+1771569497.652338,Huawei command,pending_clarification,0.0,0.0,0.0,0,False,none
+1771569503.088253,2,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1771569857.034177,คำสั่ง แสดงสถานะของพัดลม,article_answer,0.0,0.0,0.0,0,False,none
+1771569896.815603,คำสั่งแสดงค่าการตั้งค่าที่บันทึกไว้ในไฟล์ startup.cfg,article_answer,0.0,0.0,0.0,0,False,none
+1771569920.159946,คำสั่ง แสดง ACL ทั้งหมดที่มีการตั้งค่า,pending_clarification,0.0,0.0,0.0,0,False,none
+1771569928.4174972,คำสั่งแสดง ACL ทั้งหมดที่มีการตั้งค่า,pending_clarification,0.0,0.0,0.0,0,False,none
+1771569939.9854221,คำสั่งแสดงสถานะคิวของอินเทอร์เฟซ,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1771569962.916265,คำสั่งแสดงเนื้อหาของ Buffer Log,article_answer,0.0,0.0,0.0,0,False,none
+1771570184.936821,คำสั่งแสดง ACL ของ Huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1771570234.8174698,สมาชิกhelpdesk มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1771570254.403462,เบอร์ Radius,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771570265.418645,เบอร์ ผบบ,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771570275.7891881,เบอร์ ผบบ,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771570285.271331,เบอร์หาดใหญ่,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771570296.56574,เบอร์ผบบ.(ขอ ip ใหม่ LL ),contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771570304.222851,เบอร์ผบบ,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771570315.0610461,เบอร์ผบบ,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771570319.3312378,เบอร์ผบบ.,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771570322.815604,1,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1771570343.725229,เบอร์ผบบ.,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771570355.834707,เบอร์omc,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771570358.4854589,2,clarify_miss,0.0,0.0,0.0,0,False,none
+1771570376.3885849,เบอร์ ip,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771570387.894271,MA Cisco,article_answer,0.0,0.0,0.0,0,False,none
+1771570420.200428,แก้ context private,article_answer,0.0,0.0,0.0,0,False,none
+1771570429.3024,IPSSH,position_miss,0.0,0.0,0.0,0,False,none
+1771570611.739991,สวัสดีครับ,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1771571992.180769,MA Cisco,article_answer,0.0,0.0,0.0,0,False,none
+1771572064.5402088,แก้ context private,article_answer,0.0,0.0,0.0,0,False,none
+1771572083.995054,คำสั่งแสดงค่าการตั้งค่าที่บันทึกไว้ในไฟล์ startup.cfg,article_answer,0.0,0.0,0.0,0,False,none
+1771572102.35097,คำสั่ง แสดงสถานะของพัดลม,article_answer,0.0,0.0,0.0,0,False,none
+1771811539.8624902,โอนสายโทรศัพท์,article_answer,0.0,0.0,0.0,0,False,none
+1771811546.0020401,มาตรฐาน 5ส.,article_answer,0.0,0.0,0.0,0,False,none
+1771811560.8912268,ขอเบอร์หาดใหญ่,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771811565.3678799,ขอเบอร์ชุมพร,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771811570.145186,ใครคคือผส,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771811579.900927,ใครคือผส,position_ambiguous,0.0,0.0,0.0,0,False,none
+1771811581.320585,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1771813054.9218528,ใครคือผจ,position_ambiguous,0.0,0.0,0.0,0,False,none
+1771813060.726155,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1771813064.043377,เบอร์ผจ,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771813087.800568,3,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771817430.9688058,ขอเบอร์helpdesk,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771817449.0515342,ขอเบอร์งานhelpdesk,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771817520.483626,ขอเบอร์งาน HelpDesk (ดูแลลูกค้า),contact_hit_team,0.0,0.0,0.0,0,False,none
+1771817559.924406,สมาชิกhelpdesk,team_hit,0.0,0.0,0.0,0,False,none
+1771817572.031523,เบอร์ติดต่อ,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771817674.852614,เบอร์ติดต่อศูนย์OMC Hatyai,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771817784.805322,มาตรฐาน 5ส.,article_answer,0.0,0.0,0.0,0,False,none
+1771817837.875564,olt คือ,blocked_ambiguous,0.0,0.0,0.0,0,False,none
+1771818495.413381,อากาศวันนี้เป็นยังไง,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771819021.6840441,อากาศวันนี้เป็นยังไง,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771828239.62623,ช่วยเปรียบเทียบ Huawei กับ ZTE ให้หน่อยอันไหนดีกว่ากัน,article_answer,0.0,0.0,0.0,0,False,none
+1771828418.88099,ช่วยเปรียบเทียบ Huawei กับ ZTE ให้หน่อยอันไหนดีกว่ากัน,blocked_scope,0.0,0.0,0.0,0,False,none
+1771829280.785706,วิธี config Juniper Switch,blocked_vendor_out_of_scope,0.0,0.0,0.0,0,False,none
+1771829554.198555,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1771829556.535906,3,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1771830269.8416672,ขอพิกัดศูนย์หาดใหญ่อยู่ตรงไหน,position_miss,0.0,0.0,0.0,0,False,none
+1771830288.025215,เบอร์โทรศัพท์หล่ะ,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1771830307.890198,ผจ ชื่อ,position_miss,0.0,0.0,0.0,0,False,none
+1771830317.353098,ผจ.บลตน. ชื่อ,position_miss,0.0,0.0,0.0,0,False,none
+1771830321.3075042,ใครคือผจ,position_ambiguous,0.0,0.0,0.0,0,False,none
+1771830335.7136068,ผจ.สบลตน. ชื่ออะไร,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771830346.6840472,เบอร์โทรหล่ะ,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1771830350.115937,เบอร์โทรห,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771830367.1755252,พิกัดศูนย์หาดใหญ่อยู่ตรงไหน,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771830376.8731499,แล้วเบอร์โทรศัพท์ล่ะ,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771831195.170568,รูปที่ 4.2.2: การจดจำและเติมเต็มคำนามในบริบทสนทนา (Context Enrichment),web_error,0.0,0.0,0.0,0,False,none
+1771831203.034656,พิมพ์คำว่า: พิกัดศูนย์หาดใหญ่อยู่ตรงไหน (รอมันตอบ),article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1771831210.2214358,พิมพ์คำว่า: แล้วเบอร์โทรศัพท์ล่ะ,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1771831210.2440388,"สิ่งที่จะแคป: ส่วนที่แสดงข้อความ [CONTEXT_MEMORY] Query enriched from conversation context และระบบสามารถดึงเบอร์ของ ""หาดใหญ่"" มาตอบได้โดยพึ่งพาความจำเดิม",article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1771831210.41417,คำอธิบายใต้ภาพ: ระบบสามารถประมวลผลคำถามติดตาม (Follow-up) ได้อย่างต่อเนื่องเสมือนพูดคุยกับมนุษย์,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1771831221.36076,Q> พิกัดศูนย์หาดใหญ่อยู่ตรงไหน,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1771831234.340918,Q> แล้วเบอร์โทรศัพท์ล่ะ,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1771831312.781939,พิกัดศูนย์หาดใหญ่อยู่ตรงไหน,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771831328.142515,เบอร์หล่ะ,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1771831588.0758321,พิกัดศูนย์หาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771831605.2060401,เบอร์โทรล่ะ,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771831638.786602,ผจ.สบลตน. ชื่อว่าอะไร,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771831647.69606,เบอร์ล่ะ,contact_hit_team,0.0,0.0,0.0,0,False,none
+1771832048.432121,ผจ.สบลตน. ชื่อว่าอะไร,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771832053.449821,เบอร์โทรล่ะ,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1771832405.000132,ขอเบอร์ศูนย์หาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771837768.5065432,ติดต่อ ผส.บลตน.,position_holder_hit,0.0,0.0,0.0,0,False,none
+1771837974.283214,วิธีตั้งค่า Huawei NE8000,article_answer,0.0,0.0,0.0,0,False,none
+1771838872.833728,มาตรฐาน 5ส.,article_answer,0.0,0.0,0.0,0,False,none
+1771897799.105937,Q> ตรวจสอบ tacacs login ไม่ได้,article_answer,0.0,0.0,0.0,0,False,none
+1771897814.690497,Q> onu light กะพริบไม่หยุด แก้ยังไง,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1771897823.6766589,Q> ค่า snr ต่ำของ adsl ทำยังไง,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771898162.2921422,Q> Huawei fttx มีปัญหา speed ตก,article_answer,0.0,0.0,0.0,0,False,none
+1771898204.1969762,Q> Huawei fttx มีปัญหา speed ตก,article_answer,0.0,0.0,0.0,0,False,none
+1771899262.329071,onu light กะพริบไม่หยุด แก้ยังไง,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1771899498.598871,ขอเบอร์หาดใหญ่,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771899505.0147479,เบอร์โทร OMC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1771899517.916687,Huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1771899524.78092,huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1771899531.5416079,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1771899542.4013739,onu light กะพริบ แก้ยังไง,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1771899863.373866,ใครตำแหน่ง ผส.บลตน.,position_holder_hit,0.0,0.0,0.0,0,False,none
+1771899863.3933,"ครตำแหน่ง ผส.บลตน."" # Typo check",position_holder_hit,0.0,0.0,0.0,0,False,none
+1771899863.4057002,ใครตำแหน่ง ชจญ.ภ.4,position_miss,0.0,0.0,0.0,0,False,none
+1771899863.4123578,แก้ user สำหรับลูกค้า context private,article_answer,0.0,0.0,0.0,0,False,none
+1771899863.528982,การจ่ายงานเลขหมายวงจรเช่าภูเก็ต,dispatch_mapper_hit,0.0,0.0,0.0,0,False,none
+1771899869.871695,การจ่ายงานเลขหมายวงจรเช่า,dispatch_mapper_general,0.0,0.0,0.0,0,False,none
+1771899872.121355,รายชื่อผู้บริหาร,article_answer,0.0,0.0,0.0,0,False,none
+1771899872.1776562,รหัสผ่าน root คืออะไร,rag_security_guided,0.0,0.0,0.0,0,False,none
+1771899874.586185,เบอร์ผส.บลตน,position_holder_hit,0.0,0.0,0.0,0,False,none
+1771899874.6141472,เบอร์งาน FTTx,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771899874.848628,เบอร์ผส,contact_prefix_ambiguous,0.0,0.0,0.0,0,False,none
+1771899874.874332,ข่าวเกี่ยวกับมนุษย์ต่างดาวบุกโลก,web_knowledge,0.0,0.0,0.0,0,False,none
+1771899888.209602,ข่าวสารSMC,article_answer,0.0,0.0,0.0,0,False,none
+1771899894.4876668,sbc ip,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771899894.4969091,NCS,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1771899898.189216,BRAS,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771899898.190144,วีธีบีบ แบนวิธ port onu zte,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1771900039.973356,วีธีบีบ แบนวิธ ที่ port onu Zte,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1771900152.9563808,วีธีบีบ แบนวิธ ที่ port onu Zte,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771900172.655648,การทำ Bridge ระหว่าง port,article_answer,0.0,0.0,0.0,0,False,none
+1771900446.5172539,การทำ Bridge ระหว่างพอร์ต,article_answer,0.0,0.0,0.0,0,False,none
+1771901122.176002,อากาศวันนี้เป็นยังไง,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771901134.0099359,เปรียบเทียบ Huawei กับ ZTE,blocked_scope,0.0,0.0,0.0,0,False,none
+1771901134.010562,เบอร์ CSOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771901134.021081,ขอเบอร์ NOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771901363.963095,สมาชิกhelpdesk มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1771901375.62699,มาตรฐาน 5ส.,article_answer,0.0,0.0,0.0,0,False,none
+1771901391.6128309,แก้ userลูกค้า context private,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1771901415.034673,ใครคือผจ,position_ambiguous,0.0,0.0,0.0,0,False,none
+1771901416.685698,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1771901429.8241348,huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1771901433.8906398,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1771901435.56374,8,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1771901601.9083068,แนะนำขั้นตอน reset ONU,blocked_scope,0.0,0.0,0.0,0,False,none
+1771902418.776937,แนะนำขั้นตอน reset ONU,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771902427.8609831,เปรียบเทียบ Huawei กับ ZTE อันไหนดีกว่า,web_knowledge,0.0,0.0,0.0,0,False,none
+1771902436.225396,เบอร์ CSOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771902979.278463,แนะนำ Cisco ตัวไหนดี,blocked_vendor_out_of_scope,0.0,0.0,0.0,0,False,none
+1771903002.569181,สมาชิกhelpdeskมีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1771903014.963993,สมาชิกSupervisor Agentมีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1771903068.14703,กำหนดค่าบน OLT,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1771903081.801041,หลักเกณฑ์กำหนด service ID,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1771903111.354985,เปรียบเทียบ Huawei กับ ZTE,web_error,0.0,0.0,0.0,0,False,none
+1771903853.423717,แนะนำขั้นตอน reset ONU,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771903862.867369,วิธีตั้งค่า bridge port,article_answer,0.0,0.0,0.0,0,False,none
+1771903873.969038,ปัญหา ONU ไม่ทำงาน,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1771903876.609416,เปรียบเทียบ Huawei กับ ZTE,web_error,0.0,0.0,0.0,0,False,none
+1771903877.9066,เบอร์ CSOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1771904027.58699,วิธีตั้งค่า bridge,article_answer,0.0,0.0,0.0,0,False,none
+1771904048.415804,แนะนำขั้นตอน reset ONU,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771904087.404268,ปัญหา ONU ไม่ทำงาน,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1771904229.8689542,เปรียบเทียบ Huawei กับ ZTE,web_error,0.0,0.0,0.0,0,False,none
+1771904287.2329001,หลักเกณฑ์กำหนด service ID,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1771904300.863991,กำหนดค่าบน ONU,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1771904310.091527,มาตรฐาน 5ส.,article_answer,0.0,0.0,0.0,0,False,none
+1771904323.4659882,คำสั่ง telnet,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771904330.962187,คำสั่ง telnet Forth FTTx,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771904425.849973,เปรียบเทียบ Huawe กับ ZTE อันไหนดีกว่า,blocked_scope,0.0,0.0,0.0,0,False,none
+1771904666.546744,ปัญหา ONU ไม่ทำงาน,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771904821.893829,ปัญหา ONU ไม่ทำงาน,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771904855.848636,วิธีตั้งค่า bridge,article_answer,0.0,0.0,0.0,0,False,none
+1771905245.687427,คำสั่ง ncs,article_answer,0.0,0.0,0.0,0,False,none
+1771905325.1082492,คำสั่ง telnet,pending_clarification,0.0,0.0,0.0,0,False,none
+1771905325.12337,คำสั่ง ncs,article_answer,0.0,0.0,0.0,0,False,none
+1771905327.557654,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1771905327.563091,zte commands,pending_clarification,0.0,0.0,0.0,0,False,none
+1771905477.335374,คำสั่ง telnet,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771905477.472001,คำสั่ง ssh,article_answer,0.0,0.0,0.0,0,False,none
+1771905477.520502,คำสั่ง ping,article_link_only,0.0,0.0,0.0,0,False,none
+1771905478.497258,telnet ไปที่ ONU,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771905485.603303,คำสั่ง Huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1771905830.490813,คำสั่ง telnet,pending_clarification,0.0,0.0,0.0,0,False,none
+1771905830.5132391,คำสั่ง telnet Forth FTTx,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771905830.592546,คำสั่ง Huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1771906077.954654,คำสั่ง telnet,pending_clarification,0.0,0.0,0.0,0,False,none
+1771906255.547671,คำสั่ง telnet,pending_clarification,0.0,0.0,0.0,0,False,none
+1771906340.683323,คำสั่ง telnet,pending_clarification,0.0,0.0,0.0,0,False,none
+1771906398.196772,3,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1771906405.2496269,คำสั่ง telnet,pending_clarification,0.0,0.0,0.0,0,False,none
+1771906407.5104902,1,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1771906654.901571,คำสั่ง telnet,pending_clarification,0.0,0.0,0.0,0,False,none
+1771906733.3926442,คำสั่ง telnet,pending_clarification,0.0,0.0,0.0,0,False,none
+1771906745.0137239,8,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1771906759.621582,คำสั่ง telnet,pending_clarification,0.0,0.0,0.0,0,False,none
+1771906762.536679,3,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1771906773.0863948,คำสั่ง telnet,pending_clarification,0.0,0.0,0.0,0,False,none
+1771906775.497797,7,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1771906800.085655,คำสั่ง telnet,pending_clarification,0.0,0.0,0.0,0,False,none
+1771906802.128286,6,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1771906995.835788,คำสั่ง telnet,pending_clarification,0.0,0.0,0.0,0,False,none
+1771907236.491559,คำสั่ง telnet,pending_clarification,0.0,0.0,0.0,0,False,none
+1771907363.23648,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1771907365.521476,2,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1771907369.002912,คำสั่ง telnet,pending_clarification,0.0,0.0,0.0,0,False,none
+1771907370.215231,2,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1771907401.780756,คำสั่งASR920-12GE,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771907409.04268,คำสั่ง zte,pending_clarification,0.0,0.0,0.0,0,False,none
+1771907414.932153,2,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1771908385.4684641,วิธีตั้งค่า OLT Huawei,article_answer,0.0,0.0,0.0,0,False,none
+1771908385.591629,คำสั่ง Huawei OLT,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771908385.6055748,ปัญหา ONU ไม่ทำงาน,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771908394.513338,คำสั่ง telnet,pending_clarification,0.0,0.0,0.0,0,False,none
+1771908394.521077,display device manuinfo,knowledge_pack_huawei_cmd,0.0,0.0,0.0,0,False,none
+1771908590.1674602,troubleshoot ONU,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771908605.4223611,แก้ปัญหา ONU,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771908634.348639,ตั้งค่า EtherChannel บน Cisco,blocked_vendor_out_of_scope,0.0,0.0,0.0,0,False,none
+1771914146.893769,ตั้งค่า EtherChannel บน Cisco,blocked_intent,0.0,0.0,0.0,0,False,none
+1771914146.918794,etherchannel cisco,blocked_vendor_out_of_scope,0.0,0.0,0.0,0,False,none
+1771914146.919861,คำสั่ง Cisco Router,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771914147.092293,Cisco switch vlan,blocked_vendor_out_of_scope,0.0,0.0,0.0,0,False,none
+1771914147.092939,คำสั่ง Huawei OLT,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771914147.1116061,ตั้งค่า ZTE OLT,blocked_ambiguous,0.0,0.0,0.0,0,False,none
+1771914147.117671,คำสั่ง telnet,pending_clarification,0.0,0.0,0.0,0,False,none
+1771914184.234805,ตั้งค่า EtherChannel บน Cisco,blocked_intent,0.0,0.0,0.0,0,False,none
+1771914383.0818062,ตั้งค่า EtherChannel บน Cisco,article_answer,0.0,0.0,0.0,0,False,none
+1771914399.6059039,etherchannel cisco,blocked_vendor_out_of_scope,0.0,0.0,0.0,0,False,none
+1771914399.606965,Cisco router bgp configuration,article_answer,0.0,0.0,0.0,0,False,none
+1771914406.540298,คำสั่ง Cisco switch,blocked_vendor_out_of_scope,0.0,0.0,0.0,0,False,none
+1771914406.545386,คำสั่ง Huawei OLT,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771914406.583392,คำสั่ง telnet,pending_clarification,0.0,0.0,0.0,0,False,none
+1771914406.603611,display device manuinfo,knowledge_pack_huawei_cmd,0.0,0.0,0.0,0,False,none
+1771914406.604809,วิธีตั้งค่า OLT Huawei,article_answer,0.0,0.0,0.0,0,False,none
+1771914406.66544,ปัญหา ONU ไม่ทำงาน,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771915121.488847,ตั้งค่า EtherChannel บน Cisco,article_answer,0.0,0.0,0.0,0,False,none
+1771915138.757824,ดู log onu,article_answer,0.0,0.0,0.0,0,False,none
+1771915157.6031392,ดูค่า power olt,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1771915172.884477,คำสั่ง BNG_Cisco,blocked_vendor_out_of_scope,0.0,0.0,0.0,0,False,none
+1771915179.071745,BNG_Cisco_ASR9006,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771915186.844034,เข้า ONU ZTE ไม่ได้,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771915197.222154,การทำ Bridge ระหว่างพอร์ต,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771915205.973854,Forword Port command for Cisco,blocked_vendor_out_of_scope,0.0,0.0,0.0,0,False,none
+1771915213.502678,Forword Port command for Cisco router,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771915221.019125,การทำ Bridge ระหว่างพอร์ตใน Cisco Router,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771915883.88553,Forword Port command for Cisco,blocked_vendor_out_of_scope,0.0,0.0,0.0,0,False,none
+1771915902.203553,Forword Port command for router,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771916003.256093,การทำ Bridge ระหว่างพอร์ต,article_answer,0.0,0.0,0.0,0,False,none
+1771916019.4759412,การทำ Bridge ระหว่างพอร์ตใน router,article_link_only_index,0.0,0.0,0.0,0,False,none
+1771916644.111708,แก้ปัญหา ONU ไม่ทำงาน,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771916714.7843788,แก้ปัญหา NCS,article_answer,0.0,0.0,0.0,0,False,none
+1771916721.318893,ข้อจำกัดสิทธิ์ NCS,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1771916971.546218,ตรวจสอบ power olt,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771916978.552854,วิธีเช็คสัญญาณไฟตก,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771916979.9355001,ปัญหาลูกค้าใช้งานอินเทอร์เน็ตไม่ได้,article_answer,0.0,0.0,0.0,0,False,none
+1771917146.671027,fiber optic คืออะไร,blocked_scope,0.0,0.0,0.0,0,False,none
+1771917344.9229498,smc คืออะไร,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771917419.860488,วิธีเช็ค power olt ที่รับจาก onu,blocked_ambiguous,0.0,0.0,0.0,0,False,none
+1771917419.888258,ตรวจสอบ power olt,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771983167.1365519,แก้ปัญหา NCs,article_answer,0.0,0.0,0.0,0,False,none
+1771983173.288049,ข้อจำกัดสิทธิ์ NCS,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1771983377.22999,ข้อจำกัดสิทธิ์ NCS,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1771983384.824951,แก้ปัญหา NCS,article_answer,0.0,0.0,0.0,0,False,none
+1771983542.961088,แก้ปัญหา NCs,article_answer,0.0,0.0,0.0,0,False,none
+1771983686.442233,ข้อจำกัดสิทธิ์ NCS,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1771984852.470888,ขอ commnd NCS sน่อย,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1771984867.6795259,ขอ command NCS หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1772425354.320883,สวัสดี,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1772425358.720702,ใครคคือผจ,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1772425367.594751,ใครรคือผจ,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1772425388.086559,ขอเบอร์หาดใหญ่,contact_broad_list,0.0,0.0,0.0,0,False,none
+1772425395.222951,คำสั่ง zte,pending_clarification,0.0,0.0,0.0,0,False,none
+1772425412.0849159,คพhuawei command,pending_clarification,0.0,0.0,0.0,0,False,none
+1772425445.304427,มาตรฐาน5ส,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1772425476.438184,มาตรฐาน 5ส,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1772425509.731628,มาตรฐาน 5ส.,article_answer,0.0,0.0,0.0,0,False,none
+1772427944.5583959,สวัสดี,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1772427950.5447721,ใครคือผจ,position_ambiguous,0.0,0.0,0.0,0,False,none
+1772427953.389819,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1772427963.107878,มาตรฐาน 5ส.,article_answer,0.0,0.0,0.0,0,False,none
+1772428147.321507,คำสั่งhuawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1772428150.2427719,4,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1772428162.611434,ขอเบอร์ศูนย์ชุมพรหน่อย,contact_hit_team,0.0,0.0,0.0,0,False,none
+1772428221.355798,เข้า ONU ZTE ไม่ได้,article_link_only_index,0.0,0.0,0.0,0,False,none
+1772428230.2514648,การทำ Bridge ระหว่างพอร์ตใน Cisco Router,article_link_only_index,0.0,0.0,0.0,0,False,none
+1773021188.380599,สวัสดี,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773021196.0279438,ขอเบอร์u muxหน่อย,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773021205.040916,เบอร์ผจ หน่อย,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773021217.8793652,ใครคือผส,position_ambiguous,0.0,0.0,0.0,0,False,none
+1773021226.7903092,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1773021233.6557472,ทะเบียนสินทรัพย์,article_answer,0.0,0.0,0.0,0,False,none
+1773021241.642967,คำสั่ง ute,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773021253.6748538,คำสั่ง zte,pending_clarification,0.0,0.0,0.0,0,False,none
+1773021255.133173,3,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1773030510.043425,ขอเบอร์ helpdesk หน่อย,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773030510.253438,ของ RNOC ละ,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773031145.954585,ขอเบอร์ helpdesk หน่อย,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773031145.99377,ของ RNOC ละ,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773031612.251132,ขอเบอร์ helpdesk หน่อย,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773031612.289325,ของ RNOC ละ,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773037941.698084,ขอเบอร์omcหาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773037957.280789,ฑRNOCหาดใหญ่หล่ะ,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773038004.548621,ขอเบอร์OMCหาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773038008.713195,Rnocหล่ะ,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773038051.664105,Rnocหหาดใหญ่,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773038063.035156,omc hatyai,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773038067.6105332,ขอเบอร์OMCหาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773038112.128142,ขอเบอร์OMC Hatyai,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773038123.4504268,แล้ว RNOC หาดใหญ่ หล่ะ,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773038512.7640991,ขอเบอร์OMC Hatyai,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773038522.954769,แล้ว RNOC หาดใหญ่ หล่ะ,knowledge_pack,0.0,0.0,0.0,0,False,none
+1773038627.339008,ขอเบอร์OMC Hatyai,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773038637.283784,แล้วเบอร์RNOC Hatyaiหล่ะ,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773038736.028637,ขอเบอร์OMC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773038744.3970392,แล้วเบอร์Rnoc หาดใหญ่หล่ะ,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773038809.713289,ขอเบอร์ OMC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773038809.7652612,แล้ว RNOC หาดใหญ่ หล่ะ,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773038815.6337762,exit,contact_hit_team,0.0,0.0,0.0,0,False,none
+1773038985.539895,ขอเบอร์OMC Hatyai,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773038995.440641,แล้วRNOC Hatyaiหล่ะ,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773039003.602335,ขอเบอร์OMC Hatyai,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773039013.301255,แล้วเบอร์RNOC หาดใหญ่หล่ะ,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773040036.808703,ขอเบอร์OMCหาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773040048.894411,แล้วเบอร์ RNOC หาดใหญ่หลล่ะ,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773040060.679921,แล้ว RNOC หาดใหญ่ หล่ะ,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773040105.9434571,ขอเบอร์OMC Hatyai,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773040109.8838668,แล้ว RNOC หาดใหญ่ หล่ะ,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773139161.298736,สวัสดี,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773139167.4009469,คำสั่งhuaawei,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773139182.931871,คำสั่งhuawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1773139186.908106,3,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1773139212.252042,คำสั่งhuaawei,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773139219.73487,คำสั่งhuawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1773139223.246536,2,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1773139247.070575,คำสั่งhuawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1773139249.082485,1,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1773139260.5730538,คำสั่งhuawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1773139263.1386292,2,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1773139265.409722,คำสั่งhuawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1773139266.080054,3,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1773139268.514424,คำสั่งhuawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1773139269.518544,4,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1773139279.711585,คำสั่งhuawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1773139281.846706,4,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1773139664.472298,คำสั่งhuawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1773139666.8253162,5,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1773140364.669708,ขอเบอร์OMC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773140440.704994,rnoc หาดใหญ่หล่ะ,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773140482.87266,สมาชิก helpdeskมีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773140548.2592,ขอ Bras ip หน่อย,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773140617.278037,bras ip,article_link_only_index,0.0,0.0,0.0,0,False,none
+1773140628.0559108,ตารางproxy ipphone,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773140659.622453,คำสั่ง NCS,article_answer,0.0,0.0,0.0,0,False,none
+1773140890.285685,ดู log ONU,article_answer,0.0,0.0,0.0,0,False,none
+1773141731.058622,ขอเบอร์ NOC ,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773164392.3404338,สวัสดี,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773164401.561055,ขอเบอร์หาดใหญ่,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773164419.762903,ใครคือผส,position_ambiguous,0.0,0.0,0.0,0,False,none
+1773164430.046558,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1773164449.565814,สมาชิกงานhelpdeskมีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773164483.407965,มาตรฐาน 5 ส.,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773164559.622048,มาตรฐาน5ส.,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773164583.782599,มาตรฐาน5ส.,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773164668.147448,การระบุ SIP ของ บริการ V-PBX,article_answer,0.0,0.0,0.0,0,False,none
+1773164704.177542,"{
+  ""query"": ""
+การจ่ายงานเลขหมายวงจรเช่า"",
+  ""user"": ""champ1t"",
+  ""top_k"": 3
+}",dispatch_mapper_general,0.0,0.0,0.0,0,False,none
+1773164720.6287382,การจ่ายงานเลขหมายวงจรเช่า,article_answer,0.0,0.0,0.0,0,False,none
+1773164746.339757,การจ่ายงานเลขหมายวงจรเช่า,article_answer,0.0,0.0,0.0,0,False,none
+1773168210.238316,มาตรฐาน5ส.,article_answer,0.0,0.0,0.0,0,False,none
+1773168281.433752,Check list ลูกค้า แจ้งช้า,article_answer,0.0,0.0,0.0,0,False,none
+1773168314.57784,Fiberhome-manule,article_link_only_index,0.0,0.0,0.0,0,False,none
+1773168333.743213,การจ่ายงานเลขหมายวงจรเช่า,article_answer,0.0,0.0,0.0,0,False,none
+1773168384.8981602,การติดตั้ง Modem 9ต่างๆ,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773168402.91793,Check list ลูกค้า แจ้งช้า,article_answer,0.0,0.0,0.0,0,False,none
+1773168420.419073,show power DE,article_link_only_index,0.0,0.0,0.0,0,False,none
+1773168430.419028,มาตรฐาน5ส,article_answer,0.0,0.0,0.0,0,False,none
+1773168454.176922,Check list ลูกค้า แจ้งช้า,article_answer,0.0,0.0,0.0,0,False,none
+1773168509.175188,Check list ลูกค้า แจ้งช้า,article_answer,0.0,0.0,0.0,0,False,none
+1773168516.1372118,มาตรฐาน5ส,article_answer,0.0,0.0,0.0,0,False,none
+1773169134.015697,มาตรฐาน5ส,article_answer,0.0,0.0,0.0,0,False,none
+1773169170.005558,checklistลูกคเาแจ้งช้า,article_answer,0.0,0.0,0.0,0,False,none
+1773169325.8349152,มาตรฐาน5ส,article_answer,0.0,0.0,0.0,0,False,none
+1773169370.086238,ทะเบียนสินทรัพย์,article_answer,0.0,0.0,0.0,0,False,none
+1773169385.392721,checklistลูกค้าแจ้งช้า,article_answer,0.0,0.0,0.0,0,False,none
+1773169677.890399,checklistลูกค้าแจ้งช้า,article_answer,0.0,0.0,0.0,0,False,none
+1773169694.050366,มาตรฐาน5ส,article_answer,0.0,0.0,0.0,0,False,none
+1773169768.961115,Alan planning,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773169792.911407,iPhone network diagram,article_answer,0.0,0.0,0.0,0,False,none
+1773169805.9471538,test leasdline,article_link_only_index,0.0,0.0,0.0,0,False,none
+1773169843.530577,Checklist ลูกค้าแจ้งช้า,article_answer,0.0,0.0,0.0,0,False,none
+1773169869.0814788,Bras  fixip,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773169880.552383,Bras for fixip,article_link_only_index,0.0,0.0,0.0,0,False,none
+1773169892.418954,Bras for fixip,article_link_only_index,0.0,0.0,0.0,0,False,none
+1773170291.749366,Bras for fixip,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773170838.078867,bras for fixip,article_answer,0.0,0.0,0.0,0,False,none
+1773170869.733731,มาตรฐาน 5ส.,article_answer,0.0,0.0,0.0,0,False,none
+1773170885.606441,การจ่ายงานเลขหมายวงจรเช่า,article_answer,0.0,0.0,0.0,0,False,none
+1773179859.746794,สวัสดีครับ,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773179874.623581,ขอเบอร์ศูนย์ชุมพรหน่อย,contact_hit_team,0.0,0.0,0.0,0,False,none
+1773179881.566048,ขอเบอร์หาดใหญ่,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773179894.378714,onu ติดตั้งยังไง,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773179971.135802,การเปิดโทร3สายบนONU,article_link_only,0.0,0.0,0.0,0,False,none
+1773180003.2096891,การกำหนดค่าบนONU,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773180021.7665842,มาตรฐาน5ส,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773180030.263337,มาตรฐาน5ส.,article_answer,0.0,0.0,0.0,0,False,none
+1773180039.8749151,มาตรฐาน5ส,article_answer,0.0,0.0,0.0,0,False,none
+1773180086.12012,มาตรฐาน5ส,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773180158.191617,มาตรฐาน5ส,article_answer,0.0,0.0,0.0,0,False,none
+1773180201.6818938,การกำหนดค่าบนONU,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773180219.596138,คำสั่งHuawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1773180225.715163,5,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1773180272.2828429,ขอเบอร์OMC,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773180294.626998,ขอเบอร์สื่อสารข้อมูล,contact_hit_team,0.0,0.0,0.0,0,False,none
+1773180303.358346,ขอเบอร์สื่อสารข้อมูล,contact_hit_team,0.0,0.0,0.0,0,False,none
+1773180310.077919,ขอเบอร์สื่อสารข้อมูล,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773180321.335878,ขอเบอร์สื่อสารข้อมูล,contact_hit_team,0.0,0.0,0.0,0,False,none
+1773180463.177901,5,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773180620.169164,ขอเบอร์สื่อสารข้อมูล,contact_hit_team,0.0,0.0,0.0,0,False,none
+1773180626.64114,ขอเบอร์สื่อสารข้อมูลทั้งหมด,contact_hit_team,0.0,0.0,0.0,0,False,none
+1773180661.999882,ขอเบอร์สื่อสารข้อมูลทั้งหมด,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773180665.633936,ขอเบอร์สื่อสารข้อมูลทั้งหมด,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773181344.4161742,เบอร์โทรสื่อสารข้อมูล,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773184562.288053,สวัสดี,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773184574.0509372,ขอเบอร์สื่อสารข้อมูล,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773184582.962467,1,article_link_only_index,0.0,0.0,0.0,0,False,none
+1773184594.979916,ขอเบอร์สื่อสารข้อมูล,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773184600.885491,ใครคือผส,position_ambiguous,0.0,0.0,0.0,0,False,none
+1773184610.174906,ใช่,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773184644.927551,ใครคือผส.,position_ambiguous,0.0,0.0,0.0,0,False,none
+1773184653.78414,ใช่,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773184662.5638049,ใครคือผส,position_ambiguous,0.0,0.0,0.0,0,False,none
+1773184668.957695,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1773184704.2992,สมาชิกงานhel[deskมีใครบ้าง,team_ambiguous,0.0,0.0,0.0,0,False,none
+1773184721.478379,สมาชิกงานhelpdeskมีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773184753.362696,มาตรฐาน 5ส.,article_answer,0.0,0.0,0.0,0,False,none
+1773184789.710745,การกำหนดค่า ONU,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773184851.714668,command huawei,article_answer,0.0,0.0,0.0,0,False,none
+1773184862.761529,command huawei,article_answer,0.0,0.0,0.0,0,False,none
+1773184868.920924,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1773185226.033906,huawei command,pending_clarification,0.0,0.0,0.0,0,False,none
+1773185233.6965718,command huawei,article_answer,0.0,0.0,0.0,0,False,none
+1773185243.2768488,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1773185248.036712,1,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1773185363.671906,ใครคือผส.สบลตน.,position_miss,0.0,0.0,0.0,0,False,none
+1773185379.948381,ใครคือผส,position_ambiguous,0.0,0.0,0.0,0,False,none
+1773185388.7868018,ใครคือผส.สบลตน.,position_miss,0.0,0.0,0.0,0,False,none
+1773185392.081248,ใช่,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773185399.222324,ใครคือผส,position_ambiguous,0.0,0.0,0.0,0,False,none
+1773185409.433579,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1773185629.968081,คำสั่ง ztee,pending_clarification,0.0,0.0,0.0,0,False,none
+1773185633.288372,1,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1773185676.602601,ทำไมท้องฟ้าสีฟ้า,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773185689.071409,รวบรวมคำสั่งใช้งาน (Command Reference),pending_clarification,0.0,0.0,0.0,0,False,none
+1773185689.071409,รวบรวมคำสั่งใช้งาน (Command Reference),pending_clarification,0.0,0.0,0.0,0,False,none
+1773185738.53356,มาตรฐาน 5 ส,article_answer,0.0,0.0,0.0,0,False,none
+1773185776.7434812,ขอเบอร์สื่อสารข้อมูล,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773185785.985972,hi,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773185796.134062,ใครคือผส,position_ambiguous,0.0,0.0,0.0,0,False,none
+1773185805.845251,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1773185825.365136,สมาชิกหน่วยงานhelpdeskมีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773185858.5234728,มาตรฐาน 5 ส.,article_answer,0.0,0.0,0.0,0,False,none
+1773185892.606673,การกำหนดค่าบน ONU,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773185932.832881,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1773185943.415437,5,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1773185969.826734,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1773185981.08675,6,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1773191990.250766,hi,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773192010.743117,ใครคือผส.,position_ambiguous,0.0,0.0,0.0,0,False,none
+1773192026.314423,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1773192037.316573,สมาชิกงานhelpdesk มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773192052.0137029,ขอเบอร์หาดใหญ่,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773192073.0789351,ขอเบอร์สื่อสารข้อมูล,contact_hit_team,0.0,0.0,0.0,0,False,none
+1773192082.9743621,ขอเบอร์ติดต่อสื่อสารข้อมูล,contact_hit_team,0.0,0.0,0.0,0,False,none
+1773192091.605706,ขอเบอร์สื่อสารข้อมูล,contact_hit_team,0.0,0.0,0.0,0,False,none
+1773192110.350986,ขอเบอร์หาดใหญ่,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773192113.970361,ขอเบอร์สื่อสารข้อมูล,contact_hit_team,0.0,0.0,0.0,0,False,none
+1773192342.9710379,ขอเบอร์หาดใหญ่,contact_hit_team,0.0,0.0,0.0,0,False,none
+1773192345.753424,1,contact_hit_team,0.0,0.0,0.0,0,False,none
+1773192377.336961,ขอเบอร์หาดใหญ่หน่อย,contact_hit_team,0.0,0.0,0.0,0,False,none
+1773192455.1701062,ขอเบอร์หาดใหญ่,contact_hit_team,0.0,0.0,0.0,0,False,none
+1773192461.4381142,ขอเบอร์ชุมพร,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773192468.440157,ขอเบอร์นครศรีธรรมราช,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773192476.24792,ขอเบอร์UMUX,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773192484.4079418,ขอเบอร์หาดใหญ่ทั้งหมด,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773192515.899252,hi,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773192521.102348,ใครคือผส,position_ambiguous,0.0,0.0,0.0,0,False,none
+1773192528.6737258,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1773192536.867394,สมาชิก helpdesk มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773192550.952634,ขอเบอร์สื่อสารข้อมูล,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773192616.4371068,สมาชิกhelpdeskมีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773192643.436456,ขอเบอร์สื่อสารข้อมูล,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773192652.943885,1,clarify_miss,0.0,0.0,0.0,0,False,none
+1773192675.9010298,มาตรฐาน5ส,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773192746.6429791,ขอเบอร์สื่อสารข้อมูล,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773192754.638209,มาตรฐาน 5 ส.,article_answer,0.0,0.0,0.0,0,False,none
+1773192806.862784,สวัสดีครับ,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773192813.057179,ใครคือผส,position_ambiguous,0.0,0.0,0.0,0,False,none
+1773192821.067153,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1773192835.2359738,สมาชิกงานhelpdeskมีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773192848.589757,ขอเบอร์สื่อสารข้อมูล,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773192856.2017438,ขอเบอร์หาดใหญ่,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773192864.228982,มาตรฐาน 5 ส.,article_answer,0.0,0.0,0.0,0,False,none
+1773193504.07131,การกำหนดค่า onu,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773193541.243671,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1773193546.656928,6,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1773194359.298729,hi,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773194364.642703,hi,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773194396.326632,hi,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773197818.965577,hi,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773197826.3570719,ใครคือผส,position_ambiguous,0.0,0.0,0.0,0,False,none
+1773197836.4600089,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1773197846.349708,สมาชิกงานhelpdeskมีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773197869.27404,ขอเบอร์สื่อสารข้อมูล,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773197879.68148,มาตรฐาน 5ส.,article_answer,0.0,0.0,0.0,0,False,none
+1773197897.832261,การกำหนดค่า ONU,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773197913.7658439,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1773197917.9066508,6,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1773198941.074909,hi,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773198950.323262,ใครคือผส,position_ambiguous,0.0,0.0,0.0,0,False,none
+1773198963.445324,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1773198973.708095,สมาชิกงานhelpdeskมีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773198993.176248,ขอเบอร์สื่อสารข้อมูล,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773199007.249587,มาตรฐาน 5ส.,article_answer,0.0,0.0,0.0,0,False,none
+1773199038.811674,การกำหนดค่าONU,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773199069.6793349,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1773199073.9286451,6,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1773199239.460344,วิธีconfig ZTE เป็น route,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773201645.506141,Config ZTE,article_link_only_index,0.0,0.0,0.0,0,False,none
+1773201655.893738,Config ZTE,article_link_only_index,0.0,0.0,0.0,0,False,none
+1773201703.662401,Config ZTE OLT C6xx,article_link_only_index,0.0,0.0,0.0,0,False,none
+1773201756.859287,Config ZTE,article_link_only_index,0.0,0.0,0.0,0,False,none
+1773201761.856671,Config ZTE OLT C6xx,article_link_only_index,0.0,0.0,0.0,0,False,none
+1773201779.4458082,config zte,article_link_only_index,0.0,0.0,0.0,0,False,none
+1773374447.65519,การกำหนดค่า ONU,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773384092.446273,คำสั่ง huawei,pending_clarification,0.0,0.0,0.0,0,False,none
+1773384094.837715,6,numeric_selection_resolved,0.0,0.0,0.0,0,False,none
+1773651135.630691,Checklist ลูกค้าแจ้งช้า,article_answer,0.0,0.0,0.0,0,False,none
+1773651157.7545311,กำหนดค่าบน ONU,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773652669.834518,การกำหนดค่า ONU,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773746424.125062,ถามหน่อย เบอร์ชุมพรเบอร์อะไร,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773746961.489092,ขอคำสั่ง zte ทั้งหมด,pending_clarification,0.0,0.0,0.0,0,False,none
+1773747276.994016,ขอคำสั่ง zte ทั้งหมด,pending_clarification,0.0,0.0,0.0,0,False,none
+1773747285.0709271,ขอเบอร์หาดใหญ่,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773747446.5789282,ถามหน่อยดิ จะกำหนดค่า ONU ต้องทำยังไง,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773747717.500865,ผมเข้า onu zte ไม่ได้ ต้องทำไงอ่ะ,article_answer,0.0,0.0,0.0,0,False,none
+1773747766.411768,ถามหน่อย กำหนดค่า onu ทำยังไง,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773747793.927393,ถามหน่อย กำหนดค่าบน ONU ต้องทำยังไง,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773755529.73216,กำหนดค่าบน OLT/ONU,article_answer,0.0,0.0,0.0,0,False,none
+1773758022.740483,ถามหน่อย กำหนดค่าบน ONU ต้องทำยังไง,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773758432.1473489,ถามหน่อย กำหนดค่าบน ONU ต้องทำยังไง,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773758849.112382,ถามหน่อย กำหนดค่าบน ONU ต้องทำยังไง,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773760545.511866,ถามหน่อย กำหนดค่าบน ONU ต้องทำยังไง,article_answer,0.0,0.0,0.0,0,False,none
+1773760568.005125,ถามหน่อยดิ จะกำหนดค่า ONU ต้องทำยังไง,article_answer,0.0,0.0,0.0,0,False,none
+1773760589.4481049,เบอร์โทร OMC คืออะไร,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773775243.026368,ดีครับ,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773775270.2749171,ช่วยบอกหน่อย เบอร์โทรของศูนย์หาดใหญ่คือเบอร์อะไร,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773775296.081346,ช่วยตอบหน่อย เบอร์โทรหาดใหญ่เบอร์อะไร,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773775567.986413,ช่วยตอบหน่อย เบอร์โทรหาดใหญ่เบอร์อะไร,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773775645.380816,ช่วยตอบหน่อย เบอร์โทรหาดใหญ่เบอร์อะไร,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773775711.151006,ช่วยตอบหน่อย เบอร์โทรหาดใหญ่เบอร์อะไร,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773775739.140248,ถามหน่อย กำหนดค่าบน ONU ต้องทำยังไง,article_answer,0.0,0.0,0.0,0,False,none
+1773775807.166008,ช่วยตอบหน่อย เบอร์โทรหาดใหญ่เบอร์อะไร,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773775895.5712252,ช่วยตอบหน่อย เบอร์โทรหาดใหญ่เบอร์อะไร,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773775954.6718988,ช่วยตอบหน่อย เบอร์โทรหาดใหญ่เบอร์อะไร,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773775982.9771142,เบอร์หาดใหญ่,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773776137.59601,ถามหน่อย กำหนดค่าบน ONU,article_answer,0.0,0.0,0.0,0,False,none
+1773776145.761719,ช่วยตอบหน่อย เบอร์โทรหาดใหญ่เบอร์อะไร,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773776412.022432,ช่วยตอบหน่อย เบอร์โทรหาดใหญ่เบอร์อะไร,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773776429.8337522,กำหนดค่าบน ONU ต้องทำยังไง,article_answer,0.0,0.0,0.0,0,False,none
+1773776532.575113,ช่วยตอบหน่อย เบอร์โทรหาดใหญ่เบอร์อะไร,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773776547.0844648,เอ๊ะ แล้วเบอร์ศูนย์ชุมพรหล่ะ,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773776607.20188,อยกาากรู้คำสั่ง zte ทั้งหมด,pending_clarification,0.0,0.0,0.0,0,False,none
+1773776626.839772,คำสั่งhuaweiทั้งหมด,pending_clarification,0.0,0.0,0.0,0,False,none
+1773776953.633213,เอ๊ะ แล้วเบอร์ศูนย์ชุมพรหล่ะ,contact_hit_team,0.0,0.0,0.0,0,False,none
+1773776965.90012,อยากรู้คำสั่ง zte ทั้งหมด,pending_clarification,0.0,0.0,0.0,0,False,none
+1773776982.5367072,คำสั่ง huawei ทั้งหมด,article_answer,0.0,0.0,0.0,0,False,none
+1773776998.478509,ช่วยตอบหน่อย เบอร์โทรหาดใหญ่เบอร์อะไร,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773777120.8307211,จะโทรหา U-MUX ต้องโทรเบอร์อะไร,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773777581.223855,จะโทรหา U-MUX ต้องโทรเบอร์อะไร,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773777592.840655,อยกาากรู้คำสั่ง zte ทั้งหมด,pending_clarification,0.0,0.0,0.0,0,False,none
+1773777821.095517,เบอร์โทรหาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773777933.7121348,จะโทรหา U-MUX ต้องโทรเบอร์อะไร,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773777957.7982411,รวมคำสั่ง zte ทั้งหมด,pending_clarification,0.0,0.0,0.0,0,False,none
+1773778230.267395,สวัสดี ขอช่วยหน่อย ONT password คืออะไร,rag_credential_redirect,0.0,0.0,0.0,0,False,none
+1773778285.608759,ตอนนี้มีปัญหา คือถ้าจะ กำหนดค่าบน ONU ต้องทำยังไง,article_answer,0.0,0.0,0.0,0,False,none
+1773778310.98103,ขอลิ้งค์ตาราง proxy ipphoneหน่อย,knowledge_pack,0.0,0.0,0.0,0,False,none
+1773778331.3057559,ขอคำสั่ง zte ทั้งหมดหน่อย,pending_clarification,0.0,0.0,0.0,0,False,none
+1773778361.424439,การจ่ายงานหมายเลขวงจรเช่าจ่ายัยไง,dispatch_mapper_general,0.0,0.0,0.0,0,False,none
+1773778381.550582,การจ่ายงานหมายเลขวงจรเช่า จ่ายยังไง,dispatch_mapper_general,0.0,0.0,0.0,0,False,none
+1773778415.802646,การจ่ายงานเลขหมายวงจรเช่า จ่ายยังไง,dispatch_mapper_general,0.0,0.0,0.0,0,False,none
+1773778430.9476109,การจ่ายงานเลขหมายวงจรเช่า จ,dispatch_mapper_general,0.0,0.0,0.0,0,False,none
+1773778462.240982,การจ่ายเลขหมายวงจรเช่า,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773778496.425313,การจ่ายงานเลขหมายวงจรเช่า จ่ายยังไง,dispatch_mapper_general,0.0,0.0,0.0,0,False,none
+1773778510.918242,ขอดูวิธีการจ่ายงานเลขหมายวงจรเช่าหน่อย,dispatch_mapper_general,0.0,0.0,0.0,0,False,none
+1773778741.6556008,ขอดูวิธีการจ่ายงานเลขหมายวงจรเช่าหน่อย,dispatch_mapper_general,0.0,0.0,0.0,0,False,none
+1773778820.1381629,ขอดูวิธีการจ่ายงานเลขหมายวงจรเช่าหน่อย,dispatch_mapper_general,0.0,0.0,0.0,0,False,none
+1773779135.093138,ขอดูวิธีการจ่ายงานเลขหมายวงจรเช่าหน่อย,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773779366.688652,ขอดูวิธีการจ่ายงานเลขหมายวงจรเช่า,article_answer,0.0,0.0,0.0,0,False,none
+1773779413.066609,แก้ user ลูกค้าที่ context private,article_answer,0.0,0.0,0.0,0,False,none
+1773779511.785692,ผจ.บลตน. ชื่อว่าอะไร,position_miss,0.0,0.0,0.0,0,False,none
+1773779517.144096,ผจ คือใคร,position_ambiguous,0.0,0.0,0.0,0,False,none
+1773779532.868157,ผจ.สบลตน. ชื่อว่าอะไรเหรอ,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773779544.765055,คุณคือใคร,position_miss,0.0,0.0,0.0,0,False,none
+1773779617.429527,จะเปิดโทร 3 สายบนonu ผมต้องทำไง,article_link_only,0.0,0.0,0.0,0,False,none
+1773779640.376308,ขอคำสั่ง telnet หน่อย,pending_clarification,0.0,0.0,0.0,0,False,none
+1773779660.850786,telnet Forth fttx,article_link_only_index,0.0,0.0,0.0,0,False,none
+1773779730.325079,จะทำรายงานรอ nms config ทำยังไง,article_link_only_index,0.0,0.0,0.0,0,False,none
+1773779752.960618,ขอ dns ของ tot  หน่อย,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773779781.4702451,DNS ของ TOT,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773779808.355556,ผมจะกำหนดค่าบน OLT ต้องทำยังไง,blocked_ambiguous,0.0,0.0,0.0,0,False,none
+1773779821.007921,ผมจะกำหนดค่าบน OLT ต,blocked_ambiguous,0.0,0.0,0.0,0,False,none
+1773779840.608781,ผมจะกำหนดค่าบน ONT ต้องทำยังไง,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773779856.504971,ผมจะกำหนดค่าบน OLT ต้องทำยังไง,blocked_ambiguous,0.0,0.0,0.0,0,False,none
+1773805025.682671,ขอช่วยหน่อย จะกำหนดค่าONU ต้องทำยังไง,rag_miss_coverage,0.0,0.0,0.0,0,False,none
+1773805053.6974652,ก,blocked_scope,0.0,0.0,0.0,0,False,none
+1773805061.0433018,กำหนดค่า ONU,rag_miss_coverage,0.0,0.0,0.0,0,False,none
+1773805084.469985,สวัสดี,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773805089.156778,ทะเบียนสินทรัพย์,rag_miss_coverage,0.0,0.0,0.0,0,False,none
+1773805277.220114,สวัสดี,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773805278.6691232,ขอช่วยหน่อย จะกำหนดค่าONU ต้องทำยังไง,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773805311.323658,ผมอยากรู้ว่าเบอร์ติดต่อศูนย์ชุมพรเบอร์อะไร,contact_hit_contact_prefix_match,0.0,0.0,0.0,0,False,none
+1773805336.535037,กำหนดค่าบน OLT/ONU,article_answer,0.0,0.0,0.0,0,False,none
+1773805346.607177,กำหนดค่าบน ONU,article_answer,0.0,0.0,0.0,0,False,none
+1773805358.795579,ขอช่วยหน่อย ผมจะ กำหนดค่าบน ONU,article_answer,0.0,0.0,0.0,0,False,none
+1773805364.470399,ขอช่วยหน่อย ผมจะ กำหนดค่าบน ONU ต้องทำยังไง,article_answer,0.0,0.0,0.0,0,False,none
+1773805375.370301,อยากทราบว่าผจ คือใครเหรอ,position_miss,0.0,0.0,0.0,0,False,none
+1773805383.571074,อยากทราบว่าผจ คือใครเหรอ,position_miss,0.0,0.0,0.0,0,False,none
+1773805428.965117,ผมอยากถามว่า ONT password คืออะไร,rag_credential_redirect,0.0,0.0,0.0,0,False,none
+1773805485.957193,ผมอยากแก้user สำหรับลูกค้า แcontext private,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773805539.542672,ตอนนี้ผมติดปัญหาเข้า ONU ZTE ไม่ได้ ต้องแก้ไขยังไง,article_link_only_index,0.0,0.0,0.0,0,False,none
+1773805573.1481228,ขอ config zte ทำ bridge port,article_answer,0.0,0.0,0.0,0,False,none
+1773805690.4125261,ขอconfig zte olt หน่อย,article_link_only_index,0.0,0.0,0.0,0,False,none
+1773805707.955879,คำสั่ง NCS คืออะไร ส่งมาดูหน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773814199.735584,ผจ ชื่อว่าอะไรเหรอ,position_miss,0.0,0.0,0.0,0,False,none
+1773815237.872019,ผจ ชื่อว่าอะไรเหรอ,position_miss,0.0,0.0,0.0,0,False,none
+1773823379.937223,ใครคือผจ,position_ambiguous,0.0,0.0,0.0,0,False,none
+1773823381.717993,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1773823385.718442,ผจ ชื่ออะไรเหรอ,position_miss,0.0,0.0,0.0,0,False,none
+1773823407.5177028,เบอร์โทร omc hatyai เบอร์ไร,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773824731.317569,ขอเบอร์ติดต่อศูนย์ชุมพรมาให้หน่อย,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773824738.242017,ขอเบอร์ติดต่อศูนย์ชุมพรมา,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773824744.855592,ขอเบอร์ชุมพร,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773825239.341909,ช่วยหาเบอร์ศูนย์ชุมพรมาให้หน่อย,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773825357.789323,ช่วยหาเบอร์ศูนย์ชุมพรมาให้หน่อย,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773825491.286102,ช่วยหาเบอร์ศูนย์ชุมพรมาให้หน่อย,contact_hit_team,0.0,0.0,0.0,0,False,none
+1773825554.289953,ขอเบอร์ติดต่อศูนย์ชุมพร,contact_hit_team,0.0,0.0,0.0,0,False,none
+1773825678.62363,ขอเบอร์ติดต่อศูนย์ชุมพรหน่อย,contact_hit_team,0.0,0.0,0.0,0,False,none
+1773825724.247981,อยากรู้เบอร์ UMUX ด้วย,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773825879.004894,จะติดต่อศูนย์ชุมพร ติดต่อเบอร์อะไร,contact_hit_team,0.0,0.0,0.0,0,False,none
+1773831797.89595,เบอร์สื่อสารข้อมูลชุมพรคือเบอร์อะไร,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773832089.25103,ขอเบอร์ชุมพรหน่อยสิ,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773832111.533335,ใครคือผจ,position_ambiguous,0.0,0.0,0.0,0,False,none
+1773832122.042528,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1773832253.962442,เบอร์สื่อสารข้อมูลชุมพรคือเบอร์อะไร,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773832308.641691,เบอร์ RNOC หาดใหญ่ คือเบอร์อะไร,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773832315.768213,ขอคำสั่ง config zte c600 routemode หน่อย,rag_miss_coverage,0.0,0.0,0.0,0,False,none
+1773832326.9024389,URL ของหน่วยงานที่เกี่ยวข้องมีอะไรบ้าง,web_error,0.0,0.0,0.0,0,False,none
+1773832407.940779,เบอร์ RNOC หาดใหญ่ คือเบอร์อะไร,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773832415.1786208,ขอคำสั่ง config zte c600 routemode หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773832415.25383,URL ของหน่วยงานที่เกี่ยวข้องมีอะไรบ้าง,web_error,0.0,0.0,0.0,0,False,none
+1773832530.093757,อยากได้เบอร์ของชุมพรหน่อยครับ,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773832537.5538418,เบอร์ rnoc หาดใหญ่ เท่าไหร่นะ?,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773832544.39617,สอน config zte c600 หน่อยดิ,article_answer,0.0,0.0,0.0,0,False,none
+1773832642.493888,อยากได้เบอร์ของชุมพรหน่อย,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773832669.4288461,ขอถามหน่อย ขอเบอร์ติดต่อ Help Desk ภ.40 หน่อยครับ,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773832689.994911,Radius NT2 นี่โทรเบอร์อะไร,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773832844.6888819,ช่วยหน่อย สอน config zte c600 หน่อยดิ,rag_miss_coverage,0.0,0.0,0.0,0,False,none
+1773832858.702991,ขอคำสั่ง config zte c600 routemode หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773832883.9150121,หัว SFP 100G หน้าตามันเป็นยังไง ขอดูรูปหน่อย,rag_miss_coverage,0.0,0.0,0.0,0,False,none
+1773832897.348138,ขอ URL ของหน่วยงานที่เกี่ยวข้องหน่อยครับ,knowledge_pack,0.0,0.0,0.0,0,False,none
+1773832917.6452339,มีลิ้งค์เว็บที่เกี่ยวกับ SMC ไหม?,rag_miss_coverage,0.0,0.0,0.0,0,False,none
+1773832932.571234,ใครคือผจ,position_ambiguous,0.0,0.0,0.0,0,False,none
+1773832955.969203,.ช่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773832969.773144,ใครคือผจ,position_ambiguous,0.0,0.0,0.0,0,False,none
+1773832978.269568,ใช่,position_lookup,0.0,0.0,0.0,0,False,none
+1773833210.3653061,เบอร์ HelpDesk ข.บลตน. คือเบอร์อะไร?,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773833221.0111098,ขอเบอร์ของภูเก็ตหน่อยครับ,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773833229.368036,Radius NT1 โทรเบอร์ไหนนะ?,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773833236.135926,สอน config zte c600 หน่อยดิ,article_answer,0.0,0.0,0.0,0,False,none
+1773833246.71259,หัว SFP 100G หน้าตายังไง ขอดูรูปหน่อย,rag_miss_coverage,0.0,0.0,0.0,0,False,none
+1773833257.739379,URL แผนกที่เกี่ยวข้องกันมีอะไรบ้างครับ,position_miss,0.0,0.0,0.0,0,False,none
+1773833268.1224399,เบอร์พวก NOC มีเบอร์อะไรบ้าง?,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773833278.106854,JNA - test นี่เบอร์อะไร?,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773833286.975598,พวกทีม SMC ติดต่อใครได้บ้าง,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773833294.627581,ZTE C600 ปรับเป็น route mode ยังไงนะ,rag_miss_coverage,0.0,0.0,0.0,0,False,none
+1773833433.470291,พวกทีม SMC ติดต่อใครได้บ้าง,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773833441.2163851,ZTE C600 ปรับเป็น route mode ยังไงนะ,rag_miss_coverage,0.0,0.0,0.0,0,False,none
+1773833452.2977989,URL ของหน่วยงานที่เกี่ยวข้องมีอะไรบ้าง,web_error,0.0,0.0,0.0,0,False,none
+1773833550.3225951,พวกทีม SMC ติดต่อใครได้บ้าง,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773833557.944406,ZTE C600 ปรับเป็น route mode ยังไงนะ,rag_miss_coverage,0.0,0.0,0.0,0,False,none
+1773833569.0420249,URL ของหน่วยงานที่เกี่ยวข้องมีอะไรบ้าง,web_error,0.0,0.0,0.0,0,False,none
+1773833615.507265,พวกทีม SMC ติดต่อใครได้บ้าง,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773833623.105941,ZTE C600 ปรับเป็น route mode ยังไงนะ,rag_miss_coverage,0.0,0.0,0.0,0,False,none
+1773833634.117016,URL ของหน่วยงานที่เกี่ยวข้องมีอะไรบ้าง,web_error,0.0,0.0,0.0,0,False,none
+1773833756.794283,พวกทีม SMC ติดต่อใครได้บ้าง,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773833765.272135,ZTE C600 ปรับเป็น route mode ยังไงนะ,rag_miss_coverage,0.0,0.0,0.0,0,False,none
+1773833776.45111,URL ของหน่วยงานที่เกี่ยวข้องมีอะไรบ้าง,article_link_only,0.0,0.0,0.0,0,False,none
+1773833961.5155241,พวกทีม SMC ติดต่อใครได้บ้าง,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773833969.935457,ZTE C600 ปรับเป็น route mode ยังไงนะ,rag_miss_coverage,0.0,0.0,0.0,0,False,none
+1773833981.245308,URL ของหน่วยงานที่เกี่ยวข้องมีอะไรบ้าง,article_link_only,0.0,0.0,0.0,0,False,none
+1773834049.893502,พวกทีม SMC ติดต่อใครได้บ้าง,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773834058.326133,ZTE C600 ปรับเป็น route mode ยังไงนะ,rag_miss_coverage,0.0,0.0,0.0,0,False,none
+1773834069.789191,URL ของหน่วยงานที่เกี่ยวข้องมีอะไรบ้าง,article_link_only,0.0,0.0,0.0,0,False,none
+1773834158.993258,พวกทีม SMC ติดต่อใครได้บ้าง,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773834167.446281,ZTE C600 ปรับเป็น route mode ยังไงนะ,rag_miss_coverage,0.0,0.0,0.0,0,False,none
+1773834178.755435,URL ของหน่วยงานที่เกี่ยวข้องมีอะไรบ้าง,article_link_only,0.0,0.0,0.0,0,False,none
+1773834241.5311759,พวกทีม SMC ติดต่อใครได้บ้าง,article_answer,0.0,0.0,0.0,0,False,none
+1773834241.63794,ZTE C600 ปรับเป็น route mode ยังไงนะ,rag_miss_coverage,0.0,0.0,0.0,0,False,none
+1773834252.936409,URL ของหน่วยงานที่เกี่ยวข้องมีอะไรบ้าง,article_link_only,0.0,0.0,0.0,0,False,none
+1773834311.940809,พวกทีม SMC ติดต่อใครได้บ้าง,article_answer,0.0,0.0,0.0,0,False,none
+1773834312.071321,ZTE C600 ปรับเป็น route mode ยังไงนะ,rag_miss_coverage,0.0,0.0,0.0,0,False,none
+1773834323.248341,URL ของหน่วยงานที่เกี่ยวข้องมีอะไรบ้าง,article_link_only,0.0,0.0,0.0,0,False,none
+1773834585.244669,พวกทีม SMC ติดต่อใครได้บ้าง,article_answer,0.0,0.0,0.0,0,False,none
+1773834585.31687,ZTE C600 ปรับเป็น route mode ยังไงนะ,article_answer,0.0,0.0,0.0,0,False,none
+1773834585.338631,URL ของหน่วยงานที่เกี่ยวข้องมีอะไรบ้าง,article_link_only,0.0,0.0,0.0,0,False,none
+1773861092.475307,ตัวอย่างหัว SFP 100G มีแบบไหนบ้าง,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773861101.729258,งานรับผิดชอบของ HelpDesk ข.บลตน. คืออะไร,rag_no_docs,0.0,0.0,0.0,0,False,none
+1773861109.15621,ขอยูอาร์แอลหน่อยดิ,rag_miss_coverage,0.0,0.0,0.0,0,False,none
+1773861122.932416,ทีม SMC มีใครบ้าง,article_answer,0.0,0.0,0.0,0,False,none
+1773861122.960602,เบอร์ติดต่อ Radius NT1,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773861228.610571,ตัวอย่างหัว SFP 100G มีแบบไหนบ้าง,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773861237.872736,งานรับผิดชอบของ HelpDesk ข.บลตน. คืออะไร,rag_no_docs,0.0,0.0,0.0,0,False,none
+1773861245.312396,ขอยูอาร์แอลหน่อยดิ,article_answer,0.0,0.0,0.0,0,False,none
+1773861245.338063,ทีม SMC มีใครบ้าง,article_answer,0.0,0.0,0.0,0,False,none
+1773861245.360329,เบอร์ติดต่อ Radius NT1,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773861321.085601,ตัวอย่างหัว SFP 100G มีแบบไหนบ้าง,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773861330.1589172,งานรับผิดชอบของ HelpDesk ข.บลตน. คืออะไร,article_answer,0.0,0.0,0.0,0,False,none
+1773861330.18374,ขอยูอาร์แอลหน่อยดิ,article_answer,0.0,0.0,0.0,0,False,none
+1773861330.206003,ทีม SMC มีใครบ้าง,article_answer,0.0,0.0,0.0,0,False,none
+1773861330.22977,เบอร์ติดต่อ Radius NT1,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773861718.0983,สวัสดี,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773861730.3203719,ใครคือผจ.ข.บลตน.,position_miss,0.0,0.0,0.0,0,False,none
+1773863946.6904378,ตัวอย่างหัว SFP 100G มีแบบไหนบ้าง,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773863956.1369019,งานรับผิดชอบของ HelpDesk ข.บลตน. คืออะไร,article_answer,0.0,0.0,0.0,0,False,none
+1773863956.1721,ขอยูอาร์แอลหน่อยดิ,article_answer,0.0,0.0,0.0,0,False,none
+1773863956.195817,ทีม SMC มีใครบ้าง,article_answer,0.0,0.0,0.0,0,False,none
+1773863956.219476,เบอร์ติดต่อ Radius NT1,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773864471.553969,ขอเบอร์ soft-switch หน่อยสิ,blocked_scope,0.0,0.0,0.0,0,False,none
+1773864554.710388,ขอเบอรร์หาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773864592.689968,ขอเบอร์ สผ (IP Phone),contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773864621.2728288,ใครคือผจ.ข.บลตน.,position_miss,0.0,0.0,0.0,0,False,none
+1773864823.834646,ใครคือผจ.ข.บลตน.,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773865034.49415,ใครคือผจ.ข.บลตน.,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773865126.562197,ใครคือผจ.ข.บลตน.,article_answer,0.0,0.0,0.0,0,False,none
+1773865474.6607301,ใครคือผจ.ข.บลตน.,article_answer,0.0,0.0,0.0,0,False,none
+1773865496.9960608,ขอเบอร์โทร Scom Helpdesk,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773865519.587847,ขอเบอร์ Scom,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773865550.8351512,ขอเบอร์  UMBO,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773865565.984324,ขอเบอร์ Umbo,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773866100.2572858,ขอเบอร์ UMBO,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773866243.175599,ขอเบอร์ umbo หน่อย,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773866282.454006,อยากทราบเบอร์ WINET,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773867784.783909,ตัวอย่างหัว sfp 100G,article_answer,0.0,0.0,0.0,0,False,none
+1773867909.980294,ตัวอย่างหัว sfp 100G,article_answer,0.0,0.0,0.0,0,False,none
+1773868837.7597399,ขอลิ้งค์ umbo หน่อย,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773869006.547062,ขอลิ้งค์ umbo หน่อย,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773869059.527484,ขอลิ้งค์ umbo หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773869228.0958982,ขอลิ้งค์ umbo หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773869457.951942,ขอลิ้งค์ umbo หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773869622.147844,ขอลิ้งค์ umbo หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773869651.114888,ขอลิ้งค์ umbo หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773869806.061717,ขอลิ้งค์ umbo หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773869890.979638,ขอลิ้งค์ umbo หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773870161.887744,ขอลิ้งค์ umbo หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773870376.6433432,ขอลิ้ง scom หน่อยสิ,article_answer,0.0,0.0,0.0,0,False,none
+1773870455.327689,ขอลิ้งค์ umbo หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773870532.4912372,ใครคือผส.บลตน.,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773870547.2624168,ใครคือผจ.ส.บลตน.,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773870733.4124029,ใครคือผส.บลตน.,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773870869.681225,ใครคือผส.บลตน.,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773870899.386173,ใครคือผจ.ส.บลตน.,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773871303.5378401,ขอลิ้งค์เพื่อเข้า umbo หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773871312.929714,ผส.บลตน. คือใครเหรอครับพอดีจะติดต่อธุระ,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773871324.972002,สบลตน เค้าทำหน้าที่อะไรบ้างอะ เล่าให้ฟังหน่อย,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773871341.442728,ใครเป็น ผจ.ส.บลตน. อะพี่ จำชื่อไม่ได้แล้ว,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773871355.243691,ขอเบอร์ติดต่อของ ส.บลตน. หน่อยดิ๊ จะโทรไปปรึกษาเรื่องวงจรเช่า,contact_hit_generic,0.0,0.0,0.0,0,False,none
+1773871405.082182,ขอเบอร์ติดต่อของ ส.บลตน. หน่อยดิ๊ จะโทรไปปรึกษาเรื่องวงจรเช่า,contact_hit_generic,0.0,0.0,0.0,0,False,none
+1773871430.17467,สบลตน เค้าทำหน้าที่อะไรบ้างอะ เล่าให้ฟังหน่อย,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773871486.43438,ขอเบอร์ติดต่อของ ส.บลตน. หน่อยดิ๊ จะโทรไปปรึกษาเรื่องวงจรเช่า,contact_hit_generic,0.0,0.0,0.0,0,False,none
+1773871511.219462,สบลตน เค้าทำหน้าที่อะไรบ้างอะ เล่าให้ฟังหน่อย,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773871601.124516,ขอเบอร์ติดต่อของ ส.บลตน. หน่อยดิ๊ จะโทรไปปรึกษาเรื่องวงจรเช่า,contact_hit_generic,0.0,0.0,0.0,0,False,none
+1773871627.241039,สบลตน เค้าทำหน้าที่อะไรบ้างอะ เล่าให้ฟังหน่อย,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773871659.349977,ขอเบอร์ติดต่อของ ส.บลตน. หน่อยดิ๊ จะโทรไปปรึกษาเรื่องวงจรเช่า,contact_hit_generic,0.0,0.0,0.0,0,False,none
+1773871685.744592,สบลตน เค้าทำหน้าที่อะไรบ้างอะ เล่าให้ฟังหน่อย,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773871712.131338,ขอเบอร์ติดต่อของ ส.บลตน. หน่อยดิ๊ จะโทรไปปรึกษาเรื่องวงจรเช่า,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773871738.616412,สบลตน เค้าทำหน้าที่อะไรบ้างอะ เล่าให้ฟังหน่อย,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773871787.388768,สบลตน เค้าทำหน้าที่อะไรบ้างอะ เล่าให้ฟังหน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773871925.2154298,ขอเบอร์ JNA ให้หน่อยสิ,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773871939.714119,ขอลิ้งค์ umbo หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773871958.4769568,config zte c600 routemode,article_answer,0.0,0.0,0.0,0,False,none
+1773871953.2900858,จะติดต่อสื่อสารข้อมูลของชุมพร ขอเบอร์หน่อยสิ,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773871980.8508868,จะติดต่อ omc ของ หาดใหญ่อ่ะ ส่งมาหน่อย,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773872003.353916,ใครคือผจ,position_ambiguous,0.0,0.0,0.0,0,False,none
+1773872040.468151,ผจ.ข.บลตน.,article_answer,0.0,0.0,0.0,0,False,none
+1773872056.3883898,คนไหนที่เป็น ผส.บลตน. อะพี่? พอดีมีเรื่องจะปรึกษา,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773872084.1434398,ขอเบอร์พวกทีม SMC หน่อยดิ๊ จะโทรไปเช็คเรื่องเคสวงจรเช่า,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773872099.08432,"ลิ้งค์เข้า umbo อยู่ไหนเนี่ย? หาใน Google ไม่เจอเลยพี่บอท""",article_answer,0.0,0.0,0.0,0,False,none
+1773872108.439363,สบลตน. เค้าทำหน้าที่อะไรบ้างเหรอ? เล่าให้ฟังแบบย่อๆ หน่อยจิ,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773872119.553271,วิธี config routemode ของ ZTE ตัวใหม่ต้องทำยังไงบ้าง สอนหน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773872134.383728,เบอร์ HelpDesk ตรง พัทลุง เบอร์อะไรอ่ะ,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773872155.0359612,ขอดูพวกรูปหัว SFP 100G หน่อยดิ อยากเห็นว่าหน้าตาไง,team_miss,0.0,0.0,0.0,0,False,none
+1773872228.13362,เบอร์ HelpDesk ตรง พัทลุง เบอร์อะไรอะ,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773872254.772726,ขอดูรูปพวกหัว SFP 100G หน่อยดิ่,team_miss,0.0,0.0,0.0,0,False,none
+1773872283.587423,ผจ.ส.บลตน. ชื่อเล่นว่าอะไรนะ,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773872310.4411452,รวมเบอร์หน่วยงานที่เกี่ยวข้องมาให้หน่อย,contact_miss_domain_strict,0.0,0.0,0.0,0,False,none
+1773872525.400357,เบอร์ HelpDesk ตรง พัทลุง เบอร์อะไรอะ,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773872552.185138,ขอดูรูปพวกหัว SFP 100G หน่อยดิ่,team_miss,0.0,0.0,0.0,0,False,none
+1773872581.1751812,รวมเบอร์หน่วยงานที่เกี่ยวข้องมาให้หน่อย,rag_link_only_content_type,0.8137665033340453,0.4943746779258152,0.31939182540823013,3,False,none
+1773872613.195423,เบอร์ HelpDesk ตรง พัทลุง เบอร์อะไรอะ,contact_hit_contact_prefix_match,0.0,0.0,0.0,0,False,none
+1773872639.985825,ขอดูรูปพวกหัว SFP 100G หน่อยดิ่,article_answer,0.0,0.0,0.0,0,False,none
+1773872669.280544,รวมเบอร์หน่วยงานที่เกี่ยวข้องมาให้หน่อย,rag_link_only_content_type,0.8137665033340453,0.4943746779258152,0.31939182540823013,3,False,none
+1773873069.840408,เห้ยบอท ขอเบอร์ Helpdesk ตรงพัทลุงหน่อยดิ่ จะโทรไปประสานงานวงจรเช่า,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773873084.2573,ผจ.เปิ้ลที่เป็น ผจ.ส.บลตน. นี่เค้าชื่อจริงว่าอะไรนะ ลืมชื่อเค้าแล้ว,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773873100.466963,สบลตน เค้ามีหน้าที่ทำอะไรใน SMC บ้างอะ เล่าให้ฟังแบบย่อๆ ห,article_answer,0.0,0.0,0.0,0,False,none
+1773873120.4128199,วิธี config ตัว ONU ของ ZTE รุ่น C600 ต้องทำไงบ้าง ขอพวกคำสั่งหน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773873510.1023622,f,blocked_scope,0.0,0.0,0.0,0,False,none
+1773873517.298366,สวัสดี,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773873533.9408882,ระบบ SCOM มันใช้ทำอะไรเหรอ อธิบายให้มือใหม่ฟังหน่อยว่ามันดีตรงไหน,article_answer,0.0,0.0,0.0,0,False,none
+1773873558.542063,ลิ้งค์ที่ใช้เข้าหน้า Login ของระบบ umbo อยู่ไหนเนี่ย หาไม่เจอเลยพี่,article_answer,0.0,0.0,0.0,0,False,none
+1773873571.3592699,วิธี config ตัว ONU ของ ZTE รุ่น C600 ต้องทำไงบ้าง ขอพวกคำสั่งหน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773873591.378894,ใครคือคนคุม ส.บลตน. ตอนนี้อะ อยากรู้จักตำแหน่งเค้าด้วย,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773873618.254584,ใครคือผส.บลตน.,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773873647.1472902,ใครคือผจ.ข.บลตน.,article_answer,0.0,0.0,0.0,0,False,none
+1773873886.723773,ใครคือผจ.ข.บลตน.,article_answer,0.0,0.0,0.0,0,False,none
+1773873938.2189581,ใครคือผจ.ข.บลตน.,article_answer,0.0,0.0,0.0,0,False,none
+1773874005.5949461,ใครคือผจ.ข.บลตน.,article_answer,0.0,0.0,0.0,0,False,none
+1773874036.241173,ใครคือผจ.ข.บลตน.,article_answer,0.0,0.0,0.0,0,False,none
+1773874080.368036,ใครคือผจ.ข.บลตน.,article_answer,0.0,0.0,0.0,0,False,none
+1773875047.113973,ขอเบอร์ NOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773875087.006616,ขอเบอร์ สผ หน่อย,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773878178.860503,ใครคือ ผส.บลตน.?,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773878192.359777,เบอร์โทร OMC หาดใหญ่ มีใครบ้าง?,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773878220.96464,ใครรับผิดชอบการขอ IP ใหม่ และมีเบอร์ติดต่ออะไรบ้าง?,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773878233.946829,สรุปข้อมูลเบอร์ติดต่อหน่อย,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773878251.723928,สรุปรายชื่อคนใน ส.บลตน. หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773878275.459836,สรุปรายชื่อคนใน ส.บลตน. หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773878298.028364,สรุปรายชื่อคนใน ส.บลตน. หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773878318.5765991,สรุปรายชื่อคนใน ส.บลตน. หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773878359.558789,สรุปรายชื่อคนใน ส.บลตน. หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773878378.731023,ใครคือ ผส.บลตน.?,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773878393.771878,ส.บลตน. มีพนักงานกี่คน?,position_miss,0.0,0.0,0.0,0,False,none
+1773878415.994476,สรุปเนื้อหา เกี่ยวกับหน่วยงาน ส.บลตน. หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773878469.899858,สรุปรายชื่อคนใน ส.บลตน. หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773878523.480373,สรุปรายชื่อคนใน ส.บลตน. หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773878594.0165389,ขอเบอร์ สผ หน่อย,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773878622.141163,ใครคือผจ.ข.บลตน.,article_answer,0.0,0.0,0.0,0,False,none
+1773878766.3328068,HelpDesk ข.บลตน. มีหน้าที่อะไร,article_answer,0.0,0.0,0.0,0,False,none
+1773878891.13167,เบอร์ติดต่อหน่วยงานต่างๆ มีหน้าที่อะไรบ้าง?,rag_link_only_content_type,0.8679049253463744,0.6797121279426572,0.1881927974037172,3,False,none
+1773878912.773278,คนใน HelpDesk ข.บลตน. มีใครบ้าง?,position_miss,0.0,0.0,0.0,0,False,none
+1773878939.703778,ใครคือ ผจ.บลตน.?,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773878962.0530229,ขอเบอร์ RNOC หาดใหญ่ หน่อย,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773879020.551488,รายชื่อคนใน ส.บลตน. มีใครบ้าง?,position_miss,0.0,0.0,0.0,0,False,none
+1773879106.979459,คนใน HelpDesk ข.บลตน. มีใครบ้าง?,position_miss,0.0,0.0,0.0,0,False,none
+1773879148.3851461,คนใน HelpDesk ข.บลตน. มีใครบ้าง?,team_miss,0.0,0.0,0.0,0,False,none
+1773879213.595511,คนใน HelpDesk ข.บลตน. มีใครบ้าง?,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773879307.736547,คนใน HelpDesk ข.บลตน. มีใครบ้าง?,rag_link_only_content_type,0.6815070807933807,0.47478441146270806,0.20672266933067268,3,False,none
+1773880958.738436,ขอช่วยหน่อย หาเบอร์ สผ ให้หน่อยสิ,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773881027.7457752,ผจ.ข.บลตน. คือใคร,article_answer,0.0,0.0,0.0,0,False,none
+1773881051.680723,ใครคือผจ.ข.บลตน.,article_answer,0.0,0.0,0.0,0,False,none
+1773881080.920259,ใครคือผส.บลตน.,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773881046.967544,คนใน HelpDesk ข.บลตน. มีใครบ้าง?,rag_evaluator_rejected,0.6815070807933807,0.47478441146270806,0.20672266933067268,3,False,none
+1773881105.032715,ผจ.ข.บลตน. คือใคร,article_answer,0.0,0.0,0.0,0,False,none
+1773881148.6491652,ขอconfig zte 600 หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773881155.464413,คนใน HelpDesk ข.บลตน. มีใครบ้าง?,rag_cache_l2,0.6815070807933807,0.47478441146270806,0.20672266933067268,3,False,none
+1773881180.4730618,ทีม HelpDesk ข.บลตน. มีหน้าที่อะไร?,article_answer,0.0,0.0,0.0,0,False,none
+1773881195.176149,เบอร์โทร ส.บลตน.,article_answer,0.0,0.0,0.0,0,False,none
+1773881200.737813,ขอconfig ate c600,blocked_scope,0.0,0.0,0.0,0,False,none
+1773881217.890784,ขอ config zte c600 หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773881213.331659,ตำแหน่ง ผู้บริหารสูงสุด บลตน. คือใคร,rag_cache,0.7050294578075409,0.47309770857594874,0.23193174923159215,3,False,none
+1773881239.0489511,ขอตัวอย่าง ตัวอย่างหัว sfp 100G,article_answer,0.0,0.0,0.0,0,False,none
+1773881299.27175,เบอร์โทร ส.บลตน.,article_answer,0.0,0.0,0.0,0,False,none
+1773881321.084485,ขอลิ้งค์เข้า umbo หน่อยได้ไหม,article_answer,0.0,0.0,0.0,0,False,none
+1773881491.01119,คนใน HelpDesk ข.บลตน. มีใครบ้าง?,rag_cache_l2,0.6815070807933807,0.47478441146270806,0.20672266933067268,3,False,none
+1773882262.503045,ขอ config zte c600 หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773882522.363343,ขอ config zte c600 หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773882549.447836,ขอ config zte c600 หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773882581.1392498,ขอ config zte c600 หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773882646.8442628,ขอ config zte c600 หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773882748.295182,ขอ config zte c600 หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773882805.592683,ขอ config zte c600 หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773882908.400171,ขอ config zte c600 หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773883813.661578,ขอ config zte c600 หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773883815.0179799,ขอ config zte c600 หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773884012.587436,ขอ config zte c600 หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773884494.983967,ขอ config zte c600 หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773884553.780973,config zte c600,article_answer,0.0,0.0,0.0,0,False,none
+1773884690.580776, ขอ config zte c600,article_answer,0.0,0.0,0.0,0,False,none
+1773884714.161055,จะติดต่อเบอร์ helpdesk,article_answer,0.0,0.0,0.0,0,False,none
+1773884748.950191,ขอเบอร์ helpdesk,article_answer,0.0,0.0,0.0,0,False,none
+1773884781.8964942,ใครคือผจ.ข.บลตน.,article_answer,0.0,0.0,0.0,0,False,none
+1773885138.3777459,จะติดต่อเบอร์ helpdesk,article_answer,0.0,0.0,0.0,0,False,none
+1773885205.7451992,จะติดต่อเบอร์ helpdesk,article_answer,0.0,0.0,0.0,0,False,none
+1773885238.931565,จะติดต่อเบอร์ helpdesk,article_answer,0.0,0.0,0.0,0,False,none
+1773885288.293783,จะติดต่อเบอร์ helpdesk,article_answer,0.0,0.0,0.0,0,False,none
+1773885348.436832,จะติดต่อเบอร์ helpdesk,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773885749.07527,จะติดต่อเบอร์ helpdesk,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773885875.453377,สมาชิก ข.บลตนสมาชิก ข.บลตน,rag_link_only_content_type,0.7914112210273743,0.5757836928147031,0.21562752821267117,3,False,none
+1773886075.779244,สมาชิก ข.บลตน,team_hit,0.0,0.0,0.0,0,False,none
+1773886189.991853,สมาชิก ข.บลตน,team_hit,0.0,0.0,0.0,0,False,none
+1773886217.20803,เบอร์ helpdesk,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773886331.65283,สมาชิก ข.บลตน,team_hit,0.0,0.0,0.0,0,False,none
+1773886362.9135711,ขอเบอร์ helpdesk,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773886389.8734431,ขอ config zte c600 หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773886403.58965,ขอลิงก์เข้าสู่ระบบหน่อย,article_link_only,0.0,0.0,0.0,0,False,none
+1773886558.0657768,ขอconfig zte c600 หน่อยครับ,article_answer,0.0,0.0,0.0,0,False,none
+1773886627.222864,ใครคือผจ.ข.บลตน.,article_answer,0.0,0.0,0.0,0,False,none
+1773886656.195287,ขอเบอร์helpdeskหน่อย,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773886695.628594,ขอเบอร์ Help Desk ภ.4,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773886866.656281,ใครคือผจ.ข.บลตน.,article_answer,0.0,0.0,0.0,0,False,none
+1773888637.856825,ขอเบอร์ helpdeskหน่อย,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773888731.0405838,ขอเบอร์ Help Desk ภ.4,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773888784.118515,ขอเบอร์ helpdeskหน่อย,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773888904.700973,ใครคือผจ.ข.บลตน.,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773888929.917514,สมาชิก helpdesk มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773888961.537041,สมาชิก helpdesk มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773889174.110658,สมาชิก helpdesk มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773889464.1564422,สมาชิก helpdesk มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773890098.7960598,สวัสดีครับ,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773890111.7915268,ขอดู config zte c600 หน่อยจิ,article_answer,0.0,0.0,0.0,0,False,none
+1773890140.0201821,ช่วยหน่อย จะขอดูตัวอย่างหัวsfp100G,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773890177.313647,ขอรูปภาพด้วย,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773890190.470377,ตัวอย่างหัว sfp 100G,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773890198.064623,ตัวอย่างหัว sfp 100G,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773890231.98065,สมาชิกhelpdeskมีใครบ้างครับ,team_hit,0.0,0.0,0.0,0,False,none
+1773890265.989271,ขอเบอร์ติดต่อ callcenter wifi I หน่อย,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773890294.0962958,ขอเบอร์ติดต่อ IP TV,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773890335.716792,ผมอยากติดต่อ สผ ติดต่อยังไงได้บ้าง,pending_clarification,0.8007489919662475,0.7865074035889226,0.01424158837732492,3,True,multi_close_candidates
+1773890346.83638,ตัวอย่างหัว sfp 100G,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773890384.178035,ตัวอย่างหัว sfp 100G,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773890368.66826, เบอร์ติดต่อหน่วยงานต่างๆ,article_answer,0.0,0.0,0.0,0,False,none
+1773890407.423717,ตัวอย่างหัว sfp 100G,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773890442.678658,ตัวอย่างหัว sfp 100G,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773890485.521854,ตัวอย่างหัว sfp 100G,article_answer,0.0,0.0,0.0,0,False,none
+1773890533.483637,ตัวอย่างหัว sfp 100G,article_answer,0.0,0.0,0.0,0,False,none
+1773890580.888808,ตัวอย่างหัว sfp 100G,article_answer,0.0,0.0,0.0,0,False,none
+1773890646.9993238,ตัวอย่างหัว sfp 100G,article_answer,0.0,0.0,0.0,0,False,none
+1773890751.8493838,ตัวอย่างหัว sfp 100G,article_answer,0.0,0.0,0.0,0,False,none
+1773890797.433748,ตัวอย่างหัว sfp 100G,article_answer,0.0,0.0,0.0,0,False,none
+1773890863.63487,ตัวอย่างหัว sfp 100G,article_answer,0.0,0.0,0.0,0,False,none
+1773890929.079076,สมาชิก helpdesk มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773891008.284965,ใครคือ ผผส.บลตน.,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773891057.0964348,ใครคือ ผจ.ข.บลตน.,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773891154.103425,ตัวอย่างหัว sfp 100G,article_answer,0.0,0.0,0.0,0,False,none
+1773891172.1415,สมาชิก helpdesk มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773891194.957927,ใครคือ ผส.บลตน.,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773891219.98478,สรุปขั้นตอน config zte c600 routemode,article_answer,0.0,0.0,0.0,0,False,none
+1773891320.906524,รายชื่อทีม ข.บลตน.,team_hit,0.0,0.0,0.0,0,False,none
+1773891346.798948,ใครคือ ผผส.บลตน.,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773891368.0484521,ขอดูรูป sfp หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773891390.9851542,ไปกินข้าวที่ไหนดี,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773891412.0246751,config zte c600,article_answer,0.0,0.0,0.0,0,False,none
+1773891478.6377568,ขอดู config zte c600 หน่อยจิ,article_answer,0.0,0.0,0.0,0,False,none
+1773891506.730707,ช่วยหน่อย จะขอดูตัวอย่างหัวsfp100G,article_answer,0.0,0.0,0.0,0,False,none
+1773891543.98281,ใครคือผจ.ข.บลตน.,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773891568.5154161,สมาชิก helpdesk มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none

@@ -1,0 +1,228 @@
+{
+  "url": "http://10.192.133.33/smc/index.php?option=com_content&view=article&id=627:zte-telnet-to-onu&catid=43:2011-11-14-08-37-12&Itemid=81",
+  "title": "zte telnet to onu",
+  "text": " | Today | 82\n | Yesterday | 522\n | This week | 973\n | Last week | 95\n | This month | 1317\n | Last month | 415\n | All days | 610634\n\nWDM (แนะนำIE)\nTemplate ZTE FTTX v.3 (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=149)\nTemplate for PE,APE,LPE (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=163)\nConvert ASR920 To NCS (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=111)\nGet IP IPPhone (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=153)\nตรวจสอบ ONU Event Log (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=143)\nTemplate Extreme (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=133)\n\nนราธิวาส NMS (http://10.192.39.50/)\nสุราษฎร์ NMS (https://totsni.com/network)\n\nzte telnet to onu เขียนโดย Meru^^ วันเสาร์ที่ 20 พฤษภาคม  2017 เวลา 12:55 น. ----------- -- telnet ont (IP จริงปลายทาง)-- ------------------- user :  root     pass : Zte521 # cat /proc/sys/net/netfiter/nf_conntrack_max //ดู session สูงสุดที่รองรับได้ # cat /proc/sys/net/netfilter/nf_conntrack_count // นับ Session ที่ใช้งานอยู่ # cat /proc/net/arp // นับ arp table # cat /proc/net/nf_conntrack // ดู session ที่ใช้งานราย record ปัจจุบัน # exit ------------------------------------- end -------------------------------------- ----------- -- telnet ont ลูกค้า(reset password)-- ------------------- #sendcmd 1 DB p UserInfo #sendcmd 1 DB p DevInfo #cd /userconfig/cfg #rm db_backup_cfg.xml //ลบ backup user #rm db_user_cfg.xml // ลบ user config ------------------------------------- end -------------------------------------- ----------- -- แก้ ip lan onu -- ------------------- /bin #ip addr replace dev br0 192.168.0.1/24 brd 192.168.0.255 /bin #ip addr del dev br0 192.168.0.1/24 brd 192.168.0.255 ------------------------------------- end -------------------------------------- ----------- -- Save onu -- ------------------- #sendcmd 1 DB save ------------------------------------- end -------------------------------------- ----------- -- Save onu -- ------------------- /bin # ip addr show #ip route ------------------------------------- end -------------------------------------- แก้ไขล่าสุด ใน  วันจันทร์ที่ 22 พฤษภาคม  2017 เวลา 18:26 น. | zte telnet to onu |  |  |  | เขียนโดย Meru^^ | วันเสาร์ที่ 20 พฤษภาคม  2017 เวลา 12:55 น. | ----------- -- telnet ont (IP จริงปลายทาง)-- ------------------- user :  root     pass : Zte521 # cat /proc/sys/net/netfiter/nf_conntrack_max //ดู session สูงสุดที่รองรับได้ # cat /proc/sys/net/netfilter/nf_conntrack_count // นับ Session ที่ใช้งานอยู่ # cat /proc/net/arp // นับ arp table # cat /proc/net/nf_conntrack // ดู session ที่ใช้งานราย record ปัจจุบัน # exit ------------------------------------- end -------------------------------------- ----------- -- telnet ont ลูกค้า(reset password)-- ------------------- #sendcmd 1 DB p UserInfo #sendcmd 1 DB p DevInfo #cd /userconfig/cfg #rm db_backup_cfg.xml //ลบ backup user #rm db_user_cfg.xml // ลบ user config ------------------------------------- end -------------------------------------- ----------- -- แก้ ip lan onu -- ------------------- /bin #ip addr replace dev br0 192.168.0.1/24 brd 192.168.0.255 /bin #ip addr del dev br0 192.168.0.1/24 brd 192.168.0.255 ------------------------------------- end -------------------------------------- ----------- -- Save onu -- ------------------- #sendcmd 1 DB save ------------------------------------- end -------------------------------------- ----------- -- Save onu -- ------------------- /bin # ip addr show #ip route ------------------------------------- end -------------------------------------- | แก้ไขล่าสุด ใน  วันจันทร์ที่ 22 พฤษภาคม  2017 เวลา 18:26 น.\nzte telnet to onu |  |  | \nเขียนโดย Meru^^\nวันเสาร์ที่ 20 พฤษภาคม  2017 เวลา 12:55 น.\n----------- -- telnet ont (IP จริงปลายทาง)-- ------------------- user :  root     pass : Zte521 # cat /proc/sys/net/netfiter/nf_conntrack_max //ดู session สูงสุดที่รองรับได้ # cat /proc/sys/net/netfilter/nf_conntrack_count // นับ Session ที่ใช้งานอยู่ # cat /proc/net/arp // นับ arp table # cat /proc/net/nf_conntrack // ดู session ที่ใช้งานราย record ปัจจุบัน # exit ------------------------------------- end -------------------------------------- ----------- -- telnet ont ลูกค้า(reset password)-- ------------------- #sendcmd 1 DB p UserInfo #sendcmd 1 DB p DevInfo #cd /userconfig/cfg #rm db_backup_cfg.xml //ลบ backup user #rm db_user_cfg.xml // ลบ user config ------------------------------------- end -------------------------------------- ----------- -- แก้ ip lan onu -- ------------------- /bin #ip addr replace dev br0 192.168.0.1/24 brd 192.168.0.255 /bin #ip addr del dev br0 192.168.0.1/24 brd 192.168.0.255 ------------------------------------- end -------------------------------------- ----------- -- Save onu -- ------------------- #sendcmd 1 DB save ------------------------------------- end -------------------------------------- ----------- -- Save onu -- ------------------- /bin # ip addr show #ip route ------------------------------------- end --------------------------------------\nแก้ไขล่าสุด ใน  วันจันทร์ที่ 22 พฤษภาคม  2017 เวลา 18:26 น.\n\nzte telnet to onu |  |  | \n\nเขียนโดย Meru^^\nวันเสาร์ที่ 20 พฤษภาคม  2017 เวลา 12:55 น.\n----------- -- telnet ont (IP จริงปลายทาง)-- ------------------- user :  root     pass : Zte521 # cat /proc/sys/net/netfiter/nf_conntrack_max //ดู session สูงสุดที่รองรับได้ # cat /proc/sys/net/netfilter/nf_conntrack_count // นับ Session ที่ใช้งานอยู่ # cat /proc/net/arp // นับ arp table # cat /proc/net/nf_conntrack // ดู session ที่ใช้งานราย record ปัจจุบัน # exit ------------------------------------- end -------------------------------------- ----------- -- telnet ont ลูกค้า(reset password)-- ------------------- #sendcmd 1 DB p UserInfo #sendcmd 1 DB p DevInfo #cd /userconfig/cfg #rm db_backup_cfg.xml //ลบ backup user #rm db_user_cfg.xml // ลบ user config ------------------------------------- end -------------------------------------- ----------- -- แก้ ip lan onu -- ------------------- /bin #ip addr replace dev br0 192.168.0.1/24 brd 192.168.0.255 /bin #ip addr del dev br0 192.168.0.1/24 brd 192.168.0.255 ------------------------------------- end -------------------------------------- ----------- -- Save onu -- ------------------- #sendcmd 1 DB save ------------------------------------- end -------------------------------------- ----------- -- Save onu -- ------------------- /bin # ip addr show #ip route ------------------------------------- end --------------------------------------\nแก้ไขล่าสุด ใน  วันจันทร์ที่ 22 พฤษภาคม  2017 เวลา 18:26 น.\n\n\nzte telnet to onu\nศูนย์ปฏิบัติการระบบสื่อสารข้อมูล (สบลตน.) (http://10.192.133.33/smc/)\nService Management Center(SMC)\nหน้าหลัก (http://10.192.133.33/smc/)\nผส.บลตน. (http://10.192.133.33/smc/index.php?option=com_content&view=article&id=60&Itemid=70)\nผจ.สบลตน. (http://10.192.133.33/smc/index.php?option=com_content&view=article&id=56&Itemid=60)\nข่าวสาร SMC (http://10.192.133.33/smc/index.php?option=com_content&view=category&id=49&Itemid=84)\nความรู้ (http://10.192.133.33/smc/index.php?option=com_content&view=category&id=43&Itemid=81)\nบุคลากร SMC (http://10.192.133.33/smc/index.php?option=com_content&view=article&id=59&Itemid=64)\nเบอร์หน่วยงานต่างๆ (http://10.192.133.33/smc/index.php?option=com_content&view=article&id=64&Itemid=61)\nผู้ดูแลระบบ (http://10.192.133.33/smc/index.php?option=com_content&view=article&id=57&Itemid=59)\nศูนย์ สลภก.3\nLink ที่เกี่ยวข้อง\nEdocument (https://ntedoc.intra.ntplc.co.th/doc/homepage-doc)\nNT Academy(e-Learning) (https://lms.ntplc.co.th/)\nIntranet NT (https://intranet.ntplc.co.th/)\nE-Mail NT (https://mail.ntplc.co.th/)\nWeb HR (https://webhr.ntplc.co.th/)\nกองทุนสำรองฯ (https://pvd.mfcfund.com/auth/login)\nSMC Extension Dashboard (http://192.168.99.200:8080/)\nSMC AI (http://192.168.99.200:8999/)\nToday\n82\nYesterday\n522\nThis week\n973\nLast week\n95\nThis month\n1317\nLast month\n415\nAll days\n610634\nWe have: 74 guests online\nYour IP:: 10.192.133.253\n,\nToday: ธ.ค. 24, 2025\nVisitors Counter (http://vinaora.com)\nชื่อผู้ใช้\nรหัสผ่าน\nจำข้อมูลการเข้าสู่ระบบ\nลืมรหัสผ่าน? (http://10.192.133.33/smc/index.php?option=com_user&view=reset)\nลืมชื่อเข้าใช้งาน? (http://10.192.133.33/smc/index.php?option=com_user&view=remind)\nลงทะเบียน (http://10.192.133.33/smc/index.php?option=com_user&view=register)\nTemplate\nWDM (แนะนำIE)\nTemplate ZTE FTTX v.3 (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=149)\nTemplate for PE,APE,LPE (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=163)\nConvert ASR920 To NCS (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=111)\nGet IP IPPhone (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=153)\nตรวจสอบ ONU Event Log (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=143)\nTemplate Extreme (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=133)\nลิงค์ภายใต้ ภก.3\nนราธิวาส NMS (http://10.192.39.50/)\nสุราษฎร์ NMS (https://totsni.com/network)\nProject ปรับปรุงตรวจแก้คืนดี ภก.3\nzte telnet to onu\nเขียนโดย Meru^^\nวันเสาร์ที่ 20 พฤษภาคม  2017 เวลา 12:55 น.\n----------- -- telnet ont (IP จริงปลายทาง)-- -------------------\nuser :  root     pass : Zte521\n# cat /proc/sys/net/netfiter/nf_conntrack_max\n//ดู session สูงสุดที่รองรับได้\n# cat /proc/sys/net/netfilter/nf_conntrack_count\n// นับ Session ที่ใช้งานอยู่\n# cat /proc/net/arp\n// นับ arp table\n# cat /proc/net/nf_conntrack\n// ดู session ที่ใช้งานราย record ปัจจุบัน\n# exit\n------------------------------------- end --------------------------------------\n----------- -- telnet ont ลูกค้า(reset password)-- -------------------\n#sendcmd 1 DB p UserInfo\n#sendcmd 1 DB p DevInfo\n#cd /userconfig/cfg\n#rm db_backup_cfg.xml\n//ลบ backup user\n#rm db_user_cfg.xml\n// ลบ user config\n------------------------------------- end --------------------------------------\n----------- -- แก้ ip lan onu -- -------------------\n/bin\n#ip addr replace dev br0 192.168.0.1/24 brd 192.168.0.255\n/bin\n#ip addr del dev br0\n192.168.0.1/24 brd 192.168.0.255\n------------------------------------- end --------------------------------------\n----------- -- Save onu -- -------------------\n#sendcmd 1 DB save\n------------------------------------- end --------------------------------------\n----------- -- Save onu -- -------------------\n/bin # ip addr show\n#ip route\n------------------------------------- end --------------------------------------\nแก้ไขล่าสุด ใน  วันจันทร์ที่ 22 พฤษภาคม  2017 เวลา 18:26 น.\nJoomla 1.5 Templates by Joomlashack (http://www.joomlashack.com)",
+  "content_type": "general",
+  "content_hash": "7d77aa5cce5290918ad238c69c4bcab3a970afe41d22ceb3b0ea5bc96a0e320f",
+  "links": [
+    {
+      "text": "ศูนย์ปฏิบัติการระบบสื่อสารข้อมูล (สบลตน.)",
+      "href": "http://10.192.133.33/smc/"
+    },
+    {
+      "text": "หน้าหลัก",
+      "href": "http://10.192.133.33/smc/"
+    },
+    {
+      "text": "ผส.บลตน.",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=article&id=60&Itemid=70"
+    },
+    {
+      "text": "ผจ.สบลตน.",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=article&id=56&Itemid=60"
+    },
+    {
+      "text": "ข่าวสาร SMC",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=category&id=49&Itemid=84"
+    },
+    {
+      "text": "ความรู้",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=category&id=43&Itemid=81"
+    },
+    {
+      "text": "บุคลากร SMC",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=article&id=59&Itemid=64"
+    },
+    {
+      "text": "เบอร์หน่วยงานต่างๆ",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=article&id=64&Itemid=61"
+    },
+    {
+      "text": "ผู้ดูแลระบบ",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=article&id=57&Itemid=59"
+    },
+    {
+      "text": "Edocument",
+      "href": "https://ntedoc.intra.ntplc.co.th/doc/homepage-doc"
+    },
+    {
+      "text": "NT Academy(e-Learning)",
+      "href": "https://lms.ntplc.co.th/"
+    },
+    {
+      "text": "Intranet NT",
+      "href": "https://intranet.ntplc.co.th/"
+    },
+    {
+      "text": "E-Mail NT",
+      "href": "https://mail.ntplc.co.th/"
+    },
+    {
+      "text": "Web HR",
+      "href": "https://webhr.ntplc.co.th/"
+    },
+    {
+      "text": "กองทุนสำรองฯ",
+      "href": "https://pvd.mfcfund.com/auth/login"
+    },
+    {
+      "text": "SMC Extension Dashboard",
+      "href": "http://192.168.99.200:8080/"
+    },
+    {
+      "text": "SMC AI",
+      "href": "http://192.168.99.200:8999/"
+    },
+    {
+      "text": "Visitors Counter",
+      "href": "http://vinaora.com"
+    },
+    {
+      "text": "ลืมรหัสผ่าน?",
+      "href": "http://10.192.133.33/smc/index.php?option=com_user&view=reset"
+    },
+    {
+      "text": "ลืมชื่อเข้าใช้งาน?",
+      "href": "http://10.192.133.33/smc/index.php?option=com_user&view=remind"
+    },
+    {
+      "text": "ลงทะเบียน",
+      "href": "http://10.192.133.33/smc/index.php?option=com_user&view=register"
+    },
+    {
+      "text": "Template ZTE FTTX v.3",
+      "href": "http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=149"
+    },
+    {
+      "text": "Template for PE,APE,LPE",
+      "href": "http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=163"
+    },
+    {
+      "text": "Convert ASR920 To NCS",
+      "href": "http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=111"
+    },
+    {
+      "text": "Get IP IPPhone",
+      "href": "http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=153"
+    },
+    {
+      "text": "ตรวจสอบ ONU Event Log",
+      "href": "http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=143"
+    },
+    {
+      "text": "Template Extreme",
+      "href": "http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=133"
+    },
+    {
+      "text": "นราธิวาส NMS",
+      "href": "http://10.192.39.50/"
+    },
+    {
+      "text": "สุราษฎร์ NMS",
+      "href": "https://totsni.com/network"
+    },
+    {
+      "text": "Joomla 1.5 Templates by Joomlashack",
+      "href": "http://www.joomlashack.com"
+    }
+  ],
+  "images": [
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/0.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/0.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/0.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/6.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/1.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/0.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/6.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/3.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/4.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vtoday.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vyesterday.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vweek.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vlweek.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vmonth.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vlmonth.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vall.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/templates/js_jamba/images/pdf_button.png",
+      "alt": "PDF",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/templates/js_jamba/images/printButton.png",
+      "alt": "พิมพ์",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/templates/js_jamba/images/emailButton.png",
+      "alt": "อีเมล",
+      "caption": ""
+    }
+  ],
+  "processed_at": 1767588471.059094,
+  "raw_file": "data/raw/10.192.133.33_smc_index.php_option_com_content_view_article_id_627_zte-telnet-to-onu_catid_43_2011-11-14-08-37-12_Itemid_81.html"
+}

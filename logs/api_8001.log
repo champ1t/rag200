@@ -1,0 +1,22 @@
+INFO:     Started server process [19803]
+INFO:     Waiting for application startup.
+INFO:API:Initializing ChatEngine...
+[INFO] Loading resources...
+INFO:chromadb.telemetry.product.posthog:Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+INFO:numexpr.utils:NumExpr defaulting to 8 threads.
+INFO:datasets:PyTorch version 2.9.1 available.
+INFO:datasets:Duckdb version 1.4.3 available.
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+INFO:chromadb.telemetry.product.posthog:Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+INFO:API:ChatEngine Ready!
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:API:Shutting down...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [19803]

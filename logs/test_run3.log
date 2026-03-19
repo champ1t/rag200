@@ -1,0 +1,29 @@
+
+=== 1. Human Language Test ===
+✅ [Naive 'วิธีแก้ tr069'] PASS: Ans start: ไม่พบข้อมูลที่เกี่ยวข้องในระบบ...
+✅ [Naive 'เข้าเว็บ edoc'] PASS: Ans start: ไม่พบข้อมูลที่เกี่ยวข้องในระบบ...
+⚠️ [Naive 'huawei fttx...'] WARN: Ans start: [huawei fttx มีปัญหา]
+
+📌 เนื้อ...
+⚠️ [Naive 'ip ssh...'] WARN: Ans start: ข้อมูลไม่เพียงพอ โปรดติดต่อเจ้...
+
+=== 2. Same Question, Different Style ===
+   Q1 Title: [TR069 CWMP Setting]
+   Q2 Title: ไม่พบข้อมูลที่เกี่ยวข้องในระบบ (Coverage Check FAILED)
+⚠️ [Deterministic Title] WARN: Q2 missed article
+
+=== 3. Long Session Test (State Safety) ===
+❌ [Step 1: Ask SBC] INFO: ...
+❌ [SBC Query] FAIL: Missing 'Session'
+❌ [Step 2: Switch to IP SSH] INFO: ...
+✅ [Context Leak Check] PASS: Clean switch
+❌ [Step 3: Return to SBC] INFO: ...
+✅ [Context Return Check] PASS: Clean return
+
+=== 5. Garbage / Edge Input ===
+✅ [Empty Input] PASS: Ans: สวัสดีครับ มีอะไรให้ผมช่วยค้นห
+✅ [Numeric Input] PASS: Ans: ขออภัยครับ ผมไม่เข้าใจคำค้นหาข
+
+=== 4. Cache Consistency (Snapshotted) ===
+❌ [Ribbon Output Check] FAIL: Title found: True, Link found: False
+   Signature: [Ribbon EdgeMare6000 DOC]  **SIP to SIP Quickguide

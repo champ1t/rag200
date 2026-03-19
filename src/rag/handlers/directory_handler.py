@@ -370,8 +370,8 @@ class DirectoryHandler:
         TEAM_ALIASES = {
             "smc": ["management smc", "งาน management smc", "management (smc)", "smc management", "smc"],
             "management": ["management smc", "งาน management smc", "management (smc)", "smc management"],
-            "help desk": ["helpdesk", "help desk"],
-            "helpdesk": ["helpdesk", "help desk"],
+            "help desk": ["ข.บลตน.", "helpdesk", "help desk"],
+            "helpdesk": ["ข.บลตน.", "helpdesk", "help desk"],
             "fttx": ["งาน fttx", "fttx"],
             "omc": ["omc", "ศูนย์ omc", "omc hatyai", "omc songkhla"],
             "rnoc": ["rnoc", "ศูนย์ rnoc"],
@@ -461,7 +461,10 @@ class DirectoryHandler:
 
         if not is_generic:
             # A. Exact match
-            if q_norm in self.team_norm_map:
+            raw_q_norm = normalize_for_matching(query)
+            if raw_q_norm in self.team_norm_map:
+                matches.extend(self.team_norm_map[raw_q_norm])
+            elif q_norm in self.team_norm_map:
                 matches.extend(self.team_norm_map[q_norm])
             
             # B. Alias Match Logic
@@ -474,15 +477,18 @@ class DirectoryHandler:
                         if SequenceMatcher(None, cand_norm, team_norm).ratio() >= 0.85:
                             if team_key not in matches: matches.append(team_key)
                 
-            # C. Standard Fuzzy Match (if still no matches)
+            # C. Standard Substring/Fuzzy Match (if still no matches)
             if not matches:
                 from difflib import SequenceMatcher
                 fuzzy_candidates = []
                 for team_key in self.team_index.keys():
                     team_norm = normalize_for_matching(team_key)
-                    ratio = SequenceMatcher(None, q_norm, team_norm).ratio()
-                    if ratio >= 0.75:
-                        fuzzy_candidates.append((team_key, ratio))
+                    if q_norm in team_norm or team_norm in q_norm:
+                        fuzzy_candidates.append((team_key, 1.0))
+                    else:
+                        ratio = SequenceMatcher(None, q_norm, team_norm).ratio()
+                        if ratio >= 0.75:
+                            fuzzy_candidates.append((team_key, ratio))
                 
                 if fuzzy_candidates:
                     fuzzy_candidates.sort(key=lambda x: x[1], reverse=True)
@@ -500,8 +506,11 @@ class DirectoryHandler:
                 if not rec_name: continue
                 
                 rn_norm = normalize_for_matching(rec_name)
-                # Check for unit match (e.g. "ศูนย์ OMC หาดใหญ่" contains "OMC")
-                if q_norm in rn_norm or rn_norm in q_norm:
+                # Check for unit match in name OR tags (Phase 239)
+                tags = rec.get("tags", [])
+                tag_match = any(q_norm in normalize_for_matching(t) for t in tags)
+                
+                if q_norm in rn_norm or rn_norm in q_norm or tag_match:
                     matches.append(rec_name)
                     # Update team index on the fly for this session or just return dummy data
                     if rec_name not in self.team_index:
@@ -543,16 +552,23 @@ class DirectoryHandler:
             members = team_data.get("members", [])
             count = len(members)
             
-            lines = [f"**ทีม:** {best_team} ({count} คน)"]
-            
-            limit = 10
-            for i, m in enumerate(members[:limit]):
-                m_txt = f"- {m['name']}"
-                if m.get("phones"): m_txt += f" ({', '.join(m['phones'])})"
-                lines.append(m_txt)
+            if count == 0:
+                lines = [f"**{best_team}** เป็นหมายเลขติดต่อ/ทีมส่วนกลางที่ไม่มีรายชื่อสมาชิกบุคคลระบุไว้ครับ"]
+            else:
+                lines = [f"**ทีม:** {best_team} ({count} คน)"]
                 
-            if count > limit:
-                lines.append(f"...และอีก {count - limit} คน")
+                limit = 10
+                for i, m in enumerate(members[:limit]):
+                    role_prefix = ""
+                    if m.get("role") and m["role"] != best_team:
+                        role_prefix = f"[{m['role']}] "
+                    
+                    m_txt = f"- {role_prefix}{m['name']}"
+                    if m.get("phones"): m_txt += f" ({', '.join(m['phones'])})"
+                    lines.append(m_txt)
+                    
+                if count > limit:
+                    lines.append(f"...และอีก {count - limit} คน")
                 
             s_url = team_data.get("sources", [])[0] if team_data.get("sources") else ""
             
@@ -764,15 +780,41 @@ class DirectoryHandler:
         
         # 4. Retrieve & Enrich Results
         found_positions = []
+        
+        # Extra tag-based matching (Phase 241: Prioritize Unit Match)
+        for rec in self.records:
+            tags = rec.get("tags", [])
+            tag_match = any(q_norm in normalize_for_matching(t) for t in tags)
+            if tag_match:
+                # Give a score boost for tag-based matching when it's for position/member queries
+                if not any(r.get("name") == rec.get("name") and r.get("role") == rec.get("role") for r in found_positions):
+                     # Add a custom flag to indicate tag-hit without mutating original memory
+                     hit_rec = dict(rec)
+                     hit_rec["_tag_boost"] = 100
+                     found_positions.append(hit_rec)
+        
+        # Original key matching (if any)
         if matched_keys:
             # Deduplicate keys
             matched_keys = list(set(matched_keys))
             for r in matched_keys:
                 if r in self.position_index:
                     found_positions.extend(self.position_index[r])
+        
+        # Hybrid Join (Enrich missing phones)
+        self._enrich_data_gaps(found_positions)
+        
+        # Phase 241: Final Ranking for Positions (Match-Type Priority)
+        # 1. Exact Role Match
+        # 2. Strong Unit/Tag Match
+        # 3. Fuzzy/Partial
+        def rank_pos(p):
+            priority = 0
+            if p.get("_tag_boost"): priority += 10 # Tag match (Unit)
+            if p.get("role") and q_norm in normalize_for_matching(p["role"]): priority += 5 # Role sub-match
+            return priority
             
-            # Hybrid Join (Enrich missing phones)
-            self._enrich_data_gaps(found_positions)
+        found_positions.sort(key=rank_pos, reverse=True)
 
         # 5. Output Contract / Quality Gate
         # User Rule: If query asks for contact (phone/email), result MUST have it.
@@ -807,7 +849,8 @@ class DirectoryHandler:
             return {
                 "answer": f"ไม่พบข้อมูลบุคลากรหรือตำแหน่ง '{query}' ในระบบ",
                 "route": "position_miss",
-                "latencies": {"directory": latency}
+                "latencies": {"directory": latency},
+                "fallback_to_rag": True
             }
 
     def _find_matches(self, q_norm: str) -> List[str]:

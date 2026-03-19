@@ -34,6 +34,38 @@ class ArticleInterpreter:
         self._result_cache = {} # Phase 136: Result Cache (URL, Query) -> Answer
         self.ux_cfg = ux_cfg or {}
 
+    def _post_process_ans(self, final: str, article_url: str, cleaned_content: str, show_images: bool, images: list, user_query: str, is_tutorial: bool = False) -> str:
+        """
+        Unified Post-processing (Phase 248):
+        Handles masking, link appending (tutorials), and mandatory image preservation (visual).
+        """
+        from src.rag.article_cleaner import mask_sensitive_data
+        from src.rag.image_filter import filter_and_rank_images
+        from src.rag.image_validator import filter_valid_images
+        
+        # 1. Masking
+        final = mask_sensitive_data(final)
+        final = mask_sensitive_data(final)
+        final = mask_sensitive_data(final)
+        
+        # 2. Tutorial Link Appending
+        if is_tutorial and "แหล่งที่มา" not in final:
+            final += f"\n\nแหล่งที่มา:\n🔗 {article_url}"
+            
+        # 3. Mandatory Image Inclusion (Visual Request)
+        # If user asked for an image and it's not in the LLM response, append it.
+        if show_images and images and "![" not in final:
+            # Re-fetch images from content if they leaked out of initial search
+            filtered_images = filter_and_rank_images(images, user_query, max_images=3)
+            filtered_images = filter_valid_images(filtered_images)
+            if filtered_images:
+                final += "\n\n**🖼️ รูปภาพประกอบ:**\n"
+                for i, img in enumerate(filtered_images, 1):
+                    cap = img.get("caption", img.get("alt", f"รูปภาพ {i}"))
+                    final += f"![{cap}]({img['url']})\n*{cap}*\n\n"
+                    
+        return final
+
     def _is_technical_content(self, content: str) -> bool:
         """Check if content contains technical configuration commands."""
         keywords = ["display", "config", "command", "system-view", "undo", "vlan", "interface", "ip address", "service-port", "ont ", "profile-index", "ping", "sbc", "sip", "tracert"]
@@ -147,7 +179,7 @@ class ArticleInterpreter:
         # Robust Cache Key: URL + Query + ContentHash + Intent (New Partition)
         # Phase 183: Unified Cache & Config
         # Schema v223_strict_cleaning (Rule AC-1)
-        CACHE_SCHEMA_VERSION = "v223_clean_policy"
+        CACHE_SCHEMA_VERSION = "v242_visual_preservation" # Expanded Visual Preservation & Image Support
         ux_flags = f"{self.ux_cfg.get('article.intro.enabled')}:{self.ux_cfg.get('article.max_chars')}"
         
         import hashlib
@@ -211,6 +243,13 @@ class ArticleInterpreter:
 
         clean_len = len(cleaned_content)
         
+        # New: Collect images from content if list is empty (Phase 247)
+        if not images:
+             image_links = re.findall(r'!\[(.*?)\]\((http[s]?://\S+?)\)', cleaned_content)
+             images = [{"url": u.strip(')'), "caption": cap or "รูปภาพประกอบ", "alt": cap} for cap, u in image_links]
+             if images:
+                  print(f"[ArticleInterpreter] Phase 247: Found {len(images)} images in markdown content")
+        
         # Phase 135: Early Hard Reject (Link Density)
         # Avoid cleaning/tokenizing Navigation or Index pages
         # Heuristic: High link count relative to content length
@@ -262,12 +301,19 @@ class ArticleInterpreter:
         # Phase 140: Strict Directory Detection with Score Safety Fallback
         is_directory = self._looks_like_link_directory(cleaned_content, user_query)
         
-        # If High Confidence Match (Direct Lookup), be skeptical of Directory Mode unless obvious (lots of links)
-        if match_score >= 0.9 and is_directory:
+        # User explicitly asked for a link -> Force directory curator
+        if intent == "REFERENCE_LINK":
+            is_directory = True
+        print(f"[DEBUG_INTERPRETER] intent='{intent}', is_directory={is_directory}, match_score={match_score}")
+        
+        # If High Confidence Match (Direct Lookup), be skeptical of Directory Mode unless obvious
+        if match_score >= 0.9 and is_directory and intent != "REFERENCE_LINK":
             raw_link_count = cleaned_content.lower().count("http") + cleaned_content.lower().count("ftp://") 
             if raw_link_count < 15:
                 print(f"[ArticleInterpreter] High Confidence Match ({match_score}) -> Override weak Directory signal (links={raw_link_count}). force Article Mode.")
                 is_directory = False
+                
+        print(f"[DEBUG_INTERPRETER] pre-tech override: is_directory={is_directory}")
 
         if is_directory:
              # Phase 189: Strict Tech Rescue
@@ -278,7 +324,7 @@ class ArticleInterpreter:
              # UNLESS it looks like a Link Collection (lots of links)
              # User Rule: "If has explicit Tech content but > 10 links, treat as Directory"
              raw_link_count = cleaned_content.lower().count("http") 
-             if is_tech and raw_link_count < 10 and "download" not in user_query.lower() and "manual" not in user_query.lower():
+             if is_tech and raw_link_count < 10 and "download" not in user_query.lower() and "manual" not in user_query.lower() and intent != "REFERENCE_LINK":
                  print(f"[ArticleInterpreter] Technical Content Detected (Links={raw_link_count}) -> Override Directory signal.")
                  is_directory = False
 
@@ -332,7 +378,7 @@ class ArticleInterpreter:
             # Check if user explicitly asked for Summary
             is_summary_request = any(k in user_query.lower() for k in ["สรุป", "summary", "extract", "ย่อ"])
                  
-            if not is_summary_request:
+            if not is_summary_request and not show_images:
                 # Default Policy: Link Mode
                 msg = "⚠️ ข้อมูลเรื่องนี้ถูกจัดเก็บในรูปแบบรูปภาพ/ไฟล์สแกน\n(ระบบไม่สามารถอ่านรายละเอียดได้แม่นยำ กรุณาคลิกดูจากต้นฉบับครับ)"
                 return self._wrap_result(f"{msg}\nแหล่งที่มา: {article_url}", cleaned_content)
@@ -514,12 +560,12 @@ Rules:
             else:
                  priority_block = "\n".join(priority_lines)
             
-            # 4. Construct Answer
-            final_ans = f"[{display_title}]"
+            # 4. Construct Answer (Removed [display_title] header - Phase 222)
+            final_ans = ""
             if intro_text:
-                final_ans += f"\n\n{intro_text}"
+                final_ans += f"{intro_text}\n\n"
             
-            final_ans += f"\n\n{priority_block}"
+            final_ans += priority_block
             
             # 5. Footer (Always Append for How-to - Rule C)
             # final_ans += f"\n\nแหล่งที่มา:\n🔗 {article_url}"
@@ -537,36 +583,79 @@ Rules:
             content_len = len(cleaned_content)
             
             # A) Short Article (< 1200 chars) -> Extractive Preview (Fast, Stable)
-            if content_len < 1200:
+            # EXCEPT: If user is doing POSITION/CONTACT lookup OR asks for a SUMMARY, force LLM.
+            is_lookup_intent = intent in ["POSITION_LOOKUP", "CONTACT_LOOKUP", "TEAM_LOOKUP", "COMMAND_REFERENCE", "CONFIG_GUIDE", "TROUBLESHOOT"]
+            is_summary_req = any(k in user_query.lower() for k in ["สรุป", "summary", "list", "ใคร", "รายชื่อ", "ทุก", "staff", "personnel", "หน้าที่", "รับผิดชอบ", "ขอ", "config", "โชว์"])
+            
+            # Phase 222: Force LLM for technical content even if short
+            howto_triggers = ["# ", ">> ", "=> ", "config ", "display ", "interface ", "set ", "show ", "router ", "olt ", "onu "]
+            is_technical_content = any(k in cleaned_content.lower() for k in howto_triggers)
+            
+            if content_len < 1200 and not (is_lookup_intent or is_summary_req or is_technical_content):
                 print(f"[ArticleInterpreter] Hybrid Strategy: SHORT ({content_len} chars) -> Extractive Preview.")
                 from src.rag.article_cleaner import smart_truncate
-                
+
                 # Phase 21 Clean: Remove table pipe junk and author/date metadata lines
-                # These are common scraping artifacts from Joomla CMS
                 clean_lines = []
                 for line in cleaned_content.split('\n'):
                     stripped = line.strip()
-                    # Skip lines that are just pipes (e.g. "| | |", "| |")
-                    if re.match(r'^[\|\s]+$', stripped) and '|' in stripped:
-                        continue
-                    # Also skip lines ending with table pipe artifacts like "Title | | |"
-                    if re.search(r'\|\s*\|\s*\|?\s*$', stripped):
-                        continue
-                    # Skip author/date metadata lines
+                    if re.match(r'^[\|\s]+$', stripped) and '|' in stripped: continue
+                    if re.search(r'\|\s*\|\s*\|?\s*$', stripped): continue
                     if any(k in stripped for k in ["เขียนโดย", "แก้ไขล่าสุด", "วันศุกร์", "วันจันทร์", "วันอังคาร", "วันพุธ", "วันพฤหัสบดี", "วันเสาร์", "วันอาทิตย์"]):
-                        continue
+                         continue
                     clean_lines.append(line)
-                
+
+                # Phase 222: Deep Clean for Premium Look
                 preview_content = '\n'.join(clean_lines).strip()
                 
-                # Phase 21 Format: Expand inline numbered lists into separate lines
-                # e.g. "1. item 2. item 3. item" -> "1. item\n2. item\n3. item"
-                # Uses lookbehind (?<=[^\d]) to protect IP addresses (192.168.1.1) and decimals
+                # 1. Remove redundancy: Strip the title if it appears at the top as a header
+                title_clean = re.sub(r'[\[\]\(\)\-\_\#\s]', '', display_title).lower()
+                lines = preview_content.split('\n')
+                if lines:
+                    first_line_clean = re.sub(r'[\[\]\(\)\-\_\#\s]', '', lines[0]).lower()
+                    if title_clean in first_line_clean or first_line_clean in title_clean:
+                        lines = lines[1:]
+                
+                # 2. Convert raw markdown headers into prettier bullets
+                formatted_lines = []
+                for line in lines:
+                    l = line.strip()
+                    if not l: continue
+                    # Convert ## Header to 🔹 **Header**
+                    if l.startswith('##'):
+                        header_text = l.replace('#', '').strip()
+                        if header_text:
+                            formatted_lines.append(f"\n- **{header_text}**")
+                    elif l.startswith('#'):
+                        # Top level header inside body: usually redundant or too large
+                        continue
+                    else:
+                        formatted_lines.append(line)
+                
+                preview_content = '\n'.join(formatted_lines).strip()
+                
+                # 3. Expand inline numbered lists
                 preview_content = re.sub(r'(?<=[^\d])(\d+\.)\s', r'\n\1 ', preview_content)
                 
+                # 4. Truncate safely
                 preview_text = smart_truncate(preview_content, max_length=900, footer_url=None)
                 
-                final_ans = f"[{display_title}]\n\n{preview_text}"
+                # 4. Construct Answer (Removed [display_title] header - Phase 222)
+                final_ans = preview_text
+                
+                # New: Include images in Short path (Phase 245)
+                if show_images and images:
+                    from src.rag.image_filter import filter_and_rank_images
+                    # Filter and rank images (max 3 for explicit image queries)
+                    filtered_images = filter_and_rank_images(images, user_query, max_images=3)
+                    filtered_images = filter_valid_images(filtered_images)
+                    
+                    if filtered_images:
+                         final_ans += "\n\n**🖼️ รูปภาพประกอบจากบทความ:**\n"
+                         for i, img in enumerate(filtered_images, 1):
+                             caption = img.get("caption", img.get("alt", f"รูปภาพประกอบ {i}"))
+                             final_ans += f"![{caption}]({img['url']})\n*{caption}*\n\n"
+
                 timings["total_ms"] = (time.time() - t_start) * 1000
                 result = self._wrap_result(final_ans, cleaned_content)
                 result["metadata"]["is_extractive"] = True  # SHORT path: no LLM used
@@ -577,7 +666,7 @@ Rules:
                 print(f"[ArticleInterpreter] Hybrid Strategy: LONG ({content_len} chars) -> LLM Summarizer.")
                 
                 # Phase 18: COMMAND_REFERENCE_MODE
-                if intent == "COMMAND_REFERENCE":
+                if intent in ["COMMAND_REFERENCE", "CONFIG_GUIDE"]:
                     print(f"[ArticleInterpreter] Phase 18: Using TEMPLATE_COMMAND_REFERENCE")
                     from src.rag.prompts import TEMPLATE_COMMAND_REFERENCE
                     prompt_vals = {
@@ -593,11 +682,12 @@ Rules:
                             model=self.model,
                             prompt=prompt,
                             system="You are a strict technical command extractor.",
-                            max_tokens=400,
+                            max_tokens=1200,
                             temperature=0.0
                         ).strip()
+                        final = self._post_process_ans(llm_summary, article_url, cleaned_content, show_images, images, user_query)
                         timings["total_ms"] = (time.time() - t_start) * 1000
-                        return self._wrap_result(llm_summary, cleaned_content)
+                        return self._wrap_result(final, cleaned_content)
                     except Exception as e:
                         print(f"[ArticleInterpreter] Command Summarizer Failed: {e}")
                         # Fallback to extractive
@@ -644,8 +734,9 @@ Rules:
                     # Phase 18: Link appending removed (handled by ChatEngine)
                     # llm_summary += f"\n\nแหล่งที่มา:\n🔗 {article_url}"
 
+                    final = self._post_process_ans(llm_summary, article_url, cleaned_content, show_images, images, user_query)
                     timings["total_ms"] = (time.time() - t_start) * 1000
-                    return self._wrap_result(llm_summary, cleaned_content)
+                    return self._wrap_result(final, cleaned_content)
                     
                 except Exception as e:
                     print(f"[ArticleInterpreter] LLM Summarizer Failed: {e}. Fallback to Extractive.")
@@ -819,7 +910,6 @@ Rules:
                     
                 return self._wrap_result("ไม่พบข้อมูลที่ยืนยันคำตอบนี้ในระบบ", truncated_content)
         
-        # Phase 31: Procedural Fast-Path (Report Articles)
         # Optimization: If content contains specific report patterns, extract deterministically to bypass LLM.
         # Check this on 'truncated_content' (which might be recovered content or standard cleaned content)
         # import re (Moved to top)
@@ -953,7 +1043,7 @@ STRICT RULES:
 1. Use ONLY information explicitly found in the provided article content.
 2. DO NOT add external knowledge, best practices, or assumptions.
 3. Output Format:
-   - Provide a clear summary (6-8 Bullet points max).
+   - Provide a clear summary (10-15 Bullet points if needed for technical steps).
    - If steps are involved, list them concisely.
    - Do NOT add a conclusion or "Read more" phrase (System will add it).
 4. Language: Thai only.
@@ -962,7 +1052,7 @@ If the article content is unrelated, empty, or purely navigational:
 - Respond with: "ไม่พบเนื้อหาที่เพียงพอสำหรับการสรุปจากแหล่งข้อมูลนี้"
 """
             # Minimal User Prompt for Type B (Let System Prompt drive)
-            prompt_instruction = "Summarize the key points in 6-8 bullets."
+            prompt_instruction = "Summarize the key points in 10-15 bullets."
             
         
         else:
@@ -1002,8 +1092,8 @@ Your tasks:
    - รายละเอียด...
 
 6) Image handling:
-   - If images are relevant, include them in a SEPARATE section at the END.
-   - Use: ![description](url)
+   - If image URLs are provided in the content section below, include them using ![description](url) format when relevant.
+   - Place images in a SEPARATE section at the END.
 
 7) Safety:
    - Do NOT mask credentials.
@@ -1011,7 +1101,10 @@ Your tasks:
 
 If the article content is empty or irrelevant, reply: "เนื้อหาในบทความไม่เพียงพอต่อการสรุป (กรุณาคลิกอ่านฉบับเต็ม)"
 """
-            prompt_instruction = "Extract and structure the answer as NUMBERED ITEMS ONLY. Be concise and extractive."
+            if show_images:
+                prompt_instruction = "Extract the answer and ensure you INCLUDE the provided image URLs (markdown format) in a 'รูปภาพประกอบ' section at the end. Use NUMBERED ITEMS for the text part."
+            else:
+                prompt_instruction = "Extract and structure the answer as NUMBERED ITEMS ONLY. Be concise and extractive."
 
 
         user_prompt = f"""Article Title: {article_title}
@@ -1041,19 +1134,10 @@ If images are relevant to the user's question, include them in a separate sectio
             print(f"[ArticleInterpreter] Timing: total={timings['total_ms']:.1f}ms (clean={timings['clean_ms']:.1f}ms, select={timings['select_ms']:.1f}ms, llm={timings['llm_ms']:.1f}ms)")
             
             
-            final = answer.strip()
-            # Phase 46: Safety Guard
-            from src.rag.article_cleaner import mask_sensitive_data
-            final = mask_sensitive_data(final)
-            final = mask_sensitive_data(final)
-            final = mask_sensitive_data(final)
+            final = self._post_process_ans(answer.strip(), article_url, cleaned_content, show_images, images, user_query, is_tutorial=is_tutorial_mode)
             
-            # Phase 175: Policy 1 - Append Link for Tutorials
-            if is_tutorial_mode and "แหล่งที่มา" not in final:
-                final += f"\n\nแหล่งที่มา:\n🔗 {article_url}"
-                
             print(f"ArticleMode=article Links={cleaned_content.lower().count('http')} TextChars={len(cleaned_content)} Score={match_score} Cache=miss")
-            return final
+            return self._wrap_result(final, cleaned_content)
 
             
         except Exception as e:
@@ -1252,12 +1336,7 @@ If images are relevant to the user's question, include them in a separate sectio
             return "" 
             
         # 5. Construct Output (User Schema)
-        display_title = title if title else "Directory Links"
-        
-        out_lines = [f"[{display_title}]", f"ผู้เขียน: - | วันที่: -\n"] # Fill metadata if available/passed?
-        out_lines.append("บทความนี้เป็น “เมนูรวมลิงก์/ไฟล์” ยังไม่มีเนื้อหาให้สรุปโดยตรง")
-        # Removed hardcoded "เลือกหัวข้อที่เกี่ยวข้อง:" header (Phase 221 Fix)
-        # out_lines.append("เลือกหัวข้อที่เกี่ยวข้อง:\n")
+        out_lines = [f"### 🔗 **ลิงก์ที่เกี่ยวข้องจาก SMC:**"]
         out_lines.append("")
         
         for item in top_links:

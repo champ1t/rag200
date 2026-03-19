@@ -1,0 +1,136 @@
+[DEBUG_INTERNAL_START] _process_logic entered. q='ZTE-SW Command'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL] det_hit: {'url': 'http://10.192.133.33/smc/index.php?option=com_content&view=article&id=641:zte-sw-command&catid=43:2011-11-14-08-37-12&Itemid=81', 'title': 'ZTE-SW Command', 'score': 1.0, 'match_type': 'deterministic', 'article_type': 'OVERVIEW'}, type: <class 'dict'>
+[DEBUG_INTERNAL_START] _process_logic entered. q='ONU Command'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL] det_hit: {'url': 'http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=143', 'title': 'ตรวจสอบ ONU Event Log', 'score': 0.98, 'match_type': 'deterministic', 'article_type': 'OVERVIEW'}, type: <class 'dict'>
+[DEBUG_INTERNAL_START] _process_logic entered. q='NCS Command'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL_START] _process_logic entered. q='zte sw command'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL] det_hit: {'url': 'http://10.192.133.33/smc/index.php?option=com_content&view=article&id=641:zte-sw-command&catid=43:2011-11-14-08-37-12&Itemid=81', 'title': 'zte sw command', 'score': 1.0, 'match_type': 'deterministic', 'article_type': 'COMMAND_REFERENCE'}, type: <class 'dict'>
+[DEBUG_INTERNAL_START] _process_logic entered. q='config huawei'
+HARDENING THRESHOLD: 0.7
+[DEBUG_INTERNAL] det_hit: {'url': 'https://drive.google.com/file/d/1CcalfWaDpbQjeNtcWxKouCHEFA0R60N0/view?usp=sharing', 'title': 'How to checking Huawei 577K', 'score': 0.98, 'match_type': 'deterministic', 'article_type': 'OVERVIEW'}, type: <class 'dict'>
+[INFO] SMC Hardening ACTIVE. Policy: ['enabled', 'vendor_match', 'model_match', 'web_search_technical', 'fallback_chain', 'similarity_threshold', 'logging']
+[INFO] Enforcing Hardened Threshold: 0.7
+[INFO] Loading resources...
+[VectorStore] Using SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+[ProcessedCache] Loaded 14 aliases
+[ProcessedCache] Loading processed data from data/processed...
+[ProcessedCache] Found 144 files
+[ProcessedCache] Loaded 144 docs, 4371 links
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+[CHAT] warmup: model=llama3.2:3b base_url=http://localhost:11434
+[CHAT] LLM warmed up
+
+==================================================
+QUERY: ZTE-SW Command
+==================================================
+[GOVERNANCE] Identified Intent: COMMAND
+[GOVERNANCE] Request Category: TECH_ARTICLE_LOOKUP
+[FAST PATH] Title exact match compatible (OVERVIEW): ZTE-SW Command
+[WARN] Title fast-path check failed: 'title'
+[Deterministic] RULE 1: EXACT TITLE MATCH: 'ZTE-SW Command'
+[GOVERNANCE] Deterministic Match Found: ZTE-SW Command (1.00)
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=641:zte-sw-command&catid=43:2011-11-14-08-37-12&Itemid=81
+[GOVERNANCE] Phase 19: Precise Tech Match -> LINK_ONLY Overlap
+[AUDIT] 1770710624.742251 | Status: SUCCESS | Route: article_link_only_overlap | ArticleID: N/A | Reason: None
+ROUTE: article_link_only_overlap
+DECISION REASON: None
+LATENCY: 0.00ms
+--------------------
+ANSWER:
+[SMC Reference]
+🔗 [ZTE-SW Command](http://10.192.133.33/smc/index.php?option=com_content&view=article&id=641:zte-sw-command&catid=43:2011-11-14-08-37-12&Itemid=81)
+
+ข้อมูลทางเทคนิคมีความยาว แนะนำดูรายละเอียดทั้งหมดจากลิงก์ด้านบนครับ
+--------------------
+
+==================================================
+QUERY: ONU Command
+==================================================
+[GOVERNANCE] Identified Intent: COMMAND
+[GOVERNANCE] SMC Device Keyword Override: 'ONU Command' -> TECH_ARTICLE_LOOKUP
+[GOVERNANCE] Request Category: TECH_ARTICLE_LOOKUP
+[GOVERNANCE] Deterministic Match Found: ตรวจสอบ ONU Event Log (0.98)
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=143
+[GOVERNANCE] Phase 19: Overview Article as Command Index -> Forced LINK_ONLY
+[AUDIT] 1770710624.754132 | Status: SUCCESS | Route: article_link_only_index | ArticleID: N/A | Reason: None
+ROUTE: article_link_only_index
+DECISION REASON: None
+LATENCY: 0.00ms
+--------------------
+ANSWER:
+[SMC Reference]
+🔗 [ตรวจสอบ ONU Event Log](http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=143)
+
+บทความนี้เป็นดรรชนีรวมคำสั่ง แนะนำตรวจสอบคำสั่งที่ต้องการจากลิงก์ด้านบนครับ
+--------------------
+
+==================================================
+QUERY: NCS Command
+==================================================
+[GOVERNANCE] Identified Intent: COMMAND
+[GOVERNANCE] Request Category: NON_SMC_TECH
+[Deterministic] RULE 1: EXACT TITLE MATCH: 'Command NCS'
+[GOVERNANCE] FALLBACK OVERRIDE: Compatible SMC article found via keyword for 'NCS Command' -> Returning Link
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=644:command-ncs&catid=43:2011-11-14-08-37-12&Itemid=81
+[GOVERNANCE] Returning Link Only (Intent: FALLBACK_LINK_ONLY)
+[AUDIT] 1770710624.754873 | Status: SUCCESS | Route: article_answer | ArticleID: N/A | Reason: None
+ROUTE: article_answer
+DECISION REASON: None
+LATENCY: 0.00ms
+--------------------
+ANSWER:
+📌 **แหล่งข้อมูลหลัก (SMC):**
+🔗 [Command NCS](http://10.192.133.33/smc/index.php?option=com_content&view=article&id=644:command-ncs&catid=43:2011-11-14-08-37-12&Itemid=81)
+
+ต้องการให้สรุปรายละเอียดในหัวข้อไหน แจ้งได้เลยครับ
+--------------------
+
+==================================================
+QUERY: zte sw command
+==================================================
+[GOVERNANCE] Identified Intent: COMMAND
+[GOVERNANCE] Request Category: TECH_ARTICLE_LOOKUP
+[Deterministic] RULE 1: EXACT SLUG MATCH: 'zte sw command'
+[GOVERNANCE] Deterministic Match Found: zte sw command (1.00)
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=641:zte-sw-command&catid=43:2011-11-14-08-37-12&Itemid=81
+[GOVERNANCE] Phase 19: Precise Tech Match -> LINK_ONLY Overlap
+[AUDIT] 1770710624.7619798 | Status: SUCCESS | Route: article_link_only_overlap | ArticleID: N/A | Reason: None
+ROUTE: article_link_only_overlap
+DECISION REASON: None
+LATENCY: 0.00ms
+--------------------
+ANSWER:
+[SMC Reference]
+🔗 [ZTE-SW Command](http://10.192.133.33/smc/index.php?option=com_content&view=article&id=641:zte-sw-command&catid=43:2011-11-14-08-37-12&Itemid=81)
+
+ข้อมูลทางเทคนิคมีความยาว แนะนำดูรายละเอียดทั้งหมดจากลิงก์ด้านบนครับ
+--------------------
+
+==================================================
+QUERY: config huawei
+==================================================
+[GOVERNANCE] Identified Intent: CONFIG
+[GOVERNANCE] Request Category: TECH_ARTICLE_LOOKUP
+[GOVERNANCE] Deterministic Match Found: How to checking Huawei 577K (0.98)
+[DEBUG] News/Article Route -> https://drive.google.com/file/d/1CcalfWaDpbQjeNtcWxKouCHEFA0R60N0/view?usp=sharing
+[DEBUG] Cache Miss for https://drive.google.com/file/d/1CcalfWaDpbQjeNtcWxKouCHEFA0R60N0/view?usp=sharing -> Attempting Fetch (Strict Timeout)...
+[SMC GOVERNANCE] Fetch Failed: Status 404 -> MODE: LINK_ONLY
+[AUDIT] 1770710626.811894 | Status: SUCCESS | Route: article_link_only | ArticleID: N/A | Reason: None
+ROUTE: article_link_only
+DECISION REASON: None
+LATENCY: 0.00ms
+--------------------
+ANSWER:
+[SMC Reference]
+🔗 [How to checking Huawei 577K](https://drive.google.com/file/d/1CcalfWaDpbQjeNtcWxKouCHEFA0R60N0/view?usp=sharing)
+
+⚠️ **ไม่สามารถโหลดเนื้อหาได้:** ไม่พบหน้าเว็บ (404 Not Found)
+
+กรุณาคลิกลิงก์ด้านบนเพื่ออ่านโดยตรงจาก SMC ครับ
+--------------------

@@ -1,0 +1,116 @@
+============================================================
+EXPERT EXPLAINER — FINAL FREEZE TEST SUITE
+============================================================
+
+============================================================
+🔴 GROUP A — A1
+============================================================
+Query: วิธีชงกาแฟด้วย ONU
+❌ ERROR: A1 — Nonsense Procedure - HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 61] Connection refused"))
+
+============================================================
+🔴 GROUP A — A2
+============================================================
+Query: เอา ONU ไปทำอาหารได้มั้ย
+❌ ERROR: A2 — Non-network HOWTO - HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 61] Connection refused"))
+
+============================================================
+🔴 GROUP A — A3
+============================================================
+Query: ถ้าเอา ONU ไปต้ม จะเกิดอะไรขึ้น
+❌ ERROR: A3 — Mixed Nonsense - HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 61] Connection refused"))
+
+============================================================
+🟡 GROUP B — B1
+============================================================
+Query: ไฟ LOS แดงหมายถึงอะไร
+❌ ERROR: B1 — Symptom Explanation - HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 61] Connection refused"))
+
+============================================================
+🟡 GROUP B — B2
+============================================================
+Query: ไฟ Alarm กระพริบคืออะไร
+❌ ERROR: B2 — Alarm / Indicator - HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 61] Connection refused"))
+
+============================================================
+🟡 GROUP B — B3
+============================================================
+Query: ไฟ LOS แดง แก้ยังไง
+❌ ERROR: B3 — Troubleshooting Trap - HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 61] Connection refused"))
+
+============================================================
+🟢 GROUP C — C1
+============================================================
+Query: ONU คืออะไร
+❌ ERROR: C1 — Core Definition - HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 61] Connection refused"))
+
+============================================================
+🟢 GROUP C — C2
+============================================================
+Query: ONU ทำงานยังไง
+❌ ERROR: C2 — Conceptual Operation - HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 61] Connection refused"))
+
+============================================================
+🟢 GROUP C — C3
+============================================================
+Query: Fiber Optic ทำงานยังไง
+❌ ERROR: C3 — Related Concept - HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 61] Connection refused"))
+
+============================================================
+🔵 GROUP D — D1
+============================================================
+Query: วิธีตั้งค่า ONU Huawei ของ NT
+❌ ERROR: D1 — NT Procedure - HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 61] Connection refused"))
+
+============================================================
+🔵 GROUP D — D2
+============================================================
+Query: ขอคำสั่ง CLI เช็คไฟ LOS
+❌ ERROR: D2 — Command Request - HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 61] Connection refused"))
+
+============================================================
+🔵 GROUP D — D3
+============================================================
+Query: ขั้นตอนแก้ Fiber ขาดของ NT
+❌ ERROR: D3 — Internal Process - HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 61] Connection refused"))
+
+============================================================
+⚫ GROUP E — E1
+============================================================
+Query: ไฟ LOS แดงคืออะไร
+❌ ERROR: E1 — Context Seed - HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 61] Connection refused"))
+
+============================================================
+⚫ GROUP E — E2
+============================================================
+Query: แล้วต้องทำยังไงต่อ
+❌ ERROR: E2 — Drift Follow-up (Standalone) - HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 61] Connection refused"))
+
+============================================================
+⚫ GROUP E — E3
+============================================================
+Query: ช่วยแนะนำหน่อย
+❌ ERROR: E3 — Ambiguous Follow-up - HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /chat (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 61] Connection refused"))
+
+============================================================
+SUMMARY
+============================================================
+❌ FAIL: A1 — Nonsense Procedure
+❌ FAIL: A2 — Non-network HOWTO
+❌ FAIL: A3 — Mixed Nonsense
+❌ FAIL: B1 — Symptom Explanation
+❌ FAIL: B2 — Alarm / Indicator
+❌ FAIL: B3 — Troubleshooting Trap
+❌ FAIL: C1 — Core Definition
+❌ FAIL: C2 — Conceptual Operation
+❌ FAIL: C3 — Related Concept
+❌ FAIL: D1 — NT Procedure
+❌ FAIL: D2 — Command Request
+❌ FAIL: D3 — Internal Process
+❌ FAIL: E1 — Context Seed
+❌ FAIL: E2 — Drift Follow-up (Standalone)
+❌ FAIL: E3 — Ambiguous Follow-up
+
+Total: 0/15 tests passed
+
+⚠️ 15 TESTS FAILED

@@ -1,0 +1,213 @@
+[
+  {
+    "test_id": "TC-D1",
+    "name": "Exact Match (Canonical): 'ZTE-SW Command'",
+    "status": "❌ FAIL",
+    "errors": [
+      "Expected Link-Only route, got: error",
+      "No link emoji found in answer"
+    ],
+    "warnings": [],
+    "actual": {
+      "route": "error",
+      "audit": {},
+      "answer_preview": ""
+    },
+    "expected": {
+      "confidence_mode": "article_link_only_exact",
+      "link_present": true,
+      "decision_reason": "Contains 'Exact Match' or 'Forced LINK_ONLY'"
+    }
+  },
+  {
+    "test_id": "TC-D2",
+    "name": "Case Insensitive: 'zte-sw command'",
+    "status": "❌ FAIL",
+    "errors": [
+      "Expected Link-Only route, got: error"
+    ],
+    "warnings": [],
+    "actual": {
+      "route": "error",
+      "audit": {}
+    },
+    "expected": {}
+  },
+  {
+    "test_id": "TC-D3",
+    "name": "Space Normalize: 'zte sw command'",
+    "status": "❌ FAIL",
+    "errors": [
+      "Unexpected route: error"
+    ],
+    "warnings": [],
+    "actual": {
+      "route": "error"
+    },
+    "expected": {}
+  },
+  {
+    "test_id": "TC-D4",
+    "name": "Underscore Normalize: 'ZTE__SW__Command'",
+    "status": "❌ FAIL",
+    "errors": [],
+    "warnings": [
+      "normalized_query not found in audit"
+    ],
+    "actual": {
+      "route": "error",
+      "audit": {}
+    },
+    "expected": {}
+  },
+  {
+    "test_id": "TC-D5",
+    "name": "Extra Spaces: '   ZTE   SW    Command   '",
+    "status": "❌ FAIL",
+    "errors": [
+      "Trim/collapse failed: error"
+    ],
+    "warnings": [],
+    "actual": {
+      "route": "error"
+    },
+    "expected": {}
+  },
+  {
+    "test_id": "TC-O1",
+    "name": "Overview Index: 'ONU Command'",
+    "status": "❌ FAIL",
+    "errors": [],
+    "warnings": [
+      "Expected link-only for overview index, got: error"
+    ],
+    "actual": {
+      "route": "error",
+      "answer_preview": ""
+    },
+    "expected": {}
+  },
+  {
+    "test_id": "TC-O2",
+    "name": "Overview with COMMAND intent: 'คำสั่ง ONU'",
+    "status": "❌ FAIL",
+    "errors": [],
+    "warnings": [
+      "Intent should be ignored for overview: error"
+    ],
+    "actual": {
+      "route": "error"
+    },
+    "expected": {}
+  },
+  {
+    "test_id": "TC-L1",
+    "name": "Short Article: 'show power DE'",
+    "status": "❌ FAIL",
+    "errors": [],
+    "warnings": [
+      "Short article handling: error"
+    ],
+    "actual": {
+      "route": "error",
+      "audit": {}
+    },
+    "expected": {}
+  },
+  {
+    "test_id": "TC-L2",
+    "name": "Long Article: 'คำสั่ง ASR920-12GE'",
+    "status": "❌ FAIL",
+    "errors": [],
+    "warnings": [
+      "Long article route: error"
+    ],
+    "actual": {
+      "route": "error",
+      "answer_length": 0
+    },
+    "expected": {}
+  },
+  {
+    "test_id": "TC-L3",
+    "name": "Low Bullets: 'NCS Command'",
+    "status": "❌ FAIL",
+    "errors": [],
+    "warnings": [
+      "Command route: error"
+    ],
+    "actual": {
+      "route": "error"
+    },
+    "expected": {}
+  },
+  {
+    "test_id": "TC-S1",
+    "name": "Single Link: 'zte telnet to onu'",
+    "status": "✅ PASS",
+    "errors": [],
+    "warnings": [],
+    "actual": {
+      "route": "error",
+      "link_count": 0
+    },
+    "expected": {}
+  },
+  {
+    "test_id": "TC-S2",
+    "name": "Best Match Selection: 'Command NCS'",
+    "status": "❌ FAIL",
+    "errors": [],
+    "warnings": [],
+    "actual": {
+      "route": "error",
+      "audit": {}
+    },
+    "expected": {}
+  },
+  {
+    "test_id": "TC-G1",
+    "name": "No Match: 'Cisco OLT new command 2024'",
+    "status": "❌ FAIL",
+    "errors": [],
+    "warnings": [
+      "Non-SMC query route: error"
+    ],
+    "actual": {
+      "route": "error",
+      "answer_preview": ""
+    },
+    "expected": {}
+  },
+  {
+    "test_id": "TC-G2",
+    "name": "Near Match: 'ZTE Switch Commands'",
+    "status": "✅ PASS",
+    "errors": [],
+    "warnings": [],
+    "actual": {
+      "route": "error"
+    },
+    "expected": {}
+  },
+  {
+    "test_id": "TC-A1",
+    "name": "Audit Completeness Check",
+    "status": "❌ FAIL",
+    "errors": [
+      "Missing audit fields: ['normalized_query', 'matched_article_title', 'confidence_mode', 'decision_reason']"
+    ],
+    "warnings": [],
+    "actual": {
+      "audit_fields": []
+    },
+    "expected": {
+      "required_fields": [
+        "normalized_query",
+        "matched_article_title",
+        "confidence_mode",
+        "decision_reason"
+      ]
+    }
+  }
+]

@@ -1,0 +1,5 @@
+{"ts": 1766725890.7460248, "question": "ใครคือ ผส.บลตน.", "answer": "[ผส.บลตน.]\n- ชื่อ: คุณสมบูรณ์ เชาวน์ศิริวรกุล\n- Source: http://10.192.133.33/smc/index.php?option=com_content&view=article&id=60&Itemid=70", "route": "position_lookup", "latencies": {"routing": 0.2989768981933594, "total": 0.30303001403808594}}
+{"ts": 1766725896.724799, "question": "ขอลิงก์", "answer": "ลิงก์ข้อมูลสำหรับ ใครคือ ผส.บลตน.:\nURL: http://10.192.133.33/smc/index.php?option=com_content&view=article&id=60&Itemid=70", "route": "context_followup", "latencies": {}}
+{"ts": 1766725903.466673, "question": "ขอเบอร์", "answer": "เบอร์ติดต่อของ ใครคือ ผส.บลตน.:\n- 0893932263\n- 074251450", "route": "context_followup", "latencies": {}}
+{"ts": 1766725920.026031, "question": "ขออีเมล", "answer": "ขออภัย ระบบยังไม่มีข้อมูลอีเมลของ ใครคือ ผส.บลตน. ในขณะนี้", "route": "context_followup_miss", "latencies": {}}
+{"ts": 1766725939.628714, "question": "ขอe-mail", "answer": "ขออภัย ระบบยังไม่มีข้อมูลอีเมลของ ใครคือ ผส.บลตน. ในขณะนี้", "route": "context_followup_miss", "latencies": {}}

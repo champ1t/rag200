@@ -1,0 +1,228 @@
+{
+  "url": "http://10.192.133.33/smc/index.php?option=com_content&view=article&id=66:forth-mini-for-command&catid=43:2011-11-14-08-37-12&Itemid=81",
+  "title": "Forth Mini for command",
+  "text": " | Today | 108\n | Yesterday | 522\n | This week | 999\n | Last week | 95\n | This month | 1343\n | Last month | 415\n | All days | 610660\n\nWDM (แนะนำIE)\nTemplate ZTE FTTX v.3 (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=149)\nTemplate for PE,APE,LPE (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=163)\nConvert ASR920 To NCS (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=111)\nGet IP IPPhone (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=153)\nตรวจสอบ ONU Event Log (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=143)\nTemplate Extreme (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=133)\n\nนราธิวาส NMS (http://10.192.39.50/)\nสุราษฎร์ NMS (https://totsni.com/network)\n\n1.การ command DSL-VPN สำหรับ Forth-Mini ตัวอย่าง กรณีมีการ stack 2 ตัว และจะ config ลูกค้า วงจร 7454ID004 ที่ตำแหน่ง slot 2 port 40 vlan 682 >>set to slot1 create vlan static vlanname  7454ID004_vpn vlanid 682 egressports 385 386 untaggedports none  bridgingmode restricted >>set slot2 create vlan static vlanname 7454ID004_vpn vlanid 682 egressports 40 385 untaggedports 40 bridgingmode restricted >>map vlan to prot modify gvrp port info  portvlanid 682 ingressfiltering true portid 40 **คำสั่งดูสถานะ port $ get gvrp port info portid 1 $ get adsl line intf ifname dsl-36 $ get bridge port intf portid 36 2.การ command Learning disable port 385 modify bridge port intf portid 385 learning disable modify bridge port intf portid 386 learning enable 3.การ set speed ลุกค้า กรรี set speed (6/512M) port 1 modify adsl line profile atucintlmaxtxrate 0x5dc000 ifname dsl-0 modify adsl line profile aturintlmaxtxrate 0x7d000 ifname dsl-0 4.การ แปลง เลขฐาน 10 เป็น ฐาน 16 512=0x7d000 1M=0xfa000 2M=0x1f4000 4M=0x3e8000 6M=0x5dc000 8M=0x7d0000 9M=0x8ca000 12M=0xbb8000 14M=0xdac000 7168=0x6D6000 640=0x9C400 5.การทำ 1 mac 1 port กรณี ทำที่ port 26 get bridge port intf portid 26 modify bridge port intf portid 26 status disable modify bridge port intf portid 26 maxucast 1 modify bridge port intf portid 26 status enable 6.การทำ PVC 1/41 และ config DSL-VPN กำหนด  VLAN  2392  ที่ PORT 14  โดยกำหนด  VP/VC = 1/41 create atm vc intf ifname  aal5-61  lowif atm-13 vpi 1 vci 34 create eoa intf ifname  eoa-61  lowif  aal5-61 create bridge port intf ifname eoa-61  portid 62 learning enable status enable create vlan static vlanname ICTWIFI vlanid 2392  egressports  62  385  untaggedports  62 modify gvrp port info portid  62 portvlanid 2392 ingressfiltering true ________________________ 7. เปลี่ยน ip node $get ethernet intf $modify ethernet intf ifname eth-0 ip (10.255.81.65) mask (255.255.255.0) | 1.การ command DSL-VPN สำหรับ Forth-Mini ตัวอย่าง กรณีมีการ stack 2 ตัว และจะ config ลูกค้า วงจร 7454ID004 ที่ตำแหน่ง slot 2 port 40 vlan 682 >>set to slot1 create vlan static vlanname  7454ID004_vpn vlanid 682 egressports 385 386 untaggedports none  bridgingmode restricted >>set slot2 create vlan static vlanname 7454ID004_vpn vlanid 682 egressports 40 385 untaggedports 40 bridgingmode restricted >>map vlan to prot modify gvrp port info  portvlanid 682 ingressfiltering true portid 40 **คำสั่งดูสถานะ port $ get gvrp port info portid 1 $ get adsl line intf ifname dsl-36 $ get bridge port intf portid 36 2.การ command Learning disable port 385 modify bridge port intf portid 385 learning disable modify bridge port intf portid 386 learning enable 3.การ set speed ลุกค้า กรรี set speed (6/512M) port 1 modify adsl line profile atucintlmaxtxrate 0x5dc000 ifname dsl-0 modify adsl line profile aturintlmaxtxrate 0x7d000 ifname dsl-0 4.การ แปลง เลขฐาน 10 เป็น ฐาน 16 512=0x7d000 1M=0xfa000 2M=0x1f4000 4M=0x3e8000 6M=0x5dc000 8M=0x7d0000 9M=0x8ca000 12M=0xbb8000 14M=0xdac000 7168=0x6D6000 640=0x9C400 5.การทำ 1 mac 1 port กรณี ทำที่ port 26 get bridge port intf portid 26 modify bridge port intf portid 26 status disable modify bridge port intf portid 26 maxucast 1 modify bridge port intf portid 26 status enable 6.การทำ PVC 1/41 และ config DSL-VPN กำหนด  VLAN  2392  ที่ PORT 14  โดยกำหนด  VP/VC = 1/41 create atm vc intf ifname  aal5-61  lowif atm-13 vpi 1 vci 34 create eoa intf ifname  eoa-61  lowif  aal5-61 create bridge port intf ifname eoa-61  portid 62 learning enable status enable create vlan static vlanname ICTWIFI vlanid 2392  egressports  62  385  untaggedports  62 modify gvrp port info portid  62 portvlanid 2392 ingressfiltering true ________________________ 7. เปลี่ยน ip node $get ethernet intf $modify ethernet intf ifname eth-0 ip (10.255.81.65) mask (255.255.255.0)\n1.การ command DSL-VPN สำหรับ Forth-Mini ตัวอย่าง กรณีมีการ stack 2 ตัว และจะ config ลูกค้า วงจร 7454ID004 ที่ตำแหน่ง slot 2 port 40 vlan 682 >>set to slot1 create vlan static vlanname  7454ID004_vpn vlanid 682 egressports 385 386 untaggedports none  bridgingmode restricted >>set slot2 create vlan static vlanname 7454ID004_vpn vlanid 682 egressports 40 385 untaggedports 40 bridgingmode restricted >>map vlan to prot modify gvrp port info  portvlanid 682 ingressfiltering true portid 40 **คำสั่งดูสถานะ port $ get gvrp port info portid 1 $ get adsl line intf ifname dsl-36 $ get bridge port intf portid 36 2.การ command Learning disable port 385 modify bridge port intf portid 385 learning disable modify bridge port intf portid 386 learning enable 3.การ set speed ลุกค้า กรรี set speed (6/512M) port 1 modify adsl line profile atucintlmaxtxrate 0x5dc000 ifname dsl-0 modify adsl line profile aturintlmaxtxrate 0x7d000 ifname dsl-0 4.การ แปลง เลขฐาน 10 เป็น ฐาน 16 512=0x7d000 1M=0xfa000 2M=0x1f4000 4M=0x3e8000 6M=0x5dc000 8M=0x7d0000 9M=0x8ca000 12M=0xbb8000 14M=0xdac000 7168=0x6D6000 640=0x9C400 5.การทำ 1 mac 1 port กรณี ทำที่ port 26 get bridge port intf portid 26 modify bridge port intf portid 26 status disable modify bridge port intf portid 26 maxucast 1 modify bridge port intf portid 26 status enable 6.การทำ PVC 1/41 และ config DSL-VPN กำหนด  VLAN  2392  ที่ PORT 14  โดยกำหนด  VP/VC = 1/41 create atm vc intf ifname  aal5-61  lowif atm-13 vpi 1 vci 34 create eoa intf ifname  eoa-61  lowif  aal5-61 create bridge port intf ifname eoa-61  portid 62 learning enable status enable create vlan static vlanname ICTWIFI vlanid 2392  egressports  62  385  untaggedports  62 modify gvrp port info portid  62 portvlanid 2392 ingressfiltering true ________________________ 7. เปลี่ยน ip node $get ethernet intf $modify ethernet intf ifname eth-0 ip (10.255.81.65) mask (255.255.255.0)\n\n1.การ command DSL-VPN สำหรับ Forth-Mini ตัวอย่าง กรณีมีการ stack 2 ตัว และจะ config ลูกค้า วงจร 7454ID004 ที่ตำแหน่ง slot 2 port 40 vlan 682 >>set to slot1 create vlan static vlanname  7454ID004_vpn vlanid 682 egressports 385 386 untaggedports none  bridgingmode restricted >>set slot2 create vlan static vlanname 7454ID004_vpn vlanid 682 egressports 40 385 untaggedports 40 bridgingmode restricted >>map vlan to prot modify gvrp port info  portvlanid 682 ingressfiltering true portid 40 **คำสั่งดูสถานะ port $ get gvrp port info portid 1 $ get adsl line intf ifname dsl-36 $ get bridge port intf portid 36 2.การ command Learning disable port 385 modify bridge port intf portid 385 learning disable modify bridge port intf portid 386 learning enable 3.การ set speed ลุกค้า กรรี set speed (6/512M) port 1 modify adsl line profile atucintlmaxtxrate 0x5dc000 ifname dsl-0 modify adsl line profile aturintlmaxtxrate 0x7d000 ifname dsl-0 4.การ แปลง เลขฐาน 10 เป็น ฐาน 16 512=0x7d000 1M=0xfa000 2M=0x1f4000 4M=0x3e8000 6M=0x5dc000 8M=0x7d0000 9M=0x8ca000 12M=0xbb8000 14M=0xdac000 7168=0x6D6000 640=0x9C400 5.การทำ 1 mac 1 port กรณี ทำที่ port 26 get bridge port intf portid 26 modify bridge port intf portid 26 status disable modify bridge port intf portid 26 maxucast 1 modify bridge port intf portid 26 status enable 6.การทำ PVC 1/41 และ config DSL-VPN กำหนด  VLAN  2392  ที่ PORT 14  โดยกำหนด  VP/VC = 1/41 create atm vc intf ifname  aal5-61  lowif atm-13 vpi 1 vci 34 create eoa intf ifname  eoa-61  lowif  aal5-61 create bridge port intf ifname eoa-61  portid 62 learning enable status enable create vlan static vlanname ICTWIFI vlanid 2392  egressports  62  385  untaggedports  62 modify gvrp port info portid  62 portvlanid 2392 ingressfiltering true ________________________ 7. เปลี่ยน ip node $get ethernet intf $modify ethernet intf ifname eth-0 ip (10.255.81.65) mask (255.255.255.0)\n\n\nForth Mini for command\nศูนย์ปฏิบัติการระบบสื่อสารข้อมูล (สบลตน.) (http://10.192.133.33/smc/)\nService Management Center(SMC)\nหน้าหลัก (http://10.192.133.33/smc/)\nผส.บลตน. (http://10.192.133.33/smc/index.php?option=com_content&view=article&id=60&Itemid=70)\nผจ.สบลตน. (http://10.192.133.33/smc/index.php?option=com_content&view=article&id=56&Itemid=60)\nข่าวสาร SMC (http://10.192.133.33/smc/index.php?option=com_content&view=category&id=49&Itemid=84)\nความรู้ (http://10.192.133.33/smc/index.php?option=com_content&view=category&id=43&Itemid=81)\nบุคลากร SMC (http://10.192.133.33/smc/index.php?option=com_content&view=article&id=59&Itemid=64)\nเบอร์หน่วยงานต่างๆ (http://10.192.133.33/smc/index.php?option=com_content&view=article&id=64&Itemid=61)\nผู้ดูแลระบบ (http://10.192.133.33/smc/index.php?option=com_content&view=article&id=57&Itemid=59)\nศูนย์ สลภก.3\nLink ที่เกี่ยวข้อง\nEdocument (https://ntedoc.intra.ntplc.co.th/doc/homepage-doc)\nNT Academy(e-Learning) (https://lms.ntplc.co.th/)\nIntranet NT (https://intranet.ntplc.co.th/)\nE-Mail NT (https://mail.ntplc.co.th/)\nWeb HR (https://webhr.ntplc.co.th/)\nกองทุนสำรองฯ (https://pvd.mfcfund.com/auth/login)\nSMC Extension Dashboard (http://192.168.99.200:8080/)\nSMC AI (http://192.168.99.200:8999/)\nToday\n108\nYesterday\n522\nThis week\n999\nLast week\n95\nThis month\n1343\nLast month\n415\nAll days\n610660\nWe have: 100 guests online\nYour IP:: 10.192.133.253\n,\nToday: ธ.ค. 24, 2025\nVisitors Counter (http://vinaora.com)\nชื่อผู้ใช้\nรหัสผ่าน\nจำข้อมูลการเข้าสู่ระบบ\nลืมรหัสผ่าน? (http://10.192.133.33/smc/index.php?option=com_user&view=reset)\nลืมชื่อเข้าใช้งาน? (http://10.192.133.33/smc/index.php?option=com_user&view=remind)\nลงทะเบียน (http://10.192.133.33/smc/index.php?option=com_user&view=register)\nTemplate\nWDM (แนะนำIE)\nTemplate ZTE FTTX v.3 (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=149)\nTemplate for PE,APE,LPE (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=163)\nConvert ASR920 To NCS (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=111)\nGet IP IPPhone (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=153)\nตรวจสอบ ONU Event Log (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=143)\nTemplate Extreme (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=133)\nลิงค์ภายใต้ ภก.3\nนราธิวาส NMS (http://10.192.39.50/)\nสุราษฎร์ NMS (https://totsni.com/network)\nProject ปรับปรุงตรวจแก้คืนดี ภก.3\n1.การ command DSL-VPN สำหรับ Forth-Mini\nตัวอย่าง กรณีมีการ stack 2 ตัว และจะ config ลูกค้า\nวงจร\n7454ID004\nที่ตำแหน่ง slot 2 port\n40\nvlan\n682\n>>set to slot1\ncreate vlan static vlanname  7454ID004_vpn vlanid 682 egressports 385 386 untaggedports none  bridgingmode restricted\n>>set slot2\ncreate vlan static vlanname 7454ID004_vpn vlanid 682 egressports 40 385 untaggedports 40 bridgingmode restricted\n>>map vlan to prot\nmodify gvrp port info  portvlanid 682 ingressfiltering true portid 40\n**คำสั่งดูสถานะ port\n$ get gvrp port info portid 1\n$ get adsl line intf ifname dsl-36\n$ get bridge port intf portid 36\n2.การ command Learning disable port 385\nmodify bridge port intf portid 385 learning disable\nmodify bridge port intf portid 386 learning enable\n3.การ set speed ลุกค้า\nกรรี set speed (6/512M) port 1\nmodify adsl line profile atucintlmaxtxrate 0x5dc000 ifname dsl-0\nmodify adsl line profile aturintlmaxtxrate 0x7d000 ifname dsl-0\n4.การ แปลง เลขฐาน 10 เป็น ฐาน 16\n512=0x7d000\n1M=0xfa000\n2M=0x1f4000\n4M=0x3e8000\n6M=0x5dc000\n8M=0x7d0000\n9M=0x8ca000\n12M=0xbb8000\n14M=0xdac000\n7168=0x6D6000\n640=0x9C400\n5.การทำ 1 mac 1 port\nกรณี ทำที่ port 26\nget bridge port intf portid 26\nmodify bridge port intf portid 26 status disable\nmodify bridge port intf portid 26 maxucast 1\nmodify bridge port intf portid 26 status enable\n6.การทำ PVC 1/41 และ config DSL-VPN\nกำหนด  VLAN  2392  ที่ PORT 14  โดยกำหนด  VP/VC = 1/41\ncreate atm vc intf ifname  aal5-61  lowif atm-13 vpi 1 vci 34\ncreate eoa intf ifname  eoa-61  lowif  aal5-61\ncreate bridge port intf ifname eoa-61  portid 62 learning enable status enable\ncreate vlan static vlanname ICTWIFI vlanid 2392  egressports  62  385  untaggedports  62\nmodify gvrp port info portid  62 portvlanid 2392 ingressfiltering true\n________________________\n7. เปลี่ยน ip node\n$get ethernet intf\n$modify ethernet intf ifname eth-0 ip (10.255.81.65) mask (255.255.255.0)\nJoomla 1.5 Templates by Joomlashack (http://www.joomlashack.com)",
+  "content_type": "general",
+  "content_hash": "c330796a44be87333da2cbe04dcb6e4e1d2b152eefc574e988f4a58f1b060fd5",
+  "links": [
+    {
+      "text": "ศูนย์ปฏิบัติการระบบสื่อสารข้อมูล (สบลตน.)",
+      "href": "http://10.192.133.33/smc/"
+    },
+    {
+      "text": "หน้าหลัก",
+      "href": "http://10.192.133.33/smc/"
+    },
+    {
+      "text": "ผส.บลตน.",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=article&id=60&Itemid=70"
+    },
+    {
+      "text": "ผจ.สบลตน.",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=article&id=56&Itemid=60"
+    },
+    {
+      "text": "ข่าวสาร SMC",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=category&id=49&Itemid=84"
+    },
+    {
+      "text": "ความรู้",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=category&id=43&Itemid=81"
+    },
+    {
+      "text": "บุคลากร SMC",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=article&id=59&Itemid=64"
+    },
+    {
+      "text": "เบอร์หน่วยงานต่างๆ",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=article&id=64&Itemid=61"
+    },
+    {
+      "text": "ผู้ดูแลระบบ",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=article&id=57&Itemid=59"
+    },
+    {
+      "text": "Edocument",
+      "href": "https://ntedoc.intra.ntplc.co.th/doc/homepage-doc"
+    },
+    {
+      "text": "NT Academy(e-Learning)",
+      "href": "https://lms.ntplc.co.th/"
+    },
+    {
+      "text": "Intranet NT",
+      "href": "https://intranet.ntplc.co.th/"
+    },
+    {
+      "text": "E-Mail NT",
+      "href": "https://mail.ntplc.co.th/"
+    },
+    {
+      "text": "Web HR",
+      "href": "https://webhr.ntplc.co.th/"
+    },
+    {
+      "text": "กองทุนสำรองฯ",
+      "href": "https://pvd.mfcfund.com/auth/login"
+    },
+    {
+      "text": "SMC Extension Dashboard",
+      "href": "http://192.168.99.200:8080/"
+    },
+    {
+      "text": "SMC AI",
+      "href": "http://192.168.99.200:8999/"
+    },
+    {
+      "text": "Visitors Counter",
+      "href": "http://vinaora.com"
+    },
+    {
+      "text": "ลืมรหัสผ่าน?",
+      "href": "http://10.192.133.33/smc/index.php?option=com_user&view=reset"
+    },
+    {
+      "text": "ลืมชื่อเข้าใช้งาน?",
+      "href": "http://10.192.133.33/smc/index.php?option=com_user&view=remind"
+    },
+    {
+      "text": "ลงทะเบียน",
+      "href": "http://10.192.133.33/smc/index.php?option=com_user&view=register"
+    },
+    {
+      "text": "Template ZTE FTTX v.3",
+      "href": "http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=149"
+    },
+    {
+      "text": "Template for PE,APE,LPE",
+      "href": "http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=163"
+    },
+    {
+      "text": "Convert ASR920 To NCS",
+      "href": "http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=111"
+    },
+    {
+      "text": "Get IP IPPhone",
+      "href": "http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=153"
+    },
+    {
+      "text": "ตรวจสอบ ONU Event Log",
+      "href": "http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=143"
+    },
+    {
+      "text": "Template Extreme",
+      "href": "http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=133"
+    },
+    {
+      "text": "นราธิวาส NMS",
+      "href": "http://10.192.39.50/"
+    },
+    {
+      "text": "สุราษฎร์ NMS",
+      "href": "https://totsni.com/network"
+    },
+    {
+      "text": "Joomla 1.5 Templates by Joomlashack",
+      "href": "http://www.joomlashack.com"
+    }
+  ],
+  "images": [
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/0.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/0.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/0.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/6.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/1.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/0.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/6.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/6.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/0.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vtoday.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vyesterday.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vweek.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vlweek.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vmonth.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vlmonth.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vall.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/images/stories/pvc.jpg",
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/plugins/editors/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-laughing.gif",
+      "alt": "Laughing",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/plugins/editors/tinymce/jscripts/tiny_mce/plugins/emotions/img/smiley-laughing.gif",
+      "alt": "Laughing",
+      "caption": ""
+    }
+  ],
+  "processed_at": 1767588472.105973,
+  "raw_file": "data/raw/10.192.133.33_smc_index.php_option_com_content_view_article_id_66_forth-mini-for-command_catid_43_2011-11-14-08-37-12_Itemid_81.html"
+}

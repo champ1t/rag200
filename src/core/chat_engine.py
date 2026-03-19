@@ -139,6 +139,7 @@ class ProcessedCache:
         
         # Load Aliases from data/aliases.json (Phase 7.1)
         alias_path = Path("data/aliases.json")
+        self.aliases = {}
         if alias_path.exists():
             with open(alias_path, "r", encoding="utf-8") as f:
                 self.aliases = json.load(f)
@@ -170,6 +171,10 @@ class ProcessedCache:
         t = re.sub(r"[\-_]", " ", t)
         # Collapse all whitespace sequences to single space
         t = re.sub(r"\s+", " ", t)
+        # Phase 230: Handle Spacing in common tech terms
+        t = t.replace("route mode", "routemode")
+        t = t.replace("set up", "setup")
+        
         return t.strip()
 
     def normalize_for_matching(self, text: str) -> str:
@@ -189,13 +194,18 @@ class ProcessedCache:
         th_noise = [
             "ผม", "หนู", "เรา", "พี่", "น้อง", "เขา", "มัน", # Pronouns
             "จะ", "อยาก", "ต้องการ", "ช่วย", "บอก", "ขอ", # Verbs/Intent
-            "หน่อย", "ครับ", "ค่ะ", "นะ", "จ๊ะ", "จ้า", "อ่ะ", "ว่ะ", "ดิ", # Particles
-            "บน", "ที่", "ใน", "ของ", "กับ", # Prepositions
-            "แล้ว", "เอ่อ", "อืม", "หา", "เจอ", # Fillers
+            "หน่อย", "ครับ", "ค่ะ", "นะ", "จ๊ะ", "จ้า", "อ่ะ", "ว่ะ", "ดิ", "ดิ๊", # Particles
+            "บน", "ที่", "ใน", "ของ", "กับ", "เป็น", "คือ", # Prepositions/Linkers
+            "แล้ว", "เอ่อ", "อืม", "หา", "เจอ", "ยังไง", "บ้าง", # Fillers
+            "ใคร", "ไหน", "มี", "ว่า", "อะไร", "พวก", "ทีม", "พิกัด", "ตำแหน่ง",
+            "ติดต่อ", "เบอร์", "โทร", "ปรับ", "ตั้งค่า", "เซ็ต", "วิธี", "ขั้นตอน",
+            "รบกวน", "สรุป", "ขอ", "ได้", "มา", "เข้า", "ลิงก์", "ลิงค์", "ตัว",
+            "ฝ่าย",
+            "config", "setup", "tutorial", "manual", "เกี่ยวกับ"
         ]
         for n in th_noise:
-            # Match whole words to avoid prefix accidental stripping
-            t = re.sub(rf'\b{n}\b', ' ', t)
+            # Thai specific: often no spaces, so try direct substitution too
+            t = t.replace(n, " ").strip()
             # Thai specific: often no spaces, so try direct substitution too for unambiguous ones
             if len(n) >= 2:
                 t = t.replace(n, " ")
@@ -204,6 +214,12 @@ class ProcessedCache:
         noise = ["how to", "how", "วิธี", "config", "configuration", "คำสั่ง", "command", "manual", "คู่มือ", "guide", "basic", "พื้นฐาน", "syntax", "cmd"]
         for n in noise:
             t = t.replace(n, " ")
+            
+        # Phase 230: Handle Spacing & Tech Synonyms
+        t = t.replace("route mode", "routemode")
+        t = t.replace("set up", "setup")
+        t = t.replace("ยูอาร์แอล", "url")
+        t = t.replace("ยูอาร์เอล", "url")
             
         # Collapse spaces
         t = re.sub(r"\s+", " ", t).strip()
@@ -464,7 +480,7 @@ class ProcessedCache:
     def load(self):
         print(f"[ProcessedCache] Loading processed data from {self.processed_dir}...")
         
-        files = list(self.processed_dir.glob("*.json"))
+        files = list(self.processed_dir.rglob("*.json"))
         print(f"[ProcessedCache] Found {len(files)} files")
         
         for fp in files:
@@ -647,7 +663,7 @@ class ChatEngine:
              self.hardening_threshold = float(self.hardening_policy.get("similarity_threshold"))
              print(f"[INFO] Enforcing Hardened Threshold: {self.hardening_threshold}")
         else:
-             self.hardening_threshold = 0.70 # Default hard
+             self.hardening_threshold = 0.45 # Reduced for flexibility
 
         
         self.top_k = int(cfg["retrieval"]["top_k"])
@@ -1241,13 +1257,19 @@ class ChatEngine:
                 "ตั้งค่า", "คู่มือ", "กำหนดค่า",          # Thai config
             ],
             "HOWTO": [
-                "วิธี", "ขั้นตอน", "ทำยังไง", "ทำอย่างไร",  # Thai how-to
+                "วิธี", "ขั้นตอน", "ทำยังไง", "ทำอย่างไร",  
                 "how to", "how-to", "แนะนำขั้นตอน",
                 "reset", "reboot", "restart", "install", "เพิ่ม", "ลบ",
             ],
+            "POSITION_LOOKUP": [
+                "ใครคือ", "ใครรับผิดชอบ", "หน้าที", "ภารกิจ", "เป็นใคร", "ผู้จัดการ", "ผจ.", "สมาชิก"
+            ],
+            "CONTACT_LOOKUP": [
+                "เบอร์โทร", "เบอร์", "โทรศัพท์", "ติดต่อ", "เบอร์ติดต่อ"
+            ],
             "TROUBLESHOOT": [
                 "error", "problem", "fail", "debug", "logs", "monitor",
-                "ปัญหา", "แก้", "ไม่ได้", "ไม่ทำงาน",       # Thai troubleshoot
+                "ปัญหา", "แก้", "ไม่ได้", "ไม่ทำงาน",
                 "ขัดข้อง", "หลุด", "ล่ม", "ใช้ไม่ได้",
             ],
             "PROTOCOL": [
@@ -1255,7 +1277,11 @@ class ChatEngine:
             ],
             "OVERVIEW": [
                 "overview", "spec", "what is", "introduction", "feature",
-                "คืออะไร", "หมายถึงอะไร", "ทำหน้าที่อะไร",   # Thai overview
+                "คืออะไร", "คือใคร", "เกี่ยวกับ", "สรุป", "ภาพรวม",
+                "หมายถึงอะไร", "ทำหน้าที่อะไร",
+            ],
+            "REFERENCE_LINK": [
+                "url", "link", "ลิ้ง", "ลิงก์", "ขอลิ้ง", "เว็บไซต์"
             ],
         }
         
@@ -1272,8 +1298,11 @@ class ChatEngine:
         """
         # Phase 19 - Rule 1: EXACT MATCH OVERRIDE (Highest Priority)
         # Score >= 0.95 or is_exact=True bypasses all compatibility gates
-        if is_exact or (query and any(article_type.lower() == t for t in ["overview", "command_reference"])):
-             # We allow it, but _handle_article_route will decide if it needs to be LINK_ONLY
+        if is_exact:
+             return True
+        
+        # Rule Overlays for loosely matched overviews
+        if (query and any(article_type.lower() == t for t in ["overview", "command_reference"])):
              return True
 
         q_lower = query.lower()
@@ -2174,39 +2203,56 @@ class ChatEngine:
                     article = self.processed_cache._normalized_title_index[q_norm_title]
                 elif q_soft_title in self.processed_cache._soft_normalized_title_index:
                     article = self.processed_cache._soft_normalized_title_index[q_soft_title]
+                
+                # Phase 230: Keyword Intersection Match (Subset)
+                # If query keywords subset of title keywords -> Match
+                if not article:
+                    q_words = set(q_norm_title.split())
+                    if len(q_words) >= 1:
+                        for t_norm, art in self.processed_cache._normalized_title_index.items():
+                             t_words = set(t_norm.split())
+                             if q_words.issubset(t_words):
+                                 article = art; break
                     
                 if article:
                     art_type = article.get("article_type", "OVERVIEW")
                     is_soft = (q_soft_title == self.processed_cache.soft_normalize(article['text']))
                     self.soft_deterministic_hit = is_soft
-
-                    # ============================================================
-                    # SMART SKIP: Menu/Collection Page Detection
-                    # ============================================================
-                    # Skip Fast Path ONLY for menu/collection pages
-                    # All other exact matches → Fast Path (Link Only) ✅
-                    
                     menu_skip_patterns = ["ต่างๆ", "รวม", "เมนู", "ทั้งหมด", "หลายๆ", "index"]
-                    article_title_lower = article['text'].lower()
-                    is_menu_page = any(p in article_title_lower for p in menu_skip_patterns)
-                    
-                    if is_menu_page:
-                        print(f"[FAST PATH] Menu page detected: '{article['text']}' - Skipping Fast Path")
-                        # Continue to content analysis
-                    # Phase 15/17: Compatibility for Fast Path (Exact = True)
-                    elif self._is_article_compatible(query_intent, art_type, q, is_exact=True):
-                        print(f"[FAST PATH] Title match compatible ({art_type}): {article['text']} (Soft={is_soft})")
-                        res = self._handle_article_route(
-                            url=article["href"],
-                            query=q,
-                            latencies={"title_match": 0.0},
-                            start_time=t_start,
-                            match_score=1.0,
-                            intent="DETERMINISTIC_MATCH",
-                            article_type=art_type,
-                            decision_reason=f"Soft-normalized exact match" if is_soft else f"Fast-path exact title match: {article['text']}"
-                        )
-                        return res
+
+                    # Skip Fast Path ONLY for menu/collection pages
+                    # Phase 236: Contact Priority Check (Fast Path)
+                    CONTACT_KEYWORDS_PRIORITY = {"เบอร์", "ติดต่อ", "phone", "โทร", "อีเมล", "fax"}
+                    is_contact_related = (
+                        any(kw in q.lower() for kw in CONTACT_KEYWORDS_PRIORITY) or 
+                        query_intent in ["CONTACT_LOOKUP", "PERSON_LOOKUP", "TEAM_LOOKUP"]
+                    )
+
+                    if is_contact_related and art_type == "OVERVIEW":
+                        print(f"[FAST PATH] Skipping OVERVIEW article '{article['text']}' for contact-related query.")
+                        article = None # Force skip fast path
+
+                    if article:
+                        article_title_lower = article['text'].lower()
+                        is_menu_page = any(p in article_title_lower for p in menu_skip_patterns)
+                        
+                        if is_menu_page:
+                            print(f"[FAST PATH] Menu page detected: '{article['text']}' - Skipping Fast Path")
+                            # Continue to content analysis
+                        # Phase 15/17: Compatibility for Fast Path (Exact = True)
+                        elif self._is_article_compatible(query_intent, art_type, q, is_exact=True):
+                            print(f"[FAST PATH] Title match compatible ({art_type}): {article['text']} (Soft={is_soft})")
+                            res = self._handle_article_route(
+                                url=article["href"],
+                                query=q,
+                                latencies={"title_match": 0.0},
+                                start_time=t_start,
+                                match_score=1.0,
+                                intent="DETERMINISTIC_MATCH",
+                                article_type=art_type,
+                                decision_reason=f"Soft-normalized exact match" if is_soft else f"Fast-path exact title match: {article['text']}"
+                            )
+                            return res
                     else:
                         print(f"[FAST PATH] Incompatible match ({art_type}) for intent ({query_intent}). Skipping fast path.")
         except Exception as e:
@@ -2220,6 +2266,10 @@ class ChatEngine:
             "PERSON_LOOKUP",
             "MANAGEMENT_LOOKUP",
             "POSITION_HOLDER_LOOKUP",
+            "OVERVIEW", # Added by instruction
+            "POSITION_LOOKUP", # Added by instruction
+            "TEAM_LOOKUP", # Added by instruction
+            "KNOWLEDGE", # Added by instruction
             "HOWTO_PROCEDURE",
             "HOWTO",           # From _classify_intent Thai patterns
             "COMMAND",         # From _classify_intent
@@ -2341,17 +2391,17 @@ class ChatEngine:
                              }
                          }
                      
-                     # CRITICAL FIX 4: Contact Priority Check
-                     # If query has contact keywords (phone, email, etc), skip article route
-                     # and let contact handler process it instead
-                     CONTACT_KEYWORDS_PRIORITY = {"เบอร์", "ติดต่อ", "phone", "โทร", "อีเมล", "email", "fax", "แฟกซ์", "โทรสาร"}
+                     # Phase 236: Contact Priority Check
+                     CONTACT_KEYWORDS_PRIORITY = {"เบอร์", "ติดต่อ", "phone", "โทร", "อีเมล", "fax"}
                      q_lower_priority = q.lower()
-                     has_contact_keyword = any(kw in q_lower_priority for kw in CONTACT_KEYWORDS_PRIORITY)
+                     is_contact_related = (
+                         any(kw in q_lower_priority for kw in CONTACT_KEYWORDS_PRIORITY) or 
+                         query_intent in ["CONTACT_LOOKUP", "PERSON_LOOKUP", "TEAM_LOOKUP", "POSITION_LOOKUP"]
+                     )
                      
-                     if has_contact_keyword:
-                         print(f"[CRITICAL FIX 4] Contact keyword detected in '{q}' -> Skipping article route, routing to CONTACT domain")
-                         # Don't return article, continue to contact handler
-                         det_hit = None  # Clear det_hit to force contact routing
+                     if is_contact_related:
+                         print(f"[GOVERNANCE] Contact keyword/intent detected ('{q}') -> Forcing contact-handler search")
+                         det_hit = None 
                      else:
                          print(f"[GOVERNANCE] Deterministic Match Found: {det_hit['title']} ({det_hit['score']:.2f})")
                          # Phase 21: Track if soft match for decision reason
@@ -2363,7 +2413,7 @@ class ChatEngine:
                              latencies={"deterministic": 0.0},
                              start_time=t_start,
                              match_score=det_hit["score"],
-                             intent="DETERMINISTIC_MATCH",
+                             intent=query_intent if query_intent == "REFERENCE_LINK" else "DETERMINISTIC_MATCH",
                              article_type=art_type,
                              decision_reason=f"Exact title match found: {article_title}" if is_exact and not self.soft_deterministic_hit else (f"Soft-normalized exact match" if self.soft_deterministic_hit else f"High-score deterministic match: {article_title}")
                          )
@@ -2599,8 +2649,25 @@ class ChatEngine:
             print(f"[DEBUG] [STEP 3] Menu choice detected -> Skipping SafeNormalizer")
             shape_analysis = {"confidence": 0} 
         elif intent_locked in ["CONTACT_LOOKUP", "POSITION_LOOKUP"]:
-            print(f"[DEBUG] [STEP 19.1] Structured domain ({intent_locked}) -> Skipping SafeNormalizer (deterministic flow)")
-            shape_analysis = {"confidence": 0, "intent": intent_locked}
+            # [SMART-MODE] Stop skipping SafeNormalizer. Let LLM clean noise.
+            analysis = self.safe_normalizer.analyze(q)
+            q_proc = analysis.get("canonical_query", q)
+            
+            # [SAFETY LAYER] Extra regex check for directory noise
+            import re
+            # Strip initial "เบอร์/ขอ/หา" and trailing "มา/หน่อย/นะครับ"
+            q_proc = re.sub(r"^(ขอเบอร์|ขอ|เบอร์|ติดต่อ|หาเบอร์|ช่วยหาเบอร์|เบอร์โทร|ขอเบอร์ติดต่อ|ติดต่อเบอร์)", "", q_proc).strip()
+            q_proc = re.sub(r"(มา|หน่อย|ครับ|ค่ะ|นะ|จ๊ะ|ด้วย|ดิ|ดิ๊|ดิ้|ที|มาให้|ให้หน่อย|มาให้หน่อย)$", "", q_proc).strip()
+            
+            if not q_proc or len(q_proc.strip()) < 2:
+                q_proc = q
+            
+            print(f"[DEBUG] [STEP 19.1] Structured domain ({intent_locked}) -> Normalized via LLM & Regex: '{q_proc}'")
+            shape_analysis = analysis.copy()
+            shape_analysis["intent"] = intent_locked
+            # [CRITICAL FIX] Update the analysis object so later steps don't overwrite q
+            shape_analysis["canonical_query"] = q_proc
+            q = q_proc 
         else:
             # Fallback path (Heuristic / SafeNormalizer)
             shape_analysis = self.safe_normalizer.analyze(q)
@@ -2874,7 +2941,7 @@ class ChatEngine:
                           "latencies": latencies
                       }
                   return {
-                      "answer": ("🔒 **ขออภัยครับ ระบบไม่สามารถแสดงรหัสผ่าน ONT ได้เนื่องจากนโยบายความปลอดภัย**\n\n📌 **คำแนะนำ**:\n- รหัสผ่าน ONT เป็นข้อมูลเฉพาะของแต่ละพื้นที่/ชุมสาย\n- กรุณาติดต่อ **ทีม OMC ประจำเขต** หรือเปิด Ticket พร้อมระบุ **รุ่นและ Node** ที่ต้องการ"),
+                      "answer": ("🔒 **ขออภัยครับ ระบบไม่สามารถแสดงรหัสผ่าน ONT ได้เนื่องจากนโยบายความปลอดภัย**\n\n**คำแนะนำ**:\n- รหัสผ่าน ONT เป็นข้อมูลเฉพาะของแต่ละพื้นที่/ชุมสาย\n- กรุณาติดต่อ **ทีม OMC ประจำเขต** หรือเปิด Ticket พร้อมระบุ **รุ่นและ Node** ที่ต้องการ"),
                       "route": "rag_security_guided",
                       "latencies": latencies
                   }
@@ -2890,7 +2957,7 @@ class ChatEngine:
              # General Block
              if has_sec_kw and is_target_risk:
                  return {
-                     "answer": ("🔒 **ขออภัยครับ ระบบไม่สามารถแสดงรหัสผ่านได้เนื่องจากนโยบายความปลอดภัย (Security Policy)**\n\n📌 **ช่องทางดำเนินการที่แนะนำ**: ติดต่อทีม **NOC/OMC** หรือเปิด Ticket ตามระเบียบปฏิบัติ"),
+                     "answer": ("🔒 **ขออภัยครับ ระบบไม่สามารถแสดงรหัสผ่านได้เนื่องจากนโยบายความปลอดภัย (Security Policy)**\n\n**ช่องทางดำเนินการที่แนะนำ**: ติดต่อทีม **NOC/OMC** หรือเปิด Ticket ตามระเบียบปฏิบัติ"),
                      "route": "rag_security_guided",
                      "latencies": latencies
                  }
@@ -2904,12 +2971,14 @@ class ChatEngine:
         is_broad = is_broad_query(q_clean_for_guard)
         print(f"[DEBUG] Guard C: Query='{q_clean_for_guard}' is_broad={is_broad}")
         
-        if not is_broad and ((len(q_clean_for_guard.split()) == 1 and len(q_clean_for_guard) < 15 and q_clean_for_guard.isalpha() and q_clean_for_guard not in ["hi", "hello", "test", "ping"]) or q_clean_for_guard in ambiguous_terms):
-             return {
-                 "answer": f"คำค้นหา '{q}' กว้างเกินไปครับ กรุณาระบุให้ชัดเจน เช่น '{q} เบอร์โทร' หรือ 'วิธีแก้ปัญหา {q}'",
-                 "route": "contact_ambiguous",
-                 "latencies": latencies
-             }
+        # Bypass Guard C if we already know the user wants a contact (intent is CONTACT_LOOKUP)
+        if not is_broad and intent_locked != "CONTACT_LOOKUP" and query_intent != "CONTACT_LOOKUP":
+             if ((len(q_clean_for_guard.split()) == 1 and len(q_clean_for_guard) < 15 and q_clean_for_guard.isalpha() and q_clean_for_guard not in ["hi", "hello", "test", "ping"]) or q_clean_for_guard in ambiguous_terms):
+                  return {
+                      "answer": f"คำค้นหา '{q}' กว้างเกินไปครับ กรุณาระบุให้ชัดเจน เช่น '{q} เบอร์โทร' หรือ 'วิธีแก้ปัญหา {q}'",
+                      "route": "contact_ambiguous",
+                      "latencies": latencies
+                  }
 
 
 
@@ -3460,18 +3529,21 @@ class ChatEngine:
         if intent == "MANAGEMENT_LOOKUP":
              print("[DEBUG] Handling MANAGEMENT_LOOKUP logic")
              result = self.directory_handler.handle_management_query(q)
-             result["latencies"] = latencies
              
-             # Phase 80: Capture Ambiguity
-             if result.get("route") == "management_ambiguous" and result.get("candidates"):
-                 self.pending_question = {
-                     "kind": "management_choice",
-                     "candidates": result["candidates"],
-                     "original_query": result.get("original_query", q),
-                     "created_at": time.time()
-                 }
-                 
-             return result
+             if result.get("route") == "position_miss":
+                 print("[DEBUG] MANAGEMENT_LOOKUP missed in directory. Falling back to RAG.")
+                 intent = "OVERVIEW" # Discard the override and let semantic search find the article
+             else:
+                 result["latencies"] = latencies
+                 # Phase 80: Capture Ambiguity
+                 if result.get("route") == "management_ambiguous" and result.get("candidates"):
+                     self.pending_question = {
+                         "kind": "management_choice",
+                         "candidates": result["candidates"],
+                         "original_query": result.get("original_query", q),
+                         "created_at": time.time()
+                     }
+                 return result
 
         # 1.0c POSITION_HOLDER_LOOKUP (Phase 49)
 
@@ -3487,14 +3559,21 @@ class ChatEngine:
         if intent == "POSITION_HOLDER_LOOKUP":
              print("[DEBUG] Handling POSITION_HOLDER_LOOKUP logic")
              result = self.directory_handler.handle_position_holder(q)
-             result["latencies"] = latencies
              
-             # Capture pending action from handler
-             if result.get("pending_action"):
-                 self.pending_question = result["pending_action"]
-                 self.pending_question["created_at"] = time.time()
+             # [SMART FALLBACK] If not found in directory, allow it to fall through to RAG 
+             # because people names are now inside React overview articles.
+             if result.get("route") == "position_miss":
+                 print("[DEBUG] POSITION_HOLDER_LOOKUP missed in directory. Falling back to RAG.")
+                 intent = "OVERVIEW" # Discard the override and let semantic search find the article
+             else:
+                 result["latencies"] = latencies
                  
-             return result
+                 # Capture pending action from handler
+                 if result.get("pending_action"):
+                     self.pending_question = result["pending_action"]
+                     self.pending_question["created_at"] = time.time()
+                     
+                 return result
 
         # 1.0d TEAM_LOOKUP or ASSET (Phase 69/Stabilize)
         # Priority: If it's an asset request, handle it via Team Lookup logic (for links)
@@ -3502,34 +3581,20 @@ class ChatEngine:
              print(f"[DEBUG] Handling {intent} logic (is_asset={is_asset_request})")
              result = self.directory_handler.handle_team_lookup(q, is_asset=is_asset_request)
              
-             # Phase 80: Capture Ambiguity
-             if result.get("route") == "team_ambiguous" and result.get("candidates"):
-                 self.pending_question = {
-                     "kind": "team_choice",
-                     "candidates": result["candidates"],
-                     "original_query": q,
-                     "created_at": time.time()
-                 }
-                 
-             # Phase 72: Demotion / Re-Routing
-             if result.get("route") == "team_demoted":
-                 print("[DEBUG] Team Lookup Demoted -> Redirecting to HOWTO_PROCEDURE")
-                 # Fall through to HOWTO logic? 
-                 # Or explicitly call it.
-                 # Since HOWTO logic is BELOW, we can just change `intent` and FALL THROUGH?
-                 # BUT HOWTO logic is at priority 1.06 (Line 706)?
-                 # Wait, line 706 is AFTER this block? No, checking indices.
-                 # My previous `view_file` showed HOWTO at line 706.
-                 # `TEAM_LOOKUP` is at line 612.
-                 # So yes, HOWTO is BELOW.
-                 # So I can just set `intent = "HOWTO_PROCEDURE"` and let it fall through?
-                 # BUT the `if` clauses are `if intent == ...`.
-                 # They are not `elif`.
-                 # Let's verify structure.
-                 intent = "HOWTO_PROCEDURE"
-                 # Fall through to next if block
+             if result.get("route") in ["position_miss", "team_miss"]:
+                 print(f"[DEBUG] {intent} missed in directory. Falling back to RAG.")
+                 intent = "OVERVIEW" # Discard the override and let semantic search find the article
              else:
                  result["latencies"] = latencies
+                 
+                 # Phase 80: Capture Ambiguity
+                 if result.get("route") == "team_ambiguous" and result.get("candidates"):
+                     self.pending_question = {
+                         "kind": "team_choice",
+                         "candidates": result["candidates"],
+                         "original_query": result.get("original_query", q),
+                         "created_at": time.time()
+                     }
                  return result
 
         # 1.05 NEWS_SEARCH Handler (Phase 35)
@@ -4187,57 +4252,40 @@ class ChatEngine:
                 if session_id and session_id != "default":
                     context_manager.save_session_context(session_id, new_context)
             
-            # Fallback to RAG if Contact Handler misses (e.g. support phone in an article)
-            if res.get("route") == "contact_miss":
-                # Policy: contact_lookup.no_kill_switch
-                # If true, allow RAG fallback? Original code Logic says "Strict Kill-Switch (No RAG)".
-                # Let's check the policy.
-                # User config: guided_fallback_on_miss: true, no_kill_switch: true
-                # If no_kill_switch is TRUE, we SHOULD fall through or try something else?
-                # User Point 2 for Contact says "no_kill_switch: true" in sample,
-                # BUT "strict kill-switch" logic was requested in previous phase (135).
-                # Wait, Point 2 sample says: "ขอเบอร์ทั้งหมดของหาดใหญ่ → ต้อง guided fallback (ไม่ MISS)"
-                # My `contact_lookup` policy in file says:
-                # contact_lookup:
-                #   guided_fallback_on_miss: true
-                #   no_kill_switch: true
-                
-                # So if no_kill_switch is True, we should NOT return contact_miss_strict IMMEDIATELY?
-                # However, the user request says "Phase 135: Kill-Switch (No RAG Fallback)".
-                # The "Bridge Port", "North Flood" cases imply we WANT strict behavior for numbers.
-                # BUT "Bridge Port" (config) -> Article.
-                # "Hat Yai" -> Guided Fallback.
-                
-                # Let's implement Guided Fallback here as per Policy.
-                no_kill = self.routing_policy.get("contact_lookup", {}).get("no_kill_switch", False)
-                guided = self.routing_policy.get("contact_lookup", {}).get("guided_fallback_on_miss", False)
+            # Fallback to RAG if Contact Handler misses (signals fallback_to_rag)
+            if res.get("fallback_to_rag"):
+                 print("[DEBUG] Contact Miss -> Soft Fallback to RAG (continuing execution)")
+                 # Intent can be changed to KNOWLEDGE or kept as is (RAG is intent-agnostic)
+                 # We skip return to allow falling through to RAG block
+                 pass
+            elif res.get("route") == "contact_miss":
+                 # Policy: contact_lookup.no_kill_switch
+                 no_kill = self.routing_policy.get("contact_lookup", {}).get("no_kill_switch", False)
+                 guided = self.routing_policy.get("contact_lookup", {}).get("guided_fallback_on_miss", False)
 
-                if guided:
-                     print("[DEBUG] Contact Miss -> Attempting Guided Fallback (Policy)")
-                     # Try to suggest teams in that area?
-                     # For now, return a helpful message instead of generic miss
-                     # Or stick to strict miss but with better message?
-                     return {
-                         "answer": "ไม่พบข้อมูลเบอร์โทรศัพท์ที่ระบุโดยตรง\n\nคำแนะนำ:\n- ระบุชื่อหน่วยงานให้ชัดเจน (เช่น 'ส่วนงาน...')\n- ระบุชื่อบุคคล (เช่น 'คุณสมชาย')",
-                         "route": "contact_miss_guided",
-                         "latencies": latencies,
-                         "hits": []
-                     }
+                 if guided:
+                      print("[DEBUG] Contact Miss -> Attempting Guided Fallback (Policy)")
+                      return {
+                          "answer": "ไม่พบข้อมูลเบอร์โทรศัพท์ที่ระบุโดยตรง\n\nคำแนะนำ:\n- ระบุชื่อหน่วยงานให้ชัดเจน (เช่น 'ส่วนงาน...')\n- ระบุชื่อบุคคล (เช่น 'คุณสมชาย')",
+                          "route": "contact_miss_guided",
+                          "latencies": latencies,
+                          "hits": []
+                      }
 
-                print("[DEBUG] Contact Handler Miss -> Strict Kill-Switch (No RAG).")
-                return {
-                     "answer": "ไม่พบข้อมูลเบอร์โทรศัพท์/หน่วยงานที่ระบุในระบบสมุดโทรศัพท์ (กรุณาระบุชื่อหน่วยงาน/พื้นที่ให้ชัดเจน)",
-                     "route": "contact_miss_strict",
-                     "latencies": latencies,
-                     "hits": []
-                }
+                 print("[DEBUG] Contact Handler Miss -> Strict Kill-Switch (No RAG).")
+                 return {
+                      "answer": "ไม่พบข้อมูลเบอร์โทรศัพท์/หน่วยงานที่ระบุในระบบสมุดโทรศัพท์ (กรุณาระบุชื่อหน่วยงาน/พื้นที่ให้ชัดเจน)",
+                      "route": "contact_miss_strict",
+                      "latencies": latencies,
+                      "hits": []
+                 }
             else:
-                return {
-                    "answer": res.get("answer"),
-                    "route": res.get("route"),
-                    "latencies": latencies,
-                    "hits": res.get("hits")
-                }
+                 return {
+                     "answer": res.get("answer"),
+                     "route": res.get("route"),
+                     "latencies": latencies,
+                     "hits": res.get("hits")
+                 }
 
         # 1.2 PERSON_LOOKUP (Roles/WhoIs)
         # 1.2 PERSON_LOOKUP (Roles/WhoIs)
@@ -4524,9 +4572,8 @@ class ChatEngine:
                   # Step 12: Fallback Stability Rule (Low Confidence Guard)
                   # Phase R2-Fix: Relax threshold for Technical intents. 
                   top_r_score = results[0].score if results else 0.0
-                  
-                  is_technical = intent in ["HOWTO_PROCEDURE", "CONFIG", "TROUBLESHOOT"]
-                  dynamic_threshold = 0.60 if is_technical else 0.75
+                  is_technical = intent in ["HOWTO_PROCEDURE", "CONFIG", "TROUBLESHOOT", "POSITION_LOOKUP", "CONTACT_LOOKUP", "TEAM_LOOKUP", "OVERVIEW"]
+                  dynamic_threshold = 0.60 if is_technical else 0.65
                   
                   if 0.0 < top_r_score < dynamic_threshold:
                        print(f"[STEP 12] Low Confidence Triggered (Score {top_r_score:.4f} < {dynamic_threshold})")
@@ -4611,8 +4658,8 @@ class ChatEngine:
 
             # Step 12: Fallback Stability Rule (Low Confidence Guard)
             # Phase R2-Fix: Match dynamic threshold from Step 12
-            is_tech_final = intent in ["HOWTO_PROCEDURE", "CONFIG", "TROUBLESHOOT"]
-            final_threshold = 0.60 if is_tech_final else 0.75
+            is_tech_final = intent in ["HOWTO_PROCEDURE", "CONFIG", "TROUBLESHOOT", "POSITION_LOOKUP", "CONTACT_LOOKUP", "TEAM_LOOKUP", "OVERVIEW"]
+            final_threshold = 0.60 if is_tech_final else 0.65
 
             if top_score < final_threshold:
                  print(f"[STEP 8] Low Confidence Fallback Triggered (Score={top_score:.4f})")
@@ -5091,7 +5138,10 @@ class ChatEngine:
                     }
                 )
                 
-                if not classification["should_summarize"]:
+                # Check if user explicitly asked for a summary or specific details (Who/Duty/etc)
+                is_summary_requested = any(k in q.lower() for k in ["สรุป", "summary", "ใคร", "รายชื่อ", "หน้าที่", "รับผิดชอบ", "list", "ทุก"])
+                
+                if not classification["should_summarize"] and not is_summary_requested:
                     # Content is not suitable for summarization (LINK_MENU, IMAGE_ONLY, TABLE_HEAVY)
                     print(f"[DEBUG] Content Type: {classification['content_type']}. Forcing LINK_ONLY mode.")
                     
@@ -5208,7 +5258,7 @@ class ChatEngine:
         # Phase R6: Bypass Verification for General Fallback
         # If we already decided to show a "General Knowledge" answer (Concept Tier), 
         # we don't want the strict Verifier to reject it because it lacks internal evidence.
-        if self.evaluator and ans and not is_refusal and not is_general_fallback:
+        if self.evaluator and ans and not is_refusal and not is_general_fallback and gen_intent != "SUMMARIZE_HYBRID":
              t_eval = time.time()
              eval_res = self.evaluator.verify(q, [r.text for r in valid_results], ans)
              latencies["evaluator"] = (time.time() - t_eval) * 1000
@@ -5263,7 +5313,7 @@ class ChatEngine:
                       top_url = list(unique_sources.keys())[0]
                       top_title = unique_sources[top_url]
                       # Bold Top Header with Link
-                      ans = f"📌 **แหล่งข้อมูลหลัก:** [{top_title}]({top_url})\n\n" + ans
+                      ans = f"📎 **แหล่งข้อมูลหลัก:** [{top_title}]({top_url})\n\n" + ans
                       ans += f"\n\n---"
                       ans += f"\n**ตรวจสอบข้อมูลเพิ่มเติม:** เพื่อความถูกต้องแม่นยำที่สุด กรุณาอ่านรายละเอียดจากลิงก์ต้นฉบับครับ"
                  else:
@@ -5531,7 +5581,7 @@ class ChatEngine:
                 print(f"[STEP 3] FALLBACK_LINK_ONLY + {content_type} -> Non-Summarizable Explanation")
                 return {
                     "answer": (
-                        f"📌 **แหล่งข้อมูลหลัก (SMC):**\n"
+                        f"📎 **แหล่งข้อมูลหลัก (SMC):**\n"
                         f"🔗 [{article_title}]({self.normalize_smc_url(url)})\n\n"
                         f"เอกสารนี้เป็นข้อมูลเชิง{type_label} ซึ่งไม่เหมาะสำหรับการสรุปโดยอัตโนมัติ\n\n"
                         f"กรุณาดูรายละเอียดจากเอกสารต้นฉบับด้านบนครับ"
@@ -5547,7 +5597,7 @@ class ChatEngine:
             print(f"[GOVERNANCE] Returning Link Only (Intent: {intent})")
             return {
                 "answer": (
-                    f"📌 **แหล่งข้อมูลหลัก (SMC):**\n"
+                    f"📎 **แหล่งข้อมูลหลัก (SMC):**\n"
                     f"🔗 [{article_title}]({self.normalize_smc_url(url)})\n\n"
                     f"ต้องการให้สรุปรายละเอียดในหัวข้อไหน แจ้งได้เลยครับ"
                 ),
@@ -5592,14 +5642,14 @@ class ChatEngine:
                  ans = self.normalize_smc_url(clean_junk_text(l2_hit["answer"]))
                  
                  # Phase 18: SINGLE CANONICAL LINK RULE + Footer Cleanup
-                 canonical_header = f"📌 **แหล่งข้อมูลหลัก (SMC):**\n🔗 [{l2_hit.get('metadata', {}).get('title', 'SMC Article')}]({self.normalize_smc_url(url)})\n\n"
+                 canonical_header = f"📎 **เอกสารอ้างอิง:** [{l2_hit.get('metadata', {}).get('title', 'SMC Article')}]({self.normalize_smc_url(url)})\n\n"
                  
                  # Clean previous footers from cached answer
                  clean_ans = ans
                  for f in ["แหล่งที่มา:", "---", "ตรวจสอบข้อมูลเพิ่มเติม:"]:
                      if f in clean_ans: clean_ans = clean_ans.split(f)[0].strip()
                  
-                 final_ans = canonical_header + clean_ans + "\n\nตรวจสอบข้อมูลเพิ่มเติมจากลิงก์ SMC ต้นฉบับ"
+                 final_ans = canonical_header + clean_ans + "\n\n📤 ตรวจสอบข้อมูลเพิ่มเติมจากลิงก์ SMC ต้นฉบับ"
 
                  return {
                       "answer": final_ans,
@@ -5720,7 +5770,7 @@ class ChatEngine:
             print(f"[GOVERNANCE] Phase 21: {reason}")
             return {
                 "answer": (
-                    f"📌 **แหล่งข้อมูลหลัก (SMC):**\n"
+                    f"📎 **แหล่งข้อมูลหลัก (SMC):**\n"
                     f"🔗 [{article_title}]({self.normalize_smc_url(url)})\n\n"
                     f"พบข้อมูลที่ตรงกับคำค้นหาของคุณโดยละเอียด แนะนำดูรายละเอียดทั้งหมดจากลิงก์ด้านบนครับ"
                 ),
@@ -5756,7 +5806,7 @@ class ChatEngine:
             latencies["total"] = (time.time() - start_time) * 1000
             return {
                 "answer": (
-                    f"📌 **แหล่งข้อมูลหลัก (SMC):**\n"
+                    f"📎 **แหล่งข้อมูลหลัก (SMC):**\n"
                     f"🔗 [{article_title}]({self.normalize_smc_url(url)})\n\n"
                     f"เอกสารนี้เป็นข้อมูลเชิง{type_label} ซึ่งไม่เหมาะสำหรับการสรุปโดยอัตโนมัติ\n\n"
                     f"กรุณาดูรายละเอียดจากเอกสารต้นฉบับด้านบนครับ"
@@ -5779,7 +5829,7 @@ class ChatEngine:
             latencies["total"] = (time.time() - start_time) * 1000
             return {
                 "answer": (
-                    f"📌 **แหล่งข้อมูลหลัก (SMC):**\n"
+                    f"📎 **แหล่งข้อมูลหลัก (SMC):**\n"
                     f"🔗 [{article_title}]({self.normalize_smc_url(url)})\n\n"
                     f"บทความนี้เป็นหน้ารวมข้อมูล กรุณาเลือกหัวข้อที่สนใจจากลิงก์ด้านบนครับ"
                 ),
@@ -5795,6 +5845,11 @@ class ChatEngine:
         
         # 3. Call Interpreter (with LLM latency tracking)
         images = self.processed_cache._url_to_images.get(url, [])
+        
+        # New: Auto-detect visual request (Phase 241)
+        visual_triggers = ["รูป", "ภาพ", "วิดีโอ", "ตัวอย่าง", "ผัง", "แผนภูมิ", "ตาราง", "image", "photo", "diagram", "video", "figure", "table", "chart"]
+        is_visual_req = any(t in query.lower() for t in visual_triggers)
+        
         t_llm_start = time.time()
         interpreter_res = self.article_interpreter.interpret(
             user_query=query,
@@ -5802,9 +5857,9 @@ class ChatEngine:
             article_url=url,
             article_content=article_content,
             images=images,
-            show_images=False,
+            show_images=is_visual_req,
             match_score=match_score,
-            intent=article_type if article_type else intent
+            intent=intent if intent in ["POSITION_LOOKUP", "CONTACT_LOOKUP", "TEAM_LOOKUP", "REFERENCE_LINK"] else (article_type if article_type else intent)
         )
         t_llm_elapsed = (time.time() - t_llm_start) * 1000
         latencies["llm"] = round(t_llm_elapsed, 2)
@@ -5828,11 +5883,16 @@ class ChatEngine:
         else:
             low_context = paragraphs < 3 and bullets < 2 and content_type != "command_reference"
         
-        if low_context:
+        # Phase 242: Content Preservation Rule
+        # If we have images/tables, the AI should NOT be forced to LINK_ONLY just because text is short.
+        # This keeps the "intelligence" alive for visual queries like "SFP sample".
+        # Expanded check: Also look for markdown images ![] in the LLM answer itself or if it's a visual request.
+        has_images_in_ans = "![" in ans_data or "<img" in ans_data
+        if low_context and not images and not has_images_in_ans and not is_visual_req and "ตาราง" not in ans_data:
             print(f"[GOVERNANCE] Phase 21: Low-Context Detected (P={paragraphs}, B={bullets}, extractive={is_extractive}) -> Forced LINK_ONLY")
             return {
                  "answer": (
-                     f"📌 **แหล่งข้อมูลหลัก (SMC):**\n"
+                     f"📎 **แหล่งข้อมูลหลัก (SMC):**\n"
                      f"🔗 [{article_title}]({self.normalize_smc_url(url)})\n\n"
                      f"บทความนี้มีข้อมูลเชิงเทคนิคหรือสั้นเกินไป แนะนำตรวจสอบรายละเอียดจากต้นฉบับครับ"
                  ),
@@ -5865,7 +5925,7 @@ class ChatEngine:
         
         # 4. FINAL NORMALIZATION
         ans_data = self.normalize_smc_url(clean_junk_text(ans_data))
-        canonical_header = f"📌 **แหล่งข้อมูลหลัก (SMC):**\n🔗 [{article_title}]({self.normalize_smc_url(url)})\n\n"
+        canonical_header = f"📎 **เอกสารอ้างอิง:** [{article_title}]({self.normalize_smc_url(url)})\n\n"
         
         # Remove any existing headers/footers in ans_data
         clean_ans = ans_data
@@ -5880,10 +5940,27 @@ class ChatEngine:
                   # FIX: Explicitly remove disclaimer from clean_ans to prevent duplication
                   clean_ans = parts[0].strip()
         
+        # Phase 248: Preserve visual content during normalization
+        # Some markers like "แหล่งที่มา:" are used by LLMs but might appear BEFORE our images.
+        preserved_visuals = ""
+        if "🖼️" in clean_ans:
+             v_parts = clean_ans.split("🖼️")
+             if len(v_parts) > 1:
+                  preserved_visuals = "\n\n🖼️" + v_parts[1]
+                  clean_ans = v_parts[0].strip()
+
         for f in ["แหล่งที่มา:", "---", "ตรวจสอบข้อมูลเพิ่มเติม:", "📌 **แหล่งข้อมูลหลัก", "[SMC Reference]"]:
-            if f in clean_ans: clean_ans = clean_ans.split(f)[0].strip()
+            if f in clean_ans: 
+                 clean_ans = clean_ans.split(f)[0].strip()
         
-        final_ans = canonical_header + clean_ans + disclaimer_text + "\n\nตรวจสอบข้อมูลเพิ่มเติมจากลิงก์ SMC ต้นฉบับ"
+        # Re-append preserved visuals before the final footer
+        final_ans = (
+             canonical_header + 
+             clean_ans + 
+             preserved_visuals + 
+             disclaimer_text + 
+             "\n\n📤 ตรวจสอบข้อมูลเพิ่มเติมจากลิงก์ SMC ต้นฉบับ"
+        )
 
 
         # FIX 2: MANDATORY AUDIT - Ensure decision_reason is NEVER None

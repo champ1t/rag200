@@ -1,0 +1,127 @@
+[
+    {
+        "id": "C001",
+        "query": "sbc",
+        "expected": "AMBIGUOUS"
+    },
+    {
+        "id": "C002",
+        "query": "ip phone sbc",
+        "expected": "IP-Phone SBC"
+    },
+    {
+        "id": "C003",
+        "query": "bras",
+        "expected": "BRAS TOT"
+    },
+    {
+        "id": "C004",
+        "query": "omc hy",
+        "expected": "ศูนย์ OMC หาดใหญ่"
+    },
+    {
+        "id": "C005",
+        "query": "network",
+        "expected": "AMBIGUOUS"
+    },
+    {
+        "id": "C006",
+        "query": "admin",
+        "expected": "ผู้ดูแลระบบ"
+    },
+    {
+        "id": "C007",
+        "query": "manager",
+        "expected": "ผจ.สบลตน."
+    },
+    {
+        "id": "C008",
+        "query": "helpdesk",
+        "expected": "HelpDesk"
+    },
+    {
+        "id": "C009",
+        "query": "bras tot",
+        "expected": "BRAS TOT"
+    },
+    {
+        "id": "C010",
+        "query": "ip network",
+        "expected": "IP Network"
+    },
+    {
+        "id": "C011",
+        "query": "tacac",
+        "expected": "TACACS"
+    },
+    {
+        "id": "C012",
+        "query": "tacacs",
+        "expected": "TACACS"
+    },
+    {
+        "id": "C013",
+        "query": "omc sockhla",
+        "expected": "ศูนย์ OMC สงขลา"
+    },
+    {
+        "id": "C014",
+        "query": "hatyai",
+        "expected": "AMBIGUOUS"
+    },
+    {
+        "id": "C015",
+        "query": "xyz123",
+        "expected": "REJECT"
+    },
+    {
+        "id": "C016",
+        "query": "ราคาโปรโมชั่น",
+        "expected": "REJECT"
+    },
+    {
+        "id": "C017",
+        "query": "install",
+        "expected": "REJECT"
+    },
+    {
+        "id": "C018",
+        "query": "core",
+        "expected": "AMBIGUOUS"
+    },
+    {
+        "id": "C019",
+        "query": "noc",
+        "expected": "NOC"
+    },
+    {
+        "id": "C020",
+        "query": "call center",
+        "expected": "Call Center"
+    },
+    {
+        "id": "C021",
+        "query": "1177",
+        "expected": "Call Center"
+    },
+    {
+        "id": "C022",
+        "query": "ip-phone sbv",
+        "expected": "IP-Phone SBC"
+    },
+    {
+        "id": "C023",
+        "query": "bras tott",
+        "expected": "BRAS TOT"
+    },
+    {
+        "id": "C024",
+        "query": "omc hty",
+        "expected": "ศูนย์ OMC หาดใหญ่"
+    },
+    {
+        "id": "C025",
+        "query": "network op",
+        "expected": "NOC"
+    }
+]

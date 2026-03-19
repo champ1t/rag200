@@ -1,0 +1,41 @@
+INFO:     Started server process [6860]
+INFO:     Waiting for application startup.
+INFO:API:Initializing ChatEngine...
+[INFO] Loading resources...
+INFO:chromadb.telemetry.product.posthog:Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+INFO:numexpr.utils:NumExpr defaulting to 8 threads.
+INFO:datasets:PyTorch version 2.9.1 available.
+INFO:datasets:Duckdb version 1.4.3 available.
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+INFO:chromadb.telemetry.product.posthog:Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+INFO:API:ChatEngine Ready!
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8003 (Press CTRL+C to quit)
+INFO:API:Processing query: TR069 CWMP Setting (Session: tr069_test_174_audit)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: how-to/config/fix steps for TR069 CWMP
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  6.62it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  6.61it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.96it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.95it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 54.94it/s]
+[DEBUG] HowTo Link Match: 'TR069 CWMP Setting' -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=636:tr069-cwmp-seting&catid=49:-smc&Itemid=84 (Score: 0.9714285714285714)
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=636:tr069-cwmp-seting&catid=49:-smc&Itemid=84
+[DEBUG] Cache Key: article_summary|http://10.192.133.33/smc/index.php?option=com_content&view=article&id=636:tr069-cwmp-seting&catid=49:-smc&Itemid=84|TR069 CWMP Setting|v174|fmt:True|pre:True
+[DEBUG] Fingerprint: bcc8db7110b16912a3eda26c9430a5af
+[DEBUG] article_content type: <class 'str'>
+[ArticleInterpreter] is_tutorial_mode: False
+[ArticleInterpreter] Phase 173 Check (Pre-Type A). UX Config: {'enable_formatting': True, 'direct_content_preview': True, 'max_nav_links': 5}
+[ArticleInterpreter] Phase 173: Using Direct Content Preview
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 71.23it/s]
+INFO:API:AUDIT session=tr069_test_174_audit route=article_answer latency=3129.7ms choices=0 user=champ1t
+INFO:     127.0.0.1:52585 - "POST /chat HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:API:Shutting down...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [6860]
+/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/lib/python3.13/multiprocessing/resource_tracker.py:324: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-6860-0z1xxeq3'}
+  warnings.warn(

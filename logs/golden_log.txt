@@ -1,0 +1,100 @@
+F
+======================================================================
+FAIL: test_all_golden_queries (__main__.TestGoldenQueries.test_all_golden_queries)
+Iterate and verify all defined golden queries.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/testing/test_golden_queries.py", line 194, in test_all_golden_queries
+    self.fail("\n\n" + "\n----------------\n".join(failures))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 
+
+Query 'เบอร์ผส.บลตน' FAILED:
+ - Bad Route: Expected ['contact_hit_role', 'position_holder_hit'], got 'position_miss'
+ - Missing required text: 'ตำแหน่ง:'
+ - Missing required text: 'โทร:'
+
+----------------------------------------------------------------------
+Ran 1 test in 20.489s
+
+FAILED (failures=1)
+
+[Golden] Initializing ChatEngine for Stability Tests...
+[INFO] Loading resources...
+[VectorStore] Loading BM25 index from data/bm25_index.json...
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+
+[Golden] Running 13 contract tests...
+  > Testing: 'ใครตำแหน่ง ผส.บลตน.'...
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: POSITION_HOLDER_LOOKUP (0.9) Reason: ผส.บลตน เป็นตำแหน่งผู้บริหาร
+[DEBUG] Handling POSITION_HOLDER_LOOKUP logic
+[DEBUG] handle_position_holder: query='ใครตำแหน่ง ผส.บลตน.' -> clean='ผส.บลตน'
+    v Passed (Route: position_holder_hit)
+  > Testing: 'ครตำแหน่ง ผส.บลตน." # Typo check'...
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: POSITION_HOLDER_LOOKUP (0.9) Reason: ผส.บลตน. เป็นตำแหน่งผู้บริหารในงาน FTTx
+[DEBUG] Handling POSITION_HOLDER_LOOKUP logic
+[DEBUG] handle_position_holder: query='ครตำแหน่ง ผส.บลตน." # Typo check' -> clean='ผส.บลตน." # Typo check'
+    v Passed (Route: position_holder_hit)
+  > Testing: 'ใครตำแหน่ง ชจญ.ภ.4'...
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: POSITION_HOLDER_LOOKUP (0.9) Reason: extracted role 'ชจญ' is a possible position holder
+[DEBUG] Handling POSITION_HOLDER_LOOKUP logic
+[DEBUG] handle_position_holder: query='ใครตำแหน่ง ชจญ.ภ.4' -> clean='ชจญ.ภ.4'
+    v Passed (Route: position_miss)
+  > Testing: 'แก้ user สำหรับลูกค้า context private'...
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: แก้ user สำหรับลูกค้า context private
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] HowTo Top Hit: แก้ user สำหรับลูกค้า context private (Score: 0.6615, Threshold: 0.6)
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=563:ip-context-private&catid=49:-smc&Itemid=84
+[DEBUG] Image-Heavy Article detected (len=249, imgs=20)
+    v Passed (Route: article_answer)
+  > Testing: 'การจ่ายงานเลขหมายวงจรเช่าภูเก็ต'...
+[DEBUG] DispatchMapper Intent Triggered: การจ่ายงานเลขหมายวงจรเช่าภูเก็ต
+    v Passed (Route: dispatch_mapper_hit)
+  > Testing: 'การจ่ายงานเลขหมายวงจรเช่า'...
+[DEBUG] DispatchMapper Intent Triggered: การจ่ายงานเลขหมายวงจรเช่า
+    v Passed (Route: dispatch_mapper_general)
+  > Testing: 'รายชื่อผู้บริหาร'...
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: MANAGEMENT_LOOKUP (0.9) Reason: รายชื่อผู้บริหาร
+[DEBUG] Handling MANAGEMENT_LOOKUP logic
+    v Passed (Route: management_ambiguous)
+  > Testing: 'รหัสผ่าน root คืออะไร'...
+[DEBUG] Attempting to resolve pending question: 'รหัสผ่าน root คืออะไร'
+[DEBUG] Pending Question active -> Bypassing Cache for this turn.
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: CONTACT_LOOKUP (0.9) Reason: extracted 'root' as contact role with 'รหัสผ่าน' as phone number
+[DEBUG] Route: CONTACT_LOOKUP (via Handler)
+    v Passed (Route: contact_miss)
+  > Testing: 'เบอร์ผส.บลตน'...
+[DEBUG] Attempting to resolve pending question: 'เบอร์ผส.บลตน'
+[DEBUG] Follow-up Resolved: Choice 2 -> ผส.บลตน.
+    XXX Query 'เบอร์ผส.บลตน' FAILED:
+ - Bad Route: Expected ['contact_hit_role', 'position_holder_hit'], got 'position_miss'
+ - Missing required text: 'ตำแหน่ง:'
+ - Missing required text: 'โทร:'
+  > Testing: 'เบอร์งาน FTTx'...
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: CONTACT_LOOKUP (0.9) Reason: เบอร์งาน FTTx
+[DEBUG] Route: CONTACT_LOOKUP (via Handler)
+    v Passed (Route: contact_hit_team)
+  > Testing: 'เบอร์ผส'...
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: CONTACT_LOOKUP (0.9) Reason: เบอร์ผส found in contact info
+[DEBUG] Route: CONTACT_LOOKUP (via Handler)
+    v Passed (Route: contact_ambiguous)
+  > Testing: 'ข่าวเกี่ยวกับมนุษย์ต่างดาวบุกโลก'...
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: NEWS_SEARCH (0.9) Reason: ข่าวสารทั่วไป
+[DEBUG] Handling NEWS_SEARCH logic
+    v Passed (Route: news_miss)
+  > Testing: 'ข่าวสารSMC'...
+[DEBUG] Step 1: Intent Detection
+[DEBUG] Intent: NEWS_SEARCH (0.9) Reason: ข่าวสาร SMC
+[DEBUG] Handling NEWS_SEARCH logic
+    v Passed (Route: news_miss)

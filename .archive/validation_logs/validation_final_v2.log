@@ -1,0 +1,248 @@
+🚀 STARTING RAG_ONLY_VALIDATION_V1 (REFINED)
+[INFO] Loading resources...
+[VectorStore] Using SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+
+============================================================
+TEST: ONU คืออะไร
+DESC: General Knowledge - ONU Definition
+============================================================
+[SafeNormalizer] ONU คืออะไร -> POSITION_LOOKUP | SINGLE (4353.5ms)
+[CHAT] Canonical Rewrite: ONU คืออะไร -> ONU คืออะไร
+[DEBUG] Guard C: Query='onu คืออะไร' is_broad=False
+[DEBUG] Intent Override: 'onu คืออะไร' -> DEFINE_TERM (Keyword Match)
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'onu คืออะไร'
+[DETERMINISTIC DEBUG] Intent: DEFINE_TERM
+[DETERMINISTIC DEBUG] Source: Keyword Override
+[DETERMINISTIC DEBUG] Confidence: 1.0
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] GENERAL_NETWORK_KNOWLEDGE (confidence=0.85) - Query contains definition/explanation/cause keywords
+[DEBUG] Intent: DEFINE_TERM (1.0) Reason: Keyword Override
+[METRIC] Synonym Applied for Retrieval: None (Query: 'ONU คืออะไร' -> 'onu คืออะไร')
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[METRIC] Synonym Rollback Triggered: Score 0.16 < 0.35. Reverting to 'ONU คืออะไร'
+[METRIC] Rollback Successful: Score improved (0.16 -> 0.20)
+[Optimizer] Filtered System Page: http://10.192.133.33/smc/index.php?option=com_user&view=remind
+[DEBUG] Evidence Coverage: PASS (OK)
+[DEBUG] L2 Cache Skipped for DEFINE_TERM (Rule DT-1 Safety)
+[DEBUG] RAG Score Gate: DEFINE_TERM detected with weak coverage. Bypassing gate to invoke NT_STRICT fallback.
+[DEBUG] DEFINE_TERM: Internal Miss (Score Low) -> Triggering General Knowledge Fallback.
+[Safety] Clearing context for GENERAL_NETWORK_KNOWLEDGE + Procedure (Expl='Query contains definition/explanation/cause keywords', Intent='NT_STRICT')
+[Generator] Intent=NT_STRICT, Profile=STRICT, KnowledgeType=GENERAL_NETWORK_KNOWLEDGE, predict=512
+[Reviewer] Skipped for GENERAL_NETWORK_KNOWLEDGE (Expert Explainer Mode allows internal knowledge)
+[Reviewer] Verdict: PASS (Expert Explainer Bypass)
+[DEBUG] Saving to L2 Cache (Fingerprint: 7adfdba29a...)
+Intent: 
+Route: rag
+Latency: 17.44s
+
+[Answer Start]
+[เครือข่าย]
+📌 ขอบเขต: ความรู้เครือข่ายทั่วไป (ไม่เฉพาะ NT)
+
+คำอธิบาย:
+เครือข่ายเป็นระบบที่เชื่อมต่อเครื่องหรืออุปกรณ์ต่างๆ เพื่อให้สามารถส่งและรับข้อมูลได้ เครือข่ายสามารถแบ่งออกเป็นหลายประเภท เช่น โทรคมนาคม, โทรทัศน์, อินเทอร์เน็ต และอื่นๆ
+
+ความหมาย/สาเหตุทั่วไป (ถ้ามี):
+- การเชื่อมต่อเครื่องหรืออุปกรณ์ต่างๆ
+- การส่งและรับข้อมูลได้
+
+⚠️ ข้อจำกัด:
+สำหรับขั้นตอนการแก้ไขหรือการตั้งค่าเฉพาะระบบ NT กรุณาสอบถามทีมเทคนิค
+[Answer End]
+
+✅ PASS
+
+============================================================
+TEST: ไฟ LOS แดงเกิดจากอะไร
+DESC: General Knowledge - LOS Red
+============================================================
+[SafeNormalizer] ไฟ LOS แดงเกิดจากอะไร -> CONTACT_LOOKUP | CLARIFY (4871.3ms)
+[DEBUG] Guard C: Query='ไฟ los แดงเกิดจากอะไร' is_broad=False
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'ไฟ los แดงเกิดจากอะไร'
+[DETERMINISTIC DEBUG] Intent: WEB_KNOWLEDGE
+[DETERMINISTIC DEBUG] Source: ไฟ LOS สีแดงเกิดจากสัญญาณการทำงานผิดปกติของอุปกรณ์
+[DETERMINISTIC DEBUG] Confidence: 0.9
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] GENERAL_NETWORK_KNOWLEDGE (confidence=0.85) - Query contains definition/explanation/cause keywords
+[DEBUG] Intent: WEB_KNOWLEDGE (0.9) Reason: ไฟ LOS สีแดงเกิดจากสัญญาณการทำงานผิดปกติของอุปกรณ์
+[DEBUG] Knowledge Alias Trigger: 'ไฟ los แดงเกิดจากอะไร' -> Forcing HOWTO_PROCEDURE (Tech Pattern Alias Trigger (Not a Team))
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] HowTo Candidate: NEx-Description-Format (Score: 0.1323, Threshold: 0.6)
+[DEBUG] HowTo Candidate: การทำ Bridge ระหว่างพอร์ตใน Cisco Router (Score: 0.1321, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Tools (Score: 0.1281, Threshold: 0.6)
+[DEBUG] HowTo Candidate: คู่่มือปฏิบัติงาน 1177 ภาคใต้ (Score: 0.1256, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[METRIC] Synonym Applied for Retrieval: None (Query: 'ไฟ LOS แดงเกิดจากอะไร' -> 'ไฟ los แดงเกิดจากอะไร')
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[METRIC] Synonym Rollback Triggered: Score 0.17 < 0.35. Reverting to 'ไฟ LOS แดงเกิดจากอะไร'
+[METRIC] Rollback Aborted: Original was worse (0.15 < 0.17)
+[DEBUG] Evidence Coverage: MISS (Max score 0.13 too low (Threshold: 0.2))
+[DEBUG] General Tier Active for Concept Miss (Intent: GENERAL_QA)
+[SafetyGuard] General Fallback Active -> Bypassing Low Score Check
+[DEBUG] RAG Score Gate: DEFINE_TERM detected with weak coverage. Bypassing gate to invoke NT_STRICT fallback.
+[Thinking...] Using Intent Template: GENERAL_FALLBACK (Concept Fallback)
+[Generator] Intent=GENERAL_FALLBACK, Profile=STRICT, KnowledgeType=GENERAL_NETWORK_KNOWLEDGE, predict=512
+[Reviewer] Skipped for GENERAL_NETWORK_KNOWLEDGE (Expert Explainer Mode allows internal knowledge)
+[Reviewer] Verdict: PASS (Expert Explainer Bypass)
+[DEBUG] Saving to L2 Cache (Fingerprint: 602eaf4eb0...)
+[DEBUG] Semantic Cache HIT (score=1.0000)
+Intent: 
+Route: rag_cache
+Latency: 19.45s
+
+[Answer Start]
+[เครือข่ายคอมพิวเตอร์]
+📌 ขอบเขต: ความรู้เครือข่ายทั่วไป (ไม่เฉพาะ NT)
+
+คำอธิบาย:
+เครือข่ายคอมพิวเตอร์เป็นเครือข่ายที่เชื่อมต่อคอมพิวเตอร์ที่ทำงานร่วมกันเพื่อแลกเปลี่ยนข้อมูลและทรัพยากร ตลอดจนการเข้าถึงแหล่งข้อมูลและบริการต่างๆ
+
+ความหมาย/สาเหตุทั่วไป:
+- การใช้เครือข่ายคอมพิวเตอร์เพื่อเชื่อมต่อเครื่องคอมพิวเตอร์หลายเครื่อง
+- การแลกเปลี่ยนข้อมูลและทรัพยากรระหว่างเครื่องคอมพิวเตอร์
+- การเข้าถึงแหล่งข้อมูลและบริการต่างๆ เช่น อินเทอร์เน็ต, เว็บ, และอื่นๆ
+
+⚠️ ข้อจำกัด:
+สำหรับขั้นตอนการแก้ไขหรือการตั้งค่าเฉพาะระบบ NT กรุณาสอบถามทีมเทคนิค
+[Answer End]
+
+✅ PASS
+
+============================================================
+TEST: config ONU ยังไง
+DESC: Boundary - config ONU
+============================================================
+[SafeNormalizer] config ONU ยังไง -> CONTACT_LOOKUP | CLARIFY (3644.9ms)
+[DEBUG] Guard C: Query='config onu ยังไง' is_broad=False
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'config onu ยังไง'
+[DETERMINISTIC DEBUG] Intent: HOWTO_PROCEDURE
+[DETERMINISTIC DEBUG] Source: query contains 'config' and 'ONU'
+[DETERMINISTIC DEBUG] Confidence: 0.9
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] GENERAL_NETWORK_KNOWLEDGE (confidence=0.80) - Generic procedure request (no NT identifier) -> Routed to Expert Explainer for safe handling
+[Safety] Fast-Path Refusal for Generic Procedure Request: 'config onu ยังไง'
+Intent: HOWTO_PROCEDURE
+Route: expert_refusal_fast
+Latency: 5.99s
+
+[Answer Start]
+
+[Configuration Reminder]
+📌 ขอบเขต: ความรู้เครือข่ายทั่วไป (ไม่เฉพาะ NT)
+
+⚠️ ข้อจำกัด:
+ขออภัย ระบบไม่สามารถให้ขั้นตอนการตั้งค่า (Configuration) หรือคำสั่งเฉพาะเจาะจงได้ เนื่องจากเป็นข้อมูลทางเทคนิคเฉพาะระบบ NT
+
+หากต้องการทราบหลักการทำงานของอุปกรณ์ สามารถถามได้ครับ แต่สำหรับวิธีตั้งค่า กรุณาสอบถามทีมเทคนิคโดยตรง
+[Answer End]
+
+✅ PASS
+
+============================================================
+TEST: ตั้งค่า fiber ที่ NT ทำยังไง
+DESC: Boundary - NT Fiber Config
+============================================================
+[SafeNormalizer] ตั้งค่า fiber ที่ NT ทำยังไง -> CONTACT_LOOKUP | CLARIFY (3967.2ms)
+[DEBUG] Query Expanded/Rewritten: ตั้งค่า fiber ที่ NT ทำยังไง -> ตั้งค่า FTTx ที่ nt ทำยังไง (Rule: FTTx)
+[DEBUG] Guard C: Query='ตั้งค่า fttx ที่ nt ทำยังไง' is_broad=False
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'ตั้งค่า FTTx ที่ nt ทำยังไง'
+[DETERMINISTIC DEBUG] Intent: HOWTO_PROCEDURE
+[DETERMINISTIC DEBUG] Source: query contains 'ตั้งค่า' and 'fiber', indicating a how-to configuration step
+[DETERMINISTIC DEBUG] Confidence: 0.9
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] NT_SPECIFIC_PROCEDURE (confidence=0.95) - Query contains NT identifier AND procedure keywords
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains 'ตั้งค่า' and 'fiber', indicating a how-to configuration step
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] HowTo Candidate: FTTx  and  NIS Manual (Score: 0.3122, Threshold: 0.6)
+[DEBUG] HowTo Candidate: สถานะการใช้งาน FTTxSM ภ.4 (Score: 0.3023, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Tools (Score: 0.2840, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Tools (Score: 0.2697, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ZTE FTTx-VPN (Score: 0.2684, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ODN : Optical Distribution Network (Score: 0.2665, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Tools (Score: 0.2626, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ความรู้ทั่วไป ด้าน Network และ NMS (Score: 0.2620, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[METRIC] Synonym Applied for Retrieval: FTTx (Query: 'ตั้งค่า fiber ที่ NT ทำยังไง' -> 'ตั้งค่า FTTx ที่ nt ทำยังไง')
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[METRIC] Synonym Rollback Triggered: Score 0.31 < 0.35. Reverting to 'ตั้งค่า fiber ที่ NT ทำยังไง'
+[METRIC] Rollback Aborted: Original was worse (0.27 < 0.31)
+[DEBUG] Evidence Coverage: PASS (OK)
+[DEBUG] RAG Score Gate Passed: Best score 0.3023 (Doc: ฤศจิกายน  2014 เวลา 12:32 น.
+สถานะการใช้งาน FTTxSM...)
+[Thinking...] Using Intent Template: EXPLAIN
+[DEBUG] Knowledge Threshold: Score 0.3023 < 0.35. Triggering LINK_ONLY mode.
+Intent: 
+Route: rag_link_only
+Latency: 11.87s
+
+[Answer Start]
+พบข้อมูลที่เกี่ยวข้องแต่คะแนนความเชื่อมั่นไม่สูงนัก แนะนำให้อ่านรายละเอียดจากลิงก์โดยตรงเพื่อความถูกต้องครับ:
+
+**[สถานะการใช้งาน FTTxSM ภ.4]**
+🔗 [คลิกเพื่อเปิดดู](http://10.192.133.33/smc/index.php?option=com_content&view=article&id=579:-fttxsm-4&catid=49:-smc&Itemid=84)
+[Answer End]
+
+✅ PASS
+
+============================================================
+TEST: วิธีชงกาแฟด้วย ONU
+DESC: Anti-Hallucination - Nonsense
+============================================================
+[SafeNormalizer] วิธีชงกาแฟด้วย ONU -> CONTACT_LOOKUP | CLARIFY (3679.9ms)
+[DEBUG] Guard C: Query='วิธีชงกาแฟด้วย onu' is_broad=False
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'วิธีชงกาแฟด้วย onu'
+[DETERMINISTIC DEBUG] Intent: HOWTO_PROCEDURE
+[DETERMINISTIC DEBUG] Source: query contains 'วิธี' and 'ชงกาแฟด้วย ONU'
+[DETERMINISTIC DEBUG] Confidence: 0.9
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] GENERAL_NETWORK_KNOWLEDGE (confidence=0.80) - Generic procedure request (no NT identifier) -> Routed to Expert Explainer for safe handling
+[Safety] Fast-Path Refusal for Generic Procedure Request: 'วิธีชงกาแฟด้วย onu'
+Intent: HOWTO_PROCEDURE
+Route: expert_refusal_fast
+Latency: 6.17s
+
+[Answer Start]
+
+[Configuration Reminder]
+📌 ขอบเขต: ความรู้เครือข่ายทั่วไป (ไม่เฉพาะ NT)
+
+⚠️ ข้อจำกัด:
+ขออภัย ระบบไม่สามารถให้ขั้นตอนการตั้งค่า (Configuration) หรือคำสั่งเฉพาะเจาะจงได้ เนื่องจากเป็นข้อมูลทางเทคนิคเฉพาะระบบ NT
+
+หากต้องการทราบหลักการทำงานของอุปกรณ์ สามารถถามได้ครับ แต่สำหรับวิธีตั้งค่า กรุณาสอบถามทีมเทคนิคโดยตรง
+[Answer End]
+
+✅ PASS
+
+============================================================
+RESULTS: 5/5 PASSED
+============================================================
+✅ ALL TESTS COMPLETED SUCCESSFULLY

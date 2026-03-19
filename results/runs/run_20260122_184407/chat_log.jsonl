@@ -1,0 +1,4 @@
+{"ts": 1769082428.238919, "question": "ติดต่อศูนย์ omc ที่หาดใหญ่ยังไง", "answer": "ศูนย์ omc ที่หาดใหญ่ คืออะไร", "route": "clarify_contact_lookup", "latencies": {"total": 0.0, "llm": 0.0, "interpreter": 21365.862131118774}}
+{"ts": 1769082453.185725, "question": "โทรหา OMC หาดใหญ่เบอร์ไหน", "answer": "คุณหมายถึงหน่วยงาน OMC ที่ตั้งอยู่ที่ไหน?", "route": "clarify_contact_lookup", "latencies": {"total": 0.0, "llm": 0.0, "interpreter": 19067.687034606934}}
+{"ts": 1769082497.095359, "question": "เบแอร์ omc หาดไหญ่", "answer": "คุณหมายถึง 'เบแอร์' ในบริบทขององค์กรหรือไม่", "route": "clarify_other", "latencies": {"total": 0.0, "llm": 0.0, "interpreter": 20942.476987838745}}
+{"ts": 1769082518.842786, "question": "ใครคือผจ", "answer": "คุณหมายถึงใคร?", "route": "clarify_position_lookup", "latencies": {"total": 0.0, "llm": 0.0, "interpreter": 13191.914081573486}}

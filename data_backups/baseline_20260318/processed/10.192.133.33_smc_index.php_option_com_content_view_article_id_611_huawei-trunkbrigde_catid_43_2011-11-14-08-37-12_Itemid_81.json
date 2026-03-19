@@ -1,0 +1,232 @@
+{
+  "url": "http://10.192.133.33/smc/index.php?option=com_content&view=article&id=611:huawei-trunkbrigde&catid=43:2011-11-14-08-37-12&Itemid=81",
+  "title": "Huawei_ trunk_brigde",
+  "text": " | Today | 71\n | Yesterday | 522\n | This week | 962\n | Last week | 95\n | This month | 1306\n | Last month | 415\n | All days | 610623\n\nWDM (แนะนำIE)\nTemplate ZTE FTTX v.3 (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=149)\nTemplate for PE,APE,LPE (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=163)\nConvert ASR920 To NCS (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=111)\nGet IP IPPhone (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=153)\nตรวจสอบ ONU Event Log (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=143)\nTemplate Extreme (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=133)\n\nนราธิวาส NMS (http://10.192.39.50/)\nสุราษฎร์ NMS (https://totsni.com/network)\n\nHuawei_ trunk_brigde เขียนโดย Meru^^ วันอังคารที่ 06 กันยายน  2016 เวลา 11:30 น. คลิกดู  config NMS manual (https://drive.google.com/file/d/1Vn5bRsfZspBB5QLXN0HhQQlqrX2m8ebU/view?usp=drive_link) config vlan ก่อน  แต่ ต้องทำ q in q\nvlan xx smart\nport vlan xx  0/2 0\nvlan attrib xx  q-in-q \n\nสร้าง line ont profile\nont-lineprofile gpon profile-id 28 profile-name \"P4-VPN-UP2\"\nmapping-mode port\ntcont 4 dba-profile-id xx ** เลือก dba-profile มาใช้งาน\ngem add 126 eth tcont 4\ngem mapping 126 0 eth 1\ncommit\nquit\n\nสร้าง service profile\nont-srvprofile gpon profile-id 28 profile-name \"P4-HG311-Trunk\"\nont-port eth 1\n port vlan eth 1 transparent  ** ทำเป็น trunk\ncommit\nquit\n\nadd onu\nont add 0 xx sn-auth 4857544388543D03 omci ont-lineprofile-id 28 ont-srvprofile-id 28\n\nadd service-port \nservice-port 2531 vlan 28 gpon 0/5/6 ont 44 gemport 126 multi-service user-vlan 28 tag-transform transparent inbound traffic-table index 30 outbound traffic-table index 30\nservice-port 2532 vlan 685 gpon 0/5/6 ont 44 gemport 126 multi-service user-vlan 685 tag-transform transparent inbound traffic-table index 30 outbound traffic-table index 30\n\n** service-port    ต้องดูโดยใช้คำสั่ง display service-port all เพื่อดูว่า port ไหนว่าง \n\nตรวจสอบ  display service-port xxx เพื่อดูว่าถูกต้องไม่ แก้ไขล่าสุด ใน  วันพุธที่ 24 มกราคม  2024 เวลา 14:30 น. | Huawei_ trunk_brigde |  |  |  | เขียนโดย Meru^^ | วันอังคารที่ 06 กันยายน  2016 เวลา 11:30 น. | คลิกดู  config NMS manual (https://drive.google.com/file/d/1Vn5bRsfZspBB5QLXN0HhQQlqrX2m8ebU/view?usp=drive_link) config vlan ก่อน  แต่ ต้องทำ q in q\nvlan xx smart\nport vlan xx  0/2 0\nvlan attrib xx  q-in-q \n\nสร้าง line ont profile\nont-lineprofile gpon profile-id 28 profile-name \"P4-VPN-UP2\"\nmapping-mode port\ntcont 4 dba-profile-id xx ** เลือก dba-profile มาใช้งาน\ngem add 126 eth tcont 4\ngem mapping 126 0 eth 1\ncommit\nquit\n\nสร้าง service profile\nont-srvprofile gpon profile-id 28 profile-name \"P4-HG311-Trunk\"\nont-port eth 1\n port vlan eth 1 transparent  ** ทำเป็น trunk\ncommit\nquit\n\nadd onu\nont add 0 xx sn-auth 4857544388543D03 omci ont-lineprofile-id 28 ont-srvprofile-id 28\n\nadd service-port \nservice-port 2531 vlan 28 gpon 0/5/6 ont 44 gemport 126 multi-service user-vlan 28 tag-transform transparent inbound traffic-table index 30 outbound traffic-table index 30\nservice-port 2532 vlan 685 gpon 0/5/6 ont 44 gemport 126 multi-service user-vlan 685 tag-transform transparent inbound traffic-table index 30 outbound traffic-table index 30\n\n** service-port    ต้องดูโดยใช้คำสั่ง display service-port all เพื่อดูว่า port ไหนว่าง \n\nตรวจสอบ  display service-port xxx เพื่อดูว่าถูกต้องไม่ | แก้ไขล่าสุด ใน  วันพุธที่ 24 มกราคม  2024 เวลา 14:30 น.\nHuawei_ trunk_brigde |  |  | \nเขียนโดย Meru^^\nวันอังคารที่ 06 กันยายน  2016 เวลา 11:30 น.\nคลิกดู  config NMS manual (https://drive.google.com/file/d/1Vn5bRsfZspBB5QLXN0HhQQlqrX2m8ebU/view?usp=drive_link) config vlan ก่อน  แต่ ต้องทำ q in q\nvlan xx smart\nport vlan xx  0/2 0\nvlan attrib xx  q-in-q \n\nสร้าง line ont profile\nont-lineprofile gpon profile-id 28 profile-name \"P4-VPN-UP2\"\nmapping-mode port\ntcont 4 dba-profile-id xx ** เลือก dba-profile มาใช้งาน\ngem add 126 eth tcont 4\ngem mapping 126 0 eth 1\ncommit\nquit\n\nสร้าง service profile\nont-srvprofile gpon profile-id 28 profile-name \"P4-HG311-Trunk\"\nont-port eth 1\n port vlan eth 1 transparent  ** ทำเป็น trunk\ncommit\nquit\n\nadd onu\nont add 0 xx sn-auth 4857544388543D03 omci ont-lineprofile-id 28 ont-srvprofile-id 28\n\nadd service-port \nservice-port 2531 vlan 28 gpon 0/5/6 ont 44 gemport 126 multi-service user-vlan 28 tag-transform transparent inbound traffic-table index 30 outbound traffic-table index 30\nservice-port 2532 vlan 685 gpon 0/5/6 ont 44 gemport 126 multi-service user-vlan 685 tag-transform transparent inbound traffic-table index 30 outbound traffic-table index 30\n\n** service-port    ต้องดูโดยใช้คำสั่ง display service-port all เพื่อดูว่า port ไหนว่าง \n\nตรวจสอบ  display service-port xxx เพื่อดูว่าถูกต้องไม่\nแก้ไขล่าสุด ใน  วันพุธที่ 24 มกราคม  2024 เวลา 14:30 น.\n\nHuawei_ trunk_brigde |  |  | \n\nเขียนโดย Meru^^\nวันอังคารที่ 06 กันยายน  2016 เวลา 11:30 น.\nคลิกดู  config NMS manual (https://drive.google.com/file/d/1Vn5bRsfZspBB5QLXN0HhQQlqrX2m8ebU/view?usp=drive_link) config vlan ก่อน  แต่ ต้องทำ q in q\nvlan xx smart\nport vlan xx  0/2 0\nvlan attrib xx  q-in-q \n\nสร้าง line ont profile\nont-lineprofile gpon profile-id 28 profile-name \"P4-VPN-UP2\"\nmapping-mode port\ntcont 4 dba-profile-id xx ** เลือก dba-profile มาใช้งาน\ngem add 126 eth tcont 4\ngem mapping 126 0 eth 1\ncommit\nquit\n\nสร้าง service profile\nont-srvprofile gpon profile-id 28 profile-name \"P4-HG311-Trunk\"\nont-port eth 1\n port vlan eth 1 transparent  ** ทำเป็น trunk\ncommit\nquit\n\nadd onu\nont add 0 xx sn-auth 4857544388543D03 omci ont-lineprofile-id 28 ont-srvprofile-id 28\n\nadd service-port \nservice-port 2531 vlan 28 gpon 0/5/6 ont 44 gemport 126 multi-service user-vlan 28 tag-transform transparent inbound traffic-table index 30 outbound traffic-table index 30\nservice-port 2532 vlan 685 gpon 0/5/6 ont 44 gemport 126 multi-service user-vlan 685 tag-transform transparent inbound traffic-table index 30 outbound traffic-table index 30\n\n** service-port    ต้องดูโดยใช้คำสั่ง display service-port all เพื่อดูว่า port ไหนว่าง \n\nตรวจสอบ  display service-port xxx เพื่อดูว่าถูกต้องไม่\nแก้ไขล่าสุด ใน  วันพุธที่ 24 มกราคม  2024 เวลา 14:30 น.\n\n\nHuawei_ trunk_brigde\nศูนย์ปฏิบัติการระบบสื่อสารข้อมูล (สบลตน.) (http://10.192.133.33/smc/)\nService Management Center(SMC)\nหน้าหลัก (http://10.192.133.33/smc/)\nผส.บลตน. (http://10.192.133.33/smc/index.php?option=com_content&view=article&id=60&Itemid=70)\nผจ.สบลตน. (http://10.192.133.33/smc/index.php?option=com_content&view=article&id=56&Itemid=60)\nข่าวสาร SMC (http://10.192.133.33/smc/index.php?option=com_content&view=category&id=49&Itemid=84)\nความรู้ (http://10.192.133.33/smc/index.php?option=com_content&view=category&id=43&Itemid=81)\nบุคลากร SMC (http://10.192.133.33/smc/index.php?option=com_content&view=article&id=59&Itemid=64)\nเบอร์หน่วยงานต่างๆ (http://10.192.133.33/smc/index.php?option=com_content&view=article&id=64&Itemid=61)\nผู้ดูแลระบบ (http://10.192.133.33/smc/index.php?option=com_content&view=article&id=57&Itemid=59)\nศูนย์ สลภก.3\nLink ที่เกี่ยวข้อง\nEdocument (https://ntedoc.intra.ntplc.co.th/doc/homepage-doc)\nNT Academy(e-Learning) (https://lms.ntplc.co.th/)\nIntranet NT (https://intranet.ntplc.co.th/)\nE-Mail NT (https://mail.ntplc.co.th/)\nWeb HR (https://webhr.ntplc.co.th/)\nกองทุนสำรองฯ (https://pvd.mfcfund.com/auth/login)\nSMC Extension Dashboard (http://192.168.99.200:8080/)\nSMC AI (http://192.168.99.200:8999/)\nToday\n71\nYesterday\n522\nThis week\n962\nLast week\n95\nThis month\n1306\nLast month\n415\nAll days\n610623\nWe have: 63 guests online\nYour IP:: 10.192.133.253\n,\nToday: ธ.ค. 24, 2025\nVisitors Counter (http://vinaora.com)\nชื่อผู้ใช้\nรหัสผ่าน\nจำข้อมูลการเข้าสู่ระบบ\nลืมรหัสผ่าน? (http://10.192.133.33/smc/index.php?option=com_user&view=reset)\nลืมชื่อเข้าใช้งาน? (http://10.192.133.33/smc/index.php?option=com_user&view=remind)\nลงทะเบียน (http://10.192.133.33/smc/index.php?option=com_user&view=register)\nTemplate\nWDM (แนะนำIE)\nTemplate ZTE FTTX v.3 (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=149)\nTemplate for PE,APE,LPE (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=163)\nConvert ASR920 To NCS (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=111)\nGet IP IPPhone (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=153)\nตรวจสอบ ONU Event Log (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=143)\nTemplate Extreme (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=133)\nลิงค์ภายใต้ ภก.3\nนราธิวาส NMS (http://10.192.39.50/)\nสุราษฎร์ NMS (https://totsni.com/network)\nProject ปรับปรุงตรวจแก้คืนดี ภก.3\nHuawei_ trunk_brigde\nเขียนโดย Meru^^\nวันอังคารที่ 06 กันยายน  2016 เวลา 11:30 น.\nคลิกดู  config NMS manual (https://drive.google.com/file/d/1Vn5bRsfZspBB5QLXN0HhQQlqrX2m8ebU/view?usp=drive_link)\nconfig vlan ก่อน  แต่ ต้องทำ q in q\nvlan xx smart\nport vlan xx  0/2 0\nvlan attrib xx  q-in-q \n\nสร้าง line ont profile\nont-lineprofile gpon profile-id 28 profile-name \"P4-VPN-UP2\"\nmapping-mode port\ntcont 4 dba-profile-id xx ** เลือก dba-profile มาใช้งาน\ngem add 126 eth tcont 4\ngem mapping 126 0 eth 1\ncommit\nquit\n\nสร้าง service profile\nont-srvprofile gpon profile-id 28 profile-name \"P4-HG311-Trunk\"\nont-port eth 1\n port vlan eth 1 transparent  ** ทำเป็น trunk\ncommit\nquit\n\nadd onu\nont add 0 xx sn-auth 4857544388543D03 omci ont-lineprofile-id 28 ont-srvprofile-id 28\n\nadd service-port \nservice-port 2531 vlan 28 gpon 0/5/6 ont 44 gemport 126 multi-service user-vlan 28 tag-transform transparent inbound traffic-table index 30 outbound traffic-table index 30\nservice-port 2532 vlan 685 gpon 0/5/6 ont 44 gemport 126 multi-service user-vlan 685 tag-transform transparent inbound traffic-table index 30 outbound traffic-table index 30\n\n** service-port    ต้องดูโดยใช้คำสั่ง display service-port all เพื่อดูว่า port ไหนว่าง \n\nตรวจสอบ  display service-port xxx เพื่อดูว่าถูกต้องไม่\nแก้ไขล่าสุด ใน  วันพุธที่ 24 มกราคม  2024 เวลา 14:30 น.\nJoomla 1.5 Templates by Joomlashack (http://www.joomlashack.com)",
+  "content_type": "general",
+  "content_hash": "d1aef10d3119fdc306da35d4e3aca0b5a8ebcda53db062407243e0460867801b",
+  "links": [
+    {
+      "text": "ศูนย์ปฏิบัติการระบบสื่อสารข้อมูล (สบลตน.)",
+      "href": "http://10.192.133.33/smc/"
+    },
+    {
+      "text": "หน้าหลัก",
+      "href": "http://10.192.133.33/smc/"
+    },
+    {
+      "text": "ผส.บลตน.",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=article&id=60&Itemid=70"
+    },
+    {
+      "text": "ผจ.สบลตน.",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=article&id=56&Itemid=60"
+    },
+    {
+      "text": "ข่าวสาร SMC",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=category&id=49&Itemid=84"
+    },
+    {
+      "text": "ความรู้",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=category&id=43&Itemid=81"
+    },
+    {
+      "text": "บุคลากร SMC",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=article&id=59&Itemid=64"
+    },
+    {
+      "text": "เบอร์หน่วยงานต่างๆ",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=article&id=64&Itemid=61"
+    },
+    {
+      "text": "ผู้ดูแลระบบ",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=article&id=57&Itemid=59"
+    },
+    {
+      "text": "Edocument",
+      "href": "https://ntedoc.intra.ntplc.co.th/doc/homepage-doc"
+    },
+    {
+      "text": "NT Academy(e-Learning)",
+      "href": "https://lms.ntplc.co.th/"
+    },
+    {
+      "text": "Intranet NT",
+      "href": "https://intranet.ntplc.co.th/"
+    },
+    {
+      "text": "E-Mail NT",
+      "href": "https://mail.ntplc.co.th/"
+    },
+    {
+      "text": "Web HR",
+      "href": "https://webhr.ntplc.co.th/"
+    },
+    {
+      "text": "กองทุนสำรองฯ",
+      "href": "https://pvd.mfcfund.com/auth/login"
+    },
+    {
+      "text": "SMC Extension Dashboard",
+      "href": "http://192.168.99.200:8080/"
+    },
+    {
+      "text": "SMC AI",
+      "href": "http://192.168.99.200:8999/"
+    },
+    {
+      "text": "Visitors Counter",
+      "href": "http://vinaora.com"
+    },
+    {
+      "text": "ลืมรหัสผ่าน?",
+      "href": "http://10.192.133.33/smc/index.php?option=com_user&view=reset"
+    },
+    {
+      "text": "ลืมชื่อเข้าใช้งาน?",
+      "href": "http://10.192.133.33/smc/index.php?option=com_user&view=remind"
+    },
+    {
+      "text": "ลงทะเบียน",
+      "href": "http://10.192.133.33/smc/index.php?option=com_user&view=register"
+    },
+    {
+      "text": "Template ZTE FTTX v.3",
+      "href": "http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=149"
+    },
+    {
+      "text": "Template for PE,APE,LPE",
+      "href": "http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=163"
+    },
+    {
+      "text": "Convert ASR920 To NCS",
+      "href": "http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=111"
+    },
+    {
+      "text": "Get IP IPPhone",
+      "href": "http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=153"
+    },
+    {
+      "text": "ตรวจสอบ ONU Event Log",
+      "href": "http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=143"
+    },
+    {
+      "text": "Template Extreme",
+      "href": "http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=133"
+    },
+    {
+      "text": "นราธิวาส NMS",
+      "href": "http://10.192.39.50/"
+    },
+    {
+      "text": "สุราษฎร์ NMS",
+      "href": "https://totsni.com/network"
+    },
+    {
+      "text": "คลิกดู  config NMS manual",
+      "href": "https://drive.google.com/file/d/1Vn5bRsfZspBB5QLXN0HhQQlqrX2m8ebU/view?usp=drive_link"
+    },
+    {
+      "text": "Joomla 1.5 Templates by Joomlashack",
+      "href": "http://www.joomlashack.com"
+    }
+  ],
+  "images": [
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/0.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/0.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/0.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/6.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/1.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/0.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/6.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/2.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/3.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vtoday.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vyesterday.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vweek.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vlweek.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vmonth.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vlmonth.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vall.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/templates/js_jamba/images/pdf_button.png",
+      "alt": "PDF",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/templates/js_jamba/images/printButton.png",
+      "alt": "พิมพ์",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/templates/js_jamba/images/emailButton.png",
+      "alt": "อีเมล",
+      "caption": ""
+    }
+  ],
+  "processed_at": 1767588472.043652,
+  "raw_file": "data/raw/10.192.133.33_smc_index.php_option_com_content_view_article_id_611_huawei-trunkbrigde_catid_43_2011-11-14-08-37-12_Itemid_81.html"
+}

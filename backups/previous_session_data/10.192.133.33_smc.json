@@ -1,0 +1,16 @@
+{
+  "url": "http://10.192.133.33/smc",
+  "title": "Login to smc (Authentication Required)",
+  "text": "\nLogin to smc (Authentication Required)\nAccess to smc\nThe URL for\nsmc\nis:\nhttp://10.192.133.33/smc\nThis page requires authentication.\nPlease\nclick here to login (http://10.192.133.33/smc)\nto access smc.",
+  "content_type": "general",
+  "content_hash": "d9f2b667af4acb306d15bc52d2c7c7d3cd719b30fd77b16fd41fe31c9b5e07e3",
+  "links": [
+    {
+      "text": "click here to login",
+      "href": "http://10.192.133.33/smc"
+    }
+  ],
+  "images": [],
+  "processed_at": 1767588472.124748,
+  "raw_file": "data/raw/10.192.133.33_smc.html"
+}

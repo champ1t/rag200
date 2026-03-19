@@ -1,0 +1,1635 @@
+INFO:     Started server process [19624]
+INFO:     Waiting for application startup.
+INFO:API:Initializing ChatEngine...
+[INFO] Loading resources...
+INFO:chromadb.telemetry.product.posthog:Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+INFO:numexpr.utils:NumExpr defaulting to 8 threads.
+INFO:datasets:PyTorch version 2.9.1 available.
+INFO:datasets:Duckdb version 1.4.3 available.
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+INFO:chromadb.telemetry.product.posthog:Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+INFO:API:ChatEngine Ready!
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:API:Processing query: วิธีแก้ tr069 (Session: sess_human)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: วิธีการแก้ไข TR069
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 41.55it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.01it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.00it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 88.91it/s]
+[DEBUG] HowTo Candidate: Work contect (Score: 0.3189, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP (Score: 0.3145, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.3120, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.3067, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP (Score: 0.3054, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP (Score: 0.3051, Threshold: 0.6)
+[DEBUG] HowTo Candidate: เบอร์หน่วยงานต่างๆ (Score: 0.3008, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP (Score: 0.2967, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.2953, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP (Score: 0.2923, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 86.08it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 91.68it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.32 too low (Threshold: 0.35))
+INFO:API:AUDIT session=sess_human route=rag_miss_coverage latency=6112.6ms choices=0 user=gate_tester
+INFO:     127.0.0.1:55624 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: เข้าเว็บ edoc (Session: sess_human)
+[DEBUG] Intent: REFERENCE_LINK (0.9) Reason: ลิงก์ edoc
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 125.44it/s]
+[DEBUG] Route: REFERENCE_LINK
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 77.97it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 79.81it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.28 too low (Threshold: 0.35))
+INFO:API:AUDIT session=sess_human route=rag_miss_coverage latency=1319.4ms choices=0 user=gate_tester
+INFO:     127.0.0.1:55630 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: huawei fttx มีปัญหา (Session: sess_human)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: Huawei FTTx issue found
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 117.30it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 63.09it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 91.15it/s]
+[DEBUG] HowTo Link Match: 'huawei fttx มีปัญหา' -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=578:huaweifttx-&catid=43:2011-11-14-08-37-12&Itemid=81 (Score: 0.85)
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=578:huaweifttx-&catid=43:2011-11-14-08-37-12&Itemid=81
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 168.09it/s]
+[DEBUG] Article Summary Cache HIT (Score: 1.00)
+INFO:API:AUDIT session=sess_human route=article_answer latency=1247.2ms choices=0 user=gate_tester
+INFO:     127.0.0.1:55634 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: ip ssh คืออะไร (Session: sess_human)
+[DEBUG] Intent Override: 'ip ssh คืออะไร' -> EXPLAIN (Keyword Match)
+[DEBUG] Intent: EXPLAIN (1.0) Reason: Keyword Override
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 155.68it/s]
+INFO:API:AUDIT session=sess_human route=cache_hit latency=16.6ms choices=0 user=gate_tester
+INFO:     127.0.0.1:55638 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: TR069 CWMP Setting (Session: sess_det_1)
+[DEBUG] Session Switch Detected (sess_human -> sess_det_1). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: how-to/config/fix steps for TR069 CWMP
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 35.43it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 29.73it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 18.05it/s]
+[DEBUG] HowTo Link Match: 'TR069 CWMP Setting' -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=636:tr069-cwmp-seting&catid=49:-smc&Itemid=84 (Score: 0.9714285714285714)
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=636:tr069-cwmp-seting&catid=49:-smc&Itemid=84
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 24.53it/s]
+[DEBUG] Article Summary Cache HIT (Score: 1.00)
+INFO:API:AUDIT session=sess_det_1 route=article_answer latency=1652.2ms choices=0 user=gate_tester
+INFO:     127.0.0.1:55640 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: ตั้งค่า TR069 (Session: sess_det_2)
+[DEBUG] Session Switch Detected (sess_det_1 -> sess_det_2). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: ตั้งค่า TR069
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 53.19it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 70.99it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 87.64it/s]
+[DEBUG] HowTo Candidate: Work contect (Score: 0.3275, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.3253, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.3177, Threshold: 0.6)
+[DEBUG] HowTo Candidate: เบอร์หน่วยงานต่างๆ (Score: 0.3098, Threshold: 0.6)
+[DEBUG] HowTo Candidate: เบอร์หน่วยงานต่างๆ (Score: 0.3018, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.3005, Threshold: 0.6)
+[DEBUG] HowTo Candidate: เบอร์หน่วยงานต่างๆ (Score: 0.2947, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.2923, Threshold: 0.6)
+[DEBUG] HowTo Candidate: เบอร์หน่วยงานต่างๆ (Score: 0.2918, Threshold: 0.6)
+[DEBUG] HowTo Candidate: เบอร์หน่วยงานต่างๆ (Score: 0.2882, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 88.17it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 92.76it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.33 too low (Threshold: 0.35))
+INFO:API:AUDIT session=sess_det_2 route=rag_miss_coverage latency=1520.4ms choices=0 user=gate_tester
+INFO:     127.0.0.1:55646 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: SBC (Session: sess_long_1)
+[DEBUG] Session Switch Detected (sess_det_2 -> sess_long_1). Resetting context.
+INFO:API:AUDIT session=sess_long_1 route=contact_ambiguous latency=0.2ms choices=0 user=gate_tester
+INFO:     127.0.0.1:55651 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: ขอ IP SSH Server (Session: sess_long_1)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query for how-to/config steps related to IP SSH server
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 104.61it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 73.73it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 98.49it/s]
+[DEBUG] HowTo Link Match: 'ขอ IP SSH Server' -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=663:ip-ssh&catid=49:-smc&Itemid=84 (Score: 0.85)
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=663:ip-ssh&catid=49:-smc&Itemid=84
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 145.95it/s]
+[DEBUG] Article Summary Cache HIT (Score: 1.00)
+INFO:API:AUDIT session=sess_long_1 route=article_answer latency=1676.5ms choices=0 user=gate_tester
+INFO:     127.0.0.1:55653 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: SBC คืออะไร (Session: sess_long_1)
+[DEBUG] Intent Override: 'SBC คืออะไร' -> EXPLAIN (Keyword Match)
+[DEBUG] Intent: EXPLAIN (1.0) Reason: Keyword Override
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 153.68it/s]
+[DEBUG] Cache Governance: Rejected valid cache because missing evidence metadata (len=821)
+[DEBUG] Retrieval Strategy: VECTOR_HEAVY (alpha=0.8, top_k=5)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 84.31it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 94.20it/s]
+[DEBUG] Evidence Coverage: PASS (OK)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 178.99it/s]
+[DEBUG] L2 Answer Cache HIT (Score: 1.00)
+INFO:API:AUDIT session=sess_long_1 route=rag_cache_l2 latency=72.1ms choices=0 user=gate_tester
+INFO:     127.0.0.1:55657 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query:     (Session: sess_edge)
+[DEBUG] Session Switch Detected (sess_long_1 -> sess_edge). Resetting context.
+INFO:API:AUDIT session=sess_edge route=quick_reply latency=0.1ms choices=0 user=gate_tester
+INFO:     127.0.0.1:55659 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: 123456 (Session: sess_edge)
+[DEBUG] Non-text query detected: '123456'
+INFO:API:AUDIT session=sess_edge route=quick_reply latency=0.1ms choices=0 user=gate_tester
+INFO:     127.0.0.1:55661 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: Ribbon EdgeMare6000 DOC (Session: sess_cache)
+[DEBUG] Session Switch Detected (sess_edge -> sess_cache). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: รหัสผ่าน root
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 119.09it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 36.81it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 62.77it/s]
+[DEBUG] HowTo Link Match: 'Ribbon EdgeMare6000 DOC' -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=646:ribbon-edgemare6000-doc&catid=49:-smc&Itemid=84 (Score: 1.0)
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=646:ribbon-edgemare6000-doc&catid=49:-smc&Itemid=84
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 130.55it/s]
+[DEBUG] Article Summary Cache HIT (Score: 1.00)
+INFO:API:AUDIT session=sess_cache route=article_answer latency=1231.8ms choices=0 user=gate_tester
+INFO:     127.0.0.1:55663 - "POST /chat HTTP/1.1" 200 OK
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56325 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56328 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56330 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56332 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56334 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56336 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56338 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56340 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56342 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56344 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56346 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56348 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56351 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56353 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56355 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56357 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56359 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56361 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56363 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56365 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56367 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56369 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56371 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56373 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56376 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56378 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56380 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56382 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56384 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56386 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56388 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56390 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56392 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56394 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56396 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56398 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56419 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56421 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56423 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56425 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56427 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56429 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56431 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56433 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56435 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56437 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56439 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56441 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56445 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56447 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56449 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56451 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56453 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56455 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56457 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56459 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56461 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56463 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56465 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56467 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56469 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56471 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56473 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56475 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56477 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56479 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56481 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56483 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56485 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56487 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56489 - "POST /chat HTTP/1.1" 401 Unauthorized
+WARNING:API:Unauthorized access attempt from 127.0.0.1
+INFO:     127.0.0.1:56491 - "POST /chat HTTP/1.1" 401 Unauthorized
+INFO:API:Processing query: TR069 (Session: final_gate_174_1768533179)
+[DEBUG] Session Switch Detected (sess_cache -> final_gate_174_1768533179). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: ตั้งค่า TR069
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.92it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.92it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 50.18it/s]
+[DEBUG] HowTo Link Match: 'TR069' -> https://pete.intra.ntplc.co.th (Score: 0.7142857142857143)
+[DEBUG] News/Article Route -> https://pete.intra.ntplc.co.th
+[DEBUG] Cache Miss for https://pete.intra.ntplc.co.th -> Attempting Fetch (Strict Timeout)...
+[DEBUG] Fetch Failed: connection_error(HTTPSConnectionPool(host='pete.intra.ntplc.co.th', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)'))))
+INFO:API:AUDIT session=final_gate_174_1768533179 route=article_miss latency=8398.0ms choices=0 user=langflow
+INFO:     127.0.0.1:56512 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: MPLS Profile (Session: final_gate_174_1768533179)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: MPLS Profile configuration steps
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.92it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.92it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  8.69it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  8.67it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 45.16it/s]
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.3009, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2894, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2792, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2790, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2728, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2706, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2703, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2608, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2602, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Description และVLAN Name  บนโครงข่าย TOT-MPLS (Score: 0.2594, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 68.00it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 63.13it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.30 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533179 route=rag_miss_coverage latency=2858.4ms choices=0 user=langflow
+INFO:     127.0.0.1:56535 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: ssh access cisco (Session: final_gate_174_1768533179)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: how-to/config/fix steps for SSH access on Cisco device
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 47.73it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 32.36it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 56.54it/s]
+[DEBUG] HowTo Candidate: IP_SSH (Score: 0.2876, Threshold: 0.6)
+[DEBUG] HowTo Candidate: IP_SSH (Score: 0.2811, Threshold: 0.6)
+[DEBUG] HowTo Candidate: IP_SSH (Score: 0.2788, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Show mac Msan Forth (Score: 0.2779, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2770, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Cisco IOS Commands (Score: 0.2736, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ปิด/เปิด Remote ONU (Score: 0.2665, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Template Config TACACS (Score: 0.2664, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2629, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 81.68it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 79.51it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.29 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533179 route=rag_miss_coverage latency=2104.8ms choices=0 user=langflow
+INFO:     127.0.0.1:56541 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: ipphone setup (Session: final_gate_174_1768533179)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: Setup iPhone
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 48.57it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 24.07it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 89.14it/s]
+[DEBUG] HowTo Candidate: Setup modem for IPTV settop box (Score: 0.3097, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ipphone(ip-phone) แสดงที่ bras (Score: 0.2996, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Setup modem for IPTV settop box (Score: 0.2947, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Setup modem for IPTV settop box (Score: 0.2924, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ipphone(ip-phone) แสดงที่ bras (Score: 0.2879, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ipphone(ip-phone) แสดงที่ bras (Score: 0.2822, Threshold: 0.6)
+[DEBUG] HowTo Candidate: เบอร์หน่วยงานต่างๆ (Score: 0.2821, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 80.19it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 75.98it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.31 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533179 route=rag_miss_coverage latency=1296.1ms choices=0 user=langflow
+INFO:     127.0.0.1:56545 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: Proxy Table (Session: final_gate_174_1768533179)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains 'table' keyword
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 91.16it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 59.47it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 90.32it/s]
+[DEBUG] HowTo Candidate: ตาราง proxy IP PHONE (Score: 0.3293, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตาราง proxy IP PHONE (Score: 0.3103, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2427, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Cisco IOS Commands (Score: 0.2316, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 100.72it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 97.16it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.33 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533179 route=rag_miss_coverage latency=1356.9ms choices=0 user=langflow
+INFO:     127.0.0.1:56549 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: คู่มือ 1177 (Session: final_gate_174_1768533179)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains 'คู่มือ' which indicates a manual/guide/pdf/sop/procedure request
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 70.06it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 55.45it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 56.26it/s]
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2884, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2827, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2805, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2727, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.2715, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Bras IP (Score: 0.2697, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Bras IP (Score: 0.2686, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2667, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2606, Threshold: 0.6)
+[DEBUG] HowTo Candidate: NEW TOT-DNS (Score: 0.2598, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 91.09it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 95.90it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.29 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533179 route=rag_miss_coverage latency=2027.3ms choices=0 user=langflow
+INFO:     127.0.0.1:56553 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: Ribbon EdgeMare (Session: final_gate_174_1768533179)
+[DEBUG] Intent: GENERAL_QA (0.9) Reason: 
+[DEBUG] Knowledge Alias Trigger: 'Ribbon EdgeMare' -> Forcing HOWTO_PROCEDURE (Tech Pattern Alias Trigger (Not a Team))
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.94it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.93it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.66it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.65it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 28.92it/s]
+[DEBUG] HowTo Link Match: 'Ribbon EdgeMare' -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=646:ribbon-edgemare6000-doc&catid=49:-smc&Itemid=84 (Score: 0.85)
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=646:ribbon-edgemare6000-doc&catid=49:-smc&Itemid=84
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 56.21it/s]
+[DEBUG] article_content type: <class 'str'>
+[ArticleInterpreter] Detected Link Directory/Manual Page
+[ArticleInterpreter] Topic Filter Metric: Removed 7 links (Before: 8, After: 1) for query 'Ribbon EdgeMare'
+ArticleMode=directory Links=28 TextChars=5988 Score=0.85 Cache=miss
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 63.97it/s]
+INFO:API:AUDIT session=final_gate_174_1768533179 route=article_answer latency=64272.8ms choices=0 user=langflow
+INFO:     127.0.0.1:56559 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: เข้าเว็บ edoc (Session: final_gate_174_1768533179)
+[DEBUG] Intent: REFERENCE_LINK (0.9) Reason: ลิงก์ edoc
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 57.89it/s]
+[DEBUG] Route: REFERENCE_LINK
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 46.73it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 85.17it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.28 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533179 route=rag_miss_coverage latency=4859.8ms choices=0 user=langflow
+INFO:     127.0.0.1:56580 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: วิธีแก้ tr069 (Session: final_gate_174_1768533179)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: วิธีการแก้ไข TR069
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 39.45it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 28.07it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 27.75it/s]
+[DEBUG] HowTo Candidate: Work contect (Score: 0.3189, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP (Score: 0.3145, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.3120, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.3067, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP (Score: 0.3054, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP (Score: 0.3051, Threshold: 0.6)
+[DEBUG] HowTo Candidate: เบอร์หน่วยงานต่างๆ (Score: 0.3008, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP (Score: 0.2967, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.2953, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP (Score: 0.2923, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 18.26it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 46.52it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.32 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533179 route=rag_miss_coverage latency=1743.3ms choices=0 user=langflow
+INFO:     127.0.0.1:56584 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: ipphone โทรไม่ออก (Session: final_gate_174_1768533179)
+[DEBUG] Intent: CONTACT_LOOKUP (0.9) Reason: เบอร์โทรไม่ออก
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 32.50it/s]
+[DEBUG] Route: CONTACT_LOOKUP (via Handler)
+[DEBUG Contact] Query: 'ipphone ไม่ออก', Intent: UNKNOWN
+[METRICS] ContactLookup: query='ipphone ไม่ออก', outcome='CHOICE_MEDIUM', score=50.0
+INFO:API:AUDIT session=final_gate_174_1768533179 route=contact_hit_contact_book_fuzzy latency=1580.4ms choices=0 user=langflow
+INFO:     127.0.0.1:56589 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query:  (Session: final_gate_174_1768533179)
+INFO:API:AUDIT session=final_gate_174_1768533179 route=quick_reply latency=0.1ms choices=0 user=langflow
+INFO:     127.0.0.1:56596 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: 😊สวัสดี (Session: final_gate_174_1768533179)
+[DEBUG] Intent: GENERAL_QA (0.9) Reason: 
+[CHAT] Greeting Handler Hit: 😊สวัสดี
+INFO:API:AUDIT session=final_gate_174_1768533179 route=greeting_deterministic latency=38005.2ms choices=0 user=langflow
+INFO:     127.0.0.1:56608 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: TR069 (Session: final_gate_174_1768533179)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: ตั้งค่า TR069
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.86it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.85it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 81.37it/s]
+[DEBUG] HowTo Link Match: 'TR069' -> https://pete.intra.ntplc.co.th (Score: 0.7142857142857143)
+[DEBUG] News/Article Route -> https://pete.intra.ntplc.co.th
+[DEBUG] Cache Miss for https://pete.intra.ntplc.co.th -> Attempting Fetch (Strict Timeout)...
+[DEBUG] Fetch Failed: connection_error(HTTPSConnectionPool(host='pete.intra.ntplc.co.th', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)'))))
+INFO:API:AUDIT session=final_gate_174_1768533179 route=article_miss latency=4054.3ms choices=0 user=langflow
+INFO:     127.0.0.1:56616 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: MPLS Profile (Session: final_gate_174_1768533179)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: MPLS Profile configuration steps
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  6.17it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  6.17it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 44.83it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 89.63it/s]
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.3009, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2894, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2792, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2790, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2728, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2706, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2703, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2608, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2602, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Description และVLAN Name  บนโครงข่าย TOT-MPLS (Score: 0.2594, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 88.31it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 67.33it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.30 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533179 route=rag_miss_coverage latency=1980.9ms choices=0 user=langflow
+INFO:     127.0.0.1:56625 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: ssh access cisco (Session: final_gate_174_1768533179)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: how-to/config/fix steps for SSH access on Cisco device
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 50.68it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 39.92it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 47.04it/s]
+[DEBUG] HowTo Candidate: IP_SSH (Score: 0.2876, Threshold: 0.6)
+[DEBUG] HowTo Candidate: IP_SSH (Score: 0.2811, Threshold: 0.6)
+[DEBUG] HowTo Candidate: IP_SSH (Score: 0.2788, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Show mac Msan Forth (Score: 0.2779, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2770, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Cisco IOS Commands (Score: 0.2736, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ปิด/เปิด Remote ONU (Score: 0.2665, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Template Config TACACS (Score: 0.2664, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2629, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 60.09it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 62.82it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.29 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533179 route=rag_miss_coverage latency=1732.1ms choices=0 user=langflow
+INFO:     127.0.0.1:56636 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: ipphone setup (Session: final_gate_174_1768533179)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: Setup iPhone
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 46.62it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 24.07it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 58.64it/s]
+[DEBUG] HowTo Candidate: Setup modem for IPTV settop box (Score: 0.3097, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ipphone(ip-phone) แสดงที่ bras (Score: 0.2996, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Setup modem for IPTV settop box (Score: 0.2947, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Setup modem for IPTV settop box (Score: 0.2924, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ipphone(ip-phone) แสดงที่ bras (Score: 0.2879, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ipphone(ip-phone) แสดงที่ bras (Score: 0.2822, Threshold: 0.6)
+[DEBUG] HowTo Candidate: เบอร์หน่วยงานต่างๆ (Score: 0.2821, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 47.41it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 46.80it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.31 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533179 route=rag_miss_coverage latency=1518.4ms choices=0 user=langflow
+INFO:     127.0.0.1:56643 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: Proxy Table (Session: final_gate_174_1768533179)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains 'table' keyword
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 39.49it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 51.25it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 65.34it/s]
+[DEBUG] HowTo Candidate: ตาราง proxy IP PHONE (Score: 0.3293, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตาราง proxy IP PHONE (Score: 0.3103, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2427, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Cisco IOS Commands (Score: 0.2316, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 27.93it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 79.23it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.33 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533179 route=rag_miss_coverage latency=2245.0ms choices=0 user=langflow
+INFO:     127.0.0.1:56647 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: คู่มือ 1177 (Session: final_gate_174_1768533179)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains 'คู่มือ' which indicates a manual/guide/pdf/sop/procedure request
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 58.67it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 62.12it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 82.08it/s]
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2884, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2827, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2805, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2727, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.2715, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Bras IP (Score: 0.2697, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Bras IP (Score: 0.2686, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2667, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2606, Threshold: 0.6)
+[DEBUG] HowTo Candidate: NEW TOT-DNS (Score: 0.2598, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 89.81it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 87.87it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.29 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533179 route=rag_miss_coverage latency=2279.5ms choices=0 user=langflow
+INFO:     127.0.0.1:56652 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: Ribbon EdgeMare (Session: final_gate_174_1768533179)
+[DEBUG] Intent: GENERAL_QA (0.9) Reason: 
+[DEBUG] Knowledge Alias Trigger: 'Ribbon EdgeMare' -> Forcing HOWTO_PROCEDURE (Tech Pattern Alias Trigger (Not a Team))
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.65it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.64it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.49it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.49it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 75.31it/s]
+[DEBUG] HowTo Link Match: 'Ribbon EdgeMare' -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=646:ribbon-edgemare6000-doc&catid=49:-smc&Itemid=84 (Score: 0.85)
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=646:ribbon-edgemare6000-doc&catid=49:-smc&Itemid=84
+[DEBUG] Article Summary Cache HIT (Score: 1.00)
+INFO:API:AUDIT session=final_gate_174_1768533179 route=article_answer latency=67839.0ms choices=0 user=langflow
+INFO:     127.0.0.1:56656 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: เข้าเว็บ edoc (Session: final_gate_174_1768533179)
+[DEBUG] Intent: REFERENCE_LINK (0.9) Reason: ลิงก์ edoc
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 30.55it/s]
+[DEBUG] Route: REFERENCE_LINK
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 31.08it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 84.48it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.28 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533179 route=rag_miss_coverage latency=4879.7ms choices=0 user=langflow
+INFO:     127.0.0.1:56666 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: วิธีแก้ tr069 (Session: final_gate_174_1768533179)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: วิธีการแก้ไข TR069
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 20.25it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 15.75it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 56.16it/s]
+[DEBUG] HowTo Candidate: Work contect (Score: 0.3189, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP (Score: 0.3145, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.3120, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.3067, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP (Score: 0.3054, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP (Score: 0.3051, Threshold: 0.6)
+[DEBUG] HowTo Candidate: เบอร์หน่วยงานต่างๆ (Score: 0.3008, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP (Score: 0.2967, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.2953, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP (Score: 0.2923, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 63.77it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 70.39it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.32 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533179 route=rag_miss_coverage latency=2244.7ms choices=0 user=langflow
+INFO:     127.0.0.1:56670 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: ipphone โทรไม่ออก (Session: final_gate_174_1768533179)
+[DEBUG] Intent: CONTACT_LOOKUP (0.9) Reason: เบอร์โทรไม่ออก
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 46.84it/s]
+[DEBUG] Route: CONTACT_LOOKUP (via Handler)
+[DEBUG Contact] Query: 'ipphone ไม่ออก', Intent: UNKNOWN
+[METRICS] ContactLookup: query='ipphone ไม่ออก', outcome='CHOICE_MEDIUM', score=50.0
+INFO:API:AUDIT session=final_gate_174_1768533179 route=contact_hit_contact_book_fuzzy latency=1428.1ms choices=0 user=langflow
+INFO:     127.0.0.1:56678 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query:  (Session: final_gate_174_1768533179)
+INFO:API:AUDIT session=final_gate_174_1768533179 route=quick_reply latency=0.0ms choices=0 user=langflow
+INFO:     127.0.0.1:56688 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: 😊สวัสดี (Session: final_gate_174_1768533179)
+[DEBUG] Intent: GENERAL_QA (0.9) Reason: 
+[CHAT] Greeting Handler Hit: 😊สวัสดี
+INFO:API:AUDIT session=final_gate_174_1768533179 route=greeting_deterministic latency=45487.3ms choices=0 user=langflow
+INFO:     127.0.0.1:56702 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: TR069 (Session: final_gate_174_1768533179)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: ตั้งค่า TR069
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.44it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.43it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 80.72it/s]
+[DEBUG] HowTo Link Match: 'TR069' -> https://pete.intra.ntplc.co.th (Score: 0.7142857142857143)
+[DEBUG] News/Article Route -> https://pete.intra.ntplc.co.th
+[DEBUG] Cache Miss for https://pete.intra.ntplc.co.th -> Attempting Fetch (Strict Timeout)...
+[DEBUG] Fetch Failed: connection_error(HTTPSConnectionPool(host='pete.intra.ntplc.co.th', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)'))))
+INFO:API:AUDIT session=final_gate_174_1768533179 route=article_miss latency=3952.3ms choices=0 user=langflow
+INFO:     127.0.0.1:56713 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: TR069 (Session: final_gate_174_1768533431)
+[DEBUG] Session Switch Detected (final_gate_174_1768533179 -> final_gate_174_1768533431). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: ตั้งค่า TR069
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 19.50it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 44.11it/s]
+[DEBUG] HowTo Link Match: 'TR069' -> https://pete.intra.ntplc.co.th (Score: 0.7142857142857143)
+[DEBUG] News/Article Route -> https://pete.intra.ntplc.co.th
+[DEBUG] Cache Miss for https://pete.intra.ntplc.co.th -> Attempting Fetch (Strict Timeout)...
+[DEBUG] Fetch Failed: connection_error(HTTPSConnectionPool(host='pete.intra.ntplc.co.th', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)'))))
+INFO:API:AUDIT session=final_gate_174_1768533431 route=article_miss latency=1547.0ms choices=0 user=langflow
+INFO:     127.0.0.1:56718 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: MPLS Profile (Session: final_gate_174_1768533179)
+[DEBUG] Session Switch Detected (final_gate_174_1768533431 -> final_gate_174_1768533179). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: MPLS Profile configuration steps
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.42it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.41it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 52.67it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 64.82it/s]
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.3009, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2894, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2792, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2790, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2728, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2706, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2703, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2608, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2602, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Description และVLAN Name  บนโครงข่าย TOT-MPLS (Score: 0.2594, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 51.41it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 77.71it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.30 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533179 route=rag_miss_coverage latency=2647.8ms choices=0 user=langflow
+INFO:     127.0.0.1:56722 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: MPLS Profile (Session: final_gate_174_1768533431)
+[DEBUG] Session Switch Detected (final_gate_174_1768533179 -> final_gate_174_1768533431). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: MPLS Profile configuration steps
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 45.41it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 68.75it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 71.27it/s]
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.3009, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2894, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2792, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2790, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2728, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2706, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2703, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2608, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2602, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Description และVLAN Name  บนโครงข่าย TOT-MPLS (Score: 0.2594, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 74.38it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 73.30it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.30 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533431 route=rag_miss_coverage latency=1761.7ms choices=0 user=langflow
+INFO:     127.0.0.1:56726 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: ssh access cisco (Session: final_gate_174_1768533179)
+[DEBUG] Session Switch Detected (final_gate_174_1768533431 -> final_gate_174_1768533179). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: how-to/config/fix steps for SSH access on Cisco device
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 113.62it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 38.15it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 86.39it/s]
+[DEBUG] HowTo Candidate: IP_SSH (Score: 0.2876, Threshold: 0.6)
+[DEBUG] HowTo Candidate: IP_SSH (Score: 0.2811, Threshold: 0.6)
+[DEBUG] HowTo Candidate: IP_SSH (Score: 0.2788, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Show mac Msan Forth (Score: 0.2779, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2770, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Cisco IOS Commands (Score: 0.2736, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ปิด/เปิด Remote ONU (Score: 0.2665, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Template Config TACACS (Score: 0.2664, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2629, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 88.82it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 82.39it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.29 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533179 route=rag_miss_coverage latency=1562.8ms choices=0 user=langflow
+INFO:     127.0.0.1:56734 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: ssh access cisco (Session: final_gate_174_1768533431)
+[DEBUG] Session Switch Detected (final_gate_174_1768533179 -> final_gate_174_1768533431). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: how-to/config/fix steps for SSH access on Cisco device
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 59.29it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 75.81it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 88.57it/s]
+[DEBUG] HowTo Candidate: IP_SSH (Score: 0.2876, Threshold: 0.6)
+[DEBUG] HowTo Candidate: IP_SSH (Score: 0.2811, Threshold: 0.6)
+[DEBUG] HowTo Candidate: IP_SSH (Score: 0.2788, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Show mac Msan Forth (Score: 0.2779, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2770, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Cisco IOS Commands (Score: 0.2736, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ปิด/เปิด Remote ONU (Score: 0.2665, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Template Config TACACS (Score: 0.2664, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2629, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 79.45it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 85.26it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.29 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533431 route=rag_miss_coverage latency=2160.7ms choices=0 user=langflow
+INFO:     127.0.0.1:56747 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: ipphone setup (Session: final_gate_174_1768533179)
+[DEBUG] Session Switch Detected (final_gate_174_1768533431 -> final_gate_174_1768533179). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: Setup iPhone
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 30.96it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 34.07it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 68.44it/s]
+[DEBUG] HowTo Candidate: Setup modem for IPTV settop box (Score: 0.3097, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ipphone(ip-phone) แสดงที่ bras (Score: 0.2996, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Setup modem for IPTV settop box (Score: 0.2947, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Setup modem for IPTV settop box (Score: 0.2924, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ipphone(ip-phone) แสดงที่ bras (Score: 0.2879, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ipphone(ip-phone) แสดงที่ bras (Score: 0.2822, Threshold: 0.6)
+[DEBUG] HowTo Candidate: เบอร์หน่วยงานต่างๆ (Score: 0.2821, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 40.81it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 56.01it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.31 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533179 route=rag_miss_coverage latency=1465.2ms choices=0 user=langflow
+INFO:     127.0.0.1:56754 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: ipphone setup (Session: final_gate_174_1768533431)
+[DEBUG] Session Switch Detected (final_gate_174_1768533179 -> final_gate_174_1768533431). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: Setup iPhone
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 68.13it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 80.04it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 79.76it/s]
+[DEBUG] HowTo Candidate: Setup modem for IPTV settop box (Score: 0.3097, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ipphone(ip-phone) แสดงที่ bras (Score: 0.2996, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Setup modem for IPTV settop box (Score: 0.2947, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Setup modem for IPTV settop box (Score: 0.2924, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ipphone(ip-phone) แสดงที่ bras (Score: 0.2879, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ipphone(ip-phone) แสดงที่ bras (Score: 0.2822, Threshold: 0.6)
+[DEBUG] HowTo Candidate: เบอร์หน่วยงานต่างๆ (Score: 0.2821, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 82.05it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 84.72it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.31 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533431 route=rag_miss_coverage latency=1570.5ms choices=0 user=langflow
+INFO:     127.0.0.1:56759 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: Proxy Table (Session: final_gate_174_1768533179)
+[DEBUG] Session Switch Detected (final_gate_174_1768533431 -> final_gate_174_1768533179). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains 'table' keyword
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 107.07it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 67.74it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 71.44it/s]
+[DEBUG] HowTo Candidate: ตาราง proxy IP PHONE (Score: 0.3293, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตาราง proxy IP PHONE (Score: 0.3103, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2427, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Cisco IOS Commands (Score: 0.2316, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 68.92it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 76.79it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.33 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533179 route=rag_miss_coverage latency=1600.2ms choices=0 user=langflow
+INFO:     127.0.0.1:56763 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: Proxy Table (Session: final_gate_174_1768533431)
+[DEBUG] Session Switch Detected (final_gate_174_1768533179 -> final_gate_174_1768533431). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains 'table' keyword
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 125.31it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 83.04it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 69.03it/s]
+[DEBUG] HowTo Candidate: ตาราง proxy IP PHONE (Score: 0.3293, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตาราง proxy IP PHONE (Score: 0.3103, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2427, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Cisco IOS Commands (Score: 0.2316, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 69.87it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 76.00it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.33 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533431 route=rag_miss_coverage latency=1437.8ms choices=0 user=langflow
+INFO:     127.0.0.1:56767 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: คู่มือ 1177 (Session: final_gate_174_1768533179)
+[DEBUG] Session Switch Detected (final_gate_174_1768533431 -> final_gate_174_1768533179). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains 'คู่มือ' which indicates a manual/guide/pdf/sop/procedure request
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 80.98it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 59.19it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 56.48it/s]
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2884, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2827, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2805, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2727, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.2715, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Bras IP (Score: 0.2697, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Bras IP (Score: 0.2686, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2667, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2606, Threshold: 0.6)
+[DEBUG] HowTo Candidate: NEW TOT-DNS (Score: 0.2598, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 81.59it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 89.27it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.29 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533179 route=rag_miss_coverage latency=1875.0ms choices=0 user=langflow
+INFO:     127.0.0.1:56771 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: คู่มือ 1177 (Session: final_gate_174_1768533431)
+[DEBUG] Session Switch Detected (final_gate_174_1768533179 -> final_gate_174_1768533431). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains 'คู่มือ' which indicates a manual/guide/pdf/sop/procedure request
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 41.24it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 48.48it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 46.20it/s]
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2884, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2827, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2805, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2727, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.2715, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Bras IP (Score: 0.2697, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Bras IP (Score: 0.2686, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2667, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2606, Threshold: 0.6)
+[DEBUG] HowTo Candidate: NEW TOT-DNS (Score: 0.2598, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 43.57it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 53.75it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.29 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533431 route=rag_miss_coverage latency=1770.7ms choices=0 user=langflow
+INFO:     127.0.0.1:56775 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: Ribbon EdgeMare (Session: final_gate_174_1768533179)
+[DEBUG] Session Switch Detected (final_gate_174_1768533431 -> final_gate_174_1768533179). Resetting context.
+[DEBUG] Intent: GENERAL_QA (0.9) Reason: 
+[DEBUG] Knowledge Alias Trigger: 'Ribbon EdgeMare' -> Forcing HOWTO_PROCEDURE (Tech Pattern Alias Trigger (Not a Team))
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.80it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.79it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.98it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.98it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 58.30it/s]
+[DEBUG] HowTo Link Match: 'Ribbon EdgeMare' -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=646:ribbon-edgemare6000-doc&catid=49:-smc&Itemid=84 (Score: 0.85)
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=646:ribbon-edgemare6000-doc&catid=49:-smc&Itemid=84
+[DEBUG] Article Summary Cache HIT (Score: 1.00)
+INFO:API:AUDIT session=final_gate_174_1768533179 route=article_answer latency=72658.9ms choices=0 user=langflow
+INFO:     127.0.0.1:56779 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: Ribbon EdgeMare (Session: final_gate_174_1768533431)
+[DEBUG] Session Switch Detected (final_gate_174_1768533179 -> final_gate_174_1768533431). Resetting context.
+[DEBUG] Intent: GENERAL_QA (0.9) Reason: 
+[DEBUG] Knowledge Alias Trigger: 'Ribbon EdgeMare' -> Forcing HOWTO_PROCEDURE (Tech Pattern Alias Trigger (Not a Team))
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  6.35it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  6.34it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.82it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.82it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 80.94it/s]
+[DEBUG] HowTo Link Match: 'Ribbon EdgeMare' -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=646:ribbon-edgemare6000-doc&catid=49:-smc&Itemid=84 (Score: 0.85)
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=646:ribbon-edgemare6000-doc&catid=49:-smc&Itemid=84
+[DEBUG] Article Summary Cache HIT (Score: 1.00)
+INFO:API:AUDIT session=final_gate_174_1768533431 route=article_answer latency=67485.8ms choices=0 user=langflow
+INFO:     127.0.0.1:56783 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: เข้าเว็บ edoc (Session: final_gate_174_1768533179)
+[DEBUG] Session Switch Detected (final_gate_174_1768533431 -> final_gate_174_1768533179). Resetting context.
+[DEBUG] Intent: REFERENCE_LINK (0.9) Reason: ลิงก์ edoc
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 48.53it/s]
+[DEBUG] Route: REFERENCE_LINK
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 41.31it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 90.54it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.28 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533179 route=rag_miss_coverage latency=3592.0ms choices=0 user=langflow
+INFO:     127.0.0.1:56788 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: TR069 (Session: final_gate_174_1768533545)
+[DEBUG] Session Switch Detected (final_gate_174_1768533179 -> final_gate_174_1768533545). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: ตั้งค่า TR069
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 72.28it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 95.30it/s]
+[DEBUG] HowTo Link Match: 'TR069' -> https://pete.intra.ntplc.co.th (Score: 0.7142857142857143)
+[DEBUG] News/Article Route -> https://pete.intra.ntplc.co.th
+[DEBUG] Cache Miss for https://pete.intra.ntplc.co.th -> Attempting Fetch (Strict Timeout)...
+[DEBUG] Fetch Failed: connection_error(HTTPSConnectionPool(host='pete.intra.ntplc.co.th', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)'))))
+INFO:API:AUDIT session=final_gate_174_1768533545 route=article_miss latency=1359.2ms choices=0 user=langflow
+INFO:     127.0.0.1:56830 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: 😊สวัสดี (Session: final_gate_174_1768533179)
+[DEBUG] Session Switch Detected (final_gate_174_1768533545 -> final_gate_174_1768533179). Resetting context.
+[DEBUG] Intent: GENERAL_QA (0.9) Reason: 
+[CHAT] Greeting Handler Hit: 😊สวัสดี
+INFO:API:AUDIT session=final_gate_174_1768533179 route=greeting_deterministic latency=32181.0ms choices=0 user=langflow
+INFO:     127.0.0.1:56834 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: 😊สวัสดี (Session: final_gate_174_1768533431)
+[DEBUG] Session Switch Detected (final_gate_174_1768533179 -> final_gate_174_1768533431). Resetting context.
+[DEBUG] Intent: GENERAL_QA (0.9) Reason: 
+[CHAT] Greeting Handler Hit: 😊สวัสดี
+INFO:API:AUDIT session=final_gate_174_1768533431 route=greeting_deterministic latency=32767.7ms choices=0 user=langflow
+INFO:     127.0.0.1:56839 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: ipphone setup (Session: final_gate_174_1768533431)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: Setup iPhone
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.63it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.63it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.37it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.36it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 91.99it/s]
+[DEBUG] HowTo Candidate: Setup modem for IPTV settop box (Score: 0.3097, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ipphone(ip-phone) แสดงที่ bras (Score: 0.2996, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Setup modem for IPTV settop box (Score: 0.2947, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Setup modem for IPTV settop box (Score: 0.2924, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ipphone(ip-phone) แสดงที่ bras (Score: 0.2879, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ipphone(ip-phone) แสดงที่ bras (Score: 0.2822, Threshold: 0.6)
+[DEBUG] HowTo Candidate: เบอร์หน่วยงานต่างๆ (Score: 0.2821, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 94.15it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 92.52it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.31 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533431 route=rag_miss_coverage latency=2893.9ms choices=0 user=langflow
+INFO:     127.0.0.1:56875 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: คู่มือ 1177 (Session: final_gate_174_1768533545)
+[DEBUG] Session Switch Detected (final_gate_174_1768533431 -> final_gate_174_1768533545). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains 'คู่มือ' which indicates a manual/guide/pdf/sop/procedure request
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 113.83it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 62.06it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 75.72it/s]
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2884, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2827, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2805, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2727, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.2715, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Bras IP (Score: 0.2697, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Bras IP (Score: 0.2686, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2667, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2606, Threshold: 0.6)
+[DEBUG] HowTo Candidate: NEW TOT-DNS (Score: 0.2598, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 42.97it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 75.49it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.29 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533545 route=rag_miss_coverage latency=2096.2ms choices=0 user=langflow
+INFO:     127.0.0.1:56887 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: Proxy Table (Session: final_gate_174_1768533431)
+[DEBUG] Session Switch Detected (final_gate_174_1768533545 -> final_gate_174_1768533431). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains 'table' keyword
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 67.47it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 49.23it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 61.13it/s]
+[DEBUG] HowTo Candidate: ตาราง proxy IP PHONE (Score: 0.3293, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตาราง proxy IP PHONE (Score: 0.3103, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2427, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Cisco IOS Commands (Score: 0.2316, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 95.33it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 94.63it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.33 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533431 route=rag_miss_coverage latency=1335.5ms choices=0 user=langflow
+INFO:     127.0.0.1:56891 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: Ribbon EdgeMare (Session: final_gate_174_1768533545)
+[DEBUG] Session Switch Detected (final_gate_174_1768533431 -> final_gate_174_1768533545). Resetting context.
+[DEBUG] Intent: GENERAL_QA (0.9) Reason: 
+[DEBUG] Knowledge Alias Trigger: 'Ribbon EdgeMare' -> Forcing HOWTO_PROCEDURE (Tech Pattern Alias Trigger (Not a Team))
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 51.88it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 33.63it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 81.86it/s]
+[DEBUG] HowTo Link Match: 'Ribbon EdgeMare' -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=646:ribbon-edgemare6000-doc&catid=49:-smc&Itemid=84 (Score: 0.85)
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=646:ribbon-edgemare6000-doc&catid=49:-smc&Itemid=84
+[DEBUG] Article Summary Cache HIT (Score: 1.00)
+INFO:API:AUDIT session=final_gate_174_1768533545 route=article_answer latency=52646.5ms choices=0 user=langflow
+INFO:     127.0.0.1:56894 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: คู่มือ 1177 (Session: final_gate_174_1768533431)
+[DEBUG] Session Switch Detected (final_gate_174_1768533545 -> final_gate_174_1768533431). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains 'คู่มือ' which indicates a manual/guide/pdf/sop/procedure request
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 86.51it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 57.53it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 88.00it/s]
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2884, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2827, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2805, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2727, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.2715, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Bras IP (Score: 0.2697, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Bras IP (Score: 0.2686, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2667, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2606, Threshold: 0.6)
+[DEBUG] HowTo Candidate: NEW TOT-DNS (Score: 0.2598, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 94.38it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 95.70it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.29 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533431 route=rag_miss_coverage latency=3810.8ms choices=0 user=langflow
+INFO:     127.0.0.1:56903 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: เข้าเว็บ edoc (Session: final_gate_174_1768533431)
+[DEBUG] Intent: REFERENCE_LINK (0.9) Reason: ลิงก์ edoc
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 138.04it/s]
+[DEBUG] Route: REFERENCE_LINK
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 71.24it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 86.13it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.28 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533431 route=rag_miss_coverage latency=1183.8ms choices=0 user=langflow
+INFO:     127.0.0.1:56920 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: ipphone โทรไม่ออก (Session: final_gate_174_1768533545)
+[DEBUG] Session Switch Detected (final_gate_174_1768533431 -> final_gate_174_1768533545). Resetting context.
+[DEBUG] Intent: CONTACT_LOOKUP (0.9) Reason: เบอร์โทรไม่ออก
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 123.05it/s]
+[DEBUG] Route: CONTACT_LOOKUP (via Handler)
+[DEBUG Contact] Query: 'ipphone ไม่ออก', Intent: UNKNOWN
+[METRICS] ContactLookup: query='ipphone ไม่ออก', outcome='CHOICE_MEDIUM', score=50.0
+INFO:API:AUDIT session=final_gate_174_1768533545 route=contact_hit_contact_book_fuzzy latency=1159.3ms choices=0 user=langflow
+INFO:     127.0.0.1:56926 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: วิธีแก้ tr069 (Session: final_gate_174_1768533431)
+[DEBUG] Session Switch Detected (final_gate_174_1768533545 -> final_gate_174_1768533431). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: วิธีการแก้ไข TR069
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 109.55it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 64.38it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 84.99it/s]
+[DEBUG] HowTo Candidate: Work contect (Score: 0.3189, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP (Score: 0.3145, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.3120, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.3067, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP (Score: 0.3054, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP (Score: 0.3051, Threshold: 0.6)
+[DEBUG] HowTo Candidate: เบอร์หน่วยงานต่างๆ (Score: 0.3008, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP (Score: 0.2967, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.2953, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP (Score: 0.2923, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 76.74it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 74.85it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.32 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533431 route=rag_miss_coverage latency=1270.6ms choices=0 user=langflow
+INFO:     127.0.0.1:56939 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query:  (Session: final_gate_174_1768533545)
+[DEBUG] Session Switch Detected (final_gate_174_1768533431 -> final_gate_174_1768533545). Resetting context.
+INFO:API:AUDIT session=final_gate_174_1768533545 route=quick_reply latency=0.1ms choices=0 user=langflow
+INFO:     127.0.0.1:56942 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: ipphone โทรไม่ออก (Session: final_gate_174_1768533431)
+[DEBUG] Session Switch Detected (final_gate_174_1768533545 -> final_gate_174_1768533431). Resetting context.
+[DEBUG] Intent: CONTACT_LOOKUP (0.9) Reason: เบอร์โทรไม่ออก
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 114.59it/s]
+[DEBUG] Route: CONTACT_LOOKUP (via Handler)
+[DEBUG Contact] Query: 'ipphone ไม่ออก', Intent: UNKNOWN
+[METRICS] ContactLookup: query='ipphone ไม่ออก', outcome='CHOICE_MEDIUM', score=50.0
+INFO:API:AUDIT session=final_gate_174_1768533431 route=contact_hit_contact_book_fuzzy latency=1190.9ms choices=0 user=langflow
+INFO:     127.0.0.1:56946 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: 😊สวัสดี (Session: final_gate_174_1768533545)
+[DEBUG] Session Switch Detected (final_gate_174_1768533431 -> final_gate_174_1768533545). Resetting context.
+[DEBUG] Intent: GENERAL_QA (0.9) Reason: 
+[CHAT] Greeting Handler Hit: 😊สวัสดี
+INFO:API:AUDIT session=final_gate_174_1768533545 route=greeting_deterministic latency=32326.8ms choices=0 user=langflow
+INFO:     127.0.0.1:56949 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query:  (Session: final_gate_174_1768533431)
+[DEBUG] Session Switch Detected (final_gate_174_1768533545 -> final_gate_174_1768533431). Resetting context.
+INFO:API:AUDIT session=final_gate_174_1768533431 route=quick_reply latency=0.2ms choices=0 user=langflow
+INFO:     127.0.0.1:56952 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: TR069 (Session: final_gate_174_1768533545)
+[DEBUG] Session Switch Detected (final_gate_174_1768533431 -> final_gate_174_1768533545). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: ตั้งค่า TR069
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 40.15it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 84.55it/s]
+[DEBUG] HowTo Link Match: 'TR069' -> https://pete.intra.ntplc.co.th (Score: 0.7142857142857143)
+[DEBUG] News/Article Route -> https://pete.intra.ntplc.co.th
+[DEBUG] Cache Miss for https://pete.intra.ntplc.co.th -> Attempting Fetch (Strict Timeout)...
+[DEBUG] Fetch Failed: connection_error(HTTPSConnectionPool(host='pete.intra.ntplc.co.th', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)'))))
+INFO:API:AUDIT session=final_gate_174_1768533545 route=article_miss latency=3559.5ms choices=0 user=langflow
+INFO:     127.0.0.1:56956 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: 😊สวัสดี (Session: final_gate_174_1768533431)
+[DEBUG] Session Switch Detected (final_gate_174_1768533545 -> final_gate_174_1768533431). Resetting context.
+[DEBUG] Intent: GENERAL_QA (0.9) Reason: 
+[CHAT] Greeting Handler Hit: 😊สวัสดี
+INFO:API:AUDIT session=final_gate_174_1768533431 route=greeting_deterministic latency=25214.6ms choices=0 user=langflow
+INFO:     127.0.0.1:56958 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: MPLS Profile (Session: final_gate_174_1768533545)
+[DEBUG] Session Switch Detected (final_gate_174_1768533431 -> final_gate_174_1768533545). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: MPLS Profile configuration steps
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  8.21it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  8.20it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 39.64it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 105.25it/s]
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.3009, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2894, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2792, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2790, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2728, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2706, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2703, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2608, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2602, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Description และVLAN Name  บนโครงข่าย TOT-MPLS (Score: 0.2594, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 108.90it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 110.27it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.30 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533545 route=rag_miss_coverage latency=2728.3ms choices=0 user=langflow
+INFO:     127.0.0.1:56970 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: TR069 (Session: final_gate_174_1768533431)
+[DEBUG] Session Switch Detected (final_gate_174_1768533545 -> final_gate_174_1768533431). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: ตั้งค่า TR069
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 72.44it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 95.19it/s]
+[DEBUG] HowTo Link Match: 'TR069' -> https://pete.intra.ntplc.co.th (Score: 0.7142857142857143)
+[DEBUG] News/Article Route -> https://pete.intra.ntplc.co.th
+[DEBUG] Cache Miss for https://pete.intra.ntplc.co.th -> Attempting Fetch (Strict Timeout)...
+[DEBUG] Fetch Failed: connection_error(HTTPSConnectionPool(host='pete.intra.ntplc.co.th', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)'))))
+INFO:API:AUDIT session=final_gate_174_1768533431 route=article_miss latency=1169.4ms choices=0 user=langflow
+INFO:     127.0.0.1:56980 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: ssh access cisco (Session: final_gate_174_1768533545)
+[DEBUG] Session Switch Detected (final_gate_174_1768533431 -> final_gate_174_1768533545). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: how-to/config/fix steps for SSH access on Cisco device
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 109.61it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 76.70it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 95.25it/s]
+[DEBUG] HowTo Candidate: IP_SSH (Score: 0.2876, Threshold: 0.6)
+[DEBUG] HowTo Candidate: IP_SSH (Score: 0.2811, Threshold: 0.6)
+[DEBUG] HowTo Candidate: IP_SSH (Score: 0.2788, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Show mac Msan Forth (Score: 0.2779, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2770, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Cisco IOS Commands (Score: 0.2736, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ปิด/เปิด Remote ONU (Score: 0.2665, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Template Config TACACS (Score: 0.2664, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2629, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 63.81it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 108.86it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.29 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533545 route=rag_miss_coverage latency=1397.5ms choices=0 user=langflow
+INFO:     127.0.0.1:56983 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: MPLS Profile (Session: final_gate_174_1768533431)
+[DEBUG] Session Switch Detected (final_gate_174_1768533545 -> final_gate_174_1768533431). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: MPLS Profile configuration steps
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 114.33it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 75.55it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 87.21it/s]
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.3009, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2894, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2792, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2790, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2728, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2706, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2703, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2608, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2602, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Description และVLAN Name  บนโครงข่าย TOT-MPLS (Score: 0.2594, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 92.77it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 102.57it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.30 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533431 route=rag_miss_coverage latency=1144.4ms choices=0 user=langflow
+INFO:     127.0.0.1:56988 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: ipphone setup (Session: final_gate_174_1768533545)
+[DEBUG] Session Switch Detected (final_gate_174_1768533431 -> final_gate_174_1768533545). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: Setup iPhone
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 93.70it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 80.25it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 75.26it/s]
+[DEBUG] HowTo Candidate: Setup modem for IPTV settop box (Score: 0.3097, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ipphone(ip-phone) แสดงที่ bras (Score: 0.2996, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Setup modem for IPTV settop box (Score: 0.2947, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Setup modem for IPTV settop box (Score: 0.2924, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ipphone(ip-phone) แสดงที่ bras (Score: 0.2879, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ipphone(ip-phone) แสดงที่ bras (Score: 0.2822, Threshold: 0.6)
+[DEBUG] HowTo Candidate: เบอร์หน่วยงานต่างๆ (Score: 0.2821, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 41.81it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 90.33it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.31 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533545 route=rag_miss_coverage latency=1098.1ms choices=0 user=langflow
+INFO:     127.0.0.1:56991 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: ssh access cisco (Session: final_gate_174_1768533431)
+[DEBUG] Session Switch Detected (final_gate_174_1768533545 -> final_gate_174_1768533431). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: how-to/config/fix steps for SSH access on Cisco device
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 68.80it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 90.75it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 95.39it/s]
+[DEBUG] HowTo Candidate: IP_SSH (Score: 0.2876, Threshold: 0.6)
+[DEBUG] HowTo Candidate: IP_SSH (Score: 0.2811, Threshold: 0.6)
+[DEBUG] HowTo Candidate: IP_SSH (Score: 0.2788, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Show mac Msan Forth (Score: 0.2779, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2770, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Cisco IOS Commands (Score: 0.2736, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ปิด/เปิด Remote ONU (Score: 0.2665, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Template Config TACACS (Score: 0.2664, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2629, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 99.81it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 91.07it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.29 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533431 route=rag_miss_coverage latency=1758.6ms choices=0 user=langflow
+INFO:     127.0.0.1:57000 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: Proxy Table (Session: final_gate_174_1768533545)
+[DEBUG] Session Switch Detected (final_gate_174_1768533431 -> final_gate_174_1768533545). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains 'table' keyword
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 92.71it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 63.91it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 94.23it/s]
+[DEBUG] HowTo Candidate: ตาราง proxy IP PHONE (Score: 0.3293, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตาราง proxy IP PHONE (Score: 0.3103, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2427, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Cisco IOS Commands (Score: 0.2316, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 93.02it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 93.88it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.33 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533545 route=rag_miss_coverage latency=1203.1ms choices=0 user=langflow
+INFO:     127.0.0.1:57005 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: ipphone setup (Session: final_gate_174_1768533431)
+[DEBUG] Session Switch Detected (final_gate_174_1768533545 -> final_gate_174_1768533431). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: Setup iPhone
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 130.38it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 63.87it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 77.21it/s]
+[DEBUG] HowTo Candidate: Setup modem for IPTV settop box (Score: 0.3097, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ipphone(ip-phone) แสดงที่ bras (Score: 0.2996, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Setup modem for IPTV settop box (Score: 0.2947, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Setup modem for IPTV settop box (Score: 0.2924, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ipphone(ip-phone) แสดงที่ bras (Score: 0.2879, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ipphone(ip-phone) แสดงที่ bras (Score: 0.2822, Threshold: 0.6)
+[DEBUG] HowTo Candidate: เบอร์หน่วยงานต่างๆ (Score: 0.2821, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 71.54it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 88.47it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.31 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533431 route=rag_miss_coverage latency=1043.4ms choices=0 user=langflow
+INFO:     127.0.0.1:57011 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: คู่มือ 1177 (Session: final_gate_174_1768533545)
+[DEBUG] Session Switch Detected (final_gate_174_1768533431 -> final_gate_174_1768533545). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains 'คู่มือ' which indicates a manual/guide/pdf/sop/procedure request
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 74.77it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 69.91it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 94.77it/s]
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2884, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2827, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2805, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2727, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.2715, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Bras IP (Score: 0.2697, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Bras IP (Score: 0.2686, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2667, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2606, Threshold: 0.6)
+[DEBUG] HowTo Candidate: NEW TOT-DNS (Score: 0.2598, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 92.90it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 95.59it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.29 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533545 route=rag_miss_coverage latency=1957.7ms choices=0 user=langflow
+INFO:     127.0.0.1:57014 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: Proxy Table (Session: final_gate_174_1768533431)
+[DEBUG] Session Switch Detected (final_gate_174_1768533545 -> final_gate_174_1768533431). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains 'table' keyword
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 90.12it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 81.73it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 75.98it/s]
+[DEBUG] HowTo Candidate: ตาราง proxy IP PHONE (Score: 0.3293, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตาราง proxy IP PHONE (Score: 0.3103, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2427, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Cisco IOS Commands (Score: 0.2316, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 82.15it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 92.08it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.33 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533431 route=rag_miss_coverage latency=1298.0ms choices=0 user=langflow
+INFO:     127.0.0.1:57030 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: Ribbon EdgeMare (Session: final_gate_174_1768533545)
+[DEBUG] Session Switch Detected (final_gate_174_1768533431 -> final_gate_174_1768533545). Resetting context.
+[DEBUG] Intent: GENERAL_QA (0.9) Reason: 
+[DEBUG] Knowledge Alias Trigger: 'Ribbon EdgeMare' -> Forcing HOWTO_PROCEDURE (Tech Pattern Alias Trigger (Not a Team))
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.56it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.55it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.42it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.42it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 89.57it/s]
+[DEBUG] HowTo Link Match: 'Ribbon EdgeMare' -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=646:ribbon-edgemare6000-doc&catid=49:-smc&Itemid=84 (Score: 0.85)
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=646:ribbon-edgemare6000-doc&catid=49:-smc&Itemid=84
+[DEBUG] Article Summary Cache HIT (Score: 1.00)
+INFO:API:AUDIT session=final_gate_174_1768533545 route=article_answer latency=50723.0ms choices=0 user=langflow
+INFO:     127.0.0.1:57042 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: คู่มือ 1177 (Session: final_gate_174_1768533431)
+[DEBUG] Session Switch Detected (final_gate_174_1768533545 -> final_gate_174_1768533431). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains 'คู่มือ' which indicates a manual/guide/pdf/sop/procedure request
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.07it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.06it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.42it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.41it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 27.38it/s]
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2884, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2827, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2805, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2727, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.2715, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Bras IP (Score: 0.2697, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Bras IP (Score: 0.2686, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2667, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2606, Threshold: 0.6)
+[DEBUG] HowTo Candidate: NEW TOT-DNS (Score: 0.2598, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.05it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.04it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 25.68it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.29 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533431 route=rag_miss_coverage latency=7232.6ms choices=0 user=langflow
+INFO:     127.0.0.1:57046 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: เข้าเว็บ edoc (Session: final_gate_174_1768533545)
+[DEBUG] Session Switch Detected (final_gate_174_1768533431 -> final_gate_174_1768533545). Resetting context.
+[DEBUG] Intent: REFERENCE_LINK (0.9) Reason: ลิงก์ edoc
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:01<00:00,  1.30s/it]Batches: 100%|██████████| 1/1 [00:01<00:00,  1.30s/it]
+[DEBUG] Route: REFERENCE_LINK
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.73it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.72it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 65.74it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.28 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768533545 route=rag_miss_coverage latency=6870.2ms choices=0 user=langflow
+INFO:     127.0.0.1:57056 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: Ribbon EdgeMare (Session: final_gate_174_1768533431)
+[DEBUG] Session Switch Detected (final_gate_174_1768533545 -> final_gate_174_1768533431). Resetting context.
+[DEBUG] Intent: GENERAL_QA (0.9) Reason: 
+[DEBUG] Knowledge Alias Trigger: 'Ribbon EdgeMare' -> Forcing HOWTO_PROCEDURE (Tech Pattern Alias Trigger (Not a Team))
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.73it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.72it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.63it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.62it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 19.33it/s]
+[DEBUG] HowTo Link Match: 'Ribbon EdgeMare' -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=646:ribbon-edgemare6000-doc&catid=49:-smc&Itemid=84 (Score: 0.85)
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=646:ribbon-edgemare6000-doc&catid=49:-smc&Itemid=84
+[DEBUG] Article Summary Cache HIT (Score: 1.00)
+INFO:API:AUDIT session=final_gate_174_1768533431 route=article_answer latency=51790.4ms choices=0 user=langflow
+INFO:     127.0.0.1:57058 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57071 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57123 - "GET / HTTP/1.1" 404 Not Found
+INFO:API:Processing query: test health (Session: None)
+[DEBUG] Session Switch Detected (final_gate_174_1768533431 -> None). Resetting context.
+[DEBUG] Intent: GENERAL_QA (0.9) Reason: ไม่มีคำถามที่ชัดเจนเกี่ยวกับหัวข้อสุขภาพ
+[DEBUG] Knowledge Alias Trigger: 'test health' -> Forcing HOWTO_PROCEDURE (Tech Pattern Alias Trigger (Not a Team))
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  9.59it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  9.58it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.03it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.03it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 75.76it/s]
+[DEBUG] HowTo Candidate: test leasdline (Score: 0.1682, Threshold: 0.6)
+[DEBUG] HowTo Candidate: เบอร์หน่วยงานต่างๆ (Score: 0.1566, Threshold: 0.6)
+[DEBUG] HowTo Candidate: เบอร์หน่วยงานต่างๆ (Score: 0.1472, Threshold: 0.6)
+[DEBUG] HowTo Candidate: เบอร์หน่วยงานต่างๆ (Score: 0.1437, Threshold: 0.6)
+[DEBUG] HowTo Candidate: การจัดทำรายงานงานค้างการตรวจแก้วงจรเช่าประจำวัน (Score: 0.1337, Threshold: 0.6)
+[DEBUG] HowTo Candidate: การจัดทำรายงานงานค้างการตรวจแก้วงจรเช่าประจำวัน (Score: 0.1314, Threshold: 0.6)
+[DEBUG] HowTo Candidate: เบอร์หน่วยงานต่างๆ (Score: 0.1235, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 110.64it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 110.06it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.17 too low (Threshold: 0.35))
+INFO:API:AUDIT session=None route=rag_miss_coverage latency=19659.8ms choices=0 user=langflow
+INFO:     127.0.0.1:57151 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: TR069 (Session: final_gate_174_1768534055)
+[DEBUG] Session Switch Detected (None -> final_gate_174_1768534055). Resetting context.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: ตั้งค่า TR069
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 35.69it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 19.70it/s]
+[DEBUG] HowTo Link Match: 'TR069' -> https://pete.intra.ntplc.co.th (Score: 0.7142857142857143)
+[DEBUG] News/Article Route -> https://pete.intra.ntplc.co.th
+[DEBUG] Cache Miss for https://pete.intra.ntplc.co.th -> Attempting Fetch (Strict Timeout)...
+[DEBUG] Fetch Failed: connection_error(HTTPSConnectionPool(host='pete.intra.ntplc.co.th', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)'))))
+INFO:API:AUDIT session=final_gate_174_1768534055 route=article_miss latency=3701.7ms choices=0 user=langflow
+INFO:     127.0.0.1:57167 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: MPLS Profile (Session: final_gate_174_1768534055)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: MPLS Profile configuration steps
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 31.42it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 39.58it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 15.51it/s]
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.3009, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2894, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2792, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2790, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2728, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2706, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2703, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2608, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2602, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Description และVLAN Name  บนโครงข่าย TOT-MPLS (Score: 0.2594, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 87.97it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 54.77it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.30 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768534055 route=rag_miss_coverage latency=1835.5ms choices=0 user=langflow
+INFO:     127.0.0.1:57179 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: ssh access cisco (Session: final_gate_174_1768534055)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: how-to/config/fix steps for SSH access on Cisco device
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 20.40it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 28.64it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 78.81it/s]
+[DEBUG] HowTo Candidate: IP_SSH (Score: 0.2876, Threshold: 0.6)
+[DEBUG] HowTo Candidate: IP_SSH (Score: 0.2811, Threshold: 0.6)
+[DEBUG] HowTo Candidate: IP_SSH (Score: 0.2788, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Show mac Msan Forth (Score: 0.2779, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2770, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Cisco IOS Commands (Score: 0.2736, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ปิด/เปิด Remote ONU (Score: 0.2665, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Template Config TACACS (Score: 0.2664, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2629, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 47.38it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 58.83it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.29 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768534055 route=rag_miss_coverage latency=2049.6ms choices=0 user=langflow
+INFO:     127.0.0.1:57184 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: ipphone setup (Session: final_gate_174_1768534055)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: Setup iPhone
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 61.71it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 89.94it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 100.74it/s]
+[DEBUG] HowTo Candidate: Setup modem for IPTV settop box (Score: 0.3097, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ipphone(ip-phone) แสดงที่ bras (Score: 0.2996, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Setup modem for IPTV settop box (Score: 0.2947, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Setup modem for IPTV settop box (Score: 0.2924, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ipphone(ip-phone) แสดงที่ bras (Score: 0.2879, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ipphone(ip-phone) แสดงที่ bras (Score: 0.2822, Threshold: 0.6)
+[DEBUG] HowTo Candidate: เบอร์หน่วยงานต่างๆ (Score: 0.2821, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 94.09it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 89.25it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.31 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768534055 route=rag_miss_coverage latency=1362.4ms choices=0 user=langflow
+INFO:     127.0.0.1:57188 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: Proxy Table (Session: final_gate_174_1768534055)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains 'table' keyword
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 114.25it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 86.79it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 94.28it/s]
+[DEBUG] HowTo Candidate: ตาราง proxy IP PHONE (Score: 0.3293, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตาราง proxy IP PHONE (Score: 0.3103, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Virtual Private LAN Service (VPLS) (Score: 0.2427, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Cisco IOS Commands (Score: 0.2316, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 94.50it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 94.77it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.33 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768534055 route=rag_miss_coverage latency=1355.1ms choices=0 user=langflow
+INFO:     127.0.0.1:57192 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: คู่มือ 1177 (Session: final_gate_174_1768534055)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains 'คู่มือ' which indicates a manual/guide/pdf/sop/procedure request
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 52.53it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 59.87it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 86.74it/s]
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2884, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2827, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2805, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2727, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.2715, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Bras IP (Score: 0.2697, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Bras IP (Score: 0.2686, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2667, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Vlan_Primary BBAGG (Score: 0.2606, Threshold: 0.6)
+[DEBUG] HowTo Candidate: NEW TOT-DNS (Score: 0.2598, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 70.73it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 87.60it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.29 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768534055 route=rag_miss_coverage latency=1881.2ms choices=0 user=langflow
+INFO:     127.0.0.1:57198 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: Ribbon EdgeMare (Session: final_gate_174_1768534055)
+[DEBUG] Intent: GENERAL_QA (0.9) Reason: 
+[DEBUG] Knowledge Alias Trigger: 'Ribbon EdgeMare' -> Forcing HOWTO_PROCEDURE (Tech Pattern Alias Trigger (Not a Team))
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.82it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.81it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.45it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.44it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 84.50it/s]
+[DEBUG] HowTo Link Match: 'Ribbon EdgeMare' -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=646:ribbon-edgemare6000-doc&catid=49:-smc&Itemid=84 (Score: 0.85)
+[DEBUG] News/Article Route -> http://10.192.133.33/smc/index.php?option=com_content&view=article&id=646:ribbon-edgemare6000-doc&catid=49:-smc&Itemid=84
+[DEBUG] Article Summary Cache HIT (Score: 1.00)
+INFO:API:AUDIT session=final_gate_174_1768534055 route=article_answer latency=52480.9ms choices=0 user=langflow
+INFO:     127.0.0.1:57202 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: เข้าเว็บ edoc (Session: final_gate_174_1768534055)
+[DEBUG] Intent: REFERENCE_LINK (0.9) Reason: ลิงก์ edoc
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 41.40it/s]
+[DEBUG] Route: REFERENCE_LINK
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 45.80it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 93.91it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.28 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768534055 route=rag_miss_coverage latency=4087.7ms choices=0 user=langflow
+INFO:     127.0.0.1:57211 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: วิธีแก้ tr069 (Session: final_gate_174_1768534055)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: วิธีการแก้ไข TR069
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 44.56it/s]
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 44.52it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 82.75it/s]
+[DEBUG] HowTo Candidate: Work contect (Score: 0.3189, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP (Score: 0.3145, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.3120, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.3067, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP (Score: 0.3054, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP (Score: 0.3051, Threshold: 0.6)
+[DEBUG] HowTo Candidate: เบอร์หน่วยงานต่างๆ (Score: 0.3008, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP (Score: 0.2967, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Work contect (Score: 0.2953, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ตำแหน่งสื่อสัญญาณ 100G โครงการ R-ISP (Score: 0.2923, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 89.46it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 34.37it/s]
+[DEBUG] Evidence Coverage: MISS (Max score 0.32 too low (Threshold: 0.35))
+INFO:API:AUDIT session=final_gate_174_1768534055 route=rag_miss_coverage latency=1665.6ms choices=0 user=langflow
+INFO:     127.0.0.1:57218 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: ipphone โทรไม่ออก (Session: final_gate_174_1768534055)
+[DEBUG] Intent: CONTACT_LOOKUP (0.9) Reason: เบอร์โทรไม่ออก
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 124.28it/s]
+[DEBUG] Route: CONTACT_LOOKUP (via Handler)
+[DEBUG Contact] Query: 'ipphone ไม่ออก', Intent: UNKNOWN
+[METRICS] ContactLookup: query='ipphone ไม่ออก', outcome='CHOICE_MEDIUM', score=50.0
+INFO:API:AUDIT session=final_gate_174_1768534055 route=contact_hit_contact_book_fuzzy latency=1157.6ms choices=0 user=langflow
+INFO:     127.0.0.1:57225 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query:  (Session: final_gate_174_1768534055)
+INFO:API:AUDIT session=final_gate_174_1768534055 route=quick_reply latency=0.2ms choices=0 user=langflow
+INFO:     127.0.0.1:57236 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: 😊สวัสดี (Session: final_gate_174_1768534055)
+[DEBUG] Intent: GENERAL_QA (0.9) Reason: 
+[CHAT] Greeting Handler Hit: 😊สวัสดี
+INFO:API:AUDIT session=final_gate_174_1768534055 route=greeting_deterministic latency=29870.0ms choices=0 user=langflow
+INFO:     127.0.0.1:57238 - "POST /chat HTTP/1.1" 200 OK
+INFO:API:Processing query: TR069 (Session: final_gate_174_1768534055)
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: ตั้งค่า TR069
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:01<00:00,  1.39s/it]Batches: 100%|██████████| 1/1 [00:01<00:00,  1.39s/it]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 27.02it/s]
+[DEBUG] HowTo Link Match: 'TR069' -> https://pete.intra.ntplc.co.th (Score: 0.7142857142857143)
+[DEBUG] News/Article Route -> https://pete.intra.ntplc.co.th
+[DEBUG] Cache Miss for https://pete.intra.ntplc.co.th -> Attempting Fetch (Strict Timeout)...
+[DEBUG] Fetch Failed: connection_error(HTTPSConnectionPool(host='pete.intra.ntplc.co.th', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)'))))
+INFO:API:AUDIT session=final_gate_174_1768534055 route=article_miss latency=5672.3ms choices=0 user=langflow
+INFO:     127.0.0.1:57250 - "POST /chat HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:API:Shutting down...
+INFO:     Application shutdown complete.
+INFO:     Finished server process [19624]
+/opt/homebrew/Cellar/python@3.13/3.13.7/Frameworks/Python.framework/Versions/3.13/lib/python3.13/multiprocessing/resource_tracker.py:324: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/loky-19624-apw6otdp'}
+  warnings.warn(

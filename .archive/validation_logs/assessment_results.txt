@@ -1,0 +1,9 @@
+======================================================================
+System Capability Assessment
+Baseline: checkpoint-2026-02-13-prefix-vendor-fixes
+======================================================================
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/assess_system_capabilities.py", line 26, in <module>
+    with open(config_path, 'r', encoding='utf-8') as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/jakkapatmac/Documents/NT/RAG/rag_web/config.yaml'

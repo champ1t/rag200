@@ -1,0 +1,42 @@
+[
+  {
+    "test": "1.1 Audit - Exact Match",
+    "passed": true
+  },
+  {
+    "test": "1.2 Audit - Vendor Block",
+    "passed": true
+  },
+  {
+    "test": "2.1 Exact Match LINK_ONLY",
+    "passed": true
+  },
+  {
+    "test": "2.2 Soft-norm LINK_ONLY",
+    "passed": true
+  },
+  {
+    "test": "3.1 Low-Context Detection",
+    "passed": true
+  },
+  {
+    "test": "4.1 OUT_OF_SCOPE Block",
+    "passed": true
+  },
+  {
+    "test": "4.2 SMC_ONLY Block",
+    "passed": true
+  },
+  {
+    "test": "4.3 PRIMARY Vendor Allowed",
+    "passed": true
+  },
+  {
+    "test": "5.1 No Silent Fallback",
+    "passed": true
+  },
+  {
+    "test": "5.2 Cross-Vendor Block",
+    "passed": true
+  }
+]

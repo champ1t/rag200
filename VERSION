@@ -1,4 +1,4 @@
-v1.0-phase173
-Build: 2026-01-16
-Features: Direct Content Preview, Title Prepend, Junk Skip, Cache v179
-Status: Stable
+v1.0-phase248.200
+Build: 2026-03-19
+Features: Image Preservation (P246), Low-Context Bypass (P227), Visual-Aware Normalization (P248), Enriched Summaries (15-pts)
+Status: Frozen (Deployment Ready for .200)

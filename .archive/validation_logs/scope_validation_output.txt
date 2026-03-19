@@ -1,0 +1,97 @@
+[DEBUG_INTERNAL_START] _process_logic entered. q='Juniper MX960 config'
+HARDENING THRESHOLD: 0.7
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/test_smc_scope_validation.py", line 123, in run_test
+    response = engine.process(query, session_id="test_scope_val")
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/chat_engine.py", line 986, in process
+    raise e
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/chat_engine.py", line 981, in process
+    res = self._process_logic(q, session_id)
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/chat_engine.py", line 1722, in _process_logic
+    link_hits = self.processed_cache.find_links_fuzzy(q_stripped, threshold=0.80)
+TypeError: FakeProcessedCache.find_links_fuzzy() got an unexpected keyword argument 'threshold'
+[DEBUG_INTERNAL_START] _process_logic entered. q='What is BGP protocol?'
+HARDENING THRESHOLD: 0.7
+Traceback (most recent call last):
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/test_smc_scope_validation.py", line 123, in run_test
+    response = engine.process(query, session_id="test_scope_val")
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/chat_engine.py", line 986, in process
+    raise e
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/chat_engine.py", line 981, in process
+    res = self._process_logic(q, session_id)
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/chat_engine.py", line 1722, in _process_logic
+    link_hits = self.processed_cache.find_links_fuzzy(q_stripped, threshold=0.80)
+TypeError: FakeProcessedCache.find_links_fuzzy() got an unexpected keyword argument 'threshold'
+[DEBUG_INTERNAL_START] _process_logic entered. q='Huawei NE8000 vs Cisco ASR920 configuration'
+HARDENING THRESHOLD: 0.7
+============================================================
+SMC SCOPE VALIDATION (STEP 0)
+============================================================
+
+--- RUNNING: Case 1: Unknown Vendor/Model (Not in SMC) ---
+Query: 'Juniper MX960 config'
+[INFO] SMC Hardening ACTIVE. Policy: ['enabled', 'vendor_match', 'model_match', 'web_search_technical', 'fallback_chain', 'similarity_threshold', 'logging']
+[INFO] Enforcing Hardened Threshold: 0.7
+[INFO] Loading resources...
+[VectorStore] Using SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[ProcessedCache] Loaded 14 aliases
+[ProcessedCache] Loading processed data from data/processed...
+[ProcessedCache] Found 144 files
+[ProcessedCache] Loaded 144 docs, 4371 links
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+[GOVERNANCE] Identified Intent: CONFIG
+[WARN] Deterministic Retrieval Failed: FakeProcessedCache.find_best_article_match() got an unexpected keyword argument 'threshold'
+[SafeNormalizer] Error: Invalid URL 'mock/api/generate': No scheme supplied. Perhaps you meant https://mock/api/generate?
+[GOVERNANCE] RELAXED: Command/Config detected in 'juniper mx960 config'. Allowing RAG with Source Fidelity.
+[DEBUG] Guard C: Query='juniper mx960 config' is_broad=False
+[Router] LLM Routing Failed: Invalid URL 'mock/api/generate': No scheme supplied. Perhaps you meant https://mock/api/generate?. Falling back to Keyword Router.
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: Document/Manual Keyword Match
+[AUDIT] CRITICAL PROCESS FAILURE: FakeProcessedCache.find_links_fuzzy() got an unexpected keyword argument 'threshold'
+❌ CRASH: FakeProcessedCache.find_links_fuzzy() got an unexpected keyword argument 'threshold'
+
+--- RUNNING: Case 2: General Knowledge (Not SMC) ---
+Query: 'What is BGP protocol?'
+[INFO] SMC Hardening ACTIVE. Policy: ['enabled', 'vendor_match', 'model_match', 'web_search_technical', 'fallback_chain', 'similarity_threshold', 'logging']
+[INFO] Enforcing Hardened Threshold: 0.7
+[INFO] Loading resources...
+[VectorStore] Using SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[ProcessedCache] Loaded 14 aliases
+[ProcessedCache] Loading processed data from data/processed...
+[ProcessedCache] Found 144 files
+[ProcessedCache] Loaded 144 docs, 4371 links
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+[GOVERNANCE] Identified Intent: PROTOCOL
+[WARN] Deterministic Retrieval Failed: FakeProcessedCache.find_best_article_match() got an unexpected keyword argument 'threshold'
+[SafeNormalizer] Error: Invalid URL 'mock/api/generate': No scheme supplied. Perhaps you meant https://mock/api/generate?
+[DEBUG] Guard C: Query='what is bgp protocol?' is_broad=False
+[DEBUG] Intent Override: 'what is bgp protocol?' -> DEFINE_TERM (Keyword Match)
+[DEBUG] Intent: DEFINE_TERM (1.0) Reason: Keyword Override
+[AUDIT] CRITICAL PROCESS FAILURE: FakeProcessedCache.find_links_fuzzy() got an unexpected keyword argument 'threshold'
+❌ CRASH: FakeProcessedCache.find_links_fuzzy() got an unexpected keyword argument 'threshold'
+
+--- RUNNING: Case 3: Cross-Vendor Mix (Hard Block) ---
+Query: 'Huawei NE8000 vs Cisco ASR920 configuration'
+[INFO] SMC Hardening ACTIVE. Policy: ['enabled', 'vendor_match', 'model_match', 'web_search_technical', 'fallback_chain', 'similarity_threshold', 'logging']
+[INFO] Enforcing Hardened Threshold: 0.7
+[INFO] Loading resources...
+[VectorStore] Using SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+[ProcessedCache] Loaded 14 aliases
+[ProcessedCache] Loading processed data from data/processed...
+[ProcessedCache] Found 144 files
+[ProcessedCache] Loaded 144 docs, 4371 links
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+[GOVERNANCE] Query blocked as Out-of-Scope: Huawei NE8000 vs Cisco ASR920 configuration
+[AUDIT] 1770694944.230303 | Status: BLOCKED | Route: blocked_scope | ArticleID: N/A | Reason: OUT_OF_SCOPE_QUERY
+Route: blocked_scope
+✅ PASS
+
+============================================================
+TOTAL: 3 | PASS: 1 | FAIL: 2
+============================================================
+RESULT: NO-GO (Fix Scope First)

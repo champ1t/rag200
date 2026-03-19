@@ -36,7 +36,7 @@ def main():
     )
     ap.add_argument(
         "command",
-        choices=["crawl", "index", "chat", "models", "stats", "records"],
+        choices=["crawl", "index", "chat", "models", "stats", "records", "ingest-api"],
         help="Pipeline step to run"
     )
 
@@ -115,7 +115,8 @@ def main():
 
         processed_dir = "data/processed"
         out_path = "data/records/directory.jsonl"
-        n = build_directory_records(processed_dir, "id=64&", out_path)
+        # [SMART FIX] Match React Article Title for directory home (more stable than dynamic IDs)
+        n = build_directory_records(processed_dir, "เบอร์ติดต่อหน่วยงานต่างๆ", out_path)
         print(f"[RECORDS] built={n} -> {out_path}")
         return
 
@@ -223,7 +224,7 @@ def main():
         chunk_size = int(cfg["chunk"]["chunk_size"])
         overlap = int(cfg["chunk"]["overlap"])
 
-        json_files = sorted(processed_dir.glob("*.json"))
+        json_files = sorted(processed_dir.rglob("*.json"))
         if not json_files:
             print("[INDEX] No processed json found. Run crawl first.")
             return
@@ -359,6 +360,21 @@ def main():
                     "latencies": lat
                 }
                 append_jsonl(log_path, log_entry)
+
+    # --------------------------------------------------
+    # ingest-api (React Backend)
+    # --------------------------------------------------
+    elif args.command == "ingest-api":
+        from src.ingest_api import ingest_km_api
+        
+        API_URL = "http://10.192.133.200:5174/api/knowledge"
+        FRONTEND_URL = "http://10.192.133.200:5173/"
+        OUT_DIR = "data/processed"
+        
+        print(f"[INGEST-API] Starting import from {API_URL}...")
+        ingest_km_api(API_URL, FRONTEND_URL, OUT_DIR)
+        print("[INGEST-API] Finished.")
+        return
 
 
     else:

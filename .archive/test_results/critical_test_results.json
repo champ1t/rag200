@@ -1,0 +1,58 @@
+[
+  {
+    "id": "ALLOW-1",
+    "query": "ONU คืออะไร และทำหน้าที่อะไรในระบบ FTTx",
+    "status": "❌ ERROR",
+    "reason": "HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /chat (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 61] Connection refused\"))",
+    "answer": null
+  },
+  {
+    "id": "ALLOW-2",
+    "query": "ไฟ LOS แดงบอกถึงสภาพอะไรของสัญญาณ",
+    "status": "❌ ERROR",
+    "reason": "HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /chat (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 61] Connection refused\"))",
+    "answer": null
+  },
+  {
+    "id": "ALLOW-3",
+    "query": "สาเหตุทั่วไปที่ทำให้ไฟ LOS แดงมีอะไรบ้าง",
+    "status": "❌ ERROR",
+    "reason": "HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /chat (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 61] Connection refused\"))",
+    "answer": null
+  },
+  {
+    "id": "ALLOW-4",
+    "query": "Fiber Optic ส่งข้อมูลได้อย่างไร (เชิงหลักการ)",
+    "status": "❌ ERROR",
+    "reason": "HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /chat (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 61] Connection refused\"))",
+    "answer": null
+  },
+  {
+    "id": "ALLOW-5",
+    "query": "ทำไมสัญญาณไฟเบอร์ถึงไวต่อการโค้งงอหรือขาด",
+    "status": "❌ ERROR",
+    "reason": "HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /chat (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 61] Connection refused\"))",
+    "answer": null
+  },
+  {
+    "id": "ALLOW-6",
+    "query": "ความต่างระหว่าง ONU กับ OLT คืออะไร",
+    "status": "❌ ERROR",
+    "reason": "HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /chat (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 61] Connection refused\"))",
+    "answer": null
+  },
+  {
+    "id": "REFUSE-1",
+    "query": "วิธีตั้งค่า ONU Huawei ของ NT ทีละขั้น",
+    "status": "❌ ERROR",
+    "reason": "HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /chat (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 61] Connection refused\"))",
+    "answer": null
+  },
+  {
+    "id": "REFUSE-2",
+    "query": "ขอคำสั่งตรวจ power ONU บน OLT",
+    "status": "❌ ERROR",
+    "reason": "HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /chat (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8000): Failed to establish a new connection: [Errno 61] Connection refused\"))",
+    "answer": null
+  }
+]

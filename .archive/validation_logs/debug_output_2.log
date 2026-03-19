@@ -1,0 +1,43 @@
+🚀 DEBUG: config ONU Only
+[INFO] Loading resources...
+[VectorStore] Using SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+
+QUERY: config ONU ยังไง
+[SafeNormalizer] config ONU ยังไง -> CONTACT_LOOKUP | CLARIFY (3868.6ms)
+[DEBUG] Guard C: Query='config onu ยังไง' is_broad=False
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'config onu ยังไง'
+[DETERMINISTIC DEBUG] Intent: HOWTO_PROCEDURE
+[DETERMINISTIC DEBUG] Source: query contains 'config' and 'ONU'
+[DETERMINISTIC DEBUG] Confidence: 0.9
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] GENERAL_NETWORK_KNOWLEDGE (confidence=0.80) - Generic procedure request (no NT identifier) -> Routed to Expert Explainer for safe handling
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains 'config' and 'ONU'
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] HowTo Candidate: Cisco IOS Commands (Score: 0.2872, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Cisco IOS Commands (Score: 0.2803, Threshold: 0.6)
+[DEBUG] HowTo Candidate: คำสั่ง BNG_Cisco_ASR9006 (Score: 0.2772, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Cisco IOS Commands (Score: 0.2751, Threshold: 0.6)
+[DEBUG] HowTo Candidate: BASIC COMMAND OLT ZTE C300 (Score: 0.2689, Threshold: 0.6)
+[DEBUG] HowTo Candidate: How to  Configure MSAN (Score: 0.2666, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Config ZTE OLT C6xx (Score: 0.2663, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Command NCS (Score: 0.2633, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[METRIC] Synonym Applied for Retrieval: None (Query: 'config ONU ยังไง' -> 'config onu ยังไง')
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[METRIC] Synonym Rollback Triggered: Score 0.29 < 0.35. Reverting to 'config ONU ยังไง'
+[METRIC] Rollback Aborted: Original was worse (0.26 < 0.29)
+[DEBUG] Evidence Coverage: PASS (OK)
+[DEBUG] RAG Score Gate Passed: Best score 0.2689 (Doc: thuni eth_0/3 from-internet –> bridging mode ! OL0...)
+
+[Answer Start]
+ใช้การเข้าถึง ONU ในโหมด bridging mode หรือไม่
+[Answer End]
+❌ FAIL: Refusal

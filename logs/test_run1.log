@@ -1,0 +1,30 @@
+
+=== 1. Human Language Test ===
+✅ [Naive 'วิธีแก้ tr069'] PASS: Ans start: ไม่พบข้อมูลที่เกี่ยวข้องในระบบ...
+✅ [Naive 'เข้าเว็บ edoc'] PASS: Ans start: ไม่พบข้อมูลที่เกี่ยวข้องในระบบ...
+⚠️ [Naive 'huawei fttx...'] WARN: Ans start: [huawei fttx มีปัญหา]
+
+📌 เนื้อ...
+⚠️ [Naive 'ip ssh...'] WARN: Ans start: ...
+
+=== 2. Same Question, Different Style ===
+   Q1 Title: 
+   Q2 Title: 
+⚠️ [Deterministic Title] WARN: Different articles/formats
+
+=== 3. Long Session Test (State Safety) ===
+❌ [Step 1: Ask SBC] INFO: ...
+❌ [SBC Query] FAIL: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=15)
+❌ [Step 2: Switch to IP SSH] INFO: ...
+❌ [SSH Query] FAIL: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=15)
+✅ [Context Leak Check] PASS: Clean switch
+❌ [Step 3: Return to SBC] INFO: ...
+✅ [Context Return Check] PASS: Clean return
+
+=== 5. Garbage / Edge Input ===
+✅ [Empty Input] PASS: Ans: 
+✅ [Numeric Input] PASS: Ans: 
+❌ [Long Input (2500 chars)] FAIL: Status: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=15)
+
+=== 4. Cache Consistency (Snapshotted) ===
+❌ [Ribbon Output Check] FAIL: HTTPConnectionPool(host='localhost', port=8000): Read timed out. (read timeout=15)

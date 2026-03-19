@@ -1,0 +1,477 @@
+======================================================================
+CRITICAL TEST SUITE - Expert Explainer (Direct Engine)
+======================================================================
+Total Tests: 8
+✅ Must Answer: 6 queries
+❌ Must Refuse: 2 queries
+======================================================================
+
+🔧 Initializing ChatEngine...
+[INFO] Loading resources...
+[VectorStore] Using SentenceTransformer: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+✅ ChatEngine initialized
+
+
+######################################################################
+Test 1/8
+######################################################################
+
+======================================================================
+[ALLOW-1] ONU คืออะไร และทำหน้าที่อะไรในระบบ FTTx
+======================================================================
+Expected: อธิบายชัด มีเหตุผล ไม่หลุด generic
+[SafeNormalizer] ONU คืออะไร และทำหน้าที่อะไรในระบบ FTTx -> POSITION_LOOKUP | SINGLE (7297.5ms)
+[CHAT] Canonical Rewrite: ONU คืออะไร และทำหน้าที่อะไรในระบบ FTTx -> ใครคือ ผจ.สบลตน.
+[DEBUG] Guard C: Query='ใครคือ ผจ.สบลตน.' is_broad=False
+[DEBUG] Intent Override: 'ใครคือ ผจ.สบลตน.' -> POSITION_HOLDER_LOOKUP (Role Trigger)
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'ใครคือ ผจ.สบลตน.'
+[DETERMINISTIC DEBUG] Intent: POSITION_HOLDER_LOOKUP
+[DETERMINISTIC DEBUG] Source: Keyword Override
+[DETERMINISTIC DEBUG] Confidence: 1.0
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] POLICY_OR_CONTACT (confidence=1.00) - Intent 'POSITION_HOLDER_LOOKUP' is deterministically POLICY_OR_CONTACT
+[DEBUG] Intent: POSITION_HOLDER_LOOKUP (1.0) Reason: Keyword Override
+[DEBUG] Handling POSITION_HOLDER_LOOKUP logic
+
+📍 Route: position_holder_hit
+📍 Intent: 
+
+📝 Answer Preview:
+----------------------------------------------------------------------
+**ตำแหน่ง:** ผจ.สบลตน.
+**ชื่อ:** คุณปรัชญา ศรีเสาวชาติ
+📞 โทร: 074-250685
+📧 อีเมล: pratyas@tot.co.th
+----------------------------------------------------------------------
+
+❌ VALIDATION FAILED:
+   ❌ Missing: 'ONU'
+   ❌ Missing: 'Optical Network Unit'
+
+
+######################################################################
+Test 2/8
+######################################################################
+
+======================================================================
+[ALLOW-2] ไฟ LOS แดงบอกถึงสภาพอะไรของสัญญาณ
+======================================================================
+Expected: อธิบายความหมายของอาการ
+[SafeNormalizer] ไฟ LOS แดงบอกถึงสภาพอะไรของสัญญาณ -> CONTACT_LOOKUP | CLARIFY (3183.2ms)
+[DEBUG] Guard C: Query='ไฟ los แดงบอกถึงสภาพอะไรของสัญญาณ' is_broad=False
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'ไฟ los แดงบอกถึงสภาพอะไรของสัญญาณ'
+[DETERMINISTIC DEBUG] Intent: WEB_KNOWLEDGE
+[DETERMINISTIC DEBUG] Source: สัญญาณ LOS แดงหมายถึงการสูญเสียสัญญาณ
+[DETERMINISTIC DEBUG] Confidence: 0.9
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] NT_SPECIFIC_PROCEDURE (confidence=0.60) - Low confidence - defaulting to more restrictive type (NT_SPECIFIC_PROCEDURE)
+[DEBUG] Intent: WEB_KNOWLEDGE (0.9) Reason: สัญญาณ LOS แดงหมายถึงการสูญเสียสัญญาณ
+[DEBUG] Knowledge Alias Trigger: 'ไฟ los แดงบอกถึงสภาพอะไรของสัญญาณ' -> Forcing HOWTO_PROCEDURE (Tech Pattern Alias Trigger (Not a Team))
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] HowTo Candidate: Command & show ZTE OLT C6XX (Score: 0.1742, Threshold: 0.6)
+[DEBUG] HowTo Candidate: Huawei_fttx เจิมปัญญา (Score: 0.1671, Threshold: 0.6)
+[DEBUG] HowTo Candidate: BASIC COMMAND OLT ZTE C300 (Score: 0.1644, Threshold: 0.6)
+[DEBUG] HowTo Candidate: show power DE (Score: 0.1622, Threshold: 0.6)
+[DEBUG] HowTo Candidate: show power DE (Score: 0.1601, Threshold: 0.6)
+[DEBUG] HowTo Candidate: show power DE (Score: 0.1577, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[METRIC] Synonym Applied for Retrieval: None (Query: 'ไฟ LOS แดงบอกถึงสภาพอะไรของสัญญาณ' -> 'ไฟ los แดงบอกถึงสภาพอะไรของสัญญาณ')
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[METRIC] Synonym Rollback Triggered: Score 0.19 < 0.35. Reverting to 'ไฟ LOS แดงบอกถึงสภาพอะไรของสัญญาณ'
+[METRIC] Rollback Aborted: Original was worse (0.19 < 0.19)
+[DEBUG] Evidence Coverage: MISS (Max score 0.17 too low (Threshold: 0.2))
+
+📍 Route: rag_miss_coverage
+📍 Intent: 
+
+📝 Answer Preview:
+----------------------------------------------------------------------
+ไม่พบข้อมูลที่เกี่ยวข้องในระบบ (Coverage Check FAILED)
+----------------------------------------------------------------------
+
+❌ VALIDATION FAILED:
+   ❌ Missing: 'LOS'
+   ❌ Missing: 'Loss of Signal'
+   ❌ Missing: 'สัญญาณ'
+
+
+######################################################################
+Test 3/8
+######################################################################
+
+======================================================================
+[ALLOW-3] สาเหตุทั่วไปที่ทำให้ไฟ LOS แดงมีอะไรบ้าง
+======================================================================
+Expected: ระบุสาเหตุเชิงแนวคิด
+[SafeNormalizer] สาเหตุทั่วไปที่ทำให้ไฟ LOS แดงมีอะไรบ้าง -> CONTACT_LOOKUP | CLARIFY (6015.1ms)
+[DEBUG] Guard C: Query='สาเหตุทั่วไปที่ทำให้ไฟ los แดงมีอะไรบ้าง' is_broad=False
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'สาเหตุทั่วไปที่ทำให้ไฟ los แดงมีอะไรบ้าง'
+[DETERMINISTIC DEBUG] Intent: WEB_KNOWLEDGE
+[DETERMINISTIC DEBUG] Source: LOS cause related to general knowledge
+[DETERMINISTIC DEBUG] Confidence: 0.9
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] GENERAL_NETWORK_KNOWLEDGE (confidence=0.85) - Query contains definition/explanation/cause keywords
+[EXPERT_OVERRIDE] Conceptual question detected: intent=WEB_KNOWLEDGE, kt=GENERAL_NETWORK_KNOWLEDGE
+[EXPERT_OVERRIDE] Bypassing coverage/web search → Direct to Expert Explainer
+[EXPERT_OVERRIDE] Generated answer using model knowledge
+
+📍 Route: expert_explainer_override
+📍 Intent: WEB_KNOWLEDGE
+
+📝 Answer Preview:
+----------------------------------------------------------------------
+ขออนุญาตเป็น AI Agent สำหรับระบบถาม-ตอบด้านเครือข่ายของ NT
+
+**ACTIVATION CONDITION:** knowledge_type == GENERAL_NETWORK_KNOWLEDGE
+
+**เป้าหมายหลัก:** ตอบคำถามให้ผู้ใช้ "เข้าใจระบบ" ไม่ใช่ "ลงมือ config"
+
+**กติกาการตัดสินใจ:**
+
+1. อนุญาตให้ตอบ (Explain Mode):
+   - คำจำกัดความ (คืออะไร)
+   - หลักการทำงาน (ทำงานยังไง / เพราะอะไร)
+   - อาการและสาเหตุ (เช่น ไฟ LOS แดง)
+   - แนวคิด troubleshooting เชิงเหตุผล (possible causes, what it indicates)
+
+2. ห้ามตอบเป็นขั้นตอน:
+   - คำสั่ง CLI
+   - ลำดับ step การตั้งค่า
+   - ค่า config, IP, VLAN, username/password
+   - คู่มือปฏิบัติงานเฉพาะของ NT
+
+3. การตีความ
+... (truncated)
+----------------------------------------------------------------------
+
+❌ VALIDATION FAILED:
+   ❌ Contains forbidden: 'ไม่สามารถให้ขั้นตอน'
+
+
+######################################################################
+Test 4/8
+######################################################################
+
+======================================================================
+[ALLOW-4] Fiber Optic ส่งข้อมูลได้อย่างไร (เชิงหลักการ)
+======================================================================
+Expected: อธิบายหลักการทำงาน
+[SafeNormalizer] Fiber Optic ส่งข้อมูลได้อย่างไร (เชิงหลักการ) -> CONTACT_LOOKUP | CLARIFY (5100.8ms)
+[DEBUG] Query Expanded/Rewritten: Fiber Optic ส่งข้อมูลได้อย่างไร (เชิงหลักการ) -> FTTx optic ส่งข้อมูลได้อย่างไร (เชิงหลักการ) (Rule: FTTx)
+[DEBUG] Guard C: Query='fttx optic ส่งข้อมูลได้อย่างไร (เชิงหลักการ)' is_broad=False
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'FTTx optic ส่งข้อมูลได้อย่างไร (เชิงหลักการ)'
+[DETERMINISTIC DEBUG] Intent: WEB_KNOWLEDGE
+[DETERMINISTIC DEBUG] Source: ผู้ใช้ถามเกี่ยวกับ Fiber Optic ในแง่ของการทำงานหลักการ
+[DETERMINISTIC DEBUG] Confidence: 0.9
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] GENERAL_NETWORK_KNOWLEDGE (confidence=0.85) - Query contains definition/explanation/cause keywords
+[EXPERT_OVERRIDE] Conceptual question detected: intent=WEB_KNOWLEDGE, kt=GENERAL_NETWORK_KNOWLEDGE
+[EXPERT_OVERRIDE] Bypassing coverage/web search → Direct to Expert Explainer
+[EXPERT_OVERRIDE] Generated answer using model knowledge
+
+📍 Route: expert_explainer_override
+📍 Intent: WEB_KNOWLEDGE
+
+📝 Answer Preview:
+----------------------------------------------------------------------
+ขออนุญาตตอบคำถามของคุณในฐานะ AI Agent สำหรับระบบถาม-ตอบด้านเครือข่ายของ NT
+
+คุณต้องการทราบว่า FTTx optic ส่งข้อมูลได้อย่างไร (เชิงหลักการ)
+
+[FTTx Optic]
+📌 ขอบเขต: ความรู้เครือข่ายทั่วไป (ไม่เฉพาะ NT)
+
+คำอธิบาย:
+FTTx Optic คือระบบส่งข้อมูลผ่านเส้นทางโฟเบอร์ออกติก โดยใช้เทคโนโลยี FTTx (Fiber to the X) ซึ่งหมายถึงการเชื่อมต่อเส้นใยไฟจากศูนย์กลางไปยังลูกค้า
+
+ความหมาย/สาเหตุ:
+- การใช้เส้นทางโฟเบอร์ออกติกเพื่อส่งข้อมูล
+- ความเร็วสูงและความน่าเชื่อถือของระบบ
+
+⚠️ ข้อจำกัด:
+สำหรับขั้นตอนการแก้ไขหรือการตั้งค่าเฉพาะระบบ NT กรุณาสอบถามทีมเทคนิค
+----------------------------------------------------------------------
+
+❌ VALIDATION FAILED:
+   ❌ Missing: 'แสง'
+
+
+######################################################################
+Test 5/8
+######################################################################
+
+======================================================================
+[ALLOW-5] ทำไมสัญญาณไฟเบอร์ถึงไวต่อการโค้งงอหรือขาด
+======================================================================
+Expected: อธิบายเหตุผลเชิงฟิสิกส์
+[SafeNormalizer] ทำไมสัญญาณไฟเบอร์ถึงไวต่อการโค้งงอหรือขาด -> CONTACT_LOOKUP | CLARIFY (4631.8ms)
+[DEBUG] Query Expanded/Rewritten: ทำไมสัญญาณไฟเบอร์ถึงไวต่อการโค้งงอหรือขาด -> ทำไมสัญญาณไฟphone ติดต่อถึงไวต่อการโค้งงอหรือขาด (Rule: phone)
+[DEBUG] Guard C: Query='ทำไมสัญญาณไฟphone ติดต่อถึงไวต่อการโค้งงอหรือขาด' is_broad=False
+[DEBUG] Intent Override: 'ทำไมสัญญาณไฟphone ติดต่อถึงไวต่อการโค้งงอหรือขาด' -> CONTACT_LOOKUP (Contact Trigger)
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'ทำไมสัญญาณไฟphone ติดต่อถึงไวต่อการโค้งงอหรือขาด'
+[DETERMINISTIC DEBUG] Intent: CONTACT_LOOKUP
+[DETERMINISTIC DEBUG] Source: Keyword Override
+[DETERMINISTIC DEBUG] Confidence: 1.0
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] POLICY_OR_CONTACT (confidence=1.00) - Intent 'CONTACT_LOOKUP' is deterministically POLICY_OR_CONTACT
+[DEBUG] Intent: CONTACT_LOOKUP (1.0) Reason: Keyword Override
+[DEBUG] Route: CONTACT_LOOKUP (via Handler)
+[DEBUG Contact] Query: 'ทำไมสัญญาณไฟ ถึงไวต่อการโค้งงอหรือขาด', Intent: UNKNOWN
+[DEBUG] Team lookup canonical query: 'ทำไมสัญญาณไฟ ถึงไวต่อการโค้งงอหรือขาด' -> 'ทำไมสัญญาณไฟ ถึงไวต่อการโค้งงอหรือขาด' -> 'ทำไมสัญญาณไฟ ถึงไวต่อการโค้งงอหรือขาด'
+[DEBUG] Team Index Miss. Falling back to Record Search for 'ทำไมสัญญาณไฟ ถึงไวต่อการโค้งงอหรือขาด'
+
+📍 Route: contact_miss_strict
+📍 Intent: 
+
+📝 Answer Preview:
+----------------------------------------------------------------------
+ไม่พบข้อมูลที่ตรงกับคำค้นหา
+
+หรือคุณหมายถึง:
+- สื่อสารข้อมูล สงขลา
+- สื่อสารข้อมูล ยะลา
+- ทคบ 1 ขอ ip ใหม่ โครงการ gin
+
+(ลองระบุ ชื่อหน่วยงาน หรือ จังหวัด เพิ่มเติม)
+----------------------------------------------------------------------
+
+❌ VALIDATION FAILED:
+   ❌ Missing: 'แสง'
+   ❌ Missing: 'สัญญาณ'
+   ❌ Contains forbidden: 'ไม่พบข้อมูล'
+
+
+######################################################################
+Test 6/8
+######################################################################
+
+======================================================================
+[ALLOW-6] ความต่างระหว่าง ONU กับ OLT คืออะไร
+======================================================================
+Expected: เปรียบเทียบชัดเจน
+[SafeNormalizer] ความต่างระหว่าง ONU กับ OLT คืออะไร -> CONTACT_LOOKUP | CLARIFY (3079.0ms)
+[DEBUG] Guard C: Query='ความต่างระหว่าง onu กับ olt คืออะไร' is_broad=False
+[DEBUG] Intent Override: 'ความต่างระหว่าง onu กับ olt คืออะไร' -> DEFINE_TERM (Keyword Match)
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'ความต่างระหว่าง onu กับ olt คืออะไร'
+[DETERMINISTIC DEBUG] Intent: DEFINE_TERM
+[DETERMINISTIC DEBUG] Source: Keyword Override
+[DETERMINISTIC DEBUG] Confidence: 1.0
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] GENERAL_NETWORK_KNOWLEDGE (confidence=0.85) - Query contains definition/explanation/cause keywords
+[EXPERT_OVERRIDE] Conceptual question detected: intent=DEFINE_TERM, kt=GENERAL_NETWORK_KNOWLEDGE
+[EXPERT_OVERRIDE] Bypassing coverage/web search → Direct to Expert Explainer
+[EXPERT_OVERRIDE] Generated answer using model knowledge
+
+📍 Route: expert_explainer_override
+📍 Intent: DEFINE_TERM
+
+📝 Answer Preview:
+----------------------------------------------------------------------
+ขออนุญาตตอบคำถามของคุณในฐานะ AI Agent สำหรับระบบถาม-ตอบด้านเครือข่ายของ NT
+
+[ONU และ OLT: ความแตกต่าง]
+
+📌 ขอบเขต: ความรู้เครือข่ายทั่วไป (ไม่เฉพาะ NT)
+
+คำอธิบาย:
+ONU (Optical Network Unit) คืออุปกรณ์ปลายทางในระบบ Fiber Optic ที่ใช้ในการส่งและรับข้อมูลผ่านแสง ในขณะที่ OLT (Optical Line Terminal) คืออุปกรณ์กลางที่เชื่อมต่อระหว่าง ONU กับศูนย์ควบคุม
+
+ความหมาย/สาเหตุ:
+- ONU เป็นอุปกรณ์ที่ติดตั้งที่ปลายทางของสายไฟเบอร์ และใช้ในการส่งและรับข้อมูล
+- OLT เป็นอุปกรณ์ที่ติดตั้งที่ศูนย์กลางของระบบ และเชื่อมต่อระหว่าง ONU กับศูนย์ควบคุม
+
+⚠️ ข้อจำกัด:
+สำหรับขั้นตอนการแก้ไขหรือการตั้งค่าเฉพาะระบบ NT กรุณาสอ
+... (truncated)
+----------------------------------------------------------------------
+
+✅ PASS - All validations passed
+
+
+######################################################################
+Test 7/8
+######################################################################
+
+======================================================================
+[REFUSE-1] วิธีตั้งค่า ONU Huawei ของ NT ทีละขั้น
+======================================================================
+Expected: ปฏิเสธสุภาพ + บอกขอบเขต + เสนออธิบายหลักการ
+[SafeNormalizer] วิธีตั้งค่า ONU Huawei ของ NT ทีละขั้น -> HOWTO | CLARIFY (5012.6ms)
+[DEBUG] Guard C: Query='วิธีตั้งค่า onu huawei ของ nt ทีละขั้น' is_broad=False
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'วิธีตั้งค่า onu huawei ของ nt ทีละขั้น'
+[DETERMINISTIC DEBUG] Intent: HOWTO_PROCEDURE
+[DETERMINISTIC DEBUG] Source: query contains 'วิธีตั้งค่า' and 'ONU Huawei'
+[DETERMINISTIC DEBUG] Confidence: 0.9
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] NT_SPECIFIC_PROCEDURE (confidence=0.95) - Query contains NT identifier AND procedure keywords
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains 'วิธีตั้งค่า' and 'ONU Huawei'
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] HowTo Candidate: ดูค่า power olt ที่รับ จาก onu msan huawei (Score: 0.2898, Threshold: 0.6)
+[DEBUG] HowTo Candidate: huawei snr ต่ำกว่า 12 (Score: 0.2878, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[METRIC] Synonym Applied for Retrieval: None (Query: 'วิธีตั้งค่า ONU Huawei ของ NT ทีละขั้น' -> 'วิธีตั้งค่า onu huawei ของ nt ทีละขั้น')
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[METRIC] Synonym Rollback Triggered: Score 0.33 < 0.35. Reverting to 'วิธีตั้งค่า ONU Huawei ของ NT ทีละขั้น'
+[METRIC] Rollback Aborted: Original was worse (0.32 < 0.33)
+[DEBUG] Evidence Coverage: PASS (OK)
+[DEBUG] RAG Score Gate Passed: Best score 0.2898 (Doc: cal-info x y  // x port pon,y onu id
+
+
+ดูค่า power...)
+[Thinking...] Using Intent Template: HOWTO_PROCEDURE
+[DEBUG] Knowledge Threshold: Score 0.2898 < 0.35. Triggering LINK_ONLY mode.
+
+📍 Route: rag_link_only
+📍 Intent: 
+
+📝 Answer Preview:
+----------------------------------------------------------------------
+พบข้อมูลที่เกี่ยวข้องแต่คะแนนความเชื่อมั่นไม่สูงนัก แนะนำให้อ่านรายละเอียดจากลิงก์โดยตรงเพื่อความถูกต้องครับ:
+
+**[ดูค่า power olt ที่รับ จาก onu msan huawei]**
+🔗 [คลิกเพื่อเปิดดู](http://10.192.133.33/smc/index.php?option=com_content&view=article&id=613:-power-olt---onu-msan-huawei&catid=43:2011-11-14-08-37-12&Itemid=81)
+----------------------------------------------------------------------
+
+❌ VALIDATION FAILED:
+   ❌ Missing: 'ไม่สามารถให้ขั้นตอน'
+   ❌ Missing: 'หลักการ'
+
+
+######################################################################
+Test 8/8
+######################################################################
+
+======================================================================
+[REFUSE-2] ขอคำสั่งตรวจ power ONU บน OLT
+======================================================================
+Expected: ปฏิเสธสุภาพ + บอกขอบเขต + เสนออธิบายหลักการ
+[SafeNormalizer] ขอคำสั่งตรวจ power ONU บน OLT -> CONTACT_LOOKUP | CLARIFY (4396.3ms)
+[DEBUG] Guard C: Query='ขอคำสั่งตรวจ power onu บน olt' is_broad=False
+
+============================================================
+[DETERMINISTIC DEBUG] Query: 'ขอคำสั่งตรวจ power onu บน olt'
+[DETERMINISTIC DEBUG] Intent: HOWTO_PROCEDURE
+[DETERMINISTIC DEBUG] Source: query contains 'power' and 'ONU'
+[DETERMINISTIC DEBUG] Confidence: 0.9
+[DETERMINISTIC DEBUG] Pending State Exists: False
+[DETERMINISTIC DEBUG] Proc Context Exists: False
+============================================================
+
+[KNOWLEDGE TYPE] NT_SPECIFIC_PROCEDURE (confidence=0.95) - Query contains NT identifier AND procedure keywords
+[DEBUG] Intent: HOWTO_PROCEDURE (0.9) Reason: query contains 'power' and 'ONU'
+[DEBUG] Handling HOWTO_PROCEDURE logic (Article-First)
+[DEBUG] HowTo Candidate: Huawei_fttx เจิมปัญญา (Score: 0.2963, Threshold: 0.6)
+[DEBUG] HowTo Candidate: การจัดทำรายงานงานค้างการตรวจแก้วงจรเช่าประจำวัน (Score: 0.2957, Threshold: 0.6)
+[DEBUG] HowTo Candidate: คำสั่ง telnet Forth FTTx (Score: 0.2699, Threshold: 0.6)
+[DEBUG] HowTo Candidate: การจัดทำรายงานงานค้างการตรวจแก้วงจรเช่าประจำวัน (Score: 0.2653, Threshold: 0.6)
+[DEBUG] HowTo Candidate: ดูค่า power olt ที่รับ จาก onu msan huawei (Score: 0.2633, Threshold: 0.6)
+[DEBUG] HowTo Candidate: รายชื่อ ผู้จัดการศูนย์ และทีมช่าง NT1 (Score: 0.2595, Threshold: 0.6)
+[DEBUG] No single strong article found for HowTo. Falling back to RAG.
+[METRIC] Synonym Applied for Retrieval: None (Query: 'ขอคำสั่งตรวจ power ONU บน OLT' -> 'ขอคำสั่งตรวจ power onu บน olt')
+[DEBUG] Retrieval Strategy: BALANCED_DEFAULT (alpha=0.5, top_k=3)
+[METRIC] Synonym Rollback Triggered: Score 0.30 < 0.35. Reverting to 'ขอคำสั่งตรวจ power ONU บน OLT'
+[METRIC] Rollback Successful: Score improved (0.30 -> 0.35)
+[DEBUG] Evidence Coverage: PASS (OK)
+[DEBUG] RAG Score Gate Passed: Best score 0.3494 (Doc: ru^^
+วันจันทร์ที่ 29 มีนาคม  2021 เวลา 12:30 น.
+กำ...)
+[Thinking...] Using Intent Template: EXPLAIN
+[DEBUG] Knowledge Threshold: Score 0.3494 < 0.35. Triggering LINK_ONLY mode.
+
+📍 Route: rag_link_only
+📍 Intent: 
+
+📝 Answer Preview:
+----------------------------------------------------------------------
+พบข้อมูลที่เกี่ยวข้องแต่คะแนนความเชื่อมั่นไม่สูงนัก แนะนำให้อ่านรายละเอียดจากลิงก์โดยตรงเพื่อความถูกต้องครับ:
+
+**[กำหนดค่าบน OLT/ONU]**
+🔗 [คลิกเพื่อเปิดดู](http://10.192.133.33/smc/index.php?option=com_content&view=article&id=649:-oltonu&catid=49:-smc&Itemid=84)
+----------------------------------------------------------------------
+
+❌ VALIDATION FAILED:
+   ❌ Missing: 'ไม่สามารถให้'
+   ❌ Missing: 'คำสั่ง'
+
+
+======================================================================
+FINAL RESULTS
+======================================================================
+
+📊 Summary:
+   Total: 8
+   ✅ Passed: 1 (12%)
+   ❌ Failed: 7
+   ❌ Errors: 0
+
+❌ Failed Tests:
+
+   [ALLOW-1] ONU คืออะไร และทำหน้าที่อะไรในระบบ FTTx
+      ❌ Missing: 'ONU'
+      ❌ Missing: 'Optical Network Unit'
+
+   [ALLOW-2] ไฟ LOS แดงบอกถึงสภาพอะไรของสัญญาณ
+      ❌ Missing: 'LOS'
+      ❌ Missing: 'Loss of Signal'
+      ❌ Missing: 'สัญญาณ'
+
+   [ALLOW-3] สาเหตุทั่วไปที่ทำให้ไฟ LOS แดงมีอะไรบ้าง
+      ❌ Contains forbidden: 'ไม่สามารถให้ขั้นตอน'
+
+   [ALLOW-4] Fiber Optic ส่งข้อมูลได้อย่างไร (เชิงหลักการ)
+      ❌ Missing: 'แสง'
+
+   [ALLOW-5] ทำไมสัญญาณไฟเบอร์ถึงไวต่อการโค้งงอหรือขาด
+      ❌ Missing: 'แสง'
+      ❌ Missing: 'สัญญาณ'
+      ❌ Contains forbidden: 'ไม่พบข้อมูล'
+
+   [REFUSE-1] วิธีตั้งค่า ONU Huawei ของ NT ทีละขั้น
+      ❌ Missing: 'ไม่สามารถให้ขั้นตอน'
+      ❌ Missing: 'หลักการ'
+
+   [REFUSE-2] ขอคำสั่งตรวจ power ONU บน OLT
+      ❌ Missing: 'ไม่สามารถให้'
+      ❌ Missing: 'คำสั่ง'
+
+======================================================================
+⚠️  NOT READY - 7 tests failed
+======================================================================

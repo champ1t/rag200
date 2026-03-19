@@ -1,118 +1,14 @@
-# ============================================================
-# Python
-# ============================================================
-__pycache__/
-*.py[cod]
-*$py.class
-*.pyo
-*.egg
-*.egg-info/
-dist/
-build/
-
-# ============================================================
-# Virtual Environments
-# ============================================================
-.venv/
+# Miniminal Gitignore to allow Full Backup
+# Only ignore virtual environments and secrets
 venv/
+.venv/
 venv-py311/
 env/
 ENV/
-
-# ============================================================
-# Environment / Secrets
-# ============================================================
 .env
 .env.*
 *.secret
 config/secrets.yaml
 
-# ============================================================
-# Company / Internal Data (DO NOT PUBLISH)
-# ============================================================
-# Scraped internal content
-data/raw/
-data/processed/
-data/processed_backup_refetch/
-
-# Vector database (contains embedded internal documents)
-data/chroma_db/
-data/vectorstore/
-
-# BM25 index (contains internal article titles/content)
-data/bm25_index.json
-
-# Internal state & sessions
-data/state.json
-!data/state.example.json     # ← อนุญาตให้ขึ้น git (ตัวอย่างที่ลบข้อมูลแล้ว)
-data/sessions/
-data/sessions_test/
-data/cache_store/
-data/logs/
-
-# Internal contact/personnel records
-data/records/*.jsonl
-data/records/*.json
-!data/records/*.example.jsonl  # ← อนุญาตให้ขึ้น git (ตัวอย่างที่ลบข้อมูลแล้ว)
-data/records/knowledge_packs/
-
-# Evaluation results (may contain internal query logs)
-data/eval/
-data/acceptance_results.csv
-data/metrics.csv
-data/metrics.csv.tmp
-
-# Internal config with company domain/IP
-configs/config.yaml
-
-# ============================================================
-# Cache & Logs
-# ============================================================
-cache/
-logs/
-logs_test/
-*.log
-
-# ============================================================
-# Test / Runtime Artifacts
-# ============================================================
-test_cache_db/
-backups/
-backup_stable_v1/
-results/
-.pytest_cache/
-
-# ============================================================
-# IDE & OS
-# ============================================================
-.vscode/
-.idea/
-.DS_Store
-*.swp
-*.swo
-
-# ============================================================
-# Archive
-# ============================================================
-.archive/
-
-# ============================================================
-# Backup & Checkpoint Files (ห้าม commit ขึ้น git)
-# ============================================================
-*.backup
-*.backup_*
-*.checkpoint-*
-*_backup.py
-*_backup_*.py
-
-# Backup snapshots — contain internal data
-data/state_backup*.json
-data/vectorstore_backup*/
-
-# ============================================================
-# Temporary / Scratch Files (do not commit)
-# ============================================================
-temp_*.html
-temp_*.txt
-temp_*.py
-~$*.docx
+# Include EVERYTHING else as requested
+# (data, backups, tests, src, etc.)

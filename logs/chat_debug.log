@@ -1,0 +1,21 @@
+[INFO] Project: rag_web
+[INFO] Command: chat
+[CHAT] run_id=run_20260116_102420
+[INFO] Loading resources...
+[KnowledgePack] Loaded 561 facts.
+[INFO] Resources loaded. Position Index Size: 7
+[INFO] Resources loaded. Team Index Size: 7
+[CHAT] warmup: model=qwen3:8b base_url=http://localhost:11434
+[CHAT] LLM warmed up
+[CHAT] Type your question (Ctrl+C to exit)
+
+Q> Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/main.py", line 339, in <module>
+    main()
+    ~~~~^^
+  File "/Users/jakkapatmac/Documents/NT/RAG/rag_web/src/main.py", line 295, in main
+    q = input("\nQ> ").strip()
+        ~~~~~^^^^^^^^^
+OSError: [Errno 5] Input/output error

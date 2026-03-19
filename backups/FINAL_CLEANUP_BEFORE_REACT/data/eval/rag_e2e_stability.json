@@ -1,0 +1,20 @@
+[
+    {
+        "query": "TACACS+ คืออะไร",
+        "intent": "EXPLAIN",
+        "expected_behavior": "PASS_GENERAL",
+        "type": "STABILITY_1"
+    },
+    {
+        "query": "TACACS+ คืออะไร",
+        "intent": "EXPLAIN",
+        "expected_behavior": "CACHE_HIT",
+        "type": "STABILITY_2"
+    },
+    {
+        "query": "TACACS+ คืออะไร",
+        "intent": "EXPLAIN",
+        "expected_behavior": "CACHE_HIT",
+        "type": "STABILITY_3"
+    }
+]

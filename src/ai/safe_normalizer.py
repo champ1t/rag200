@@ -31,7 +31,7 @@ DETECTION RULES
 - If query mentions "เบอร์", "เบอ", "ติดต่อ", "โทร", "พิกัด", "ที่ตั้ง", "อยู่ที่ไหน", "อยู่ตรงไหน", "ที่อยู่", "ช่องทางติดต่อ" -> intent = "CONTACT_LOOKUP" (EXCEPT "Fiber/ไฟเบอร์" -> NOT CONTACT)
 - If query mentions "Check list", "Checklist", "วิธี", "ขั้นตอน", "คู่มือ", "ทำยังไง", "วิธีการ" -> intent = "HOWTO"
 - If query mentions "มีอะไรบ้าง", "ทั้งหมด", "รายการ", "ทุกสาขา", "ลิสต์มาหน่อย", "ขอรายชื่อ" -> request_shape = "LIST"
-- If query mentions "ข้อมูล", "รายละเอียด", "ความรู้", "อยากรู้เรื่อง" -> intent = "KNOWLEDGE"
+- If query mentions "ข้อมูล", "รายละเอียด", "ความรู้", "อยากรู้เรื่อง", "หน้าที่", "รับผิดชอบ", "ทำอะไรบ้าง", "สโคปงาน" -> intent = "KNOWLEDGE"
 
 OUTPUT (JSON ONLY)
 {{
@@ -46,6 +46,11 @@ OUTPUT (JSON ONLY)
   "clarification_question": null | string,
   "confidence": 0.0-1.0
 }}
+
+STRICT RULE:
+- NEVER transform a query about URLs or websites into technical hardware/config steps (like ONU/VLAN).
+- If the user asks for "URL" or "Link", the intent MUST be "KNOWLEDGE" or "OTHER" (to trigger RAG), not "HOWTO".
+- Preserve "SMC" as a unit. Do NOT expand "SMC" to other terms.
 
 DETECTION RULES (ASSETS)
 - If query contains "ตาราง", "ไฟล์ตาราง", "ลิสต์ตาราง", "ตารางข้อมูล", "ตารางเบอร์" -> request_shape = "ASSET", asset_type = "TABLE"
@@ -84,34 +89,26 @@ NOW PROCESS:
 USER_QUERY: "{user_query}"
 """
 
-PROMPT_QUERY_REWRITER = """Rewrite the Thai text below. Remove filler words, slang, and polite particles. Keep technical terms and entity names exactly. Output ONLY the rewritten Thai text, nothing else.
-
-Filler words to remove: ถามหน่อย, ถามหน่อยดิ, อยากถาม, ขอถามว่า, ช่วยบอก, บอกหน่อย, หน่อย, ดิ, ดิ๊, วะ, อ่ะ, หว่า, สิ, เฮ้ย, หรอฮัฟ, ครับ, ค่ะ, นะ, จ้า, นะจ๊ะ, นะครับ, นะคะ, หน่อยนะ
-Keep exactly: OMC, RNOC, CSOC, NOC, FTTx, ONU, OLT, ZTE, Huawei, BRAS, VLAN, ADSL, FTTX, IP
-
-Abbreviation expansions: ผจ/ผจก→ผู้จัดการ, ผอ→ผู้อำนวยการ, ช.สาย→ช่างสาย
+PROMPT_QUERY_REWRITER = """Rewrite the Thai text to be CLEAN and STANDARD.
+1. Remove polite particles (ครับ, ค่ะ, นะ, จ๊ะ, หน่อย, จ้า).
+2. Remove conversational filler (ถามหน่อยดิ, อยากรู้ว่า, ขอลิงก์, ช่วยหา, มาให้หน่อย).
+3. KEEP exact technical terms: OMC, RNOC, CSOC, NOC, FTTx, ONU, OLT, SMC, URL, Link.
+4. DO NOT ADD NEW WORDS. DO NOT HALLUCINATE TECHNICAL TERMS.
+5. If the user asks about "duty", "responsibility", or "what they do" (e.g., ทำหน้าที่อะไร, รับผิดชอบอะไร), DO NOT rewrite it to a person search. Keep the "duty" intent.
+6. If the input is about "URL" or "Website", just keep the CORE subject.
 
 Examples:
-Thai: ถามหน่อยดิ จะกำหนดค่า ONU ต้องทำยังไง
-Clean: วิธีกำหนดค่า ONU
+Input: ถามหน่อยดิ จะกำหนดค่า ONU ต้องทำยังไง
+Output: กำหนดค่า ONU
 
-Thai: ขอถามว่า ใครคือผจ หรอฮัฟ
-Clean: ใครคือผู้จัดการ
+Input: ขอรายชื่อ URL ของหน่วยงานที่เกี่ยวข้องทั้งหมดเลยครับ
+Output: URL หน่วยงานที่เกี่ยวข้อง
 
-Thai: เฮ้ย เบอร์ OMC มึงรู้มั้ยวะ
-Clean: เบอร์ OMC
+Input: ช่วยหาเบอร์ติดต่อ SMC มาให้หน่อยดิ๊
+Output: SMC
 
-Thai: ขั้นตอน add onu zte ทำยังไงอ่ะ
-Clean: ขั้นตอน add onu zte
-
-Thai: สมาชิก fttx มีใครบ้างหว่า
-Clean: สมาชิก fttx
-
-Thai: ผจก OMC คือใคร
-Clean: ผู้จัดการ OMC คือใคร
-
-Thai: {user_query}
-Clean:"""
+Input: {user_query}
+Output:"""
 
 class SafeNormalizer:
     def __init__(self, llm_cfg: Dict[str, Any]):
@@ -159,6 +156,32 @@ class SafeNormalizer:
         clean_query = self._rewrite_query(query)
 
         # Stage 2: Intent classification on the clean query
+        
+        # --- HEURISTIC OVERRIDES (Phase 241) ---
+        # Catch duty/responsibility before LLM hallucinations
+        duty_keywords = ["หน้าที่", "รับผิดชอบ", "ทำอะไรบ้าง", "สโคปงาน", "ภารกิจ"]
+        if any(k in query for k in duty_keywords):
+            print(f"[SafeNormalizer] Heuristic HIT: KNOWLEDGE (duty)")
+            return {
+                "intent": "KNOWLEDGE",
+                "request_shape": "SINGLE",
+                "canonical_query": query,
+                "entities": {"unit": None},
+                "confidence": 1.0
+            }
+        
+        # Catch Link/URL before LLM 
+        link_keywords = ["ลิ้ง", "ลิงก์", "url", "เว็ป", "เว็บ", "link"]
+        if any(k in query.lower() for k in link_keywords):
+             print(f"[SafeNormalizer] Heuristic HIT: KNOWLEDGE (link)")
+             return {
+                "intent": "KNOWLEDGE",
+                "request_shape": "SINGLE",
+                "canonical_query": query,
+                "entities": {"unit": None},
+                "confidence": 1.0
+            }
+        
         prompt = PROMPT_SAFE_SHAPE_ANALYZER.format(user_query=clean_query)
         try:
             t0 = time.time()

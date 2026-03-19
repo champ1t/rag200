@@ -1,0 +1,228 @@
+{
+  "url": "http://10.192.133.33/smc/index.php?option=com_content&view=article&id=557:add-onu-to-huawei-by-manual&catid=43:2011-11-14-08-37-12&Itemid=81",
+  "title": "Add onu to Huawei by manual",
+  "text": " | Today | 41\n | Yesterday | 522\n | This week | 932\n | Last week | 95\n | This month | 1276\n | Last month | 415\n | All days | 610593\n\nWDM (แนะนำIE)\nTemplate ZTE FTTX v.3 (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=149)\nTemplate for PE,APE,LPE (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=163)\nConvert ASR920 To NCS (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=111)\nGet IP IPPhone (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=153)\nตรวจสอบ ONU Event Log (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=143)\nTemplate Extreme (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=133)\n\nนราธิวาส NMS (http://10.192.39.50/)\nสุราษฎร์ NMS (https://totsni.com/network)\n\nAdd onu to Huawei by manual เขียนโดย Maru^^ วันเสาร์ที่ 18 มกราคม  2014 เวลา 17:23 น. #enable #display board 0                       // ดู card ที่เป็น GPBC #config #display ont-lineprofile gpon all    // ดู line-profile #display ont-srvprofile gpon all    // ดู service-profile #display vlan all                         // ดู vlan #display traffic table ip from-index 0   // ดู tx - rx traffic profile (สุ่ม index) #config #interface gpon (slot/port (0/5)) #display ont autofind (port-id(0-7)) #ont add (portid (0-7)) (onuid (0-127)) sn-auth (serial number) omci ont-lineprofile-id (ont-lineprofileid) ont-srvprofile-id (ont-srvprofileid) desc (Number) #quit ----------- Add Internet ---------- #service-port vlan (vlan id) gpon (fr/sl/port) ont (onuid) gemport 1 multi-service user-vlan 10 rx-cttr (uploadid) tx-cttr (downloadid) ----------- Add Voice ---------- #service-port vlan (vlan-void id) gpon (fr/sl/port) ont (onuid) gemport 2 multi-service user-vlan 20 rx-cttr (uploadid) tx-cttr (downloadid) ----------- EX ---------- #ont add 2 129 sn-auth 48575443DC244xxx omci ont-lineprofile-id 2 ont-srvprofile-id 2 desc 7424j0000 #quit #service-port vlan 3606 gpon 0/5/2 ont 129 gemport 1 multi-service user-vlan 10 rx-cttr 6 tx-cttr 6 #service-port vlan 1101 gpon 0/5/2 ont 129 gemport 2 multi-service user-vlan 20 rx-cttr 11 tx-cttr 11 -------- Delete service ont ------- #undo service-port port (fr/sl/po) ont (id) gemport (id) ------- Delete ont ------- #ont delete (port id) (onu id) ------- display ont ------- #config #interface gpon 0/5 #display ont info (port id (0-8)) all      // ดู sn ของแต่ละ port #display service-port port (fr/sl/po) ont (id)   // ดู rx-index tx-index (download) #display service-port port (fr/sl/po) ont (port id (0-8) #undo service-port (port id (0-8) ------- add vlan  uplink ------- #vlan 3600 smart vpi 1 vci 32 rx 6 tx 6 #port vlan 3600 0/2 0 ---------------------------- -- Huawei. edit ont-lineprofile -- --------------------------- #interface gpon 0/5 #display ont info (port id (0-8)) all      // ดู sn ของแต่ละ port yala(config)#display ont-lineprofile gpon profile-id 12 DBA Profile-ID:25 yala(config)#display dba-profile all    // เลือก dba-profile ที่ ต้องการ yala(config)#ont-lineprofile gpon profile-id 12 profile-name P4_InternetUp15M // เข้าไปใน line-profile ที่ต้องการแก้ไข yala(config-gpon-lineprofile-12)#tcont 1 dba-profile-id 34  // แก้ไข ให้เป็น dba-profile-id 34 ---------------------------- -- Huawei. change vlan -- --------------------------- display mac-address vlan 3602 ---- vlan 3600 smart vpi 1 vci 32 rx 6 tx 6 port vlan 3600 0/2 0 ---- undo service-port 28 service-port 28 vlan 1476 adsl 0/1/28 vpi 1 vci 32 rx-cttr 6 tx-cttr 6 แก้ไขล่าสุด ใน  วันศุกร์ที่ 25 พฤษภาคม  2018 เวลา 14:14 น. | Add onu to Huawei by manual |  |  |  | เขียนโดย Maru^^ | วันเสาร์ที่ 18 มกราคม  2014 เวลา 17:23 น. | #enable #display board 0                       // ดู card ที่เป็น GPBC #config #display ont-lineprofile gpon all    // ดู line-profile #display ont-srvprofile gpon all    // ดู service-profile #display vlan all                         // ดู vlan #display traffic table ip from-index 0   // ดู tx - rx traffic profile (สุ่ม index) #config #interface gpon (slot/port (0/5)) #display ont autofind (port-id(0-7)) #ont add (portid (0-7)) (onuid (0-127)) sn-auth (serial number) omci ont-lineprofile-id (ont-lineprofileid) ont-srvprofile-id (ont-srvprofileid) desc (Number) #quit ----------- Add Internet ---------- #service-port vlan (vlan id) gpon (fr/sl/port) ont (onuid) gemport 1 multi-service user-vlan 10 rx-cttr (uploadid) tx-cttr (downloadid) ----------- Add Voice ---------- #service-port vlan (vlan-void id) gpon (fr/sl/port) ont (onuid) gemport 2 multi-service user-vlan 20 rx-cttr (uploadid) tx-cttr (downloadid) ----------- EX ---------- #ont add 2 129 sn-auth 48575443DC244xxx omci ont-lineprofile-id 2 ont-srvprofile-id 2 desc 7424j0000 #quit #service-port vlan 3606 gpon 0/5/2 ont 129 gemport 1 multi-service user-vlan 10 rx-cttr 6 tx-cttr 6 #service-port vlan 1101 gpon 0/5/2 ont 129 gemport 2 multi-service user-vlan 20 rx-cttr 11 tx-cttr 11 -------- Delete service ont ------- #undo service-port port (fr/sl/po) ont (id) gemport (id) ------- Delete ont ------- #ont delete (port id) (onu id) ------- display ont ------- #config #interface gpon 0/5 #display ont info (port id (0-8)) all      // ดู sn ของแต่ละ port #display service-port port (fr/sl/po) ont (id)   // ดู rx-index tx-index (download) #display service-port port (fr/sl/po) ont (port id (0-8) #undo service-port (port id (0-8) ------- add vlan  uplink ------- #vlan 3600 smart vpi 1 vci 32 rx 6 tx 6 #port vlan 3600 0/2 0 ---------------------------- -- Huawei. edit ont-lineprofile -- --------------------------- #interface gpon 0/5 #display ont info (port id (0-8)) all      // ดู sn ของแต่ละ port yala(config)#display ont-lineprofile gpon profile-id 12 DBA Profile-ID:25 yala(config)#display dba-profile all    // เลือก dba-profile ที่ ต้องการ yala(config)#ont-lineprofile gpon profile-id 12 profile-name P4_InternetUp15M // เข้าไปใน line-profile ที่ต้องการแก้ไข yala(config-gpon-lineprofile-12)#tcont 1 dba-profile-id 34  // แก้ไข ให้เป็น dba-profile-id 34 ---------------------------- -- Huawei. change vlan -- --------------------------- display mac-address vlan 3602 ---- vlan 3600 smart vpi 1 vci 32 rx 6 tx 6 port vlan 3600 0/2 0 ---- undo service-port 28 service-port 28 vlan 1476 adsl 0/1/28 vpi 1 vci 32 rx-cttr 6 tx-cttr 6 | แก้ไขล่าสุด ใน  วันศุกร์ที่ 25 พฤษภาคม  2018 เวลา 14:14 น.\nAdd onu to Huawei by manual |  |  | \nเขียนโดย Maru^^\nวันเสาร์ที่ 18 มกราคม  2014 เวลา 17:23 น.\n#enable #display board 0                       // ดู card ที่เป็น GPBC #config #display ont-lineprofile gpon all    // ดู line-profile #display ont-srvprofile gpon all    // ดู service-profile #display vlan all                         // ดู vlan #display traffic table ip from-index 0   // ดู tx - rx traffic profile (สุ่ม index) #config #interface gpon (slot/port (0/5)) #display ont autofind (port-id(0-7)) #ont add (portid (0-7)) (onuid (0-127)) sn-auth (serial number) omci ont-lineprofile-id (ont-lineprofileid) ont-srvprofile-id (ont-srvprofileid) desc (Number) #quit ----------- Add Internet ---------- #service-port vlan (vlan id) gpon (fr/sl/port) ont (onuid) gemport 1 multi-service user-vlan 10 rx-cttr (uploadid) tx-cttr (downloadid) ----------- Add Voice ---------- #service-port vlan (vlan-void id) gpon (fr/sl/port) ont (onuid) gemport 2 multi-service user-vlan 20 rx-cttr (uploadid) tx-cttr (downloadid) ----------- EX ---------- #ont add 2 129 sn-auth 48575443DC244xxx omci ont-lineprofile-id 2 ont-srvprofile-id 2 desc 7424j0000 #quit #service-port vlan 3606 gpon 0/5/2 ont 129 gemport 1 multi-service user-vlan 10 rx-cttr 6 tx-cttr 6 #service-port vlan 1101 gpon 0/5/2 ont 129 gemport 2 multi-service user-vlan 20 rx-cttr 11 tx-cttr 11 -------- Delete service ont ------- #undo service-port port (fr/sl/po) ont (id) gemport (id) ------- Delete ont ------- #ont delete (port id) (onu id) ------- display ont ------- #config #interface gpon 0/5 #display ont info (port id (0-8)) all      // ดู sn ของแต่ละ port #display service-port port (fr/sl/po) ont (id)   // ดู rx-index tx-index (download) #display service-port port (fr/sl/po) ont (port id (0-8) #undo service-port (port id (0-8) ------- add vlan  uplink ------- #vlan 3600 smart vpi 1 vci 32 rx 6 tx 6 #port vlan 3600 0/2 0 ---------------------------- -- Huawei. edit ont-lineprofile -- --------------------------- #interface gpon 0/5 #display ont info (port id (0-8)) all      // ดู sn ของแต่ละ port yala(config)#display ont-lineprofile gpon profile-id 12 DBA Profile-ID:25 yala(config)#display dba-profile all    // เลือก dba-profile ที่ ต้องการ yala(config)#ont-lineprofile gpon profile-id 12 profile-name P4_InternetUp15M // เข้าไปใน line-profile ที่ต้องการแก้ไข yala(config-gpon-lineprofile-12)#tcont 1 dba-profile-id 34  // แก้ไข ให้เป็น dba-profile-id 34 ---------------------------- -- Huawei. change vlan -- --------------------------- display mac-address vlan 3602 ---- vlan 3600 smart vpi 1 vci 32 rx 6 tx 6 port vlan 3600 0/2 0 ---- undo service-port 28 service-port 28 vlan 1476 adsl 0/1/28 vpi 1 vci 32 rx-cttr 6 tx-cttr 6\nแก้ไขล่าสุด ใน  วันศุกร์ที่ 25 พฤษภาคม  2018 เวลา 14:14 น.\n\nAdd onu to Huawei by manual |  |  | \n\nเขียนโดย Maru^^\nวันเสาร์ที่ 18 มกราคม  2014 เวลา 17:23 น.\n#enable #display board 0                       // ดู card ที่เป็น GPBC #config #display ont-lineprofile gpon all    // ดู line-profile #display ont-srvprofile gpon all    // ดู service-profile #display vlan all                         // ดู vlan #display traffic table ip from-index 0   // ดู tx - rx traffic profile (สุ่ม index) #config #interface gpon (slot/port (0/5)) #display ont autofind (port-id(0-7)) #ont add (portid (0-7)) (onuid (0-127)) sn-auth (serial number) omci ont-lineprofile-id (ont-lineprofileid) ont-srvprofile-id (ont-srvprofileid) desc (Number) #quit ----------- Add Internet ---------- #service-port vlan (vlan id) gpon (fr/sl/port) ont (onuid) gemport 1 multi-service user-vlan 10 rx-cttr (uploadid) tx-cttr (downloadid) ----------- Add Voice ---------- #service-port vlan (vlan-void id) gpon (fr/sl/port) ont (onuid) gemport 2 multi-service user-vlan 20 rx-cttr (uploadid) tx-cttr (downloadid) ----------- EX ---------- #ont add 2 129 sn-auth 48575443DC244xxx omci ont-lineprofile-id 2 ont-srvprofile-id 2 desc 7424j0000 #quit #service-port vlan 3606 gpon 0/5/2 ont 129 gemport 1 multi-service user-vlan 10 rx-cttr 6 tx-cttr 6 #service-port vlan 1101 gpon 0/5/2 ont 129 gemport 2 multi-service user-vlan 20 rx-cttr 11 tx-cttr 11 -------- Delete service ont ------- #undo service-port port (fr/sl/po) ont (id) gemport (id) ------- Delete ont ------- #ont delete (port id) (onu id) ------- display ont ------- #config #interface gpon 0/5 #display ont info (port id (0-8)) all      // ดู sn ของแต่ละ port #display service-port port (fr/sl/po) ont (id)   // ดู rx-index tx-index (download) #display service-port port (fr/sl/po) ont (port id (0-8) #undo service-port (port id (0-8) ------- add vlan  uplink ------- #vlan 3600 smart vpi 1 vci 32 rx 6 tx 6 #port vlan 3600 0/2 0 ---------------------------- -- Huawei. edit ont-lineprofile -- --------------------------- #interface gpon 0/5 #display ont info (port id (0-8)) all      // ดู sn ของแต่ละ port yala(config)#display ont-lineprofile gpon profile-id 12 DBA Profile-ID:25 yala(config)#display dba-profile all    // เลือก dba-profile ที่ ต้องการ yala(config)#ont-lineprofile gpon profile-id 12 profile-name P4_InternetUp15M // เข้าไปใน line-profile ที่ต้องการแก้ไข yala(config-gpon-lineprofile-12)#tcont 1 dba-profile-id 34  // แก้ไข ให้เป็น dba-profile-id 34 ---------------------------- -- Huawei. change vlan -- --------------------------- display mac-address vlan 3602 ---- vlan 3600 smart vpi 1 vci 32 rx 6 tx 6 port vlan 3600 0/2 0 ---- undo service-port 28 service-port 28 vlan 1476 adsl 0/1/28 vpi 1 vci 32 rx-cttr 6 tx-cttr 6\nแก้ไขล่าสุด ใน  วันศุกร์ที่ 25 พฤษภาคม  2018 เวลา 14:14 น.\n\n\nAdd onu to Huawei by manual\nศูนย์ปฏิบัติการระบบสื่อสารข้อมูล (สบลตน.) (http://10.192.133.33/smc/)\nService Management Center(SMC)\nหน้าหลัก (http://10.192.133.33/smc/)\nผส.บลตน. (http://10.192.133.33/smc/index.php?option=com_content&view=article&id=60&Itemid=70)\nผจ.สบลตน. (http://10.192.133.33/smc/index.php?option=com_content&view=article&id=56&Itemid=60)\nข่าวสาร SMC (http://10.192.133.33/smc/index.php?option=com_content&view=category&id=49&Itemid=84)\nความรู้ (http://10.192.133.33/smc/index.php?option=com_content&view=category&id=43&Itemid=81)\nบุคลากร SMC (http://10.192.133.33/smc/index.php?option=com_content&view=article&id=59&Itemid=64)\nเบอร์หน่วยงานต่างๆ (http://10.192.133.33/smc/index.php?option=com_content&view=article&id=64&Itemid=61)\nผู้ดูแลระบบ (http://10.192.133.33/smc/index.php?option=com_content&view=article&id=57&Itemid=59)\nศูนย์ สลภก.3\nLink ที่เกี่ยวข้อง\nEdocument (https://ntedoc.intra.ntplc.co.th/doc/homepage-doc)\nNT Academy(e-Learning) (https://lms.ntplc.co.th/)\nIntranet NT (https://intranet.ntplc.co.th/)\nE-Mail NT (https://mail.ntplc.co.th/)\nWeb HR (https://webhr.ntplc.co.th/)\nกองทุนสำรองฯ (https://pvd.mfcfund.com/auth/login)\nSMC Extension Dashboard (http://192.168.99.200:8080/)\nSMC AI (http://192.168.99.200:8999/)\nToday\n41\nYesterday\n522\nThis week\n932\nLast week\n95\nThis month\n1276\nLast month\n415\nAll days\n610593\nWe have: 33 guests online\nYour IP:: 10.192.133.253\n,\nToday: ธ.ค. 24, 2025\nVisitors Counter (http://vinaora.com)\nชื่อผู้ใช้\nรหัสผ่าน\nจำข้อมูลการเข้าสู่ระบบ\nลืมรหัสผ่าน? (http://10.192.133.33/smc/index.php?option=com_user&view=reset)\nลืมชื่อเข้าใช้งาน? (http://10.192.133.33/smc/index.php?option=com_user&view=remind)\nลงทะเบียน (http://10.192.133.33/smc/index.php?option=com_user&view=register)\nTemplate\nWDM (แนะนำIE)\nTemplate ZTE FTTX v.3 (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=149)\nTemplate for PE,APE,LPE (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=163)\nConvert ASR920 To NCS (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=111)\nGet IP IPPhone (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=153)\nตรวจสอบ ONU Event Log (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=143)\nTemplate Extreme (http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=133)\nลิงค์ภายใต้ ภก.3\nนราธิวาส NMS (http://10.192.39.50/)\nสุราษฎร์ NMS (https://totsni.com/network)\nProject ปรับปรุงตรวจแก้คืนดี ภก.3\nAdd onu to Huawei by manual\nเขียนโดย Maru^^\nวันเสาร์ที่ 18 มกราคม  2014 เวลา 17:23 น.\n#enable\n#display board 0                       // ดู card ที่เป็น GPBC\n#config\n#display ont-lineprofile gpon all    // ดู line-profile\n#display ont-srvprofile gpon all    // ดู service-profile\n#display vlan all                         // ดู vlan\n#display traffic table ip from-index 0   // ดู tx - rx traffic profile (สุ่ม index)\n#config\n#interface gpon (slot/port (0/5))\n#display ont autofind (port-id(0-7))\n#ont add\n(portid (0-7))\n(onuid (0-127))\nsn-auth\n(serial number)\nomci ont-lineprofile-id\n(ont-lineprofileid)\nont-srvprofile-id\n(ont-srvprofileid) desc (Number)\n#quit\n----------- Add Internet ----------\n#service-port vlan\n(vlan id)\ngpon\n(fr/sl/port)\nont\n(onuid)\ngemport 1 multi-service user-vlan 10 rx-cttr\n(uploadid)\ntx-cttr\n(downloadid)\n----------- Add Voice ----------\n#service-port vlan\n(vlan-void id)\ngpon\n(fr/sl/port)\nont\n(onuid)\ngemport 2 multi-service user-vlan 20 rx-cttr\n(uploadid)\ntx-cttr\n(downloadid)\n----------- EX ----------\n#ont add 2 129 sn-auth 48575443DC244xxx omci ont-lineprofile-id 2 ont-srvprofile-id 2\ndesc 7424j0000\n#quit\n#service-port vlan 3606 gpon 0/5/2 ont 129 gemport 1 multi-service user-vlan 10 rx-cttr 6 tx-cttr 6\n#service-port vlan 1101 gpon 0/5/2 ont\n129\ngemport 2 multi-service user-vlan 20 rx-cttr 11 tx-cttr 11\n-------- Delete service ont -------\n#undo service-port port (fr/sl/po) ont (id) gemport (id)\n------- Delete ont -------\n#ont delete (port id) (onu id)\n------- display ont -------\n#config\n#interface gpon 0/5\n#display ont info (port id (0-8)) all      // ดู sn ของแต่ละ port\n#display service-port port\n(fr/sl/po)\nont\n(id)   // ดู rx-index tx-index (download)\n#display service-port port\n(fr/sl/po)\nont\n(port id (0-8)\n#undo service-port\n(port id (0-8)\n------- add vlan  uplink -------\n#vlan 3600 smart vpi 1 vci 32 rx 6 tx 6\n#port vlan 3600 0/2 0\n---------------------------- -- Huawei.\nedit ont-lineprofile\n-- ---------------------------\n#interface gpon 0/5\n#display ont info (port id (0-8)) all      // ดู sn ของแต่ละ port\nyala(config)#display ont-lineprofile gpon profile-id 12\nDBA Profile-ID:25\nyala(config)#display dba-profile all    // เลือก dba-profile ที่ ต้องการ\nyala(config)#ont-lineprofile gpon profile-id 12 profile-name P4_InternetUp15M // เข้าไปใน line-profile ที่ต้องการแก้ไข\nyala(config-gpon-lineprofile-12)#tcont 1 dba-profile-id 34  // แก้ไข ให้เป็น\ndba-profile-id 34\n---------------------------- -- Huawei.\nchange vlan\n-- ---------------------------\ndisplay mac-address vlan 3602\n----\nvlan 3600 smart vpi 1 vci 32 rx 6 tx 6\nport vlan 3600 0/2 0\n----\nundo service-port 28\nservice-port 28 vlan 1476 adsl 0/1/28 vpi 1 vci 32 rx-cttr 6 tx-cttr 6\nแก้ไขล่าสุด ใน  วันศุกร์ที่ 25 พฤษภาคม  2018 เวลา 14:14 น.\nJoomla 1.5 Templates by Joomlashack (http://www.joomlashack.com)",
+  "content_type": "general",
+  "content_hash": "0e1ed411afa5da17c84f5f73e7511000bc19fe7620f9afc7ec0accb8006ec12a",
+  "links": [
+    {
+      "text": "ศูนย์ปฏิบัติการระบบสื่อสารข้อมูล (สบลตน.)",
+      "href": "http://10.192.133.33/smc/"
+    },
+    {
+      "text": "หน้าหลัก",
+      "href": "http://10.192.133.33/smc/"
+    },
+    {
+      "text": "ผส.บลตน.",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=article&id=60&Itemid=70"
+    },
+    {
+      "text": "ผจ.สบลตน.",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=article&id=56&Itemid=60"
+    },
+    {
+      "text": "ข่าวสาร SMC",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=category&id=49&Itemid=84"
+    },
+    {
+      "text": "ความรู้",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=category&id=43&Itemid=81"
+    },
+    {
+      "text": "บุคลากร SMC",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=article&id=59&Itemid=64"
+    },
+    {
+      "text": "เบอร์หน่วยงานต่างๆ",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=article&id=64&Itemid=61"
+    },
+    {
+      "text": "ผู้ดูแลระบบ",
+      "href": "http://10.192.133.33/smc/index.php?option=com_content&view=article&id=57&Itemid=59"
+    },
+    {
+      "text": "Edocument",
+      "href": "https://ntedoc.intra.ntplc.co.th/doc/homepage-doc"
+    },
+    {
+      "text": "NT Academy(e-Learning)",
+      "href": "https://lms.ntplc.co.th/"
+    },
+    {
+      "text": "Intranet NT",
+      "href": "https://intranet.ntplc.co.th/"
+    },
+    {
+      "text": "E-Mail NT",
+      "href": "https://mail.ntplc.co.th/"
+    },
+    {
+      "text": "Web HR",
+      "href": "https://webhr.ntplc.co.th/"
+    },
+    {
+      "text": "กองทุนสำรองฯ",
+      "href": "https://pvd.mfcfund.com/auth/login"
+    },
+    {
+      "text": "SMC Extension Dashboard",
+      "href": "http://192.168.99.200:8080/"
+    },
+    {
+      "text": "SMC AI",
+      "href": "http://192.168.99.200:8999/"
+    },
+    {
+      "text": "Visitors Counter",
+      "href": "http://vinaora.com"
+    },
+    {
+      "text": "ลืมรหัสผ่าน?",
+      "href": "http://10.192.133.33/smc/index.php?option=com_user&view=reset"
+    },
+    {
+      "text": "ลืมชื่อเข้าใช้งาน?",
+      "href": "http://10.192.133.33/smc/index.php?option=com_user&view=remind"
+    },
+    {
+      "text": "ลงทะเบียน",
+      "href": "http://10.192.133.33/smc/index.php?option=com_user&view=register"
+    },
+    {
+      "text": "Template ZTE FTTX v.3",
+      "href": "http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=149"
+    },
+    {
+      "text": "Template for PE,APE,LPE",
+      "href": "http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=163"
+    },
+    {
+      "text": "Convert ASR920 To NCS",
+      "href": "http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=111"
+    },
+    {
+      "text": "Get IP IPPhone",
+      "href": "http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=153"
+    },
+    {
+      "text": "ตรวจสอบ ONU Event Log",
+      "href": "http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=143"
+    },
+    {
+      "text": "Template Extreme",
+      "href": "http://10.192.133.33/smc/index.php?option=com_wrapper&view=wrapper&Itemid=133"
+    },
+    {
+      "text": "นราธิวาส NMS",
+      "href": "http://10.192.39.50/"
+    },
+    {
+      "text": "สุราษฎร์ NMS",
+      "href": "https://totsni.com/network"
+    },
+    {
+      "text": "Joomla 1.5 Templates by Joomlashack",
+      "href": "http://www.joomlashack.com"
+    }
+  ],
+  "images": [
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/0.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/0.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/0.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/6.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/1.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/0.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/5.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/9.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/digit_counter/default/3.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vtoday.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vyesterday.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vweek.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vlweek.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vmonth.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vlmonth.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/modules/mod_vvisit_counter/images/stats/default/vall.png",
+      "alt": "mod_vvisit_counter",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/templates/js_jamba/images/pdf_button.png",
+      "alt": "PDF",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/templates/js_jamba/images/printButton.png",
+      "alt": "พิมพ์",
+      "caption": ""
+    },
+    {
+      "url": "http://10.192.133.33/smc/templates/js_jamba/images/emailButton.png",
+      "alt": "อีเมล",
+      "caption": ""
+    }
+  ],
+  "processed_at": 1767588471.6098182,
+  "raw_file": "data/raw/10.192.133.33_smc_index.php_option_com_content_view_article_id_557_add-onu-to-huawei-by-manual_catid_43_2011-11-14-08-37-12_Itemid_81.html"
+}

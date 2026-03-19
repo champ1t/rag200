@@ -1,0 +1,4 @@
+{"ts": 1766630741.1335082, "question": "เบอร์คุณ เฉลิมรัตน์", "answer": "คุณ เฉลิมรัตน์ อัศวทรงพล\n02-575-7222\n085-813-5083", "route": "contact_lookup", "lookup_hit": true, "latency_ms": 0.4589557647705078}
+{"ts": 1766630746.619762, "question": "02-575-7222", "answer": "REVERSE_LOOKUP_HIT", "route": "contact_lookup", "lookup_hit": true, "latency_ms": 0.7369518280029297}
+{"ts": 1766630754.129209, "question": "RNOC หาดใหญ่", "answer": "ศูนย์ RNOC หาดใหญ่\n074-856-174\n081-417-0144", "route": "contact_lookup", "lookup_hit": true, "latency_ms": 0.20194053649902344}
+{"ts": 1766630784.079753, "question": "RAG คืออะไร", "answer": "จากข้อมูลอ้างอิงที่ให้มา ไม่มีข้อมูลเกี่ยวกับ \"RAG\" ที่สามารถอธิบายความหมายหรือบริบทของคำนี้ได้ ดังนั้น คำตอบคือ **ไม่ทราบ** เนื่องจากข้อมูลที่ให้มานั้นไม่เกี่ยวข้องกับ RAG", "route": "rag", "lookup_hit": true, "latency_ms": 26152.137994766235}

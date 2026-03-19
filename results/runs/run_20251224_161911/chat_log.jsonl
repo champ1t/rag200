@@ -1,0 +1,10 @@
+{"ts": 1766567987.5500531, "question": "เบอร์คุณ เฉลิมรัตน์", "answer": "คุณ เฉลิมรัตน์ อัศวทรงพล\n02-575-7222\n085-813-5083", "route": "contact_lookup", "lookup_hit": true, "latency_ms": 2.0589828491210938}
+{"ts": 1766567999.926066, "question": "RNOC หาดใหญ่", "answer": "ศูนย์ RNOC หาดใหญ่\n074-856-174\n081-417-0144", "route": "contact_lookup", "lookup_hit": true, "latency_ms": 0.29397010803222656}
+{"ts": 1766568010.6937191, "question": "IP Network", "answer": "IP Network\n02-575-4750\n02-575-4755\n02-574-8478\n02-575-4602\n02-575-4603", "route": "contact_lookup", "lookup_hit": true, "latency_ms": 0.9286403656005859}
+{"ts": 1766568128.908888, "question": "สื่อสารข้อมูล นครศรีธรรมราช", "answer": "สื่อสารข้อมูล นครศรีธรรมราช\n075-346-888", "route": "contact_lookup", "lookup_hit": true, "latency_ms": 0.8771419525146484}
+{"ts": 1766568142.589788, "question": "สผ (IP Phone)", "answer": "สผ (IP Phone)\n02-269-9111 ต่อ 1", "route": "contact_lookup", "lookup_hit": true, "latency_ms": 0.30803680419921875}
+{"ts": 1766568158.024768, "question": "สผ (แบบฟอร์ม Fixed IP ADSL)(ปสผ.)", "answer": "สผ (แบบฟอร์ม Fixed IP ADSL)(ปสผ.)\n02-269-9111 ต่อ 2", "route": "contact_lookup", "lookup_hit": true, "latency_ms": 1.1959075927734375}
+{"ts": 1766627286.2666728, "question": "BRAS TOT", "answer": "BRAS TOT\n02-575-5190\n02-575-5191\n02-568-2515\n02-568-2516", "route": "contact_lookup", "lookup_hit": true, "latency_ms": 1.2788772583007812}
+{"ts": 1766627294.105352, "question": "เบอร์ BRAS TOT", "answer": "BRAS TOT\n02-575-5190\n02-575-5191\n02-568-2515\n02-568-2516", "route": "contact_lookup", "lookup_hit": true, "latency_ms": 0.3330707550048828}
+{"ts": 1766627300.0602329, "question": "02-575-7222", "answer": "REVERSE_LOOKUP_HIT", "route": "contact_lookup", "lookup_hit": true, "latency_ms": 1.1599063873291016}
+{"ts": 1766627318.829822, "question": "คุณ เฉลิมรัตน์", "answer": "คุณ เฉลิมรัตน์ อัศวทรงพล\n02-575-7222\n085-813-5083", "route": "contact_lookup", "lookup_hit": true, "latency_ms": 0.209808349609375}
