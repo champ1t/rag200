@@ -1,9 +1,0 @@
-{
-  "session_id": "test-session-1",
-  "context": {
-    "type": "test",
-    "query": "query 1",
-    "timestamp": 1771319361.800839
-  },
-  "saved_at": 1771319361.800844
-}

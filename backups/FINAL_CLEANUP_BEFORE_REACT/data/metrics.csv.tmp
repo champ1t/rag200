@@ -1,1 +1,0 @@
-timestamp,session_id,query,route,latency_ms,choices_len,sources_len,ans_len,top_k,user,ok
