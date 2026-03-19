@@ -140,7 +140,9 @@ def precompute_record(r: Dict[str, Any]) -> Dict[str, Any]:
     name = r.get("name", "")
     key_norm = normalize_for_matching(name)
     r["key_norm"] = key_norm
-    r["tokens"] = set(key_norm.split())
+    
+    # Use a set locally for efficiency and uniqueness, convert to list at end for JSON
+    tokens = set(key_norm.split())
     
     # Extract Latin Tokens (Rule B)
     # e.g. "ศูนย์ omc ภูเก็ต" -> ["omc"]
@@ -165,10 +167,7 @@ def precompute_record(r: Dict[str, Any]) -> Dict[str, Any]:
     if "help desk" in key_norm:
         aliases.add(key_norm.replace("help desk", "helpdesk"))
         
-    # B.3 Optional Hyphens/Dots (Managed by normalization mostly, but implicit concat)
-    # e.g. "t-nep" normalized to "t nep". Add "tnep"?
-    # logic: if single chars or short words separated by space, concat them
-    # naive approach: concat all latin tokens? "ip phone" -> "ipphone"
+    # B.3 Optional Hyphens/Dots
     latin_concat = "".join(re.findall(r"[a-z0-9]", key_norm))
     if latin_concat and len(latin_concat) > 2:
         aliases.add(latin_concat)
@@ -179,9 +178,11 @@ def precompute_record(r: Dict[str, Any]) -> Dict[str, Any]:
         if tag_norm:
             aliases.add(tag_norm)
             # Break down tag into tokens too
-            r["tokens"].update(tag_norm.split())
+            tokens.update(tag_norm.split())
     
-    r["alias_set"] = aliases
+    r["tokens"] = list(tokens)
+    r["latin_tokens"] = list(r["latin_tokens"])
+    r["alias_set"] = list(aliases)
     r["_precomputed"] = True
     return r
 

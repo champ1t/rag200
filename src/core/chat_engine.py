@@ -1563,13 +1563,18 @@ class ChatEngine:
     def process(self, q: str, session_id: str = "default") -> Dict[str, Any]:
         """
         Phase 3.5: Audited Process Wrapper
-        Wraps internal logic to ensure mandatory logging.
+        Wraps internal logic to ensure mandatory logging and context updates.
         """
         # Step 10 Reset
         self.last_telemetry = {"query": q, "timestamp": time.time(), "route": "unknown"}
         
         try:
             res = self._process_logic(q, session_id)
+            
+            # [CONTEXT_MANAGEMENT] Save context globally for follow-ups
+            # Use _last_intent (set by router) as it's always available after _process_logic
+            resolved_intent = res.get("intent") or res.get("_intent") or getattr(self, "_last_intent", "UNKNOWN")
+            self._update_session_context(q, res, session_id, resolved_intent=resolved_intent)
             
             # Phase 21: Mandatory Audit Field Injection
             # Ensure audit exists and follows strict schema
@@ -1603,9 +1608,75 @@ class ChatEngine:
                     "confidence_mode": "fail_closed"
                 }
             }
+
+    def _update_session_context(self, q: str, res: Dict[str, Any], session_id: str, resolved_intent: str = "UNKNOWN"):
+        """
+        Update conversation context based on current response results.
+        Enables article stickiness and cross-turn state management.
+        """
+        if not res or res.get("route") in ["error", "system_error_fail_closed"]:
+            return
+            
+        entities = {}
+        last_article = None
+        route = res.get("route", "")
+        
+        # --- Extract entities from query for CONTACT routes ---
+        # Contact handlers return hits but not structured entities w/ ORG/LOC
+        # We need to extract them from the original query for context enrichment
+        if resolved_intent in ("CONTACT_LOOKUP", "TEAM_LOOKUP") or route.startswith("contact_"):
+            try:
+                from src.governance.lightweight_entity_detector import LightweightEntityDetector
+                det = LightweightEntityDetector()
+                detection = det.detect(q)
+                for ent in detection.get("all_entities", []):
+                    ent_val = ent.get("value", "")
+                    ent_type = ent.get("type", "UNKNOWN")
+                    if ent_val:
+                        entities[ent_val] = ent_type
+            except Exception as e:
+                print(f"[DEBUG_CONTEXT] Warning: Entity extraction failed: {e}")
+                pass  # Graceful degradation
+        
+        # Extract metadata from result hits
+        hits = res.get("hits", [])
+        if hits and isinstance(hits, list):
+            top_hit = hits[0]
+            # Technical Article Case
+            if "source_url" in top_hit or "href" in top_hit:
+                last_article = {
+                    "title": top_hit.get("value") or top_hit.get("text") or "Article",
+                    "url": top_hit.get("source_url") or top_hit.get("href"),
+                    "slug": top_hit.get("slug")
+                }
+            # Contact Case: add person names (save multiple if ambiguous)
+            elif top_hit.get("name"):
+                 # Determine if we should save multiple entities
+                 save_limit = 1
+                 if route in ["contact_ambiguous", "contact_broad_list", "contact_ambiguous_all", "contact_prefix_ambiguous"]:
+                     save_limit = 10
+                 
+                 for hit in hits[:save_limit]:
+                     hit_name = hit.get("name")
+                     if hit_name:
+                         entities[hit_name] = "CONTACT"
+                 
+        # Create and save context via context_manager
+        try:
+            new_context = context_manager.create_context(
+                query=q,
+                intent=resolved_intent,
+                route=route or "unknown",
+                entities=entities,
+                last_article=last_article,
+                result_summary=res.get("answer", "")[:100]
+            )
+            self.last_context = new_context
+            if session_id and session_id != "default":
+                context_manager.save_session_context(session_id, new_context)
+                print(f"[DEBUG_CONTEXT] Saved context: intent={resolved_intent}, entities={list(entities.keys())}")
         except Exception as e:
-            print(f"[AUDIT] CRITICAL PROCESS FAILURE: {e}")
-            raise e
+            print(f"[DEBUG_CONTEXT] Warning: Failed to save context: {e}")
 
     def _is_vendor_broad_query(self, query: str) -> bool:
         """
@@ -2655,12 +2726,30 @@ class ChatEngine:
             
             # [SAFETY LAYER] Extra regex check for directory noise
             import re
+            # Keep a backup before regex strip (to detect location truncation)
+            q_before_strip = q_proc
+            
             # Strip initial "เบอร์/ขอ/หา" and trailing "มา/หน่อย/นะครับ"
             q_proc = re.sub(r"^(ขอเบอร์|ขอ|เบอร์|ติดต่อ|หาเบอร์|ช่วยหาเบอร์|เบอร์โทร|ขอเบอร์ติดต่อ|ติดต่อเบอร์)", "", q_proc).strip()
             q_proc = re.sub(r"(มา|หน่อย|ครับ|ค่ะ|นะ|จ๊ะ|ด้วย|ดิ|ดิ๊|ดิ้|ที|มาให้|ให้หน่อย|มาให้หน่อย)$", "", q_proc).strip()
             
+            # [LOCATION GUARD] If a known Thai location in original query is missing/split in q_proc,
+            # restore it. Prevents "หาดใหญ่" from becoming "ดใหญ่".
+            KNOWN_LOCATIONS_GUARD = [
+                "หาดใหญ่", "ภูเก็ต", "สงขลา", "ตรัง", "นครศรี", "สุราษฎร์", "ชุมพร",
+                "ระนอง", "กระบี่", "สตูล", "ยะลา", "ปัตตานี", "นราธิวาส", "พัทลุง",
+            ]
+            q_original_lower = original_q_str.lower()
+            for loc in KNOWN_LOCATIONS_GUARD:
+                if loc in q_original_lower and loc not in q_proc.lower():
+                    # Location was lost in normalization -> restore it
+                    q_proc = f"{q_proc} {loc}".strip()
+                    print(f"[DEBUG] [LOCATION GUARD] Restored location '{loc}' to query: '{q_proc}'")
+
+            
             if not q_proc or len(q_proc.strip()) < 2:
                 q_proc = q
+
             
             print(f"[DEBUG] [STEP 19.1] Structured domain ({intent_locked}) -> Normalized via LLM & Regex: '{q_proc}'")
             shape_analysis = analysis.copy()
@@ -3133,13 +3222,11 @@ class ChatEngine:
         # GUARD: Contact Precision Check (Phase 229)
         # Prevent false-positive CONTACT_LOOKUP for technical/config queries
         if intent == "CONTACT_LOOKUP":
-            if not is_valid_contact_query(q):
+            if not is_valid_contact_query(original_q_str):
                 print(f"[DEBUG] Contact Precision Guard: Invalid Contact Query -> Rerouting")
                 
                 # Check for Fail-Soft Reroute to HOWTO
-                # Note: should_reroute_to_howto expects (query, route) not (query, intent)
-                # Since we're in invalid contact context, use a fake route to check patterns
-                should_reroute, new_intent = should_reroute_to_howto(q, "contact_miss_strict")
+                should_reroute, new_intent = should_reroute_to_howto(original_q_str, "contact_miss_strict")
                 if should_reroute:
                      print(f"[DEBUG] Fail-Soft Reroute -> HOWTO_PROCEDURE")
                      intent = "HOWTO_PROCEDURE"
@@ -3580,23 +3667,32 @@ class ChatEngine:
         if intent == "TEAM_LOOKUP" or intent == "ASSET" or is_asset_request:
              print(f"[DEBUG] Handling {intent} logic (is_asset={is_asset_request})")
              result = self.directory_handler.handle_team_lookup(q, is_asset=is_asset_request)
-             
-             if result.get("route") in ["position_miss", "team_miss"]:
-                 print(f"[DEBUG] {intent} missed in directory. Falling back to RAG.")
-                 intent = "OVERVIEW" # Discard the override and let semantic search find the article
-             else:
-                 result["latencies"] = latencies
-                 
-                 # Phase 80: Capture Ambiguity
-                 if result.get("route") == "team_ambiguous" and result.get("candidates"):
-                     self.pending_question = {
-                         "kind": "team_choice",
-                         "candidates": result["candidates"],
-                         "original_query": result.get("original_query", q),
-                         "created_at": time.time()
-                     }
-                 return result
 
+             # Phase 88: Article Priority Check (Stop Directory Hijacking)
+             # If query contains a technical team name (acronym) that matches an article title, favor the article.
+             found_art = None
+             q_lower = q.lower()
+             KNOWN_TEAMS = {'helpdesk', 'rnoc', 'omc', 'noc', 'csoc', 'iig'}
+             matched_team = next((t for t in KNOWN_TEAMS if t in q_lower), None)
+
+             if matched_team:
+                  for title_raw, art in self.processed_cache._normalized_title_index.items():
+                       # Check if matched team acronym is in the article title
+                       if matched_team in title_raw.lower():
+                            found_art = art; break
+
+             if found_art:
+                  target_url = found_art.get("href")
+                  print(f"[DEBUG] Team query matched article via acronym '{matched_team}': {found_art.get('text')}")
+                  return self._handle_article_route(target_url, q, latencies, start_time=t_start, match_score=1.0)
+
+             if result.get("route") in ["position_miss", "team_miss", "team_ambiguous"]:
+                  # If directory failed, fallback to RAG/Article
+                  print(f"[DEBUG] {intent} missed/ambiguous in directory. Falling back to RAG.")
+                  intent = "OVERVIEW"
+             else:
+                  result["latencies"] = latencies
+                  return result
         # 1.05 NEWS_SEARCH Handler (Phase 35)
         if intent == "NEWS_SEARCH":
             print("[DEBUG] Handling NEWS_SEARCH logic")
@@ -4213,44 +4309,8 @@ class ChatEngine:
                 self.pending_question = None
                 self.pending_contact_clarify = None
             
-            # If hit, update context
-            if res.get("hits"):
-                hits = res["hits"]
-                
-                # ================================================================
-                # CRITICAL FIX: Save ALL options in ambiguous results
-                # ================================================================
-                # Old: Only saved hits[0] → context has only first option (OMC)
-                # New: Save ALL hits → context has all options (OMC + RNOC)
-                # This enables entity matching: "ของ RNOC ละ" can find RNOC
-                
-                entities = {}
-                route = res.get("route", "")
-                
-                # For ambiguous/multiple results, save ALL options as entities
-                if route in ["contact_ambiguous", "contact_broad_list", "contact_ambiguous_all", "contact_prefix_ambiguous"]:
-                    # Save all candidate names as CONTACT entities
-                    for hit in hits[:10]:  # Limit to top 10
-                        hit_name = hit.get("name", "")
-                        if hit_name:
-                            entities[hit_name] = "CONTACT"
-                    result_data = hits  # Save all hits
-                else:
-                    # Single hit or other routes
-                    entities = {hits[0].get("name", ""): "CONTACT"}
-                    result_data = hits[0]
-                
-                # Save context to persistent storage
-                new_context = context_manager.create_context(
-                    query=q,
-                    intent="CONTACT_LOOKUP",
-                    route="contact",
-                    entities=entities,
-                    result_data=result_data
-                )
-                self.last_context = new_context
-                if session_id and session_id != "default":
-                    context_manager.save_session_context(session_id, new_context)
+                # Redundant context saving removed - handled in process() wrapper
+                pass
             
             # Fallback to RAG if Contact Handler misses (signals fallback_to_rag)
             if res.get("fallback_to_rag"):
@@ -4293,32 +4353,7 @@ class ChatEngine:
              print(f"[DEBUG] Route: {intent}")
              t_start = time.time()
              # Use original query for directory to ensure Thai keyword matching
-             res = self.directory_handler.handle(original_q_str)
-             
-             # Phase: Directory Context Persistence
-             # Capture entities from lookup results for follow-up support
-             if res.get("hits"):
-                 hits = res["hits"]
-                 entities = {}
-                 if intent == "TEAM_LOOKUP":
-                      # For team queries, try to extract specific team from query
-                      entities[original_q_str] = "ORGANIZATION"
-                 elif hits:
-                      # For person/role, capture the matched name
-                      entities[hits[0].get("name", "")] = "PERSON"
-                 
-                 new_context = context_manager.create_context(
-                     query=original_q_str,
-                     intent=intent,
-                     route=res.get("route", "directory"),
-                     entities=entities,
-                     result_data=hits[0] if hits else {}
-                 )
-                 self.last_context = new_context
-                 if session_id and session_id != "default":
-                     context_manager.save_session_context(session_id, new_context)
-             
-             return res
+             return self.directory_handler.handle(original_q_str)
 
         elif intent == "REFERENCE_LINK":
              print("[DEBUG] Route: REFERENCE_LINK")
@@ -5906,7 +5941,8 @@ class ChatEngine:
         if is_extractive:
             low_context = paragraphs < 1 and bullets < 1
         else:
-            low_context = paragraphs < 3 and bullets < 2 and content_type != "command_reference"
+            # Phase 21: Relaxed threshold (P<1 and B<1) instead of 3/2
+            low_context = paragraphs < 1 and bullets < 1 and content_type != "command_reference"
         
         # Phase 242: Content Preservation Rule
         # If we have images/tables, the AI should NOT be forced to LINK_ONLY just because text is short.

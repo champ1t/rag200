@@ -141,8 +141,8 @@ class ArticleInterpreter:
             # Expand them to separate lines before counting so the P/B counters work correctly.
             # This ONLY affects counting logic, NOT the content sent to the LLM.
             content_for_counting = re.sub(r'\s+(\d+\.\s)', r'\n\n\1', content)
-            # Count non-empty paragraphs (at least 40 chars to be meaningful)
-            paragraphs = [p for p in content_for_counting.split("\n\n") if len(p.strip()) > 40]
+            # Count non-empty paragraphs (at least 20 chars to be meaningful)
+            paragraphs = [p for p in content_for_counting.split("\n\n") if len(p.strip()) > 20]
             paragraphs_count = len(paragraphs)
             # Count bullets
             bullets = re.findall(r'^\s*[\•\-\*\d\.)]', content_for_counting, re.MULTILINE)
@@ -368,7 +368,7 @@ class ArticleInterpreter:
                 print(f"[DEBUG] Junk Table Detected: pipes={pipe_count}, digit_ratio={digit_count/clean_len:.2f}")
 
         # Check: Short content OR Junk Table
-        if (clean_len < 600 or is_junk_table) and has_images and not any(k in cleaned_content.lower() for k in ["display", "config", "command"]):
+        if (clean_len < 50 or is_junk_table) and has_images and not any(k in cleaned_content.lower() for k in ["display", "config", "command"]):
 
             # Heuristic: < 600 chars is likely just a title or header residue + images.
             # Phase 98: Rescue technical content still applies via check above.

@@ -23,7 +23,7 @@ KNOWN_ACRONYMS: set = {
     "smc", "omc", "rnoc", "noc", "csoc", "iig", "helpdesk",
     # --- Device / System Acronyms ---
     "umux", "olt", "onu", "bras", "dslam", "msan", "fttx",
-    "atm", "sbc", "cmts", "tacacs",
+    "atm", "sbc", "cmts", "tacacs", "sfp", "smn",
     # --- Team / Unit Names (contact record abbreviations) ---
     "jna", "sopa", "mdes", "tot", "senate",
 }
@@ -36,7 +36,17 @@ KNOWN_THAI_TEAMS: set = {
     "call center", "wifi", "intra", "ipphone", "ip phone", "ip-phone",
     "winet", "ipnetwork", "ip network", "softswitch", "soft switch",
     "leased line", "dsl", "fiber", "fttx", "iptv", "ip tv",
-    "ห้องสมุด", "บริหาร", "ฝ่ายขาย",
+    "ห้องสมุด", "บริหาร", "ฝ่ายขาย", "คอลเซ็นเตอร์", "ศูนย์บริการ",
+    "ส่วนปฏิบัติการ", "ร.บลตน", "ข.บลตน",
+}
+
+# KNOWN_THAI_LOCATIONS: Common Thai location names/provinces/offices.
+# If query mentions a NEW location not in context, it's a topic switch.
+KNOWN_THAI_LOCATIONS: set = {
+    "หาดใหญ่", "สงขลา", "ภูเก็ต", "สุราษฎร์", "นครศรี", "ตรัง", "พัทลุง", "กระบี่",
+    "ระนอง", "ชุมพร", "สตูล", "เบตง", "ยะลา", "ปัตตานี", "นราธิวาส",
+    "หลักสี่", "แจ้งวัฒนะ", "กรุงเทพ", "นนทบุรี", "ปทุมธานี",
+    "ชลบุรี", "ระยอง", "พัทยา", "เชียงใหม่", "ขอนแก่น", "โคราช",
 }
 
 
@@ -68,14 +78,14 @@ def should_use_context(query: str, last_context: Optional[Dict[str, Any]]) -> bo
         "ละ", "ล่ะ", "อีกคน", "คนอื่น",
         "ของ", "แล้ว", "อันนี้", "อันนั้น",
         
-        # Request for more info
+        # Request for more info (images, tables, details)
         "คำสั่งอะไรบ้าง", "มีอะไรบ้าง", "มีอะไรอีก",
         "เพิ่มเติม", "อื่น", "รายละเอียด", "ขยาย",
         "ช่วยบอก", "บอกหน่อย", "อธิบาย",
+        "รูป", "ภาพ", "ประกอบ", "หน้าตา", "ตาราง", "สรุป", "บทสรุป",
         
         # Selection/clarification
         "อันแรก", "อันที่สอง", "ตัวแรก", "ตัวที่",
-        "คนแรก", "คนสุดท้าย", "คนต่อมา", "คนถัดมา",
         "นี่", "นั่น", "โน่น"
     ]
     
@@ -89,21 +99,22 @@ def should_use_context(query: str, last_context: Optional[Dict[str, Any]]) -> bo
     # NEW TOPIC DETECTION (Clear context on topic change)
     # =========================================================================
     # Detect if query is about completely different topic
-    # Examples that should CLEAR context:
-    # - Previous: "ศูนย์หาดใหญ่" → Current: "huawei command" → CLEAR
-    # - Previous: "contact" → Current: "ใครคือผจ" → CLEAR
     
     # Strong topic indicators (if present, likely NEW topic, not follow-up)
     new_topic_patterns = [
         # Technical queries
-        "huawei", "cisco", "juniper", "command", "คำสั่ง", "config", "configuration",
+        "huawei", "cisco", "juniper", "command", "config", "configuration",
         # Position queries (when previous was CONTACT)
         "ใครคือ", "ผจ", "ผส", "ผู้จัดการ", "ผู้อำนวยการ",
-        #General queries
-        "กระจกแปรง", "อะไร", "คือ", "หมายถึง", "อธิบาย"
+        # General queries
+        "กระจกแปรง", "คืออะไร", "หมายถึง", "อธิบาย"
     ]
     
     has_new_topic = any(pattern in q_lower for pattern in new_topic_patterns)
+    
+    # Special: 'คือ' alone is common in followups, 'คืออะไร' is new topic
+    if "คืออะไร" in q_lower:
+        has_new_topic = True
     
     # If new topic detected and no follow-up pattern, clear context
     if has_new_topic and not has_followup_pattern:
@@ -219,9 +230,36 @@ def enrich_query_with_context(query: str, last_context: Optional[Dict[str, Any]]
     if not should_use_context(query, last_context):
         return query
     
+    q_lower = query.lower()
     entities = get_context_entities(last_context)
-    print(f"[DEBUG_ENTITIES] Extracted entities: {entities}")  # DEBUG
+    last_article = last_context.get("last_article")
+    print(f"[DEBUG_CONTEXT] Extracted Entities: {list(entities.keys())}, Last Article: {last_article.get('title') if last_article else 'None'}")
     
+    # =========================================================================
+    # TOPIC CONFLICT GUARD: If new query has a technical term NOT in the old article,
+    # then the user is likely asking about something NEW.
+    # =========================================================================
+    has_new_tech_term = False
+    if last_article:
+        art_title_lower = (last_article.get("title", "") or "").lower()
+        for acro in KNOWN_ACRONYMS:
+            # If term is in query but WAS NOT in previous article topic -> NEW TOPIC
+            if acro in q_lower and acro not in art_title_lower:
+                has_new_tech_term = True
+                print(f"[CONTEXT_GUARD] New technical term '{acro}' detected in query. Skipping sticky enrichment.")
+                break
+
+    # =========================================================================
+    # ARTICLE STICKINESS: If query is vague (images/details) and we have an article
+    # =========================================================================
+    if last_article and not has_new_tech_term and any(kw in q_lower for kw in ["รูป", "ภาพ", "ประกอบ", "หน้าตา", "ตาราง", "สรุป", "รายละเอียด"]):
+        article_title = last_article.get("title", "")
+        # Don't add if title already in query
+        if article_title and article_title.lower() not in q_lower:
+            enriched = f"{query} {article_title}"
+            print(f"[CONTEXT_ARTICLE_STICKY] '{query}' → '{enriched}' (Article: {article_title})")
+            return enriched
+
     if not entities:
         return query
     
@@ -229,8 +267,6 @@ def enrich_query_with_context(query: str, last_context: Optional[Dict[str, Any]]
     # MULTI-ENTITY SUPPORT: Smart Entity Selection
     # =========================================================================
     # If multiple entities exist, pick the most relevant one for the query
-    
-    q_lower = query.lower()
     
     # =========================================================================
     # CRITICAL FIX: Match Query Keywords First
@@ -440,36 +476,17 @@ def enrich_query_with_context(query: str, last_context: Optional[Dict[str, Any]]
                   f"→ blocking enrichment with {list(entities.keys())}")
             break
 
-    # -------------------------------------------------------------------------
-    # DETECT new Thai location names differing from context
-    # -------------------------------------------------------------------------
-    if not new_entity_detected:
-        known_locations = ["ภูเก็ต", "ชุมพร", "กรุงเทพ", "นครศรี", "พังงา", "สงขลา",
-                           "ระนอง", "ตรัง", "สตูล", "ยะลา", "ปัตตานี", "นราธิวาส",
-                           "หาดใหญ่"]
-        for token in novel_tokens_low:
-            if any(loc in token for loc in known_locations):
-                new_entity_detected = True
-                print(f"[CONTEXT_CONFLICT] New location '{token}' differs from context "
-                      f"→ blocking enrichment")
-                break
-
     if new_entity_detected:
         return query  # New entity wins — use raw query, don't mix old context
 
     # -------------------------------------------------------------------------
-    # CHECK 3: Known Thai team/department name (สื่อสารข้อมูล, radius, etc.)
+    # CHECK 3: Known Thai team/department/location name
     # -------------------------------------------------------------------------
-    # Problem: query "ขอเบอร์สื่อสารข้อมูล" contains "สื่อสารข้อมูล" which is a
-    # specific team name. If context has OMC entity, "สื่อสารข้อมูล" bypasses all
-    # ASCII/location checks and OMC gets appended → wrong answer.
-    # Fix: if query contains any KNOWN_THAI_TEAMS keyword that is NOT already in
-    # the context entities, treat as a new entity and block enrichment.
     context_entity_text = " ".join(entities.keys()).lower()
-    for thai_team in KNOWN_THAI_TEAMS:
-        if thai_team in q_lower and thai_team not in context_entity_text:
-            print(f"[CONTEXT_CONFLICT] Thai team name '{thai_team}' in query "
-                  f"(not in context) → blocking enrichment")
+    for entity in KNOWN_THAI_TEAMS | KNOWN_THAI_LOCATIONS:
+        if entity in q_lower and entity not in context_entity_text:
+            print(f"[CONTEXT_CONFLICT] Thai entity '{entity}' in query "
+                  f"(not in context) → blocking enrichment with {list(entities.keys())}")
             return query
 
     # =========================================================================
@@ -568,7 +585,8 @@ def create_context(
     route: str,
     entities: Optional[Dict[str, str]] = None,
     result_data: Optional[Dict[str, Any]] = None,
-    result_summary: str = ""
+    result_summary: str = "",
+    last_article: Optional[Dict[str, str]] = None # NEW: article_id, slug, title
 ) -> Dict[str, Any]:
     """
     Create a new conversation context for storage.
@@ -580,6 +598,7 @@ def create_context(
         entities: Detected entities {value: type}
         result_data: Result data (for legacy compat)
         result_summary: Summary of results
+        last_article: Metadata of the primary article in results
         
     Returns:
         Context dict to save in last_context
@@ -591,5 +610,6 @@ def create_context(
         "intent": intent,
         "result_summary": result_summary,
         "timestamp": time.time(),
-        "data": result_data or {}
+        "data": result_data or {},
+        "last_article": last_article
     }
