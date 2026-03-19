@@ -1,5 +1,4 @@
-# Miniminal Gitignore to allow Full Backup
-# Only ignore virtual environments and secrets
+# Virtual Environments
 venv/
 .venv/
 venv-py311/
@@ -7,8 +6,38 @@ env/
 ENV/
 .env
 .env.*
+
+# Secrets
 *.secret
 config/secrets.yaml
 
-# Include EVERYTHING else as requested
-# (data, backups, tests, src, etc.)
+# Data & Database (Private Company Info)
+data/processed/
+data/records/
+data/raw/
+data/sessions/
+data/sessions_test/
+data/vectorstore/
+data/cache_store/
+data/chroma_db/
+data/state.json
+data/*.bin
+data/*.json
+
+# Logs & Results
+logs/
+results/
+results/runs/
+*.csv
+*.jsonl
+
+# Archive & Caches
+*.zip
+*.tar.gz
+*.7z
+chroma.sqlite3
+__pycache__/
+.DS_Store
+
+# Include ONLY Source and Config
+# (src/, configs/, package.json, main scripts, etc.)
