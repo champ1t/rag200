@@ -75,6 +75,7 @@ def should_use_context(query: str, last_context: Optional[Dict[str, Any]]) -> bo
         
         # Selection/clarification
         "อันแรก", "อันที่สอง", "ตัวแรก", "ตัวที่",
+        "คนแรก", "คนสุดท้าย", "คนต่อมา", "คนถัดมา",
         "นี่", "นั่น", "โน่น"
     ]
     

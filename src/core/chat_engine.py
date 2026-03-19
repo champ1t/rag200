@@ -4293,7 +4293,32 @@ class ChatEngine:
              print(f"[DEBUG] Route: {intent}")
              t_start = time.time()
              # Use original query for directory to ensure Thai keyword matching
-             return self.directory_handler.handle(original_q_str)
+             res = self.directory_handler.handle(original_q_str)
+             
+             # Phase: Directory Context Persistence
+             # Capture entities from lookup results for follow-up support
+             if res.get("hits"):
+                 hits = res["hits"]
+                 entities = {}
+                 if intent == "TEAM_LOOKUP":
+                      # For team queries, try to extract specific team from query
+                      entities[original_q_str] = "ORGANIZATION"
+                 elif hits:
+                      # For person/role, capture the matched name
+                      entities[hits[0].get("name", "")] = "PERSON"
+                 
+                 new_context = context_manager.create_context(
+                     query=original_q_str,
+                     intent=intent,
+                     route=res.get("route", "directory"),
+                     entities=entities,
+                     result_data=hits[0] if hits else {}
+                 )
+                 self.last_context = new_context
+                 if session_id and session_id != "default":
+                     context_manager.save_session_context(session_id, new_context)
+             
+             return res
 
         elif intent == "REFERENCE_LINK":
              print("[DEBUG] Route: REFERENCE_LINK")
