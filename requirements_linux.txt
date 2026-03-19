@@ -343,7 +343,6 @@ numba==0.63.1
 numexpr==2.10.2
 numpy==1.26.4
 oauthlib==3.3.1
-ocrmac==1.0.1
 ollama==0.6.1
 omegaconf==2.3.0
 onnxruntime==1.23.2
@@ -483,11 +482,6 @@ pylibsrtp==1.0.0
 pyloudnorm==0.2.0
 pymilvus==2.6.6
 pymongo==4.10.1
-pyobjc-core==12.1
-pyobjc-framework-Cocoa==12.1
-pyobjc-framework-CoreML==12.1
-pyobjc-framework-Quartz==12.1
-pyobjc-framework-Vision==12.1
 pyOpenSSL==25.1.0
 pyparsing==3.3.1
 pypdf==6.6.0
