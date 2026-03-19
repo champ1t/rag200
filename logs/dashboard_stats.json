@@ -1,17 +1,17 @@
 {
-  "total_queries": 2993,
-  "blocked_queries": 317,
+  "total_queries": 3172,
+  "blocked_queries": 321,
   "missing_article_queries": 145,
-  "article_served_queries": 447,
-  "cross_vendor_block_count": 193,
+  "article_served_queries": 487,
+  "cross_vendor_block_count": 197,
   "intents": {
-    "unknown": 2932,
+    "unknown": 3111,
     "DETERMINISTIC_MATCH": 53
   },
   "vendors": {},
   "derived": {
-    "blocked_rate": "10.6%",
-    "missing_rate": "4.8%",
-    "success_rate": "14.9%"
+    "blocked_rate": "10.1%",
+    "missing_rate": "4.6%",
+    "success_rate": "15.4%"
   }
 }

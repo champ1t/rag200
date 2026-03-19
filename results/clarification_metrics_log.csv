@@ -1518,3 +1518,234 @@ timestamp,query,route,top_score,second_score,score_gap,n_candidates_above_thresh
 1773891506.730707,ช่วยหน่อย จะขอดูตัวอย่างหัวsfp100G,article_answer,0.0,0.0,0.0,0,False,none
 1773891543.98281,ใครคือผจ.ข.บลตน.,position_holder_hit,0.0,0.0,0.0,0,False,none
 1773891568.5154161,สมาชิก helpdesk มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773903189.987626,ใครคือผจ.ข.บลตน.,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773903215.229324,สมาชิก helpdeskมีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773903321.104497,สมาชิกส.บลตน. SMC มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773903531.566446,สมาชิกส.บลตน. SMC มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773903786.490431,สมาชิก ส.บลตน. ทีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773903827.199902,สมาชิกส.บลตน. SMC มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773911456.2492852,ข้อจำกัดตัวอย่างหัว sfp 100G,article_answer,0.0,0.0,0.0,0,False,none
+1773911688.453702,หัว sfp 100G คือ,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773911721.461204,ขอรูปประกอบด้วย,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773911803.348572,สมาชิก helpdesk มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773912211.25894,สมาชิก helpdesk มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773912308.5253,ขอzte config,article_answer,0.0,0.0,0.0,0,False,none
+1773912343.891092,สมาชิกในhelpdeskมีใครบ้างเหรอ,team_ambiguous,0.0,0.0,0.0,0,False,none
+1773912368.746731,SFP 100G คืออะไร,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773912368.823825,ผส.บลตน. คือใคร,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773912378.489326,"helpdesk ,u.8i[hk'",contact_broad_list,0.0,0.0,0.0,0,False,none
+1773912401.836245,SFP 100G คืออะไร,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773912401.166698,helpdesk มีใครบ้าง,article_answer,0.0,0.0,0.0,0,False,none
+1773912401.94365,ผส.บลตน. คือใคร,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773912417.374146,สมาชิกใน helpdesk มีใครบ้าง,team_ambiguous,0.0,0.0,0.0,0,False,none
+1773912452.8649979,สมาชิกใน helpdesk มีใครบ้าง,team_ambiguous,0.0,0.0,0.0,0,False,none
+1773912487.4383261,SFP 100G คืออะไร,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773912487.505416,ขอรูปประกอบด้วย,article_answer,0.0,0.0,0.0,0,False,none
+1773912507.335802,ผส.บลตน. คือใคร,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773912589.5911338,SFP 100G คืออะไร,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773912613.752299,ช่วยหน่อย จะขอดูตัวอย่างหัวsfp100G,article_answer,0.0,0.0,0.0,0,False,none
+1773912633.8553011,ขอรูปประกอบด้วย,article_answer,0.0,0.0,0.0,0,False,none
+1773912677.7159219,helpdesk มีใครบ้าง,article_answer,0.0,0.0,0.0,0,False,none
+1773912724.2759712,ขอรูปตัวอย่างหััว sfp 100G,article_answer,0.0,0.0,0.0,0,False,none
+1773912883.232657,ลิ้งหน่วยงานที่เกี่ยวข้องมีอะไรบ้าง,article_answer,0.0,0.0,0.0,0,False,none
+1773912890.920028,ขอลิ้งของ umbo หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773912925.003377,ส.บลตน. มีหน้าที่อะไรบ้าง,rag_cache,0.7636428475379944,0.6596880974140722,0.10395475012392219,3,False,none
+1773912978.034728,สมาชิกมีใครบ้าง,team_ambiguous,0.0,0.0,0.0,0,False,none
+1773912998.431456,helpdesk มีใครบ้าง,article_answer,0.0,0.0,0.0,0,False,none
+1773913148.389487,หัว sfp 100Gแพงมั้ย,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773913178.215949,ขอรูปประกอบหน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773913211.204702,สมาชิกใน helpdesk มีใครบ้างเหรอ,pending_clarification,0.6491959691047668,0.6418227644144389,0.0073732046903279835,3,True,multi_close_candidates
+1773913266.7112541,สมาชิก  ร.บลตน. มีใครบ้างเหรอ,team_hit,0.0,0.0,0.0,0,False,none
+1773913295.7115068,ขอแค่ Callcenter ร.บลตน.,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773913388.6275,ใครคือผจ,position_ambiguous,0.0,0.0,0.0,0,False,none
+1773919352.0178308,ผจ.ส.บลตน.,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773919419.658297,สมาชิกใน helpdesk มีใครบ้าง,pending_clarification,0.6519370079040527,0.6417198271929118,0.010217180711140972,3,True,multi_close_candidates
+1773919495.6997702,สมาชิกใน helpdesk มีใครบ้าง,pending_clarification,0.6519370079040527,0.6417198271929118,0.010217180711140972,3,True,multi_close_candidates
+1773919787.483414,สมาชิกใน helpdesk มีใครบ้าง,pending_clarification,0.6519370079040527,0.6417198271929118,0.010217180711140972,3,True,multi_close_candidates
+1773919888.191211,สมาชิกใน helpdesk มีใครบ้าง,article_answer,0.0,0.0,0.0,0,False,none
+1773920361.5869608,ขอแค่ Callcenter ร.บลตน.,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773920378.1310232,ขอเบอร์สื่อสารข้อมูลหาดใหญ่หน่อย,rag_link_only_content_type,0.7616652250289917,0.6338028076871018,0.12786241734188986,3,False,none
+1773920515.732165,ขอแค่ Callcenter ร.บลตน.,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773920532.348898,ขอเบอร์สื่อสารข้อมูลหาดใหญ่หน่อย,rag_link_only_content_type,0.856999135017395,0.7493478565431926,0.10765127847420242,3,False,none
+1773920679.551283,ขอแค่ Callcenter ร.บลตน.,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773920694.3375292,ขอเบอร์สื่อสารข้อมูลหาดใหญ่หน่อย,rag_link_only_content_type,0.856999135017395,0.7493478565431926,0.10765127847420242,3,False,none
+1773920755.124,ขอแค่ Callcenter ร.บลตน.,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773920769.852522,ขอเบอร์สื่อสารข้อมูลหาดใหญ่หน่อย,rag_link_only_content_type,0.856999135017395,0.7493478565431926,0.10765127847420242,3,False,none
+1773922006.300291,ขอแค่ Callcenter ร.บลตน.,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773922022.7705631,ขอเบอร์สื่อสารข้อมูลหาดใหญ่หน่อย,rag_link_only_content_type,0.856999135017395,0.7493478565431926,0.10765127847420242,3,False,none
+1773922038.0457978,ขอเบอร์ติดต่อข้อมูลหาดใหญ่หน่อย,rag_link_only_content_type,0.8591664671897887,0.7566762427372247,0.10249022445256406,3,False,none
+1773922054.622779,เบอร์ OMC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773922065.906694,ของ RNOC ล่ะ,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773922080.596462,helpdesk มีใครบ้าง,article_answer,0.0,0.0,0.0,0,False,none
+1773922086.8310149,Callcenter ร.บลตน.,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773922098.732256,ขอเบอร์ภูเก็ต,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773922153.726293,เบอร์ OMC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773922166.331031,ของ RNOC ล่ะ,clarification_low_confidence,0.0,0.0,0.0,0,False,none
+1773922565.329928,ขอแค่ Callcenter ร.บลตน.,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773922582.663764,ขอเบอร์สื่อสารข้อมูลหาดใหญ่หน่อย,rag_link_only_content_type,0.856999135017395,0.7493478565431926,0.10765127847420242,3,False,none
+1773922597.867598,ขอเบอร์ติดต่อข้อมูลหาดใหญ่หน่อย,rag_link_only_content_type,0.8591664671897887,0.7566762427372247,0.10249022445256406,3,False,none
+1773922615.630002,เบอร์ OMC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773922627.561842,ของ RNOC ล่ะ,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773922640.268088,helpdesk มีใครบ้าง,article_answer,0.0,0.0,0.0,0,False,none
+1773922646.685494,Callcenter ร.บลตน.,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773922659.3159838,ขอเบอร์ภูเก็ต,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773923197.7856488,เบอร์ OMC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773923212.2687402,เบอร์ RNOC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773923223.3551,โทร Callcenter ภูเก็ต,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773923233.572743,ขอเบอร์ติดต่อ NOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773923244.242871,เบอร์ CSOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773923255.2342038,เบอร์ JNA,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773923265.512685,เบอร์ OMC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773923277.332736,ของ RNOC ล่ะ,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773923290.093684,เบอร์ศูนย์ หาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773923301.747267,ขอแค่เบอร์,context_followup_miss,0.0,0.0,0.0,0,False,none
+1773923312.69546,Callcenter ร.บลตน.,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773923324.813426,ขอเบอร์สื่อสารข้อมูลหาดใหญ่หน่อย,rag_link_only_content_type,0.856999135017395,0.7493478565431926,0.10765127847420242,3,False,none
+1773923339.7703621,ขอเบอร์ภูเก็ต,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773923353.2407522,helpdesk มีใครบ้าง,article_answer,0.0,0.0,0.0,0,False,none
+1773923359.772578,สมาชิกใน helpdesk,article_answer,0.0,0.0,0.0,0,False,none
+1773923378.443892,เกี่ยวกับหน่วยงาน SMC,article_answer,0.0,0.0,0.0,0,False,none
+1773923384.601363,บุคลากร FTTx มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773923400.111918,เปิดโทร 3 สาย บน ONU,article_answer,0.0,0.0,0.0,0,False,none
+1773923437.9730392,โทรได้กี่สาย,rag_link_only_content_type,0.7645264565944672,0.6942623812756175,0.0702640753188497,3,False,none
+1773923463.560865,config IP Phone SIP,article_answer,0.0,0.0,0.0,0,False,none
+1773923509.6198862,,blocked_scope,0.0,0.0,0.0,0,False,none
+1773923509.748708,ขอเบอร์,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773923519.286309,สวัสดีครับ,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773923519.393481,Callcenter ร.บลตน.,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773923531.761232,ขอเบอร์ติดต่อข้อมูลหาดใหญ่,rag_link_only_content_type,0.8713077902793884,0.5893819915033359,0.2819257987760525,3,False,none
+1773923579.781814,เบอร์ OMC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773923592.3141818,เบอร์ RNOC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773923603.19458,โทร Callcenter ภูเก็ต,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773923613.200869,ขอเบอร์ติดต่อ NOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773923623.564797,เบอร์ CSOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773923634.209993,เบอร์ JNA,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773923644.238088,เบอร์ OMC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773923655.8208818,ของ RNOC ล่ะ,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773923667.987395,เบอร์ศูนย์ หาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773923679.282776,ขอแค่เบอร์,context_followup_miss,0.0,0.0,0.0,0,False,none
+1773923689.939158,Callcenter ร.บลตน.,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773923698.3728461,เบอร์ OMC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773923716.608275,เบอร์ RNOC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773923701.9692569,ขอเบอร์สื่อสารข้อมูลหาดใหญ่หน่อย,rag_link_only_content_type,0.856999135017395,0.7493478565431926,0.10765127847420242,3,False,none
+1773923731.840949,โทร Callcenter ภูเก็ต,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773923733.7705028,ขอเบอร์ภูเก็ต,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773923753.120188,helpdesk มีใครบ้าง,article_answer,0.0,0.0,0.0,0,False,none
+1773923751.187616,ขอเบอร์ติดต่อ NOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773923769.5221498,เบอร์ CSOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773923764.48067,สมาชิกใน helpdesk,article_answer,0.0,0.0,0.0,0,False,none
+1773923786.014334,เบอร์ JNA,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773923799.4850528,เกี่ยวกับหน่วยงาน SMC,article_answer,0.0,0.0,0.0,0,False,none
+1773923804.477432,เบอร์ OMC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773923811.998382,บุคลากร FTTx มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773923829.0942562,ของ RNOC ล่ะ,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773923838.796992,เบอร์ OMC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773923839.038263,เปิดโทร 3 สาย บน ONU,article_answer,0.0,0.0,0.0,0,False,none
+1773923857.519425,เบอร์ศูนย์ หาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773923862.596457,เบอร์ RNOC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773923916.758828,ขอแค่เบอร์,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773923918.626868,โทร Callcenter ภูเก็ต,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773923943.0905201,Callcenter ร.บลตน.,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773923944.9047658,ขอเบอร์ติดต่อ NOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773923911.688746,โทรได้กี่สาย,rag_link_only_content_type,0.7645264565944672,0.6942623812756175,0.0702640753188497,3,False,none
+1773923973.143085,เบอร์ CSOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773923971.170599,ขอเบอร์สื่อสารข้อมูลหาดใหญ่หน่อย,rag_link_only_content_type,0.856999135017395,0.7493478565431926,0.10765127847420242,3,False,none
+1773923994.684148,เบอร์ JNA,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773923975.4618099,config IP Phone SIP,article_answer,0.0,0.0,0.0,0,False,none
+1773924033.8409421,,blocked_scope,0.0,0.0,0.0,0,False,none
+1773924008.064319,ขอเบอร์ภูเก็ต,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773924013.0708852,เบอร์ OMC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773924033.970891,ขอเบอร์,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773924059.617753,สวัสดีครับ,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773924055.949263,helpdesk มีใครบ้าง,article_answer,0.0,0.0,0.0,0,False,none
+1773924056.8766,เบอร์ OMC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773924059.728176,Callcenter ร.บลตน.,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773924057.8954282,ของ RNOC ล่ะ,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773924065.9017038,สมาชิกใน helpdesk,article_answer,0.0,0.0,0.0,0,False,none
+1773924099.782162,เบอร์ศูนย์ หาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773924132.5875762,สวัสดีครับ,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773924126.2632651,เกี่ยวกับหน่วยงาน SMC,article_answer,0.0,0.0,0.0,0,False,none
+1773924096.151775,ขอเบอร์ติดต่อข้อมูลหาดใหญ่,rag_link_only_content_type,0.8713077902793884,0.5893819915033359,0.2819257987760525,3,False,none
+1773924140.462755,บุคลากร FTTx มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773924161.523361,เบอร์ OMC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773924156.970603,เปิดโทร 3 สาย บน ONU,article_answer,0.0,0.0,0.0,0,False,none
+1773924176.338419,เบอร์ RNOC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773924230.3593102,โทร Callcenter ภูเก็ต,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773924212.180659,โทรได้กี่สาย,rag_link_only_content_type,0.7645264565944672,0.6942623812756175,0.0702640753188497,3,False,none
+1773924248.906533,ขอเบอร์ติดต่อ NOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773924264.4939451,เบอร์ CSOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773924259.445694,config IP Phone SIP,article_answer,0.0,0.0,0.0,0,False,none
+1773924322.3173518,,blocked_scope,0.0,0.0,0.0,0,False,none
+1773924279.692103,เบอร์ JNA,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773924322.4447381,ขอเบอร์,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773924342.3140962,สวัสดีครับ,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773924327.26949,เบอร์ OMC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773924342.4280279,Callcenter ร.บลตน.,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773924344.181223,ของ RNOC ล่ะ,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773924370.875184,เบอร์ศูนย์ หาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773924360.84394,ขอเบอร์ติดต่อข้อมูลหาดใหญ่,rag_link_only_content_type,0.8713077902793884,0.5893819915033359,0.2819257987760525,3,False,none
+1773924382.59303,เบอร์ OMC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773924396.571669,ขอแค่เบอร์,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773924414.205735,Callcenter ร.บลตน.,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773924426.298951,ขอเบอร์สื่อสารข้อมูลหาดใหญ่หน่อย,rag_link_only_content_type,0.856999135017395,0.7493478565431926,0.10765127847420242,3,False,none
+1773924440.3132071,ขอเบอร์ภูเก็ต,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773924453.376665,helpdesk มีใครบ้าง,article_answer,0.0,0.0,0.0,0,False,none
+1773924459.202276,สมาชิกใน helpdesk,article_answer,0.0,0.0,0.0,0,False,none
+1773924477.492618,เกี่ยวกับหน่วยงาน SMC,article_answer,0.0,0.0,0.0,0,False,none
+1773924484.427434,บุคลากร FTTx มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773924499.545752,เปิดโทร 3 สาย บน ONU,article_answer,0.0,0.0,0.0,0,False,none
+1773924545.959955,โทรได้กี่สาย,rag_link_only_content_type,0.7645264565944672,0.6942623812756175,0.0702640753188497,3,False,none
+1773924594.423358,config IP Phone SIP,article_answer,0.0,0.0,0.0,0,False,none
+1773924644.044071,,blocked_scope,0.0,0.0,0.0,0,False,none
+1773924644.170429,ขอเบอร์,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773924662.719903,สวัสดีครับ,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773924662.8281658,Callcenter ร.บลตน.,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773924682.356677,ขอเบอร์ติดต่อข้อมูลหาดใหญ่,rag_link_only_content_type,0.8713077902793884,0.5893819915033359,0.2819257987760525,3,False,none
+1773924767.523684,helpdesk มีใครบ้าง,article_answer,0.0,0.0,0.0,0,False,none
+1773924786.6503522,เกี่ยวกับหน่วยงาน SMC,article_answer,0.0,0.0,0.0,0,False,none
+1773924847.769831,,blocked_scope,0.0,0.0,0.0,0,False,none
+1773924857.537106,สวัสดีครับ,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773925059.762486,helpdesk มีใครบ้าง,article_answer,0.0,0.0,0.0,0,False,none
+1773925077.947537,เกี่ยวกับหน่วยงาน SMC,article_answer,0.0,0.0,0.0,0,False,none
+1773925095.958435,เบอร์ OMC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773925131.352077,เบอร์ OMC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773925160.363063,,blocked_scope,0.0,0.0,0.0,0,False,none
+1773925150.313417,เบอร์ RNOC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773925179.0108218,สวัสดีครับ,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773925165.412502,โทร Callcenter ภูเก็ต,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773925180.8212779,ขอเบอร์ติดต่อ NOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773925200.002167,เบอร์ CSOC,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773925219.93947,เบอร์ JNA,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773925230.206856,เบอร์ OMC หาดใหญ่,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773925242.0243049,ของ RNOC ล่ะ,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773925254.617116,เบอร์ศูนย์ หาดใหญ่,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773925266.139115,ขอแค่เบอร์,contact_broad_list,0.0,0.0,0.0,0,False,none
+1773925277.221847,Callcenter ร.บลตน.,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773925289.587169,ขอเบอร์สื่อสารข้อมูลหาดใหญ่หน่อย,rag_link_only_content_type,0.856999135017395,0.7493478565431926,0.10765127847420242,3,False,none
+1773925303.957962,ขอเบอร์ภูเก็ต,contact_hit_contact_book_fuzzy,0.0,0.0,0.0,0,False,none
+1773925317.611548,helpdesk มีใครบ้าง,article_answer,0.0,0.0,0.0,0,False,none
+1773925323.647136,สมาชิกใน helpdesk,article_answer,0.0,0.0,0.0,0,False,none
+1773925342.76657,เกี่ยวกับหน่วยงาน SMC,article_answer,0.0,0.0,0.0,0,False,none
+1773925349.780681,บุคลากร FTTx มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773925365.0909388,เปิดโทร 3 สาย บน ONU,article_answer,0.0,0.0,0.0,0,False,none
+1773925412.567602,โทรได้กี่สาย,rag_link_only_content_type,0.7645264565944672,0.6942623812756175,0.0702640753188497,3,False,none
+1773925438.330732,config IP Phone SIP,article_answer,0.0,0.0,0.0,0,False,none
+1773925485.5811672,,blocked_scope,0.0,0.0,0.0,0,False,none
+1773925485.706385,ขอเบอร์,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773925495.340325,สวัสดีครับ,greeting_early_exit,0.0,0.0,0.0,0,False,none
+1773925495.445514,Callcenter ร.บลตน.,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773925507.940213,ขอเบอร์ติดต่อข้อมูลหาดใหญ่,rag_link_only_content_type,0.8713077902793884,0.5893819915033359,0.2819257987760525,3,False,none
+1773925614.945808,สมาชิก callcenter มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773925666.855039,สมาชิก ร.บลตน. มีใครบ้าง,team_hit,0.0,0.0,0.0,0,False,none
+1773925773.259423,sfp 100G แพงมั้ย,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773925802.3278348,ขอรูปด้วย,article_answer,0.0,0.0,0.0,0,False,none
+1773925849.7792902,ข,blocked_scope,0.0,0.0,0.0,0,False,none
+1773925865.689628,มีข้อจำกัดไหม,article_link_only_low_context,0.0,0.0,0.0,0,False,none
+1773927757.516088,หัว sfp 100G มีข้อจำกัดแะไรบ้างไหม,article_answer,0.0,0.0,0.0,0,False,none
+1773927809.9908109,ส.บลตน. SMC มีหน้าที่อะไร,rag_cache,0.8024523258209229,0.5590356043559278,0.24341672146499505,3,False,none
+1773927919.2098088,ส.,contact_ambiguous,0.0,0.0,0.0,0,False,none
+1773927965.120888,หัว sfp 100G แพงไหม,article_answer,0.0,0.0,0.0,0,False,none
+1773927994.908024,ขอรูปด้วยครับ,article_answer,0.0,0.0,0.0,0,False,none
+1773928045.234422,ขอช่วยส่ง config zte c600 ให้หน่อย,article_answer,0.0,0.0,0.0,0,False,none
+1773928068.311632,ส.บลตน. มีใครบ้้าง,position_holder_hit,0.0,0.0,0.0,0,False,none
+1773928109.5798311,แล้วใครเป็นผจ.ส.บลตน.,position_holder_hit,0.0,0.0,0.0,0,False,none
