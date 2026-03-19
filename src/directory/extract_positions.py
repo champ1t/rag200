@@ -433,8 +433,9 @@ def summarize_teams(records):
     for r in records:
         role = r["role"]
         
-        # Clean the role to get the base unit name (e.g. "สมาชิก ข.บลตน." -> "ข.บลตน.")
-        unit = re.sub(r"^(ผส\.|ผจ\.|ผอ\.|หัวหน้าส่วน|สมาชิก)\s*", "", role).strip()
+        # Clean the role to get the base unit name (e.g. "สมาชิก ข.บลตน." -> "บลตน.")
+        # Added ส\. และ ข\. และรองรับช่องว่างระหว่างคำนำหน้า (เช่น สมาชิก ส.บลตน. -> บลตน.)
+        unit = re.sub(r"^(?:ผส\.|ผจ\.|ผอ\.|หัวหน้าส่วน|สมาชิก|ส\.|ข\.|\s)+", "", role).strip()
         
         if not unit:
             unit = role

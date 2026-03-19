@@ -547,7 +547,10 @@ class DirectoryHandler:
         
         if matches and not is_ambiguous:
             # Hit Logic (Existing)
-            best_team = sorted(matches, key=len)[0]
+            # Prefer longest match (Phase 241) or team with most members (Phase 249)
+            # This prevents picking 'บลตน.' (1 person) over 'ส.บลตน.' (6 people) when query is 'ส.บลตน.'
+            matches = sorted(matches, key=lambda x: (len(self.team_index[x].get('members', [])), len(x)), reverse=True)
+            best_team = matches[0]
             team_data = self.team_index[best_team]
             members = team_data.get("members", [])
             count = len(members)
